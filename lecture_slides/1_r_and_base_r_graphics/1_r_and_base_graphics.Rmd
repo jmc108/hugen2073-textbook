@@ -1,0 +1,448 @@
+---
+title: "3_r_base_r_graphics_code_2025s"
+author: "Jon Chernus"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    code_folding: show
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Lecture 3 - Visualization with R, RStudio, and RMarkdown
+
+This file contains the code from lecture 3 (3_r_base_r_graphics_2023s.pptx). A separate .Rmd/.html has the plotting example code that accompanies 3_visualization_example_in_r_base_graphics_2023s.
+
+## Slide 6
+
+R performs mathematical calculations. Often these calculations are in the form of functions.
+
+```{r slide6}
+1 + 2 # comments can be added after hashes
+
+sqrt(4)
+
+mean(c(1,2,3,4))
+
+rnorm(n = 2, mean = 0, sd = 1)
+
+rnorm(2, 0, 1)
+```
+
+## Slide 7
+
+Functions can be nested inside of other functions.
+
+```{r slide7}
+rnorm(n = sqrt(mean(c(2,4,6))), mean = 1 - 1, sd = 1)
+```
+
+## Slide 8
+
+To get documentation about a function use ?. To search documentation use ??.
+
+```{r slide8}
+?rnorm
+
+??rnorm
+```
+
+## Slide 9
+
+It can save information into objects (which are like variables).
+
+```{r slide9}
+a <- 1
+a
+
+a <- 1 + 2
+a
+
+beta <- 2 + 2
+beta
+
+a + beta
+```
+
+## Slide 10
+
+These objects can be vectors of values.
+
+```{r slide10}
+a <- c(1, 2, 3 ,4)
+a
+
+a <- c(T, F, F, F, F, T, F)
+a
+```
+
+## Slide 11
+
+You can choose subsets of values in a vector.
+
+```{r slide11}
+a <- c("a", "b", "c", "d")
+a
+
+a[2]
+
+a[2:3]
+```
+
+## Slide 12
+
+You can operate on subsets of values in a vector.
+
+```{r slide12}
+a <- c(1, 2, 3, 4)
+a
+
+a[2] <- a[2] + 1
+a
+```
+
+## Slide 13
+
+Using conditions and TRUE and FALSE can be handy.
+
+```{r slide13}
+a <- c(1, 2, 3, 4)
+a == 2
+a[a == 2]
+a[c(F, T, F, F)]
+```
+
+## Slide 14
+
+R can work with tables of data called data frames.
+
+```{r slide14}
+# Your path to the file will be different!
+try(a <- read.csv("/Users/jonathanchernus/Documents/Teaching/2024s/HUGEN2073/lectures/lecture3_4/data3.csv"))
+try(a)
+```
+
+## Slide 15
+
+Since data frames are two dimensional, to subset you need two coordinates.
+
+```{r slide15}
+a
+
+a[2, 3]
+
+a[3, 1]
+```
+
+## Slide 16
+
+If you leave one of the two coordinates empty, you’ll get a vector:
+
+```{r slide16}
+a
+
+a[2, ]
+
+a[, 1]
+```
+
+## Slide 17
+
+You can use conditions and functions within the [s and ]s too.
+
+```{r slide17}
+a
+
+a[a[, 1] == "Xiao", c("x")]
+```
+
+## Slide 18
+
+We often work with a whole column at a time, and there is a shortcut for that using `$`.
+
+```{r slide18}
+a
+
+a$name
+```
+
+## Slide 19
+
+Note these three are exactly equal:
+
+```{r slide19}
+identical(a$name, a[, 1])
+identical(a$name, a[, c("name")])
+identical(a[, 1], a[, c("name")])
+```
+
+## Slide 20
+
+R can also manipulate tables of data by adding columns that are transformations of other columns.
+
+```{r slide20}
+a$z <- a$x + a$y
+a
+```
+
+## Slide 21
+
+R can also manipulate tables of data by adding columns that are transformations of other columns.
+
+```{r slide21}
+a$b <- sqrt(a$z)
+a
+```
+
+## Slide 22
+
+You can also add new data to a data frame.
+
+```{r slide22}
+a$r <- runif(length(a$z))
+a
+
+# write.csv(a, "newdata.csv") # This would write out the data frame as a .csv file
+```
+
+## Slide 23
+
+Reading and writing CSV data into and out of R (commented out as it is redundant with above examples.)
+
+```{r  slide23}
+# a <- read.csv("data.csv")
+# a
+# rite.csv(a, "newdata.csv")
+```
+
+## Slides 24-26
+
+R can also create graphics.
+
+```{r slide 24_25_26}
+plot(a$x, a$y)
+a[, c("x", "y")]
+plot(a$x, a$y,   type = "o")
+barplot(a$z,    horiz = TRUE,    names.arg=a$name)
+```
+
+To add some R embedded in the narrative text itself (inline): The mean of the `r length(c(1,2,3,4))` values `r c(1,2,3,4)` is `r mean(length(c(1,2,3,4)))`.
+
+## Slide 40
+
+So plotting numbers and their squares:
+
+```{r slide40}
+x <- c(1,2,3,4,5,6,7,8,9,10)
+y <- x^2
+plot(x, y)
+plot(x, y, main = "Squares",
+     xlab = "Integers",
+     ylab = "Squares",
+     xlim = c(-10, 110), ylim = c(-10, 100))
+```
+
+## Slide 46
+
+Adding some plotting parameters:
+
+```{r slide46}
+x <- c(1,2,3,4,5,6,7,8,9,10)
+y <- x^2
+plot(x, y)
+plot(x, y, main = "Squares",
+     xlab = "Integers", ylab = "Squares",
+     xlim = c(-10, 110), ylim = c(-10, 100),
+     col = c(2,3,4), lty=1)
+```
+
+## Slide 48
+
+Let’s add a line between the points, a vertical line at 9 and a horizontal line at 81, and a second set of points:
+
+```{r slide48}
+plot(x, y, main = "Squares",
+     xlab = "Integers", ylab = "Squares",
+     xlim = c(-10, 110), ylim = c(-10, 100),
+     pch = c(15,16,17), col = c(2,3,4), cex = 3, lwd = 2)
+
+lines(x, y, col = 1, lwd = 4, lty = "dotted")
+abline(v = 9, lwd = 4, col = 2)
+abline(h = 81, lwd = 4, col = 4)
+y2 <- x * 9
+points(x, y2, col = 1, lwd = 4, cex = 2)
+```
+
+# Visualization with R: Example with R Base Graphics
+
+## Slide 52
+
+Load `tidyverse` so we can use the `alpha` function later, and read in the data.
+
+```{r slide52}
+# Load package
+library("tidyverse")
+
+# Read the data in
+# You'll need to download the data and change the path
+data <- read.csv("/Users/jonathanchernus/Documents/Teaching/2024s/HUGEN2073/lectures/lecture3_4/20220120-rlm-2073_Data.csv")
+```
+
+## Slide 53
+
+Inspect the data:
+
+```{r slide 53}
+dim(data)
+head(data)
+tail(data)
+summary(data)
+```
+
+## Slide 54
+
+Check out the categorical data and make histograms of the continuous data, experimenting with bin widths.
+
+```{r slide54}
+# Categorical variable
+table(data$sex)
+
+# Continuous variables
+hist(data$age)
+hist(data$height)
+
+# Best bin width?
+hist(data$height, breaks = 10)
+hist(data$height, breaks = 100)
+hist(data$height, breaks = 1000)
+```
+
+## Slide 55
+
+Making a scatterplot with `plot`:
+
+```{r, slide55}
+# Scatterplots
+plot(x = data$age, y = data$height)
+```
+
+## Slide 56
+
+Changing the alpha/opacity setting:
+
+```{r slide56}
+# Change point settings
+#   alpha is a transparency parameter (25% opaque)
+plot(data$age, data$height,
+     pch = 16,
+     col = alpha("black", 0.25))
+```
+
+## Slide 58
+
+Stratify by sex, making separate plots for males and females. What is the "problem" here?
+
+```{r slide58}
+# Females: dark green triangles
+plot(data$age[data$sex == "F"],
+     data$height[data$sex == "F"],
+     pch = 17, col = alpha("darkgreen", 0.25),
+     xlab="Age", ylab="Height")
+# Males: purple circles
+plot(data$age[data$sex == "M"],
+     data$height[data$sex == "M"],
+     pch = 16, col = alpha("purple", 0.25),
+     xlab="Age", ylab="Height")
+```
+
+## Slide 59
+
+Now try with the same y-axis:
+
+```{r slide59}
+# What is the full range of heights?
+summary(data$height)
+
+# Plot again, this time with the same y-axis
+# Females first
+plot(data$age[data$sex == "F"],
+     data$height[data$sex == "F"],
+     pch = 17, col = alpha("darkgreen", 0.25),
+     xlab="Age", ylab="Height",
+     ylim = c(143, 204))
+# Now males
+plot(data$age[data$sex == "M"],
+     data$height[data$sex == "M"],
+     pch = 16, col = alpha("purple", 0.25),
+     xlab="Age", ylab="Height",
+     ylim = c(143, 204))
+```
+
+## Slide 61
+
+Now try a single plotting window, first using `plot` and then `points`. What's wrong here?
+
+```{r slide61}
+# Plot females
+plot(data$age[data$sex == "F"],
+     data$height[data$sex == "F"],
+     pch = 17, col = alpha("darkgreen", 0.25),
+     xlab="Age", ylab="Height")
+# Add points for males
+points(data$age[data$sex == "M"],
+     data$height[data$sex == "M"],
+     pch = 16, col = alpha("purple", 0.25))
+```
+
+## Slide 62
+
+Overlay again, but set `ylim` correctly in the call to `plot`:
+
+```{r slide62}
+# View full range of heights
+summary(data$height)
+
+# Plot females
+plot(data$age[data$sex == "F"],
+     data$height[data$sex == "F"],
+     pch = 17, col = alpha("darkgreen", 0.25),
+     xlab="Age", ylab="Height",
+     ylim = c(143, 204))
+
+# Overlay males
+points(data$age[data$sex == "M"],
+       data$height[data$sex == "M"],
+       pch = 16, col = alpha("purple", 0.25))
+```
+
+## Slide 63
+
+Now try to use only a single call to `plot`. We have to make vectors of plotting parameters:
+
+```{r slide63}
+# Create vectors containing pch and col values
+data$pch[data$sex == "F"] <- 17
+data$pch[data$sex == "M"] <- 16
+data$col[data$sex == "F"] <- "darkgreen"
+data$col[data$sex == "M"] <- "purple"
+
+# Check that this worked right
+head(data)
+table(data$sex, data$pch)
+table(data$sex, data$col)
+```
+
+## Slide 64
+
+Now use a single `plot` command:
+
+```{r slide64}
+# Use the vectors created above
+plot(data$age, data$height,
+     pch = data$pch,
+     col = alpha(data$col, 0.25),
+     xlab="Age", ylab="Height")
+```

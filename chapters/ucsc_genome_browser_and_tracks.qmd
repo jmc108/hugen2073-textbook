@@ -1,0 +1,63 @@
+---
+title: "UCSC Genome Browser and Tracks"
+format:
+  html:
+    sidebar: true
+    grid:
+      sidebar-width: 420px
+---
+
+<div id="tutor-root" data-chapter="week05" class="tutor-floating"></div>
+<script src="../assets/tutor-chat.js"></script>
+<link rel="stylesheet" href="../assets/tutor-chat.css">
+
+
+## Preparation for Class
+
+- Watch the lecture recording
+
+- Do any required reading (see below)
+
+- Ask Dr. Lysenko any questions you have
+
+- Pass Dr. Lysenko's quiz
+
+## Lecture Recording and Slides
+
+```{=html}
+<div class="yt-embed">
+  <div class="ratio">
+    <iframe
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+      title="Lecture video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+```
+
+```{=html}
+<div style="width: 100%; height: 800px; margin-top: 1.5em;">
+  <iframe
+    src="../lecture_slides/1_r_and_base_r_graphics/3_r_base_r_graphics_with_example_2025s.pdf"
+    style="width: 100%; height: 100%; border: 1px solid #ccc;"
+    title="Lecture slides">
+  </iframe>
+</div>
+```
+
+## Required Reading
+
+## Suggested Reading
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,209 @@
+---
+title: "ggplot exercises"
+author: "Jon Chernus"
+output:
+  html_document:
+    code_folding: show
+---
+
+# Setup
+
+First we simulate data for 1000 individuals:
+
+-   genotypes coded 0, 1, 2 for 10 SNPs
+
+-   `phenotype` (height in cm., continuous)
+
+-   `weight` (in kg., continuous)
+
+-   `sex` (binary, `"M"` or `"F"`)
+
+```{r, 0a_simulate}
+# Load packages
+library("knitr")
+library("tidyverse")
+
+# Parameters
+set.seed(2073)
+n_individuals <- 1000
+n_snps <- 10
+
+# Randomly generate data
+#   Genotypes for 10 SNPs (coded 0, 1, 2)
+#   Phenotype
+#   Sex
+#   Weight
+#   Also add an ID
+# Check data
+snp_data <- as.data.frame(matrix(sample(0:2, n_individuals * n_snps, replace = TRUE), nrow = n_individuals))
+colnames(snp_data) <- paste("SNP", 1:n_snps, sep = "_")
+snp_data$phenotype <- rnorm(n_individuals, mean = 160, sd = 10)
+snp_data$sex <- sample(c("F","M"), n_individuals, replace = TRUE)
+snp_data$weight <- rnorm(n_individuals, mean = 70, sd = 15)
+snp_data$ID <- paste0("subject",1:n_individuals)
+
+```
+
+Here is what the dataset looks like:
+
+```{r, 0b_checkdata}
+# Show data
+kable(head(snp_data))
+```
+
+# Exercises
+
+Try experimenting with plotting parameters to see if you can improve on the defaults (including axis labels and titles).
+
+## 1. Plot the overall distribution of the `phenotype`
+
+```{r, 1_distribution}
+# Your code here
+snp_data %>% ggplot(aes(x=phenotype)) + 
+  geom_histogram() + 
+  geom_density()
+
+
+snp_data %>% ggplot(aes(x=phenotype)) + 
+  geom_histogram(aes(y=..density..)) + 
+  geom_density()
+```
+
+## 2. Plot the distribution of the `phenotype` by `sex`
+
+```{r, 2_distribution_stratified}
+# Your code here
+snp_data %>% ggplot(aes(x=phenotype)) + 
+  geom_histogram(aes(y=..density..)) + 
+  geom_density() +
+  facet_wrap(~sex)
+
+snp_data %>% ggplot(aes(x=phenotype)) + 
+  #geom_histogram(aes(y=..density..)) + 
+  geom_density(aes(color=sex))
+
+```
+
+## 3. Make a barplot of the "haplotype" counts for `SNP_1` and `SNP_2`
+
+This two-way table shows how the genotypes of SNP_1 and SNP_2 are related.
+
+```{r, 3a_snp1_snp2_table}
+# Show bins
+kable(table(snp_data$SNP_1, snp_data$SNP_2))
+```
+
+Let's make a single variable called `haplo12` that says summarizes genotype for `SNP_1` and `SNP_2`.
+
+```{r, 3b_haplo_table}
+# Make a binning variable
+snp_data$haplo12 <- paste(snp_data$SNP_1, snp_data$SNP_2, sep="_")
+kable(table(snp_data$haplo12))
+```
+
+Now make a plot showing the counts in all 9 categories.
+
+```{r, 3_barplot}
+# Your code here
+
+```
+
+## 4. Make a scatterplot with trendline of `phenotype` vs. `weight`, stratifying by `SNP_1` genotype
+
+```{r, 4_scatterplot_stratified}
+# Your code here
+
+```
+
+## 5. Make a scatterplot of `phenotype` vs. `weight`, faceting by `SNP_1` genotype and stratified by `sex`
+
+```{r, 5_scatterplot_stratified_faceted}
+# Your code here
+
+```
+
+## 6. Remake the plot from 6, now faceting in two dimensions, by `SNP_1` and `SNP_2`
+
+```{r, 6_scatterplot_stratified_faceted_two_ways}
+# Your code here
+
+```
+
+## 7. Make an interesting plot of your choice
+
+```{r, 7_your_choice}
+# Your code here
+
+```
+
+# Solutions
+
+These are just suggestions - there are other ways to do these exercises.
+
+## 1.
+
+```{r, 1_ans}
+snp_data %>% ggplot() +
+  geom_histogram(aes(x=phenotype, y=..density..), color=1, fill="white") +
+  geom_density(aes(x=phenotype), fill="blue", alpha=0.3) +
+  xlab("Height (cm.)") + ylab("Density") + ggtitle("Measurements of 1000 individuals")
+```
+
+## 2.
+
+```{r, 2_ans}
+snp_data %>% ggplot() +
+  geom_boxplot(aes(x=sex, y=phenotype)) +
+  xlab("Sex") + ylab("Height (cm.)") + ggtitle("Similar heights by sex")
+```
+
+## 3.
+
+```{r, 3_ans}
+snp_data %>% ggplot() +
+  geom_bar(aes(x=haplo12)) +
+  xlab("Genotype bin (SNP1_SNP2)") + ylab("Count") +
+  ggtitle("Similar counts across genotype bins")
+```
+
+## 4.
+
+```{r, 4_ans}
+snp_data %>% ggplot() +
+  geom_point(aes(x=weight, y=phenotype, color=factor(SNP_1))) +
+  geom_smooth(aes(x=weight, y=phenotype, color=factor(SNP_1)), se = FALSE) +
+  xlab("Weight (kg.)") + ylab("Height (cm.)") +
+  ggtitle("Little relationship between height and weight") +
+  guides(color=guide_legend(title="SNP_1 genotype"))
+```
+
+## 5.
+
+```{r, 5_ans}
+snp_data %>% ggplot() +
+  geom_point(aes(x=weight, y=phenotype, color=sex)) +
+  facet_grid(~SNP_1) +
+  xlab("Weight (kg.)") + ylab("Height (cm.)") +
+  ggtitle("Height-weight relationship by SNP1 genotype")
+```
+
+## 6.
+
+I've also added a `haplo12`-specific trend-line to each.
+
+```{r, 6_ans}
+snp_data %>% ggplot() +
+  geom_point(aes(x=weight, y=phenotype, color=sex)) +
+  geom_smooth(aes(x=weight, y=phenotype, group=haplo12), se=FALSE, method="lm") +
+  facet_grid(SNP_1 ~ SNP_2) +
+  xlab("Weight (kg.)") + ylab("Height (cm.)") +
+  ggtitle("Height-weight relationship by SNP1 and SNP2 genotype")
+```
+
+## 7.
+
+You get to answer this one.
+
+```{r, 7_ans}
+# Your code here
+```

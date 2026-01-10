@@ -1,0 +1,129 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "HUGEN 2073",
+    "section": "",
+    "text": "Preliminaries",
+    "crumbs": [
+      "Preliminaries"
+    ]
+  },
+  {
+    "objectID": "index.html#important-links",
+    "href": "index.html#important-links",
+    "title": "HUGEN 2073",
+    "section": "Important links",
+    "text": "Important links",
+    "crumbs": [
+      "Preliminaries"
+    ]
+  },
+  {
+    "objectID": "index.html#software",
+    "href": "index.html#software",
+    "title": "HUGEN 2073",
+    "section": "Software",
+    "text": "Software",
+    "crumbs": [
+      "Preliminaries"
+    ]
+  },
+  {
+    "objectID": "index.html#computing-cluster",
+    "href": "index.html#computing-cluster",
+    "title": "HUGEN 2073",
+    "section": "Computing cluster",
+    "text": "Computing cluster",
+    "crumbs": [
+      "Preliminaries"
+    ]
+  },
+  {
+    "objectID": "index.html#help",
+    "href": "index.html#help",
+    "title": "HUGEN 2073",
+    "section": "Help",
+    "text": "Help",
+    "crumbs": [
+      "Preliminaries"
+    ]
+  },
+  {
+    "objectID": "chapters/principles.html",
+    "href": "chapters/principles.html",
+    "title": "1  Principles of Visualization",
+    "section": "",
+    "text": "Some content…\n\n\nCheck your understanding\n\n\n\n\nCheck",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Principles of Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/week05.html",
+    "href": "chapters/week05.html",
+    "title": "4  Week 5: Linkage Disequilibrium & Annotation",
+    "section": "",
+    "text": "4.1 Learning goals",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 5: Linkage Disequilibrium & Annotation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/week05.html#learning-goals",
+    "href": "chapters/week05.html#learning-goals",
+    "title": "4  Week 5: Linkage Disequilibrium & Annotation",
+    "section": "",
+    "text": "Understand what linkage disequilibrium (LD) represents biologically\nDistinguish common LD measures (r² vs D′)\nLearn how LD is used to interpret GWAS lead variants",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 5: Linkage Disequilibrium & Annotation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/week05.html#conceptual-overview",
+    "href": "chapters/week05.html#conceptual-overview",
+    "title": "4  Week 5: Linkage Disequilibrium & Annotation",
+    "section": "4.2 Conceptual overview",
+    "text": "4.2 Conceptual overview\n\n4.2.1 What LD tells you\nExplain here what LD captures, why nearby variants are correlated, and how population history affects LD patterns.\n\n\n4.2.2 r² vs D′\nExplain: - what each measure captures - when one is misleading - why r² is usually preferred for association interpretation",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 5: Linkage Disequilibrium & Annotation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/week05.html#practical-workflow-annotating-a-gwas-hit",
+    "href": "chapters/week05.html#practical-workflow-annotating-a-gwas-hit",
+    "title": "4  Week 5: Linkage Disequilibrium & Annotation",
+    "section": "4.3 Practical workflow: annotating a GWAS hit",
+    "text": "4.3 Practical workflow: annotating a GWAS hit\n\nIdentify the lead SNP\nRetrieve LD proxies in the relevant ancestry\nAnnotate proxies (VEP, regulatory context, eQTLs)\nIntegrate evidence into a mechanistic hypothesis",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 5: Linkage Disequilibrium & Annotation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/week05.html#self-check-prompts-for-students",
+    "href": "chapters/week05.html#self-check-prompts-for-students",
+    "title": "4  Week 5: Linkage Disequilibrium & Annotation",
+    "section": "4.4 Self-check prompts (for students)",
+    "text": "4.4 Self-check prompts (for students)\n\nWhy does LD decay with distance?\nWhy might LD structure differ across ancestries?\nWhen might a non-coding proxy SNP be more plausible than the lead SNP?",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 5: Linkage Disequilibrium & Annotation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/week05.html#references-notes",
+    "href": "chapters/week05.html#references-notes",
+    "title": "4  Week 5: Linkage Disequilibrium & Annotation",
+    "section": "4.5 References / notes",
+    "text": "4.5 References / notes\nAdd references, links, or citations here.",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 5: Linkage Disequilibrium & Annotation</span>"
+    ]
+  }
+]

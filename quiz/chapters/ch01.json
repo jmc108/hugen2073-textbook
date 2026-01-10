@@ -1,0 +1,16 @@
+{
+  "chapter_id": "ch01",
+  "questions": [
+    {
+      "question_id": "q1",
+      "prompt": "What are the two main purposes of data visualizations? Contrast them.",
+      "required_points": [
+        "Exploration and communication/presentation.",
+        "Exploratory visualizations can be more complicated, as they are used to iteratively ask and answer questions about the data. They may be for private rather than public purposes.",
+        "Communicative visualizations tend to be, in a sense, shallower and have a clear point. The purpose would generally be to make a point about the data, to tell a story, to answer a question, etc.",
+        "There is a tradeoff in complexity between the two.",
+        "You should always have a specific purpose in mind before you make a visualization or present it to someone."
+      ]
+    }
+  ]
+}

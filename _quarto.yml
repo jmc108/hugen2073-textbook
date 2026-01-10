@@ -1,0 +1,55 @@
+project:
+  type: book
+  output-dir: _sitet
+
+
+book:
+  title: "HUGEN 2073"
+  subtitle: "Course Textbook"
+  author: "T. D. Lysenko"
+  date: last-modified
+  chapters:
+    - index.qmd
+    - part: "Visualization"
+      chapters:
+        - chapters/r_and_base_r_graphics.qmd
+        - chapters/ggplot2.qmd
+        - chapters/principles_of_visualization.qmd
+        - chapters/amounts_and_tables.qmd
+        - chapters/distributions.qmd
+        - chapters/associations_and_trends.qmd
+        - chapters/categorical_data_and_proportions.qmd
+        - chapters/uncertainty.qmd
+        - chapters/structure_in_high_dimensional_data.qmd
+        - chapters/dimension_reduction.qmd
+        - chapters/machine_learning.qmd
+        - chapters/model_evaluation.qmd
+        - chapters/gwas_plots.qmd
+        - chapters/shiny.qmd
+        - chapters/ethics_and_accessibility.qmd
+    - part: "Genomics"
+      chapters:
+        - chapters/annotating_variants.qmd
+        - chapters/linkage_disequilibrium.qmd
+        - chapters/annotating_gwas_results.qmd
+        - chapters/ucsc_genome_browser_and_tracks.qmd
+        - chapters/ucsc_genome_browser_tables.qmd
+        - chapters/ucsc_genome_browser_commandline_tools.qmd
+        - chapters/gene_set_analysis.qmd
+        - chapters/eqtls_and_twas.qmd
+        - chapters/phewas.qmd
+        - chapters/finemapping.qmd
+        - chapters/TBD1.qmd
+        - chapters/TBD2.qmd
+    - part: "Appendix"
+      chapters:
+        - chapters/appendix.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true
+    code-fold: true
+    code-tools: true
+    link-external-newwindow: true
