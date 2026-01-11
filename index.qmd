@@ -1,9 +1,23 @@
 # Preliminaries {.unnumbered}
 
-## Important links
-
 ## Software
+
+-   Download and install R (<https://www.r-project.org>)
+
+-   Download and install RStudio (<https://posit.co/download/rstudio-desktop/>)
+
+-   Download, install, and configure GlobalProtect (follow the instructions [here](https://services.pitt.edu/TDClient/33/Portal/KB/ArticleDet?ID=293), including connecting to the VPN)
 
 ## Computing cluster
 
+Instructions forthcoming.
+
+## Important links
+
+Forthcoming.
+
 ## Help
+
+-   Office hours TBD
+
+-   Use the Canvas discussion board
