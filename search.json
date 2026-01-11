@@ -10,21 +10,11 @@
     ]
   },
   {
-    "objectID": "index.html#important-links",
-    "href": "index.html#important-links",
-    "title": "HUGEN 2073",
-    "section": "Important links",
-    "text": "Important links",
-    "crumbs": [
-      "Preliminaries"
-    ]
-  },
-  {
     "objectID": "index.html#software",
     "href": "index.html#software",
     "title": "HUGEN 2073",
     "section": "Software",
-    "text": "Software",
+    "text": "Software\n\nDownload and install R (https://www.r-project.org)\nDownload and install RStudio (https://posit.co/download/rstudio-desktop/)\nDownload, install, and configure GlobalProtect (follow the instructions here, including connecting to the VPN)",
     "crumbs": [
       "Preliminaries"
     ]
@@ -34,7 +24,17 @@
     "href": "index.html#computing-cluster",
     "title": "HUGEN 2073",
     "section": "Computing cluster",
-    "text": "Computing cluster",
+    "text": "Computing cluster\nInstructions forthcoming.",
+    "crumbs": [
+      "Preliminaries"
+    ]
+  },
+  {
+    "objectID": "index.html#important-links",
+    "href": "index.html#important-links",
+    "title": "HUGEN 2073",
+    "section": "Important links",
+    "text": "Important links\nForthcoming.",
     "crumbs": [
       "Preliminaries"
     ]
@@ -44,7 +44,7 @@
     "href": "index.html#help",
     "title": "HUGEN 2073",
     "section": "Help",
-    "text": "Help",
+    "text": "Help\n\nOffice hours TBD\nUse the Canvas discussion board",
     "crumbs": [
       "Preliminaries"
     ]
