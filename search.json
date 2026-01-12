@@ -109,7 +109,7 @@
     "href": "chapters/1_r_and_base_r_graphics.html#in-class-exercises",
     "title": "1  R and Base R Graphics",
     "section": "1.5 In-class Exercises",
-    "text": "1.5 In-class Exercises\nDownload the exercises\nDownload the data for the exercises",
+    "text": "1.5 In-class Exercises\nDownload the exercises\nDownload the data for the exercises\nHere are solutions to the exercises:\nurl &lt;- \"https://jmc108.github.io/hugen2073-textbook/exercises/1_r_and_r_base_graphics/nggyu_syndrome.assoc.logistic\"",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>R and Base R Graphics</span>"
