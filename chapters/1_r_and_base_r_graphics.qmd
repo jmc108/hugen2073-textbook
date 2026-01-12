@@ -72,8 +72,75 @@ No required reading.
 Here are solutions to the exercises:
 
 ```{webr}
+### 1
+# Read in data
 url <- "https://jmc108.github.io/hugen2073-textbook/exercises/1_r_and_r_base_graphics/nggyu_syndrome.assoc.logistic"
+data <- read.table(url, header=TRUE, sep="\t")
 
+# Inspect
+head(data)
+tail(data)
+dim(data)
+
+### 2-3
+# Filter, and drop some columns
+data <- data[data$TEST=="SNP" & data$NMISS >= 995, -which(names(data) %in% c("A1","TEST","STAT"))]
+# Did it work?
+dim(data)
+names(data)
+table(data$TEST, useNA="always")
+sum(data$NMISS < 995, na.rm=TRUE)
+
+### 4
+# Add a new column
+data$nlp <- -log10(data$P)
+head(data)
+
+### 5
+# Apply a function
+ld <- function(df) {
+  # Get top SNP's position
+  top_snp_bp <- df$BP[ which(df$P == min(df$P)) ]
+  
+  # Get distances from it
+  dist_from_top_snp <- abs(df$BP - top_snp_bp)
+  
+  # Generate random LDs
+  lds <- 1 - rnorm(mean=  (dist_from_top_snp/max(dist_from_top_snp))^(1/2)  , sd=0.01, n = dim(df)[1])
+  lds[lds <=0] <- 0.01
+  lds[which(df$P == min(df$P))] <- 1
+  return(lds)
+}
+
+data$ld <- ld(data)
+head(data)
+
+### 6
+# Modify values of color column
+data$color <- NA
+data$color[data$ld == 1] <- "purple"
+data$color[data$ld >= 0.8 & data$ld < 1] <- "red"
+data$color[data$ld >= 0.6 & data$ld < 0.8] <- "orange"
+data$color[data$ld >= 0.4 & data$ld < 0.6] <- "green"
+data$color[data$ld >= 0.2 & data$ld < 0.4] <- "light blue"
+data$color[data$ld < 0.2] <- "dark blue"
+
+# Inspect
+head(data)
+table(data$color, useNA="always")
+
+### 7
+# Modify values of pch column
+data$pch <- ifelse(data$OR > 1, 2, 6)
+table(data$pch, useNA="always")
+
+### 8-9
+# Plot
+plot(x=data$BP, y=data$nlp, pch=data$pch, col=data$color, cex=0.6, xlab="Base-pair position", ylab="-log10(p)", main="Nggyu Syndrome Associations")
+
+### 10
+# Write out data
+# write.csv(x=data, file="./nggyu_results_processed.csv", quote=FALSE, row.names=FALSE, col.names=TRUE)
 ```
 
 
