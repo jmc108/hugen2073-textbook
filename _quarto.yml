@@ -14,34 +14,34 @@ book:
     - part: "Visualization"
       chapters:
         - chapters/1_r_and_base_r_graphics.qmd
-        - chapters/ggplot2.qmd
-        - chapters/principles_of_visualization.qmd
-        - chapters/amounts_and_tables.qmd
-        - chapters/distributions.qmd
-        - chapters/associations_and_trends.qmd
-        - chapters/categorical_data_and_proportions.qmd
-        - chapters/uncertainty.qmd
-        - chapters/structure_in_high_dimensional_data.qmd
-        - chapters/dimension_reduction.qmd
-        - chapters/machine_learning.qmd
-        - chapters/model_evaluation.qmd
-        - chapters/gwas_plots.qmd
-        - chapters/shiny.qmd
-        - chapters/ethics_and_accessibility.qmd
+        - chapters/2_ggplot2.qmd
+        - chapters/3_principles_of_visualization.qmd
+        - chapters/4_amounts_and_tables.qmd
+        - chapters/5_distributions.qmd
+        - chapters/6_associations_and_trends.qmd
+        - chapters/7_categorical_data_and_proportions.qmd
+        - chapters/8_uncertainty.qmd
+        - chapters/9_structure_in_high_dimensional_data.qmd
+        - chapters/10_dimension_reduction.qmd
+        - chapters/11_machine_learning.qmd
+        - chapters/12_model_evaluation.qmd
+        - chapters/13_gwas_plots.qmd
+        - chapters/14_shiny.qmd
+        - chapters/15_ethics_and_accessibility.qmd
     - part: "Genomics"
       chapters:
-        - chapters/annotating_variants.qmd
-        - chapters/linkage_disequilibrium.qmd
-        - chapters/annotating_gwas_results.qmd
-        - chapters/ucsc_genome_browser_and_tracks.qmd
-        - chapters/ucsc_genome_browser_tables.qmd
-        - chapters/ucsc_genome_browser_commandline_tools.qmd
-        - chapters/gene_set_analysis.qmd
-        - chapters/eqtls_and_twas.qmd
-        - chapters/phewas.qmd
-        - chapters/finemapping.qmd
-        - chapters/TBD1.qmd
-        - chapters/TBD2.qmd
+        - chapters/16_annotating_variants.qmd
+        - chapters/17_linkage_disequilibrium.qmd
+        - chapters/18_annotating_gwas_results.qmd
+        - chapters/19_ucsc_genome_browser_and_tracks.qmd
+        - chapters/20_ucsc_genome_browser_tables.qmd
+        - chapters/21_ucsc_genome_browser_commandline_tools.qmd
+        - chapters/22_gene_set_analysis.qmd
+        - chapters/23_eqtls_and_twas.qmd
+        - chapters/24_phewas.qmd
+        - chapters/25_finemapping.qmd
+        - chapters/26_TBD1.qmd
+        - chapters/27_TBD2.qmd
     - part: "Appendix"
       chapters:
         - chapters/appendix.qmd
