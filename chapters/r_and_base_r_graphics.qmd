@@ -56,3 +56,8 @@ No required reading.
 -   [Exploratory Data Analysis with R: 9 The Base Plotting System](https://bookdown.org/rdpeng/exdata/the-base-plotting-system-1.html)
 
 -   [The R Graph Gallery: Data visualization with base R](https://r-graph-gallery.com/base-R.html)
+
+## In-class Exercises
+
+[Download the exercises](exercises/1_r_and_r_base_graphics/1_r_and_r_base_graphics_exercises.Rmd)
+
