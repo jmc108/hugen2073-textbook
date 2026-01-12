@@ -7,12 +7,10 @@ format:
       sidebar-width: 420px
 ---
 
-::: {#tutor-root .tutor-floating data-chapter="1_r_and_base_r_graphics"}
-:::
-
+<div id="tutor-root" data-chapter="1_r_and_base_r_graphics" class="tutor-floating"></div>
 <script src="../assets/tutor-chat.js"></script>
-
 <link rel="stylesheet" href="../assets/tutor-chat.css">
+
 
 ## Preparation for Class
 
@@ -26,6 +24,8 @@ format:
 
 ## Lecture Recording and Slides
 
+
+```{=html}
 <div class="yt-embed">
   <div class="ratio">
     <iframe
@@ -37,6 +37,10 @@ format:
     </iframe>
   </div>
 </div>
+```
+
+
+```{=html}
 <div style="width: 100%; height: 800px; margin-top: 1.5em;">
   <iframe
     src="../lecture_slides/1_r_and_base_r_graphics/1_r_and_base_graphics.pdf"
@@ -44,6 +48,8 @@ format:
     title="Lecture slides">
   </iframe>
 </div>
+```
+
 
 ## Required Reading
 
@@ -60,4 +66,3 @@ No required reading.
 ## In-class Exercises
 
 [Download the exercises](exercises/1_r_and_r_base_graphics/1_r_and_r_base_graphics_exercises.Rmd)
-
