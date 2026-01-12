@@ -56,6 +56,15 @@ format:
 
 [Download the exercises](../exercises/16_annotating_variants/16_annotating_variants_exercises.Rmd)
 
+::: {.callout-tip collapse="true"}
+
+### Expand to see the answers
+
+```{webr}
+
+```
+
+:::
 
 
 

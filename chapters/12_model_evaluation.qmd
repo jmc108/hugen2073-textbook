@@ -56,6 +56,15 @@ format:
 
 [Download the exercises](../exercises/12_model_evaluation/12_model_evaluation_exercises.Rmd)
 
+::: {.callout-tip collapse="true"}
+
+### Expand to see the answers
+
+```{webr}
+
+```
+
+:::
 
 
 

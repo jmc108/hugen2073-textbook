@@ -56,6 +56,15 @@ format:
 
 [Download the exercises](../exercises/18_annotating_gwas_results/18_annotating_gwas_results_exercises.Rmd)
 
+::: {.callout-tip collapse="true"}
+
+### Expand to see the answers
+
+```{webr}
+
+```
+
+:::
 
 
 

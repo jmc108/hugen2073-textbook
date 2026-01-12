@@ -56,6 +56,15 @@ format:
 
 [Download the exercises](../exercises/19_ucsc_genome_browser_and_tracks/19_ucsc_genome_browser_and_tracks_exercises.Rmd)
 
+::: {.callout-tip collapse="true"}
+
+### Expand to see the answers
+
+```{webr}
+
+```
+
+:::
 
 
 

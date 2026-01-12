@@ -57,6 +57,15 @@ format:
 [Download the exercises](../exercises/7_categorical_data_and_proportions/7_categorical_data_and_proportions_exercises.Rmd)
 
 
+::: {.callout-tip collapse="true"}
+
+### Expand to see the answers
+
+```{webr}
+
+```
+
+:::
 
 
 

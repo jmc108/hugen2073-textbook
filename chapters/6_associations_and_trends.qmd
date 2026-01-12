@@ -57,7 +57,15 @@ format:
 [Download the exercises](../exercises/6_associations_and_trends/6_associations_and_trends_exercises.Rmd)
 
 
+::: {.callout-tip collapse="true"}
 
+### Expand to see the answers
+
+```{webr}
+
+```
+
+:::
 
 
 

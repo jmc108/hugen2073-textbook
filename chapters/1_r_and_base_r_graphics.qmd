@@ -71,7 +71,7 @@ No required reading.
 
 ::: {.callout-tip collapse="true"}
 
-Expand to see the answer
+### Expand to see the answers
 
 ```{webr}
 ### 1

@@ -67,7 +67,15 @@ No required reading.
 
 [Download the exercises](../exercises/2_ggplot2/2_ggplot2_exercises.Rmd)
 
+::: {.callout-tip collapse="true"}
 
+### Expand to see the answers
+
+```{webr}
+
+```
+
+:::
 
 
 

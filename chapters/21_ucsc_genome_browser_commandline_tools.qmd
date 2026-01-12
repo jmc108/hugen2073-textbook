@@ -57,6 +57,15 @@ format:
 [Download the exercises](../exercises/21_ucsc_genome_browser_commandline_tools/21_ucsc_genome_browser_commandline_tools_exercises.Rmd)
 
 
+::: {.callout-tip collapse="true"}
+
+### Expand to see the answers
+
+```{webr}
+
+```
+
+:::
 
 
 

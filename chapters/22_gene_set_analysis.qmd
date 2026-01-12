@@ -57,6 +57,15 @@ format:
 [Download the exercises](../exercises/22_gene_set_analysis/22_gene_set_analysis_exercises.Rmd)
 
 
+::: {.callout-tip collapse="true"}
+
+### Expand to see the answers
+
+```{webr}
+
+```
+
+:::
 
 
 

@@ -57,6 +57,15 @@ format:
 [Download the exercises](../exercises/4_amounts_and_tables/4_amounts_and_tables_exercises.Rmd)
 
 
+::: {.callout-tip collapse="true"}
+
+### Expand to see the answers
+
+```{webr}
+
+```
+
+:::
 
 
 

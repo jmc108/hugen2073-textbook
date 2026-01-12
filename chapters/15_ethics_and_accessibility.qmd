@@ -56,6 +56,15 @@ format:
 
 [Download the exercises](../exercises/15_ethics_and_accessibility/15_ethics_and_accessibility_exercises.Rmd)
 
+::: {.callout-tip collapse="true"}
+
+### Expand to see the answers
+
+```{webr}
+
+```
+
+:::
 
 
 

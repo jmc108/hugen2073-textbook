@@ -57,6 +57,15 @@ format:
 [Download the exercises](../exercises/8_uncertainty/8_uncertainty_exercises.Rmd)
 
 
+::: {.callout-tip collapse="true"}
+
+### Expand to see the answers
+
+```{webr}
+
+```
+
+:::
 
 
 
