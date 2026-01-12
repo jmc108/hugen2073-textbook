@@ -69,7 +69,9 @@ No required reading.
 
 [Download the data for the exercises](../exercises/1_r_and_r_base_graphics/nggyu_syndrome.assoc.logistic)
 
-Here are solutions to the exercises:
+::: {.callout-tip collapse="true"}
+
+Expand to see the answer
 
 ```{webr}
 ### 1
@@ -143,4 +145,4 @@ plot(x=data$BP, y=data$nlp, pch=data$pch, col=data$color, cex=0.6, xlab="Base-pa
 # write.csv(x=data, file="./nggyu_results_processed.csv", quote=FALSE, row.names=FALSE, col.names=TRUE)
 ```
 
-
+:::
