@@ -1,7 +1,8 @@
 project:
   type: book
-  output-dir: _sitet
-
+  output-dir: _site
+  resources:
+    - exercises/**
 
 book:
   title: "HUGEN 2073"
