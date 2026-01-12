@@ -109,7 +109,7 @@
     "href": "chapters/1_r_and_base_r_graphics.html#in-class-exercises",
     "title": "1  R and Base R Graphics",
     "section": "1.5 In-class Exercises",
-    "text": "1.5 In-class Exercises\nDownload the exercises\nDownload the data for the exercises\n\n\n\n\n\n\nTip\n\n\n\n\n\nExpand to see the answer\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "text": "1.5 In-class Exercises\nDownload the exercises\nDownload the data for the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>R and Base R Graphics</span>"
@@ -175,7 +175,7 @@
     "href": "chapters/2_ggplot2.html#in-class-exercises",
     "title": "2  ggplot2",
     "section": "2.5 In-class Exercises",
-    "text": "2.5 In-class Exercises\nDownload the exercises",
+    "text": "2.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>ggplot2</span>"
@@ -241,7 +241,7 @@
     "href": "chapters/3_principles_of_visualization.html#in-class-exercises",
     "title": "3  Principles of Visualization",
     "section": "3.5 In-class Exercises",
-    "text": "3.5 In-class Exercises\nDownload the exercises",
+    "text": "3.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Principles of Visualization</span>"
@@ -307,7 +307,7 @@
     "href": "chapters/4_amounts_and_tables.html#in-class-exercises",
     "title": "4  Amounts and Tables",
     "section": "4.5 In-class Exercises",
-    "text": "4.5 In-class Exercises\nDownload the exercises",
+    "text": "4.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Amounts and Tables</span>"
@@ -373,7 +373,7 @@
     "href": "chapters/5_distributions.html#in-class-exercises",
     "title": "5  Distributions",
     "section": "5.5 In-class Exercises",
-    "text": "5.5 In-class Exercises\nDownload the exercises",
+    "text": "5.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Distributions</span>"
@@ -439,7 +439,7 @@
     "href": "chapters/6_associations_and_trends.html#in-class-exercises",
     "title": "6  Associations and Trends",
     "section": "6.5 In-class Exercises",
-    "text": "6.5 In-class Exercises\nDownload the exercises",
+    "text": "6.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Associations and Trends</span>"
@@ -505,7 +505,7 @@
     "href": "chapters/7_categorical_data_and_proportions.html#in-class-exercises",
     "title": "7  Categorical Data and Proportions",
     "section": "7.5 In-class Exercises",
-    "text": "7.5 In-class Exercises\nDownload the exercises",
+    "text": "7.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Categorical Data and Proportions</span>"
@@ -571,7 +571,7 @@
     "href": "chapters/8_uncertainty.html#in-class-exercises",
     "title": "8  Uncertainty",
     "section": "8.5 In-class Exercises",
-    "text": "8.5 In-class Exercises\nDownload the exercises",
+    "text": "8.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Uncertainty</span>"
@@ -637,7 +637,7 @@
     "href": "chapters/9_structure_in_high_dimensional_data.html#in-class-exercises",
     "title": "9  Structure in High-dimensional Data",
     "section": "9.5 In-class Exercises",
-    "text": "9.5 In-class Exercises\nDownload the exercises",
+    "text": "9.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Structure in High-dimensional Data</span>"
@@ -703,7 +703,7 @@
     "href": "chapters/10_dimension_reduction.html#in-class-exercises",
     "title": "10  Dimension Reduction",
     "section": "10.5 In-class Exercises",
-    "text": "10.5 In-class Exercises\nDownload the exercises",
+    "text": "10.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Dimension Reduction</span>"
@@ -769,7 +769,7 @@
     "href": "chapters/11_machine_learning.html#in-class-exercises",
     "title": "11  Machine Learning",
     "section": "11.5 In-class Exercises",
-    "text": "11.5 In-class Exercises\nDownload the exercises",
+    "text": "11.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Machine Learning</span>"
@@ -835,7 +835,7 @@
     "href": "chapters/12_model_evaluation.html#in-class-exercises",
     "title": "12  Model Evaluation",
     "section": "12.5 In-class Exercises",
-    "text": "12.5 In-class Exercises\nDownload the exercises",
+    "text": "12.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Model Evaluation</span>"
@@ -901,7 +901,7 @@
     "href": "chapters/13_gwas_plots.html#in-class-exercises",
     "title": "13  GWAS Plots",
     "section": "13.5 In-class Exercises",
-    "text": "13.5 In-class Exercises\nDownload the exercises",
+    "text": "13.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>GWAS Plots</span>"
@@ -967,7 +967,7 @@
     "href": "chapters/14_shiny.html#in-class-exercises",
     "title": "14  Shiny",
     "section": "14.5 In-class Exercises",
-    "text": "14.5 In-class Exercises\nDownload the exercises",
+    "text": "14.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Shiny</span>"
@@ -1033,7 +1033,7 @@
     "href": "chapters/15_ethics_and_accessibility.html#in-class-exercises",
     "title": "15  Ethics and Accessibility",
     "section": "15.5 In-class Exercises",
-    "text": "15.5 In-class Exercises\nDownload the exercises",
+    "text": "15.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Ethics and Accessibility</span>"
@@ -1099,7 +1099,7 @@
     "href": "chapters/16_annotating_variants.html#in-class-exercises",
     "title": "16  Annotating Variants",
     "section": "16.5 In-class Exercises",
-    "text": "16.5 In-class Exercises\nDownload the exercises",
+    "text": "16.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Annotating Variants</span>"
@@ -1165,7 +1165,7 @@
     "href": "chapters/17_linkage_disequilibrium.html#in-class-exercises",
     "title": "17  Linkage Disequilibrium",
     "section": "17.5 In-class Exercises",
-    "text": "17.5 In-class Exercises\nDownload the exercises",
+    "text": "17.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Linkage Disequilibrium</span>"
@@ -1231,7 +1231,7 @@
     "href": "chapters/18_annotating_gwas_results.html#in-class-exercises",
     "title": "18  Annotating GWAS Results",
     "section": "18.5 In-class Exercises",
-    "text": "18.5 In-class Exercises\nDownload the exercises",
+    "text": "18.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Annotating GWAS Results</span>"
@@ -1297,7 +1297,7 @@
     "href": "chapters/19_ucsc_genome_browser_and_tracks.html#in-class-exercises",
     "title": "19  UCSC Genome Browser and Tracks",
     "section": "19.5 In-class Exercises",
-    "text": "19.5 In-class Exercises\nDownload the exercises",
+    "text": "19.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>UCSC Genome Browser and Tracks</span>"
@@ -1363,7 +1363,7 @@
     "href": "chapters/20_ucsc_genome_browser_tables.html#in-class-exercises",
     "title": "20  UCSC Genome Browser Tables",
     "section": "20.5 In-class Exercises",
-    "text": "20.5 In-class Exercises\nDownload the exercises",
+    "text": "20.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>UCSC Genome Browser Tables</span>"
@@ -1429,7 +1429,7 @@
     "href": "chapters/21_ucsc_genome_browser_commandline_tools.html#in-class-exercises",
     "title": "21  UCSC Genome Browser command-line tools",
     "section": "21.5 In-class Exercises",
-    "text": "21.5 In-class Exercises\nDownload the exercises",
+    "text": "21.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>UCSC Genome Browser command-line tools</span>"
@@ -1495,7 +1495,7 @@
     "href": "chapters/22_gene_set_analysis.html#in-class-exercises",
     "title": "22  Gene Set Analysis",
     "section": "22.5 In-class Exercises",
-    "text": "22.5 In-class Exercises\nDownload the exercises",
+    "text": "22.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Gene Set Analysis</span>"
@@ -1561,7 +1561,7 @@
     "href": "chapters/23_eqtls_and_twas.html#in-class-exercises",
     "title": "23  eQTLs and TWAS",
     "section": "23.5 In-class Exercises",
-    "text": "23.5 In-class Exercises\nDownload the exercises",
+    "text": "23.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>eQTLs and TWAS</span>"
@@ -1627,7 +1627,7 @@
     "href": "chapters/24_phewas.html#in-class-exercises",
     "title": "24  PheWAS",
     "section": "24.5 In-class Exercises",
-    "text": "24.5 In-class Exercises\nDownload the exercises",
+    "text": "24.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>PheWAS</span>"
@@ -1693,7 +1693,7 @@
     "href": "chapters/25_finemapping.html#in-class-exercises",
     "title": "25  Fine-mapping",
     "section": "25.5 In-class Exercises",
-    "text": "25.5 In-class Exercises\nDownload the exercises",
+    "text": "25.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Fine-mapping</span>"
@@ -1759,7 +1759,7 @@
     "href": "chapters/26_TBD1.html#in-class-exercises",
     "title": "26  TBD1",
     "section": "26.5 In-class Exercises",
-    "text": "26.5 In-class Exercises\nDownload the exercises",
+    "text": "26.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>26</span>  <span class='chapter-title'>TBD1</span>"
@@ -1825,7 +1825,7 @@
     "href": "chapters/27_TBD2.html#in-class-exercises",
     "title": "27  TBD2",
     "section": "27.5 In-class Exercises",
-    "text": "27.5 In-class Exercises\nDownload the exercises",
+    "text": "27.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>27</span>  <span class='chapter-title'>TBD2</span>"
