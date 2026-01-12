@@ -52,7 +52,9 @@ format:
 
 ## Suggested Reading
 
+## In-class Exercises
 
+[Download the exercises](../exercises/26_TBD1/26_TBD1_exercises.Rmd)
 
 
 

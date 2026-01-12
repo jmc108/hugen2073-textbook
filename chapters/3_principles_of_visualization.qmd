@@ -52,7 +52,9 @@ format:
 
 ## Suggested Reading
 
+## In-class Exercises
 
+[Download the exercises](../exercises/3_principles_of_visualization/3_principles_of_visualization_exercises.Rmd)
 
 
 

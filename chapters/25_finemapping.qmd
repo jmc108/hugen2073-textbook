@@ -52,7 +52,9 @@ format:
 
 ## Suggested Reading
 
+## In-class Exercises
 
+[Download the exercises](../exercises/25_finemapping/25_finemapping_exercises.Rmd)
 
 
 

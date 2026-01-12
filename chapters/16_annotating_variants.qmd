@@ -52,7 +52,9 @@ format:
 
 ## Suggested Reading
 
+## In-class Exercises
 
+[Download the exercises](../exercises/16_annotating_variants/16_annotating_variants_exercises.Rmd)
 
 
 

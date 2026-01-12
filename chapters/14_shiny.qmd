@@ -52,7 +52,9 @@ format:
 
 ## Suggested Reading
 
+## In-class Exercises
 
+[Download the exercises](../exercises/14_shiny/14_shiny_exercises.Rmd)
 
 
 

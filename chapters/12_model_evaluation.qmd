@@ -52,7 +52,9 @@ format:
 
 ## Suggested Reading
 
+## In-class Exercises
 
+[Download the exercises](../exercises/12_model_evaluation/12_model_evaluation_exercises.Rmd)
 
 
 

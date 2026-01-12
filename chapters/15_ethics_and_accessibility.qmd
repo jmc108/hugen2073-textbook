@@ -52,7 +52,9 @@ format:
 
 ## Suggested Reading
 
+## In-class Exercises
 
+[Download the exercises](../exercises/15_ethics_and_accessibility/15_ethics_and_accessibility_exercises.Rmd)
 
 
 

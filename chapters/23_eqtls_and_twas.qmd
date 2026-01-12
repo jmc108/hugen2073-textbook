@@ -52,7 +52,9 @@ format:
 
 ## Suggested Reading
 
+## In-class Exercises
 
+[Download the exercises](../exercises/23_eqtls_and_twas/23_eqtls_and_twas_exercises.Rmd)
 
 
 

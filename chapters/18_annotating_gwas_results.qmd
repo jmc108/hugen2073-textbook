@@ -52,7 +52,9 @@ format:
 
 ## Suggested Reading
 
+## In-class Exercises
 
+[Download the exercises](../exercises/18_annotating_gwas_results/18_annotating_gwas_results_exercises.Rmd)
 
 
 

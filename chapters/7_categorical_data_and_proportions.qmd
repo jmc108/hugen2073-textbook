@@ -52,7 +52,9 @@ format:
 
 ## Suggested Reading
 
+## In-class Exercises
 
+[Download the exercises](../exercises/7_categorical_data_and_proportions/7_categorical_data_and_proportions_exercises.Rmd)
 
 
 

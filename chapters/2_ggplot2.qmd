@@ -50,10 +50,22 @@ format:
 
 ## Required Reading
 
+No required reading.
+
 ## Suggested Reading
 
+-   [Data Analysis and Visualization in R for Ecologists: 2. Data visualization with ggplot2](https://datacarpentry.github.io/R-ecology-lesson/visualizing-ggplot.html)
+
+-   [ggplot2 extensions - gallery](https://exts.ggplot2.tidyverse.org/gallery/)
+
+-   [R for Data Science: 3. Data visualisation](https://r4ds.had.co.nz/data-visualisation.html)
+
+-   [R for Data Science: 28. Graphics for communication ](https://r4ds.had.co.nz/graphics-for-communication.html)
 
 
+## In-class Exercises
+
+[Download the exercises](../exercises/2_ggplot2/2_ggplot2_exercises.Rmd)
 
 
 

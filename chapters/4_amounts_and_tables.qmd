@@ -52,7 +52,9 @@ format:
 
 ## Suggested Reading
 
+## In-class Exercises
 
+[Download the exercises](../exercises/4_amounts_and_tables/4_amounts_and_tables_exercises.Rmd)
 
 
 

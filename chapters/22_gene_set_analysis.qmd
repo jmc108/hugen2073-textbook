@@ -52,7 +52,9 @@ format:
 
 ## Suggested Reading
 
+## In-class Exercises
 
+[Download the exercises](../exercises/22_gene_set_analysis/22_gene_set_analysis_exercises.Rmd)
 
 
 
