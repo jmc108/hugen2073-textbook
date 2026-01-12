@@ -76,7 +76,7 @@
     "href": "chapters/r_and_base_r_graphics.html#lecture-recording-and-slides",
     "title": "1  R and Base R Graphics",
     "section": "1.2 Lecture Recording and Slides",
-    "text": "1.2 Lecture Recording and Slides",
+    "text": "1.2 Lecture Recording and Slides\n\n\n&lt;iframe\n  src=\"https://www.youtube.com/embed/1QC1YdxK1rs\"\n  title=\"Lecture video\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen&gt;\n&lt;/iframe&gt;",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>R and Base R Graphics</span>"
@@ -87,7 +87,7 @@
     "href": "chapters/r_and_base_r_graphics.html#required-reading",
     "title": "1  R and Base R Graphics",
     "section": "1.3 Required Reading",
-    "text": "1.3 Required Reading",
+    "text": "1.3 Required Reading\nNo required reading.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>R and Base R Graphics</span>"
@@ -98,7 +98,7 @@
     "href": "chapters/r_and_base_r_graphics.html#suggested-reading",
     "title": "1  R and Base R Graphics",
     "section": "1.4 Suggested Reading",
-    "text": "1.4 Suggested Reading",
+    "text": "1.4 Suggested Reading\n\nR Base Graphics: An Idiot’s Guide\nExploratory Data Analysis with R: 9 The Base Plotting System\nThe R Graph Gallery: Data visualization with base R",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>R and Base R Graphics</span>"
