@@ -4,6 +4,9 @@ project:
   resources:
     - exercises/**
 
+execute:
+  enabled: false
+
 filters:
   - webr
 
