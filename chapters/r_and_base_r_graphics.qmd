@@ -7,24 +7,25 @@ format:
       sidebar-width: 420px
 ---
 
-<div id="tutor-root" data-chapter="1_r_and_base_r_graphics" class="tutor-floating"></div>
-<script src="../assets/tutor-chat.js"></script>
-<link rel="stylesheet" href="../assets/tutor-chat.css">
+::: {#tutor-root .tutor-floating data-chapter="1_r_and_base_r_graphics"}
+:::
 
+<script src="../assets/tutor-chat.js"></script>
+
+<link rel="stylesheet" href="../assets/tutor-chat.css">
 
 ## Preparation for Class
 
-- Watch the lecture recording
+-   Watch the lecture recording
 
-- Do any required reading (see below)
+-   Do any required reading (see below)
 
-- Ask Dr. Lysenko any questions you have
+-   Ask Dr. Lysenko any questions you have
 
-- Pass Dr. Lysenko's quiz
+-   Pass Dr. Lysenko's quiz
 
 ## Lecture Recording and Slides
 
-```{=html}
 <div class="yt-embed">
   <div class="ratio">
     <iframe
@@ -36,9 +37,6 @@ format:
     </iframe>
   </div>
 </div>
-```
-
-```{=html}
 <div style="width: 100%; height: 800px; margin-top: 1.5em;">
   <iframe
     src="../lecture_slides/1_r_and_base_r_graphics/1_r_and_base_graphics.pdf"
@@ -46,18 +44,15 @@ format:
     title="Lecture slides">
   </iframe>
 </div>
-```
 
 ## Required Reading
 
+No required reading.
+
 ## Suggested Reading
 
+-   [R Base Graphics: An Idiot's Guide](https://rpubs.com/SusanEJohnston/7953)
 
+-   [Exploratory Data Analysis with R: 9 The Base Plotting System](https://bookdown.org/rdpeng/exdata/the-base-plotting-system-1.html)
 
-
-
-
-
-
-
-
+-   [The R Graph Gallery: Data visualization with base R](https://r-graph-gallery.com/base-R.html)
