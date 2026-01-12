@@ -71,7 +71,9 @@ No required reading.
 
 Here are solutions to the exercises:
 
-```{webr-r}
+```{webr}
 url <- "https://jmc108.github.io/hugen2073-textbook/exercises/1_r_and_r_base_graphics/nggyu_syndrome.assoc.logistic"
 
 ```
+
+
