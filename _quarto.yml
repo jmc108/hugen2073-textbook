@@ -5,7 +5,7 @@ project:
     - exercises/**
 
 filters:
-  - quarto-webr
+  - webr
 
 book:
   title: "HUGEN 2073"
