@@ -1,0 +1,121 @@
+---
+title: "R and Base R Graphics Exercises"
+author: "Your name"
+output:
+  html_document:
+    code_folding: show
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Instructions
+
+For these exercises, you'll work with some association results on chromosome 1 for Nggyu Syndrome. You'll read in these results, manipulate them in a data frame, and produce a scatterplot similar to a LocusZoom plot (<http://locuszoom.org/>). You only need to use base R graphics, but you're welcome to use `tidyverse`/`ggplot2` if you prefer.
+
+Do all of the tasks below, in order, verifying that your code runs without error and that your document can knit at each step.
+
+
+# Task 1 - Reading in and inspecting data
+
+Correctly read in the file `nggyu_syndrome.assoc.logistic` as a data frame called `data`. Put your code in the following chunk. Apply `head`, `tail`, and `dim`. You can use the `read.table` function to read in the data, since the file is tab-delimited (you will need to use the `header` argument).
+
+```{r part1}
+# Your code here
+```
+
+# Tasks 2 & 3 - Selecting rows and columns
+
+Filter `data` to include only rows where the value of `TEST` is `SNP` and sample size (`NMISS`) is at least 995. Also drop the `A1`, `TEST` and `STAT` columns. Put your code in the following chunk.
+
+```{r part2_3}
+# Your code here
+```
+
+# Task 4 - Adding a new column
+
+Add a new column to `data` with containing the negative logarithm (base 10) of the p-values (`P`). Put your code in the following chunk.
+
+```{r part4}
+# Your code here
+```
+
+# Task 5 - Applying a function
+
+Genetic association plots often include linkage disequilibrium (LD) information (i.e., how correlated each variant is with the most significant SNP).
+
+Since that's unavailable, we'll just simulate some data. The function `ld` provided below will take your data frame (`data`) and return a vector of linkage disequilibrium values. You do not need to modify the function at all (you don't even have to read it). Just apply the function to `data` and add the output as a new column also called `ld`. Use the blank chunk that follows for your code.
+
+```{r ld}
+ld <- function(df) {
+  
+  # Get top SNP's position
+  top_snp_bp <- df$BP[ which(df$P == min(df$P)) ]
+  
+  # Get distances from it
+  dist_from_top_snp <- abs(df$BP - top_snp_bp)
+  
+  # Generate random LDs
+  lds <- 1 - rnorm(mean=  (dist_from_top_snp/max(dist_from_top_snp))^(1/2)  , sd=0.01, n = dim(df)[1])
+  lds[lds <=0] <- 0.01
+  lds[which(df$P == min(df$P))] <- 1
+  return(lds)
+}
+```
+
+```{r part5}
+# Your code here
+```
+
+# Task 6 - Modifying values in a data frame
+
+We want to color the points in our scatterplot according to their LD with the lead SNP (which you just calculated above). Create a new column called `color` such that
+
+-   `color` has the value `"purple"` if `ld` is 1
+
+-   `color` has the value `"red"` if `ld` is in [0.8, 1)
+
+-   `color` has the value `"orange"` if `ld` is [0.6, 0.8)
+
+-   `color` has the value `"green"` if `ld` is [0.4, 0.6)
+
+-   `color` has the value `"light blue"` if `ld` is [0.2, 0.4)
+
+-   `color` has the value `"dark blue"` if `ld` is less than 0.2.
+
+```{r part6}
+# Your code here
+```
+
+# Task 7 - Modifying values in a data frame (again)
+
+The effect sizes (odds ratios, in the `OR` column) say how strongly each variant is associated with the phenotype. `OR > 1` means the effect allele is associated with higher risk; `OR < 1` means the opposite. We want to use different plotting symbols for these in the scatterplot.
+
+Add a new column called `pch` which has the value 2 (triangle pointing up) if `OR > 1` and the value 6 (triangle pointing down) if `OR  < 1`.
+
+Your code goes here:
+
+```{r  part7}
+# Your code here
+```
+
+# Tasks 8 & 9 - Plotting and adjusting axis labels and title
+
+Make a scatterplot of `-log10(p)` vs. `BP`, using the `color` and `pch` columns to assign point colors and plotting symbols, respectively. Use the option `cex=0.6` to make the plotting symbols smaller so that they overlap less.
+
+Add a good title and improve the x- and y-axis titles.
+
+Your code goes here:
+
+```{r  part8_9}
+# Your code here
+```
+
+# Task 10 - Writing out a .csv file
+
+Write out your modified data frame `data` as a properly-formatted .csv file with column names but **without** row names or quotes around values.
+
+```{r  part10}
+# Your code here
+```
