@@ -4,6 +4,9 @@ project:
   resources:
     - exercises/**
 
+filters:
+  - quarto-webr
+
 book:
   title: "HUGEN 2073"
   subtitle: "Course Textbook"

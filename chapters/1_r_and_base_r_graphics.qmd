@@ -68,3 +68,10 @@ No required reading.
 [Download the exercises](../exercises/1_r_and_r_base_graphics/1_r_and_r_base_graphics_exercises.Rmd)
 
 [Download the data for the exercises](../exercises/1_r_and_r_base_graphics/nggyu_syndrome.assoc.logistic)
+
+Here are solutions to the exercises:
+
+```{web-r}
+url <- "https://jmc108.github.io/hugen2073-textbook/exercises/1_r_and_r_base_graphics/nggyu_syndrome.assoc.logistic"
+
+```
