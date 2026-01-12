@@ -10,21 +10,11 @@
     ]
   },
   {
-    "objectID": "index.html#important-links",
-    "href": "index.html#important-links",
-    "title": "HUGEN 2073",
-    "section": "Important links",
-    "text": "Important links",
-    "crumbs": [
-      "Preliminaries"
-    ]
-  },
-  {
     "objectID": "index.html#software",
     "href": "index.html#software",
     "title": "HUGEN 2073",
     "section": "Software",
-    "text": "Software",
+    "text": "Software\n\nDownload and install R (https://www.r-project.org)\nDownload and install RStudio (https://posit.co/download/rstudio-desktop/)\nDownload, install, and configure GlobalProtect (follow the instructions here, including connecting to the VPN)",
     "crumbs": [
       "Preliminaries"
     ]
@@ -34,7 +24,17 @@
     "href": "index.html#computing-cluster",
     "title": "HUGEN 2073",
     "section": "Computing cluster",
-    "text": "Computing cluster",
+    "text": "Computing cluster\nInstructions forthcoming.",
+    "crumbs": [
+      "Preliminaries"
+    ]
+  },
+  {
+    "objectID": "index.html#important-links",
+    "href": "index.html#important-links",
+    "title": "HUGEN 2073",
+    "section": "Important links",
+    "text": "Important links\nForthcoming.",
     "crumbs": [
       "Preliminaries"
     ]
@@ -44,86 +44,1505 @@
     "href": "index.html#help",
     "title": "HUGEN 2073",
     "section": "Help",
-    "text": "Help",
+    "text": "Help\n\nOffice hours TBD\nUse the Canvas discussion board",
     "crumbs": [
       "Preliminaries"
     ]
   },
   {
-    "objectID": "chapters/principles.html",
-    "href": "chapters/principles.html",
-    "title": "1  Principles of Visualization",
+    "objectID": "chapters/r_and_base_r_graphics.html",
+    "href": "chapters/r_and_base_r_graphics.html",
+    "title": "1  R and Base R Graphics",
     "section": "",
-    "text": "Some content…\n\n\nCheck your understanding\n\n\n\n\nCheck",
+    "text": "1.1 Preparation for Class",
     "crumbs": [
       "Visualization",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Principles of Visualization</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R and Base R Graphics</span>"
     ]
   },
   {
-    "objectID": "chapters/week05.html",
-    "href": "chapters/week05.html",
-    "title": "4  Week 5: Linkage Disequilibrium & Annotation",
+    "objectID": "chapters/r_and_base_r_graphics.html#preparation-for-class",
+    "href": "chapters/r_and_base_r_graphics.html#preparation-for-class",
+    "title": "1  R and Base R Graphics",
     "section": "",
-    "text": "4.1 Learning goals",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
     "crumbs": [
-      "Genomics",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 5: Linkage Disequilibrium & Annotation</span>"
+      "Visualization",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R and Base R Graphics</span>"
     ]
   },
   {
-    "objectID": "chapters/week05.html#learning-goals",
-    "href": "chapters/week05.html#learning-goals",
-    "title": "4  Week 5: Linkage Disequilibrium & Annotation",
+    "objectID": "chapters/r_and_base_r_graphics.html#lecture-recording-and-slides",
+    "href": "chapters/r_and_base_r_graphics.html#lecture-recording-and-slides",
+    "title": "1  R and Base R Graphics",
+    "section": "1.2 Lecture Recording and Slides",
+    "text": "1.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R and Base R Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/r_and_base_r_graphics.html#required-reading",
+    "href": "chapters/r_and_base_r_graphics.html#required-reading",
+    "title": "1  R and Base R Graphics",
+    "section": "1.3 Required Reading",
+    "text": "1.3 Required Reading\nNo required reading.",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R and Base R Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/r_and_base_r_graphics.html#suggested-reading",
+    "href": "chapters/r_and_base_r_graphics.html#suggested-reading",
+    "title": "1  R and Base R Graphics",
+    "section": "1.4 Suggested Reading",
+    "text": "1.4 Suggested Reading\n\nR Base Graphics: An Idiot’s Guide\nExploratory Data Analysis with R: 9 The Base Plotting System\nThe R Graph Gallery: Data visualization with base R",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R and Base R Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/r_and_base_r_graphics.html#in-class-exercises",
+    "href": "chapters/r_and_base_r_graphics.html#in-class-exercises",
+    "title": "1  R and Base R Graphics",
+    "section": "1.5 In-class Exercises",
+    "text": "1.5 In-class Exercises\nDownload the exercises",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R and Base R Graphics</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ggplot2.html",
+    "href": "chapters/ggplot2.html",
+    "title": "2  ggplot2",
     "section": "",
-    "text": "Understand what linkage disequilibrium (LD) represents biologically\nDistinguish common LD measures (r² vs D′)\nLearn how LD is used to interpret GWAS lead variants",
+    "text": "2.1 Preparation for Class",
     "crumbs": [
-      "Genomics",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 5: Linkage Disequilibrium & Annotation</span>"
+      "Visualization",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>ggplot2</span>"
     ]
   },
   {
-    "objectID": "chapters/week05.html#conceptual-overview",
-    "href": "chapters/week05.html#conceptual-overview",
-    "title": "4  Week 5: Linkage Disequilibrium & Annotation",
-    "section": "4.2 Conceptual overview",
-    "text": "4.2 Conceptual overview\n\n4.2.1 What LD tells you\nExplain here what LD captures, why nearby variants are correlated, and how population history affects LD patterns.\n\n\n4.2.2 r² vs D′\nExplain: - what each measure captures - when one is misleading - why r² is usually preferred for association interpretation",
+    "objectID": "chapters/ggplot2.html#preparation-for-class",
+    "href": "chapters/ggplot2.html#preparation-for-class",
+    "title": "2  ggplot2",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
     "crumbs": [
-      "Genomics",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 5: Linkage Disequilibrium & Annotation</span>"
+      "Visualization",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>ggplot2</span>"
     ]
   },
   {
-    "objectID": "chapters/week05.html#practical-workflow-annotating-a-gwas-hit",
-    "href": "chapters/week05.html#practical-workflow-annotating-a-gwas-hit",
-    "title": "4  Week 5: Linkage Disequilibrium & Annotation",
-    "section": "4.3 Practical workflow: annotating a GWAS hit",
-    "text": "4.3 Practical workflow: annotating a GWAS hit\n\nIdentify the lead SNP\nRetrieve LD proxies in the relevant ancestry\nAnnotate proxies (VEP, regulatory context, eQTLs)\nIntegrate evidence into a mechanistic hypothesis",
+    "objectID": "chapters/ggplot2.html#lecture-recording-and-slides",
+    "href": "chapters/ggplot2.html#lecture-recording-and-slides",
+    "title": "2  ggplot2",
+    "section": "2.2 Lecture Recording and Slides",
+    "text": "2.2 Lecture Recording and Slides",
     "crumbs": [
-      "Genomics",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 5: Linkage Disequilibrium & Annotation</span>"
+      "Visualization",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>ggplot2</span>"
     ]
   },
   {
-    "objectID": "chapters/week05.html#self-check-prompts-for-students",
-    "href": "chapters/week05.html#self-check-prompts-for-students",
-    "title": "4  Week 5: Linkage Disequilibrium & Annotation",
-    "section": "4.4 Self-check prompts (for students)",
-    "text": "4.4 Self-check prompts (for students)\n\nWhy does LD decay with distance?\nWhy might LD structure differ across ancestries?\nWhen might a non-coding proxy SNP be more plausible than the lead SNP?",
+    "objectID": "chapters/ggplot2.html#required-reading",
+    "href": "chapters/ggplot2.html#required-reading",
+    "title": "2  ggplot2",
+    "section": "2.3 Required Reading",
+    "text": "2.3 Required Reading",
     "crumbs": [
-      "Genomics",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 5: Linkage Disequilibrium & Annotation</span>"
+      "Visualization",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>ggplot2</span>"
     ]
   },
   {
-    "objectID": "chapters/week05.html#references-notes",
-    "href": "chapters/week05.html#references-notes",
-    "title": "4  Week 5: Linkage Disequilibrium & Annotation",
-    "section": "4.5 References / notes",
-    "text": "4.5 References / notes\nAdd references, links, or citations here.",
+    "objectID": "chapters/ggplot2.html#suggested-reading",
+    "href": "chapters/ggplot2.html#suggested-reading",
+    "title": "2  ggplot2",
+    "section": "2.4 Suggested Reading",
+    "text": "2.4 Suggested Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>ggplot2</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/principles_of_visualization.html",
+    "href": "chapters/principles_of_visualization.html",
+    "title": "3  Principles of Visualization",
+    "section": "",
+    "text": "3.1 Preparation for Class",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Principles of Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/principles_of_visualization.html#preparation-for-class",
+    "href": "chapters/principles_of_visualization.html#preparation-for-class",
+    "title": "3  Principles of Visualization",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Principles of Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/principles_of_visualization.html#lecture-recording-and-slides",
+    "href": "chapters/principles_of_visualization.html#lecture-recording-and-slides",
+    "title": "3  Principles of Visualization",
+    "section": "3.2 Lecture Recording and Slides",
+    "text": "3.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Principles of Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/principles_of_visualization.html#required-reading",
+    "href": "chapters/principles_of_visualization.html#required-reading",
+    "title": "3  Principles of Visualization",
+    "section": "3.3 Required Reading",
+    "text": "3.3 Required Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Principles of Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/principles_of_visualization.html#suggested-reading",
+    "href": "chapters/principles_of_visualization.html#suggested-reading",
+    "title": "3  Principles of Visualization",
+    "section": "3.4 Suggested Reading",
+    "text": "3.4 Suggested Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Principles of Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/amounts_and_tables.html",
+    "href": "chapters/amounts_and_tables.html",
+    "title": "4  Amounts and Tables",
+    "section": "",
+    "text": "4.1 Preparation for Class",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Amounts and Tables</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/amounts_and_tables.html#preparation-for-class",
+    "href": "chapters/amounts_and_tables.html#preparation-for-class",
+    "title": "4  Amounts and Tables",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Amounts and Tables</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/amounts_and_tables.html#lecture-recording-and-slides",
+    "href": "chapters/amounts_and_tables.html#lecture-recording-and-slides",
+    "title": "4  Amounts and Tables",
+    "section": "4.2 Lecture Recording and Slides",
+    "text": "4.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Amounts and Tables</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/amounts_and_tables.html#required-reading",
+    "href": "chapters/amounts_and_tables.html#required-reading",
+    "title": "4  Amounts and Tables",
+    "section": "4.3 Required Reading",
+    "text": "4.3 Required Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Amounts and Tables</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/amounts_and_tables.html#suggested-reading",
+    "href": "chapters/amounts_and_tables.html#suggested-reading",
+    "title": "4  Amounts and Tables",
+    "section": "4.4 Suggested Reading",
+    "text": "4.4 Suggested Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Amounts and Tables</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/distributions.html",
+    "href": "chapters/distributions.html",
+    "title": "5  Distributions",
+    "section": "",
+    "text": "5.1 Preparation for Class",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/distributions.html#preparation-for-class",
+    "href": "chapters/distributions.html#preparation-for-class",
+    "title": "5  Distributions",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/distributions.html#lecture-recording-and-slides",
+    "href": "chapters/distributions.html#lecture-recording-and-slides",
+    "title": "5  Distributions",
+    "section": "5.2 Lecture Recording and Slides",
+    "text": "5.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/distributions.html#required-reading",
+    "href": "chapters/distributions.html#required-reading",
+    "title": "5  Distributions",
+    "section": "5.3 Required Reading",
+    "text": "5.3 Required Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/distributions.html#suggested-reading",
+    "href": "chapters/distributions.html#suggested-reading",
+    "title": "5  Distributions",
+    "section": "5.4 Suggested Reading",
+    "text": "5.4 Suggested Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/associations_and_trends.html",
+    "href": "chapters/associations_and_trends.html",
+    "title": "6  Associations and Trends",
+    "section": "",
+    "text": "6.1 Preparation for Class",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Associations and Trends</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/associations_and_trends.html#preparation-for-class",
+    "href": "chapters/associations_and_trends.html#preparation-for-class",
+    "title": "6  Associations and Trends",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Associations and Trends</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/associations_and_trends.html#lecture-recording-and-slides",
+    "href": "chapters/associations_and_trends.html#lecture-recording-and-slides",
+    "title": "6  Associations and Trends",
+    "section": "6.2 Lecture Recording and Slides",
+    "text": "6.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Associations and Trends</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/associations_and_trends.html#required-reading",
+    "href": "chapters/associations_and_trends.html#required-reading",
+    "title": "6  Associations and Trends",
+    "section": "6.3 Required Reading",
+    "text": "6.3 Required Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Associations and Trends</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/associations_and_trends.html#suggested-reading",
+    "href": "chapters/associations_and_trends.html#suggested-reading",
+    "title": "6  Associations and Trends",
+    "section": "6.4 Suggested Reading",
+    "text": "6.4 Suggested Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Associations and Trends</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/categorical_data_and_proportions.html",
+    "href": "chapters/categorical_data_and_proportions.html",
+    "title": "7  Categorical Data and Proportions",
+    "section": "",
+    "text": "7.1 Preparation for Class",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Categorical Data and Proportions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/categorical_data_and_proportions.html#preparation-for-class",
+    "href": "chapters/categorical_data_and_proportions.html#preparation-for-class",
+    "title": "7  Categorical Data and Proportions",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Categorical Data and Proportions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/categorical_data_and_proportions.html#lecture-recording-and-slides",
+    "href": "chapters/categorical_data_and_proportions.html#lecture-recording-and-slides",
+    "title": "7  Categorical Data and Proportions",
+    "section": "7.2 Lecture Recording and Slides",
+    "text": "7.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Categorical Data and Proportions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/categorical_data_and_proportions.html#required-reading",
+    "href": "chapters/categorical_data_and_proportions.html#required-reading",
+    "title": "7  Categorical Data and Proportions",
+    "section": "7.3 Required Reading",
+    "text": "7.3 Required Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Categorical Data and Proportions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/categorical_data_and_proportions.html#suggested-reading",
+    "href": "chapters/categorical_data_and_proportions.html#suggested-reading",
+    "title": "7  Categorical Data and Proportions",
+    "section": "7.4 Suggested Reading",
+    "text": "7.4 Suggested Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Categorical Data and Proportions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/uncertainty.html",
+    "href": "chapters/uncertainty.html",
+    "title": "8  Uncertainty",
+    "section": "",
+    "text": "8.1 Preparation for Class",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Uncertainty</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/uncertainty.html#preparation-for-class",
+    "href": "chapters/uncertainty.html#preparation-for-class",
+    "title": "8  Uncertainty",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Uncertainty</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/uncertainty.html#lecture-recording-and-slides",
+    "href": "chapters/uncertainty.html#lecture-recording-and-slides",
+    "title": "8  Uncertainty",
+    "section": "8.2 Lecture Recording and Slides",
+    "text": "8.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Uncertainty</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/uncertainty.html#required-reading",
+    "href": "chapters/uncertainty.html#required-reading",
+    "title": "8  Uncertainty",
+    "section": "8.3 Required Reading",
+    "text": "8.3 Required Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Uncertainty</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/uncertainty.html#suggested-reading",
+    "href": "chapters/uncertainty.html#suggested-reading",
+    "title": "8  Uncertainty",
+    "section": "8.4 Suggested Reading",
+    "text": "8.4 Suggested Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Uncertainty</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/structure_in_high_dimensional_data.html",
+    "href": "chapters/structure_in_high_dimensional_data.html",
+    "title": "9  Structure in High-dimensional Data",
+    "section": "",
+    "text": "9.1 Preparation for Class",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Structure in High-dimensional Data</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/structure_in_high_dimensional_data.html#preparation-for-class",
+    "href": "chapters/structure_in_high_dimensional_data.html#preparation-for-class",
+    "title": "9  Structure in High-dimensional Data",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Structure in High-dimensional Data</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/structure_in_high_dimensional_data.html#lecture-recording-and-slides",
+    "href": "chapters/structure_in_high_dimensional_data.html#lecture-recording-and-slides",
+    "title": "9  Structure in High-dimensional Data",
+    "section": "9.2 Lecture Recording and Slides",
+    "text": "9.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Structure in High-dimensional Data</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/structure_in_high_dimensional_data.html#required-reading",
+    "href": "chapters/structure_in_high_dimensional_data.html#required-reading",
+    "title": "9  Structure in High-dimensional Data",
+    "section": "9.3 Required Reading",
+    "text": "9.3 Required Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Structure in High-dimensional Data</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/structure_in_high_dimensional_data.html#suggested-reading",
+    "href": "chapters/structure_in_high_dimensional_data.html#suggested-reading",
+    "title": "9  Structure in High-dimensional Data",
+    "section": "9.4 Suggested Reading",
+    "text": "9.4 Suggested Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Structure in High-dimensional Data</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/dimension_reduction.html",
+    "href": "chapters/dimension_reduction.html",
+    "title": "10  Dimension Reduction",
+    "section": "",
+    "text": "10.1 Preparation for Class",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Dimension Reduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/dimension_reduction.html#preparation-for-class",
+    "href": "chapters/dimension_reduction.html#preparation-for-class",
+    "title": "10  Dimension Reduction",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Dimension Reduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/dimension_reduction.html#lecture-recording-and-slides",
+    "href": "chapters/dimension_reduction.html#lecture-recording-and-slides",
+    "title": "10  Dimension Reduction",
+    "section": "10.2 Lecture Recording and Slides",
+    "text": "10.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Dimension Reduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/dimension_reduction.html#required-reading",
+    "href": "chapters/dimension_reduction.html#required-reading",
+    "title": "10  Dimension Reduction",
+    "section": "10.3 Required Reading",
+    "text": "10.3 Required Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Dimension Reduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/dimension_reduction.html#suggested-reading",
+    "href": "chapters/dimension_reduction.html#suggested-reading",
+    "title": "10  Dimension Reduction",
+    "section": "10.4 Suggested Reading",
+    "text": "10.4 Suggested Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Dimension Reduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/machine_learning.html",
+    "href": "chapters/machine_learning.html",
+    "title": "11  Machine Learning",
+    "section": "",
+    "text": "11.1 Preparation for Class",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Machine Learning</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/machine_learning.html#preparation-for-class",
+    "href": "chapters/machine_learning.html#preparation-for-class",
+    "title": "11  Machine Learning",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Machine Learning</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/machine_learning.html#lecture-recording-and-slides",
+    "href": "chapters/machine_learning.html#lecture-recording-and-slides",
+    "title": "11  Machine Learning",
+    "section": "11.2 Lecture Recording and Slides",
+    "text": "11.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Machine Learning</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/machine_learning.html#required-reading",
+    "href": "chapters/machine_learning.html#required-reading",
+    "title": "11  Machine Learning",
+    "section": "11.3 Required Reading",
+    "text": "11.3 Required Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Machine Learning</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/machine_learning.html#suggested-reading",
+    "href": "chapters/machine_learning.html#suggested-reading",
+    "title": "11  Machine Learning",
+    "section": "11.4 Suggested Reading",
+    "text": "11.4 Suggested Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Machine Learning</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/model_evaluation.html",
+    "href": "chapters/model_evaluation.html",
+    "title": "12  Model Evaluation",
+    "section": "",
+    "text": "12.1 Preparation for Class",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Model Evaluation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/model_evaluation.html#preparation-for-class",
+    "href": "chapters/model_evaluation.html#preparation-for-class",
+    "title": "12  Model Evaluation",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Model Evaluation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/model_evaluation.html#lecture-recording-and-slides",
+    "href": "chapters/model_evaluation.html#lecture-recording-and-slides",
+    "title": "12  Model Evaluation",
+    "section": "12.2 Lecture Recording and Slides",
+    "text": "12.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Model Evaluation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/model_evaluation.html#required-reading",
+    "href": "chapters/model_evaluation.html#required-reading",
+    "title": "12  Model Evaluation",
+    "section": "12.3 Required Reading",
+    "text": "12.3 Required Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Model Evaluation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/model_evaluation.html#suggested-reading",
+    "href": "chapters/model_evaluation.html#suggested-reading",
+    "title": "12  Model Evaluation",
+    "section": "12.4 Suggested Reading",
+    "text": "12.4 Suggested Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Model Evaluation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/gwas_plots.html",
+    "href": "chapters/gwas_plots.html",
+    "title": "13  GWAS Plots",
+    "section": "",
+    "text": "13.1 Preparation for Class",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>GWAS Plots</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/gwas_plots.html#preparation-for-class",
+    "href": "chapters/gwas_plots.html#preparation-for-class",
+    "title": "13  GWAS Plots",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>GWAS Plots</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/gwas_plots.html#lecture-recording-and-slides",
+    "href": "chapters/gwas_plots.html#lecture-recording-and-slides",
+    "title": "13  GWAS Plots",
+    "section": "13.2 Lecture Recording and Slides",
+    "text": "13.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>GWAS Plots</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/gwas_plots.html#required-reading",
+    "href": "chapters/gwas_plots.html#required-reading",
+    "title": "13  GWAS Plots",
+    "section": "13.3 Required Reading",
+    "text": "13.3 Required Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>GWAS Plots</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/gwas_plots.html#suggested-reading",
+    "href": "chapters/gwas_plots.html#suggested-reading",
+    "title": "13  GWAS Plots",
+    "section": "13.4 Suggested Reading",
+    "text": "13.4 Suggested Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>GWAS Plots</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/shiny.html",
+    "href": "chapters/shiny.html",
+    "title": "14  Shiny",
+    "section": "",
+    "text": "14.1 Preparation for Class",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Shiny</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/shiny.html#preparation-for-class",
+    "href": "chapters/shiny.html#preparation-for-class",
+    "title": "14  Shiny",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Shiny</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/shiny.html#lecture-recording-and-slides",
+    "href": "chapters/shiny.html#lecture-recording-and-slides",
+    "title": "14  Shiny",
+    "section": "14.2 Lecture Recording and Slides",
+    "text": "14.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Shiny</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/shiny.html#required-reading",
+    "href": "chapters/shiny.html#required-reading",
+    "title": "14  Shiny",
+    "section": "14.3 Required Reading",
+    "text": "14.3 Required Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Shiny</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/shiny.html#suggested-reading",
+    "href": "chapters/shiny.html#suggested-reading",
+    "title": "14  Shiny",
+    "section": "14.4 Suggested Reading",
+    "text": "14.4 Suggested Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Shiny</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ethics_and_accessibility.html",
+    "href": "chapters/ethics_and_accessibility.html",
+    "title": "15  Ethics and Accessibility",
+    "section": "",
+    "text": "15.1 Preparation for Class",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Ethics and Accessibility</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ethics_and_accessibility.html#preparation-for-class",
+    "href": "chapters/ethics_and_accessibility.html#preparation-for-class",
+    "title": "15  Ethics and Accessibility",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Ethics and Accessibility</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ethics_and_accessibility.html#lecture-recording-and-slides",
+    "href": "chapters/ethics_and_accessibility.html#lecture-recording-and-slides",
+    "title": "15  Ethics and Accessibility",
+    "section": "15.2 Lecture Recording and Slides",
+    "text": "15.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Ethics and Accessibility</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ethics_and_accessibility.html#required-reading",
+    "href": "chapters/ethics_and_accessibility.html#required-reading",
+    "title": "15  Ethics and Accessibility",
+    "section": "15.3 Required Reading",
+    "text": "15.3 Required Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Ethics and Accessibility</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ethics_and_accessibility.html#suggested-reading",
+    "href": "chapters/ethics_and_accessibility.html#suggested-reading",
+    "title": "15  Ethics and Accessibility",
+    "section": "15.4 Suggested Reading",
+    "text": "15.4 Suggested Reading",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Ethics and Accessibility</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/annotating_variants.html",
+    "href": "chapters/annotating_variants.html",
+    "title": "16  Annotating Variants",
+    "section": "",
+    "text": "16.1 Preparation for Class",
     "crumbs": [
       "Genomics",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 5: Linkage Disequilibrium & Annotation</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Annotating Variants</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/annotating_variants.html#preparation-for-class",
+    "href": "chapters/annotating_variants.html#preparation-for-class",
+    "title": "16  Annotating Variants",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Annotating Variants</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/annotating_variants.html#lecture-recording-and-slides",
+    "href": "chapters/annotating_variants.html#lecture-recording-and-slides",
+    "title": "16  Annotating Variants",
+    "section": "16.2 Lecture Recording and Slides",
+    "text": "16.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Annotating Variants</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/annotating_variants.html#required-reading",
+    "href": "chapters/annotating_variants.html#required-reading",
+    "title": "16  Annotating Variants",
+    "section": "16.3 Required Reading",
+    "text": "16.3 Required Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Annotating Variants</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/annotating_variants.html#suggested-reading",
+    "href": "chapters/annotating_variants.html#suggested-reading",
+    "title": "16  Annotating Variants",
+    "section": "16.4 Suggested Reading",
+    "text": "16.4 Suggested Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Annotating Variants</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/linkage_disequilibrium.html",
+    "href": "chapters/linkage_disequilibrium.html",
+    "title": "17  Linkage Disequilibrium",
+    "section": "",
+    "text": "17.1 Preparation for Class",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Linkage Disequilibrium</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/linkage_disequilibrium.html#preparation-for-class",
+    "href": "chapters/linkage_disequilibrium.html#preparation-for-class",
+    "title": "17  Linkage Disequilibrium",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Linkage Disequilibrium</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/linkage_disequilibrium.html#lecture-recording-and-slides",
+    "href": "chapters/linkage_disequilibrium.html#lecture-recording-and-slides",
+    "title": "17  Linkage Disequilibrium",
+    "section": "17.2 Lecture Recording and Slides",
+    "text": "17.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Linkage Disequilibrium</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/linkage_disequilibrium.html#required-reading",
+    "href": "chapters/linkage_disequilibrium.html#required-reading",
+    "title": "17  Linkage Disequilibrium",
+    "section": "17.3 Required Reading",
+    "text": "17.3 Required Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Linkage Disequilibrium</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/linkage_disequilibrium.html#suggested-reading",
+    "href": "chapters/linkage_disequilibrium.html#suggested-reading",
+    "title": "17  Linkage Disequilibrium",
+    "section": "17.4 Suggested Reading",
+    "text": "17.4 Suggested Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Linkage Disequilibrium</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/annotating_gwas_results.html",
+    "href": "chapters/annotating_gwas_results.html",
+    "title": "18  Annotating GWAS Results",
+    "section": "",
+    "text": "18.1 Preparation for Class",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Annotating GWAS Results</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/annotating_gwas_results.html#preparation-for-class",
+    "href": "chapters/annotating_gwas_results.html#preparation-for-class",
+    "title": "18  Annotating GWAS Results",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Annotating GWAS Results</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/annotating_gwas_results.html#lecture-recording-and-slides",
+    "href": "chapters/annotating_gwas_results.html#lecture-recording-and-slides",
+    "title": "18  Annotating GWAS Results",
+    "section": "18.2 Lecture Recording and Slides",
+    "text": "18.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Annotating GWAS Results</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/annotating_gwas_results.html#required-reading",
+    "href": "chapters/annotating_gwas_results.html#required-reading",
+    "title": "18  Annotating GWAS Results",
+    "section": "18.3 Required Reading",
+    "text": "18.3 Required Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Annotating GWAS Results</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/annotating_gwas_results.html#suggested-reading",
+    "href": "chapters/annotating_gwas_results.html#suggested-reading",
+    "title": "18  Annotating GWAS Results",
+    "section": "18.4 Suggested Reading",
+    "text": "18.4 Suggested Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Annotating GWAS Results</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_and_tracks.html",
+    "href": "chapters/ucsc_genome_browser_and_tracks.html",
+    "title": "19  UCSC Genome Browser and Tracks",
+    "section": "",
+    "text": "19.1 Preparation for Class",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>UCSC Genome Browser and Tracks</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_and_tracks.html#preparation-for-class",
+    "href": "chapters/ucsc_genome_browser_and_tracks.html#preparation-for-class",
+    "title": "19  UCSC Genome Browser and Tracks",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>UCSC Genome Browser and Tracks</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_and_tracks.html#lecture-recording-and-slides",
+    "href": "chapters/ucsc_genome_browser_and_tracks.html#lecture-recording-and-slides",
+    "title": "19  UCSC Genome Browser and Tracks",
+    "section": "19.2 Lecture Recording and Slides",
+    "text": "19.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>UCSC Genome Browser and Tracks</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_and_tracks.html#required-reading",
+    "href": "chapters/ucsc_genome_browser_and_tracks.html#required-reading",
+    "title": "19  UCSC Genome Browser and Tracks",
+    "section": "19.3 Required Reading",
+    "text": "19.3 Required Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>UCSC Genome Browser and Tracks</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_and_tracks.html#suggested-reading",
+    "href": "chapters/ucsc_genome_browser_and_tracks.html#suggested-reading",
+    "title": "19  UCSC Genome Browser and Tracks",
+    "section": "19.4 Suggested Reading",
+    "text": "19.4 Suggested Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>UCSC Genome Browser and Tracks</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_tables.html",
+    "href": "chapters/ucsc_genome_browser_tables.html",
+    "title": "20  UCSC Genome Browser Tables",
+    "section": "",
+    "text": "20.1 Preparation for Class",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>UCSC Genome Browser Tables</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_tables.html#preparation-for-class",
+    "href": "chapters/ucsc_genome_browser_tables.html#preparation-for-class",
+    "title": "20  UCSC Genome Browser Tables",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>UCSC Genome Browser Tables</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_tables.html#lecture-recording-and-slides",
+    "href": "chapters/ucsc_genome_browser_tables.html#lecture-recording-and-slides",
+    "title": "20  UCSC Genome Browser Tables",
+    "section": "20.2 Lecture Recording and Slides",
+    "text": "20.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>UCSC Genome Browser Tables</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_tables.html#required-reading",
+    "href": "chapters/ucsc_genome_browser_tables.html#required-reading",
+    "title": "20  UCSC Genome Browser Tables",
+    "section": "20.3 Required Reading",
+    "text": "20.3 Required Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>UCSC Genome Browser Tables</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_tables.html#suggested-reading",
+    "href": "chapters/ucsc_genome_browser_tables.html#suggested-reading",
+    "title": "20  UCSC Genome Browser Tables",
+    "section": "20.4 Suggested Reading",
+    "text": "20.4 Suggested Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>UCSC Genome Browser Tables</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_commandline_tools.html",
+    "href": "chapters/ucsc_genome_browser_commandline_tools.html",
+    "title": "21  UCSC Genome Browser command-line tools",
+    "section": "",
+    "text": "21.1 Preparation for Class",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>UCSC Genome Browser command-line tools</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_commandline_tools.html#preparation-for-class",
+    "href": "chapters/ucsc_genome_browser_commandline_tools.html#preparation-for-class",
+    "title": "21  UCSC Genome Browser command-line tools",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>UCSC Genome Browser command-line tools</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_commandline_tools.html#lecture-recording-and-slides",
+    "href": "chapters/ucsc_genome_browser_commandline_tools.html#lecture-recording-and-slides",
+    "title": "21  UCSC Genome Browser command-line tools",
+    "section": "21.2 Lecture Recording and Slides",
+    "text": "21.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>UCSC Genome Browser command-line tools</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_commandline_tools.html#required-reading",
+    "href": "chapters/ucsc_genome_browser_commandline_tools.html#required-reading",
+    "title": "21  UCSC Genome Browser command-line tools",
+    "section": "21.3 Required Reading",
+    "text": "21.3 Required Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>UCSC Genome Browser command-line tools</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/ucsc_genome_browser_commandline_tools.html#suggested-reading",
+    "href": "chapters/ucsc_genome_browser_commandline_tools.html#suggested-reading",
+    "title": "21  UCSC Genome Browser command-line tools",
+    "section": "21.4 Suggested Reading",
+    "text": "21.4 Suggested Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>UCSC Genome Browser command-line tools</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/gene_set_analysis.html",
+    "href": "chapters/gene_set_analysis.html",
+    "title": "22  Gene Set Analysis",
+    "section": "",
+    "text": "22.1 Preparation for Class",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Gene Set Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/gene_set_analysis.html#preparation-for-class",
+    "href": "chapters/gene_set_analysis.html#preparation-for-class",
+    "title": "22  Gene Set Analysis",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Gene Set Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/gene_set_analysis.html#lecture-recording-and-slides",
+    "href": "chapters/gene_set_analysis.html#lecture-recording-and-slides",
+    "title": "22  Gene Set Analysis",
+    "section": "22.2 Lecture Recording and Slides",
+    "text": "22.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Gene Set Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/gene_set_analysis.html#required-reading",
+    "href": "chapters/gene_set_analysis.html#required-reading",
+    "title": "22  Gene Set Analysis",
+    "section": "22.3 Required Reading",
+    "text": "22.3 Required Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Gene Set Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/gene_set_analysis.html#suggested-reading",
+    "href": "chapters/gene_set_analysis.html#suggested-reading",
+    "title": "22  Gene Set Analysis",
+    "section": "22.4 Suggested Reading",
+    "text": "22.4 Suggested Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Gene Set Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/eqtls_and_twas.html",
+    "href": "chapters/eqtls_and_twas.html",
+    "title": "23  eQTLs and TWAS",
+    "section": "",
+    "text": "23.1 Preparation for Class",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>eQTLs and TWAS</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/eqtls_and_twas.html#preparation-for-class",
+    "href": "chapters/eqtls_and_twas.html#preparation-for-class",
+    "title": "23  eQTLs and TWAS",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>eQTLs and TWAS</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/eqtls_and_twas.html#lecture-recording-and-slides",
+    "href": "chapters/eqtls_and_twas.html#lecture-recording-and-slides",
+    "title": "23  eQTLs and TWAS",
+    "section": "23.2 Lecture Recording and Slides",
+    "text": "23.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>eQTLs and TWAS</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/eqtls_and_twas.html#required-reading",
+    "href": "chapters/eqtls_and_twas.html#required-reading",
+    "title": "23  eQTLs and TWAS",
+    "section": "23.3 Required Reading",
+    "text": "23.3 Required Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>eQTLs and TWAS</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/eqtls_and_twas.html#suggested-reading",
+    "href": "chapters/eqtls_and_twas.html#suggested-reading",
+    "title": "23  eQTLs and TWAS",
+    "section": "23.4 Suggested Reading",
+    "text": "23.4 Suggested Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>eQTLs and TWAS</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/phewas.html",
+    "href": "chapters/phewas.html",
+    "title": "24  PheWAS",
+    "section": "",
+    "text": "24.1 Preparation for Class",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>PheWAS</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/phewas.html#preparation-for-class",
+    "href": "chapters/phewas.html#preparation-for-class",
+    "title": "24  PheWAS",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>PheWAS</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/phewas.html#lecture-recording-and-slides",
+    "href": "chapters/phewas.html#lecture-recording-and-slides",
+    "title": "24  PheWAS",
+    "section": "24.2 Lecture Recording and Slides",
+    "text": "24.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>PheWAS</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/phewas.html#required-reading",
+    "href": "chapters/phewas.html#required-reading",
+    "title": "24  PheWAS",
+    "section": "24.3 Required Reading",
+    "text": "24.3 Required Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>PheWAS</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/phewas.html#suggested-reading",
+    "href": "chapters/phewas.html#suggested-reading",
+    "title": "24  PheWAS",
+    "section": "24.4 Suggested Reading",
+    "text": "24.4 Suggested Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>PheWAS</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/finemapping.html",
+    "href": "chapters/finemapping.html",
+    "title": "25  Fine-mapping",
+    "section": "",
+    "text": "25.1 Preparation for Class",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Fine-mapping</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/finemapping.html#preparation-for-class",
+    "href": "chapters/finemapping.html#preparation-for-class",
+    "title": "25  Fine-mapping",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Fine-mapping</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/finemapping.html#lecture-recording-and-slides",
+    "href": "chapters/finemapping.html#lecture-recording-and-slides",
+    "title": "25  Fine-mapping",
+    "section": "25.2 Lecture Recording and Slides",
+    "text": "25.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Fine-mapping</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/finemapping.html#required-reading",
+    "href": "chapters/finemapping.html#required-reading",
+    "title": "25  Fine-mapping",
+    "section": "25.3 Required Reading",
+    "text": "25.3 Required Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Fine-mapping</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/finemapping.html#suggested-reading",
+    "href": "chapters/finemapping.html#suggested-reading",
+    "title": "25  Fine-mapping",
+    "section": "25.4 Suggested Reading",
+    "text": "25.4 Suggested Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Fine-mapping</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/TBD1.html",
+    "href": "chapters/TBD1.html",
+    "title": "26  TBD1",
+    "section": "",
+    "text": "26.1 Preparation for Class",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>TBD1</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/TBD1.html#preparation-for-class",
+    "href": "chapters/TBD1.html#preparation-for-class",
+    "title": "26  TBD1",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>TBD1</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/TBD1.html#lecture-recording-and-slides",
+    "href": "chapters/TBD1.html#lecture-recording-and-slides",
+    "title": "26  TBD1",
+    "section": "26.2 Lecture Recording and Slides",
+    "text": "26.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>TBD1</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/TBD1.html#required-reading",
+    "href": "chapters/TBD1.html#required-reading",
+    "title": "26  TBD1",
+    "section": "26.3 Required Reading",
+    "text": "26.3 Required Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>TBD1</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/TBD1.html#suggested-reading",
+    "href": "chapters/TBD1.html#suggested-reading",
+    "title": "26  TBD1",
+    "section": "26.4 Suggested Reading",
+    "text": "26.4 Suggested Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>TBD1</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/TBD2.html",
+    "href": "chapters/TBD2.html",
+    "title": "27  TBD2",
+    "section": "",
+    "text": "27.1 Preparation for Class",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>TBD2</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/TBD2.html#preparation-for-class",
+    "href": "chapters/TBD2.html#preparation-for-class",
+    "title": "27  TBD2",
+    "section": "",
+    "text": "Watch the lecture recording\nDo any required reading (see below)\nAsk Dr. Lysenko any questions you have\nPass Dr. Lysenko’s quiz",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>TBD2</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/TBD2.html#lecture-recording-and-slides",
+    "href": "chapters/TBD2.html#lecture-recording-and-slides",
+    "title": "27  TBD2",
+    "section": "27.2 Lecture Recording and Slides",
+    "text": "27.2 Lecture Recording and Slides",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>TBD2</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/TBD2.html#required-reading",
+    "href": "chapters/TBD2.html#required-reading",
+    "title": "27  TBD2",
+    "section": "27.3 Required Reading",
+    "text": "27.3 Required Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>TBD2</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/TBD2.html#suggested-reading",
+    "href": "chapters/TBD2.html#suggested-reading",
+    "title": "27  TBD2",
+    "section": "27.4 Suggested Reading",
+    "text": "27.4 Suggested Reading",
+    "crumbs": [
+      "Genomics",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>TBD2</span>"
     ]
   }
 ]

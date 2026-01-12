@@ -13,7 +13,7 @@ book:
     - index.qmd
     - part: "Visualization"
       chapters:
-        - chapters/r_and_base_r_graphics.qmd
+        - chapters/1_r_and_base_r_graphics.qmd
         - chapters/ggplot2.qmd
         - chapters/principles_of_visualization.qmd
         - chapters/amounts_and_tables.qmd
