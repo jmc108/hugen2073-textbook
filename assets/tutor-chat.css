@@ -97,10 +97,10 @@
 @media (min-width: 1100px) {
   #tutor-root.tutor-floating {
     position: fixed;
-    top: 180px;
+    top: 220px;
     right: 18px;
     width: 300px;
-    height: calc(100vh - 220px);
+    height: calc(100vh - 260px);
     z-index: 99999;
     background: #fff;
   }
