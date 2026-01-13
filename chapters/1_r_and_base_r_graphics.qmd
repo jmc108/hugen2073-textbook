@@ -90,7 +90,6 @@ data <- data[data$TEST=="SNP" & data$NMISS >= 995, -which(names(data) %in% c("A1
 # Did it work?
 dim(data)
 names(data)
-table(data$TEST, useNA="always")
 sum(data$NMISS < 995, na.rm=TRUE)
 
 ### 4

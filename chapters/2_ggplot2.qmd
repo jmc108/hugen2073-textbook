@@ -71,8 +71,161 @@ No required reading.
 
 ### Expand to see the answers
 
-```{webr}
+Part 1
 
+```{webr}
+library("tidyverse")
+
+### 1
+# Read in data
+url <- "https://jmc108.github.io/hugen2073-textbook/exercises/1_r_and_r_base_graphics/nggyu_syndrome.assoc.logistic"
+data <- read_table(file=url, col_names=TRUE)
+
+# Inspect
+data %>% head()
+data %>% dim()
+
+### 2-3
+# Filter, and drop some columns
+data <- data %>%
+  filter(TEST == "SNP") %>% 
+  filter(NMISS >= 995) %>% 
+  select(-A1,-TEST,-STAT)
+
+# Inspect
+head(data)
+dim(data)
+data %>%
+  select(NMISS) %>%
+  min()
+
+### 4
+# Add a new column
+data <- data %>%  mutate(nlp = -log10(P))
+data %>% head()
+
+### 5
+# Apply a function
+ld <- function(df) {
+  # Get top SNP's position
+  top_snp_bp <- df$BP[ which(df$P == min(df$P)) ]
+  
+  # Get distances from it
+  dist_from_top_snp <- abs(df$BP - top_snp_bp)
+  
+  # Generate random LDs
+  lds <- 1 - rnorm(mean=  (dist_from_top_snp/max(dist_from_top_snp))^(1/2)  , sd=0.01, n = dim(df)[1])
+  lds[lds <=0] <- 0.01
+  lds[which(df$P == min(df$P))] <- 1
+  return(lds)
+}
+
+data <- data %>% mutate(ld=ld(.))
+data %>% head()
+
+### 6
+# Modify values of color column
+data <- data %>%
+  mutate(color=case_when(
+    ld==1 ~ "purple",
+    ld >= 0.8 & ld ~ "red",
+    ld >= 0.6 & ld < 0.8 ~ "orange",
+    ld >= 0.4 & ld < 0.6 ~ "green",
+    ld >= 0.2 & ld < 0.4 ~ "light blue",
+    ld < 0.2 ~ "dark blue"
+  ))
+
+
+# Inspect
+data %>% head()
+data %>% select(color) %>% table(., useNA="always")
+
+
+### 7-9
+# Plot
+data %>%
+  ggplot() +
+  geom_point(aes(x=BP, y=nlp, color=color, shape=OR>1), cex=0.6) +
+  xlab("Base-pair position") +
+  ylab("-log10(p)") +
+  ggtitle("Nggyu Syndrome Associations") +
+  scale_color_identity()
+  
+
+### 10
+# Write out data
+# write.csv(x=data, file="./nggyu_results_processed_tidy.csv", quote=FALSE, row.names=FALSE)
+```
+
+Part 2 (these are just suggestions - there are other ways to do these exercises)
+
+```{webr}
+### Setup
+# Load packages
+library("knitr")
+library("tidyverse")
+
+# Parameters
+set.seed(2073)
+n_individuals <- 1000
+n_snps <- 10
+
+# Randomly generate data
+#   Genotypes for 10 SNPs (coded 0, 1, 2)
+#   Phenotype
+#   Sex
+#   Weight
+#   Also add an ID
+# Check data
+snp_data <- as.data.frame(matrix(sample(0:2, n_individuals * n_snps, replace = TRUE), nrow = n_individuals))
+colnames(snp_data) <- paste("SNP", 1:n_snps, sep = "_")
+snp_data$phenotype <- rnorm(n_individuals, mean = 160, sd = 10)
+snp_data$sex <- sample(c("F","M"), n_individuals, replace = TRUE)
+snp_data$weight <- rnorm(n_individuals, mean = 70, sd = 15)
+snp_data$ID <- paste0("subject",1:n_individuals)
+
+### 1
+snp_data %>% ggplot() +
+  geom_histogram(aes(x=phenotype, y=..density..), color=1, fill="white") +
+  geom_density(aes(x=phenotype), fill="blue", alpha=0.3) +
+  xlab("Height (cm.)") + ylab("Density") + ggtitle("Measurements of 1000 individuals")
+
+### 2
+snp_data %>% ggplot() +
+  geom_boxplot(aes(x=sex, y=phenotype)) +
+  xlab("Sex") + ylab("Height (cm.)") + ggtitle("Similar heights by sex")
+
+### 3
+snp_data %>% ggplot() +
+  geom_bar(aes(x=haplo12)) +
+  xlab("Genotype bin (SNP1_SNP2)") + ylab("Count") +
+  ggtitle("Similar counts across genotype bins")
+
+### 4
+snp_data %>% ggplot() +
+  geom_point(aes(x=weight, y=phenotype, color=factor(SNP_1))) +
+  geom_smooth(aes(x=weight, y=phenotype, color=factor(SNP_1)), se = FALSE) +
+  xlab("Weight (kg.)") + ylab("Height (cm.)") +
+  ggtitle("Little relationship between height and weight") +
+  guides(color=guide_legend(title="SNP_1 genotype"))
+
+### 5
+snp_data %>% ggplot() +
+  geom_point(aes(x=weight, y=phenotype, color=sex)) +
+  facet_grid(~SNP_1) +
+  xlab("Weight (kg.)") + ylab("Height (cm.)") +
+  ggtitle("Height-weight relationship by SNP1 genotype")
+
+### 6
+snp_data %>% ggplot() +
+  geom_point(aes(x=weight, y=phenotype, color=sex)) +
+  geom_smooth(aes(x=weight, y=phenotype, group=haplo12), se=FALSE, method="lm") +
+  facet_grid(SNP_1 ~ SNP_2) +
+  xlab("Weight (kg.)") + ylab("Height (cm.)") +
+  ggtitle("Height-weight relationship by SNP1 and SNP2 genotype")
+
+### 7
+# Your choice
 ```
 
 :::
