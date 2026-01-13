@@ -1,6 +1,6 @@
 ---
 title: "R and Base R Graphics Exercises"
-author: "Your name"
+author: "Jon Chernus"
 output:
   html_document:
     code_folding: show
@@ -16,6 +16,7 @@ For these exercises, you'll work with some association results on chromosome 1 f
 
 Do all of the tasks below, in order, verifying that your code runs without error and that your document can knit at each step.
 
+**Use base R for all of these exercises - not tidyverse!**
 
 # Task 1 - Reading in and inspecting data
 
