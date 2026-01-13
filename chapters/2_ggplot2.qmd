@@ -196,6 +196,9 @@ snp_data %>% ggplot() +
   xlab("Sex") + ylab("Height (cm.)") + ggtitle("Similar heights by sex")
 
 ### 3
+snp_data$haplo12 <- paste(snp_data$SNP_1, snp_data$SNP_2, sep="_")
+kable(table(snp_data$haplo12))
+
 snp_data %>% ggplot() +
   geom_bar(aes(x=haplo12)) +
   xlab("Genotype bin (SNP1_SNP2)") + ylab("Count") +
