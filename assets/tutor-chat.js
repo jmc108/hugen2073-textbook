@@ -13,7 +13,7 @@
 if (state.messages.length === 0) {
   state.messages.push({
     role: "assistant",
-    content: `Hi! I’m your chapter tutor for ${chapter}. What part of this chapter should we work on first?`
+    content: `Do you have questions about ${chapter}, or do you want me to ask you the quiz questions?`
   });
   localStorage.setItem(storageKey, JSON.stringify(state.messages));
 }
@@ -22,7 +22,7 @@ if (state.messages.length === 0) {
   root.innerHTML = `
     <div class="tutor-panel">
       <div class="tutor-header">
-        <div class="tutor-title">Chapter Tutor</div>
+        <div class="tutor-title">Chat with Dr. Lysenko</div>
         <button class="tutor-btn" id="tutor-clear" type="button">Clear</button>
       </div>
 
@@ -33,9 +33,6 @@ if (state.messages.length === 0) {
         <button class="tutor-btn tutor-send" id="tutor-send" type="button">Send</button>
       </div>
 
-      <div class="tutor-footer">
-        <button class="tutor-btn" id="tutor-quiz" type="button">Quiz me</button>
-      </div>
     </div>
   `;
 
@@ -114,9 +111,6 @@ if (state.messages.length === 0) {
     send(v);
   });
 
-  document.getElementById("tutor-quiz").addEventListener("click", () => {
-    send("Quiz me with 4 short concept-check questions based on this chapter. Ask one at a time.");
-  });
 
   document.getElementById("tutor-clear").addEventListener("click", () => {
     state.messages = [];
