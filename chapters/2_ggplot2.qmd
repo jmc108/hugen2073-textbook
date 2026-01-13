@@ -79,7 +79,7 @@ library("tidyverse")
 ### 1
 # Read in data
 url <- "https://jmc108.github.io/hugen2073-textbook/exercises/1_r_and_r_base_graphics/nggyu_syndrome.assoc.logistic"
-data <- read_table(file=url, col_names=TRUE)
+data <- read.table(file=url, header=TRUE)
 
 # Inspect
 data %>% head()
