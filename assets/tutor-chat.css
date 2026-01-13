@@ -99,7 +99,7 @@
     position: fixed;
     top: 90px;
     right: 18px;
-    width: 420px;
+    width: 320px;
     height: calc(100vh - 130px);
     z-index: 99999;
     background: #fff;
