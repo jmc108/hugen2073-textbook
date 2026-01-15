@@ -63,6 +63,14 @@ No required reading.
 -   [R for Data Science: 28. Graphics for communication ](https://r4ds.had.co.nz/graphics-for-communication.html)
 
 
+## Notes
+
+When should you put `ggplot` option inside of `aes()` and when shouldn't you?
+
+- Put it inside `aes()` if it depends on the data, i.e., if it varies form row to row of the data (like `aes(color=sex)`, which explicitly names a column of your data frame in order to color each observation by its particular `sex`)
+
+- Don't put it inside of `aes()` if it's a fixed styling choice (like `color="blue"`, which would apply to every point, and which does not use hte name of a column in the data frame)
+
 ## In-class Exercises
 
 [Download the exercises](../exercises/2_ggplot2/2_ggplot2_exercises.Rmd)
