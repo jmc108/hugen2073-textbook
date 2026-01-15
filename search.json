@@ -171,11 +171,22 @@
     ]
   },
   {
+    "objectID": "chapters/2_ggplot2.html#notes",
+    "href": "chapters/2_ggplot2.html#notes",
+    "title": "2  ggplot2",
+    "section": "2.5 Notes",
+    "text": "2.5 Notes\nWhen should you put ggplot option inside of aes() and when shouldn’t you?\n\nPut it inside aes() if it depends on the data, i.e., if it varies form row to row of the data (like aes(color=sex), which explicitly names a column of your data frame in order to color each observation by its particular sex)\nDon’t put it inside of aes() if it’s a fixed styling choice (like color=\"blue\", which would apply to every point, and which does not use hte name of a column in the data frame)",
+    "crumbs": [
+      "Visualization",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>ggplot2</span>"
+    ]
+  },
+  {
     "objectID": "chapters/2_ggplot2.html#in-class-exercises",
     "href": "chapters/2_ggplot2.html#in-class-exercises",
     "title": "2  ggplot2",
-    "section": "2.5 In-class Exercises",
-    "text": "2.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\nPart 1\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nPart 2 (these are just suggestions - there are other ways to do these exercises)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "section": "2.6 In-class Exercises",
+    "text": "2.6 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\nPart 1\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nPart 2 (these are just suggestions - there are other ways to do these exercises)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>ggplot2</span>"
