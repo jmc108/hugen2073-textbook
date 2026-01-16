@@ -43,7 +43,12 @@ def get_or_create_vector_store(chapter_id: str) -> str:
 def clear_vector_store_files(vector_store_id: str) -> None:
     files = client.vector_stores.files.list(vector_store_id).data
     for f in files:
-        client.vector_stores.files.delete(vector_store_id, f.id)
+        client.vector_stores.files.delete(
+            vector_store_id=vector_store_id,
+            file_id=f.id,
+        )
+
+
 
 def attach_pdfs(vector_store_id: str, pdf_paths: list[pathlib.Path]) -> None:
     for pdf in pdf_paths:

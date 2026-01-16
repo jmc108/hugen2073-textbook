@@ -7,7 +7,7 @@ format:
       sidebar-width: 420px
 ---
 
-<div id="tutor-root" data-chapter="week05" class="tutor-floating"></div>
+<div id="tutor-root" data-chapter="3_principles_of_visualization" class="tutor-floating"></div>
 <script src="../assets/tutor-chat.js"></script>
 <link rel="stylesheet" href="../assets/tutor-chat.css">
 
