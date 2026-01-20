@@ -1,0 +1,596 @@
+---
+title: "Principles of visualization exercises"
+author: "Jon Chernus"
+output:
+  html_document:
+    code_folding: show
+---
+
+# 1 Exploratory visualization
+
+## Randomization
+
+-   If your birthday is on an odd-numbered day (1, 3, 5, ... , 31), you are in Group A.
+
+-   If your birthday is on an even-numbered day (2, 4, 6, ... , 30), you are in Group B.
+
+## Exploration
+
+Download `data1.csv` from the class website and read it in. Use the chunk below.
+
+Spend \~5 minutes on the task below, depending on your group.
+
+### Group A task
+
+Investigate whether there is a correlation between `v3` and `v4`. Make two plots and write 3–5 sentences describing what you conclude.
+
+### Group B task
+
+Explore the dataset visually. Make three different plots and write 3–5 sentences describing anything unusual or structured you find.
+
+```{r}
+### Your code here
+```
+
+# 2. Data-ink ratio (and learning `ggplot` options)
+
+What is the data-ink ratio like for the plot below?
+
+-   Copy the code for this plot and paste it into the blank chunk below
+
+-   Read and tinker with the (copied and pasted) code to figure out which commands and parameters control which graphical elements
+
+-   Improve the data-ink ratio as much as reasonably possible
+
+```{r}
+library(tidyverse)
+
+p_bad <- ggplot(mpg, aes(displ, hwy)) +
+  
+  geom_point(
+    aes(color = class, shape=class, fill=class),
+    size = 4,
+    alpha = 0.9
+  ) +
+  
+  geom_smooth(
+    method = "loess",
+    se = TRUE,
+    linewidth = 4
+  ) +
+  
+  geom_vline(
+    xintercept = mean(mpg$displ),
+    linetype = "dashed",
+    linewidth = 3
+  ) +
+  geom_hline(
+    yintercept = mean(mpg$hwy),
+    linetype = "dashed",
+    linewidth = 3
+  ) +
+  
+  geom_text(
+    aes(label = hwy),
+    size = 2,
+    alpha = 0.8,
+    vjust = -0.3
+  ) +
+  
+  labs(
+    title = "Scatterplot of cars' highway miles per gallon and engine discplacement in liters colored by vehicle class",
+    subtitle = "Each point represents a car; points further right have bigger engines; points higher up go farther on one gallon",
+    x = "Engine displacement in liters (bigger number = bigger engine)",
+    y = "Highway miles per gallon (higher number = better mileage)",
+    color = "Vehicle class",
+    caption = "Dashed lines show average engine size and average highway MPG."
+  ) +
+  
+  scale_x_continuous(
+    limits = c(-2, 10),
+    breaks = seq(-2, 10, by = 0.1),
+    minor_breaks = seq(-2, 10, by = 0.05)
+  ) +
+  scale_y_continuous(
+    breaks = seq(10, 50, by = 2),
+    minor_breaks = seq(10, 50, by = 1)
+  ) +
+  
+  # Heavy theme elements
+  theme(
+    panel.grid.major = element_line(color = "grey30", linewidth = 0.5),
+    panel.grid.minor = element_line(color = "grey40", linewidth = 0.5),
+    panel.border = element_rect(fill = NA, linewidth = 1.5),
+    axis.ticks.length = unit(0.35, "cm"),
+    plot.title = element_text(face = "bold"),
+    panel.background = element_rect(fill = "grey60"),
+    plot.background = element_rect(fill = "grey60")
+  ) +
+  
+  annotate(
+    "text",
+    x = 6, y = 41, fontface="bold", size=4.2,
+    label = paste(
+      "      ______",
+      "  ___/|_||_\\`.__",
+      " (   _    _ _  \\",
+      " =`-(_)--(_)-'  ",
+      sep = "\n"
+    ),
+    family = "mono",
+    size = 3.5,
+    lineheight = 0.9,
+    hjust = 0, vjust = 1,
+    color = "firebrick",
+    alpha = 0.9
+  ) +
+  annotate(
+    "text",
+    x = 6, y = 39,
+    label = paste(
+      "  +----------------------+",
+      "  |                      |",
+      "  +----------------------+",
+      sep = "\n"
+    ),
+    family = "mono",
+    size = 3.5,
+    lineheight = 0.9,
+    hjust = 0, vjust = 1,
+    color = "steelblue",
+    alpha = 0.9
+  )
+
+
+p_bad
+
+```
+
+This is the chunk you should copy and paste the above code into:
+
+```{r}
+### Your code here
+```
+
+# 3. Spaghetti plot
+
+Below we have a spaghetti plot with too many overlapping lines, one for each value of `feature`.
+
+```{r}
+set.seed(2)
+
+features <- paste0("Feature ", sprintf("%02d", 1:12))
+positions <- seq(-1000, 1000, by = 10)
+
+df <- expand.grid(
+  feature = factor(features, levels = features, ordered = TRUE),
+  pos   = positions
+) %>%
+  mutate(
+    g = as.integer(feature),
+
+    # Make groups VERY similar
+    peak_height = 4 + rnorm(length(features), 0, 0.3)[g],  # small differences
+    peak_sd     = 260 + rnorm(length(features), 0, 15)[g], # similar width
+
+    # Shared structure + noise → overlap
+    signal = peak_height * exp(-(pos^2) / (2 * peak_sd^2)) +
+             rnorm(n(), sd = 1.3)
+  )
+
+ggplot(df, aes(x = pos, y = signal, color = feature)) +
+  geom_line(alpha = 0.6) +
+  labs(
+    x = "Distance from TSS (bp)",
+    y = "ChIP-seq–like signal",
+    title = "Overlapping spaghetti plot (12 similar groups)"
+  )
+
+```
+
+We could simply use `facet_wrap(~feature)` to produce separate plots. But suppose we'd like to be able to directly compare the curves by highlighting one feature in each facet (with color) while retaining all the rest by backgrounding them (by making them gray).
+
+Unfortunately, it takes a bit of work to do that.
+
+-   First, we make a new version of the dataset called `df_bg`, which will be used just for the gray, backgrounded curves that are repeated in each panel. `df_bg` needs `r length(features)` copies of each row of the original dataset - one for each curve, each labeled by a new column called `panel`, which will be used to help us group. (This has already been done for you in the code below.)
+
+-   Second, we nmake a new version of the dataet called `df_fg`, which will be used just for the foregrounded curve in each panel. This is just a `df_fg` is the same as `df`, with a new column called `panel`m aksi used to help us groupp. (This has already been done for you in the code below, too.)
+
+-   Now you just need a `ggplot` command including
+
+    -   `geom_line` using `df_bg` for the background lines (you need to include `aes(group=feature)`)
+
+    -   `geom_line` using `df_fg` for the foreground lines
+
+    -   a suitable `facet_wrap`
+
+Complete the code below:
+
+```{r}
+# df has columns: group, pos, signal
+# group is a factor with your 20 levels
+head(df)
+
+# Background data: replicate ALL lines into ALL panels
+df_bg <- df %>%
+  tidyr::crossing(panel = levels(df$feature))   # every row repeated for every facet
+head(df_bg)
+
+# Foreground data: only the focal group's line in its own panel
+df_fg <- df %>%
+  mutate(panel = feature)
+
+# Add your ggplot command here
+
+
+```
+
+# 4. Color palettes
+
+Here you'll learn how to use the `RColorBrewer` package for built-in and custom palettes.
+
+First, check out the built-in options:
+
+```{r}
+library("RColorBrewer")
+RColorBrewer::display.brewer.all(type = "qual")
+RColorBrewer::display.brewer.all(type = "seq")
+RColorBrewer::display.brewer.all(type = "div")
+```
+
+## Colors for a few groups
+
+In the barplot below, suppose we want to distinguish all 4 groups equally.
+
+Modify the code as follows:
+
+-   Use `aes()` to map `group` to `color`
+
+-   Pick an appropriate palette from above and add `+ scale_color_brewer(palette="your palette choice here")` to the plotting command
+
+-   Notice that that only outlines the bar; instead, use `fill` and `scale_fill_brewer`
+
+```{r}
+data.frame(
+  group = c("A", "B", "C", "D"),
+  value = c(18, 35, 22, 29)
+) %>% ggplot(aes(x = group, y = value)) +
+  geom_col()
+```
+
+## Colors for ordered groups
+
+In the barplot below, notice that the default color palette is not appropriate.
+
+-   What kind of palette would be appropriate? Use `scale_fill_brewer` as above to apply a good one.
+
+-   Now look at the legend. Can you see anything wrong? The colors are not correctly mapped to the categories.
+
+-   Use the `limits` option of `scale_fill_brewer` to begin fixing this by listing the categories in their natural order (note that another option would be to re-encode the ordinal variable a an ordered factor). The vector `af_bins` has been provided for you.
+
+```{r}
+# Add to this code
+set.seed(1)
+
+af_bins <- c(
+  "<0.1%",
+  "0.1–0.5%",
+  "0.5–1%",
+  "1–5%",
+  "5–10%",
+  ">10%"
+)
+
+severity <- c(
+  "Synonymous",
+  "Missense (benign)",
+  "Missense (damaging)",
+  "Splice site",
+  "Stop gained"
+)
+
+df <- expand.grid(
+  af_bin = factor(af_bins, levels = af_bins, ordered = TRUE),
+  consequence = factor(severity, levels = severity, ordered = TRUE)
+)
+
+# rare variants are more likely to be severe
+base <- exp(seq(log(5000), log(300), length.out = length(af_bins)))
+
+df$n_variants <- round(
+  base[as.integer(df$af_bin)] *
+    rev(seq(1.0, 0.4, length.out = length(severity)))[as.integer(df$consequence)] *
+    runif(nrow(df), 0.7, 1.3)
+)
+df$af_bin <- as.character(df$af_bin)
+
+# Helper variable for you!
+af_bins <- c(
+  "<0.1%",
+  "0.1–0.5%",
+  "0.5–1%",
+  "1–5%",
+  "5–10%",
+  ">10%"
+)
+
+# Your command here
+
+
+```
+
+Now the legend looks correct. But notice the bars are not in the desired order! At this point, it may be easier and simpler to just convert `af_bin` to a factor than to try to specify the "dodge" order of the bars. Here is the suggested fix:
+
+```{r}
+# No need to change this
+df %>% 
+  mutate(af_bin = factor(af_bin, levels = af_bins)) %>% 
+   ggplot(.,
+       aes(x = consequence,
+           y = n_variants,
+           fill = af_bin)) +
+  geom_col(position="dodge") + 
+  
+  scale_fill_brewer(palette="Blues",limits=af_bins)
+
+```
+
+Now that we have the colors mapped in the right order and the bars in the right order, we notice that the lightest blue shade is a little too bright to see clearly. So let's use `brewer.pal` to pick out a slightly better palette of blues.
+
+We will use `brewer.pal` to pick out 9 shades from `"Blues"`:
+
+```{r}
+library("RColorBrewer")
+brewer.pal(9, "Blues")
+```
+
+Then we will draw from the middle of these. We only need 6 shades:
+
+```{r}
+colors <- brewer.pal(9, "Blues")[4:9]
+colors
+```
+
+Now modify the last plotting command above to include `scale_fill_manual()` instead of `scale_fill_brewer`, and supply `values=colors`. You also no longer need the `palette` option since `values` will override it.
+
+```{r}
+# Add your code below
+df %>% 
+  mutate(af_bin = factor(af_bin, levels = af_bins)) %>% 
+   ggplot(.,
+       aes(x = consequence,
+           y = n_variants,
+           fill = af_bin)) +
+  geom_col(position="dodge")
+```
+
+Unfortunately, the built-in color palettes don't have that many colors in them. We need to make a custom palette if we want, say, a sequential palette with 10 colors. Look what happens if we have a lot of bins - we run out of colors!
+
+```{r}
+# Many AF bins between 0 and 0.5
+af_bins <- sprintf(
+  "%.3f–%.3f",
+  seq(0, 0.475, by = 0.025),
+  seq(0.025, 0.5, by = 0.025)
+)
+severity <- c(
+  "Synonymous",
+  "Missense (benign)",
+  "Missense (damaging)",
+  "Splice site",
+  "Stop gained"
+)
+set.seed(1)
+
+df <- expand.grid(
+  af_bin = af_bins,
+  consequence = severity
+)
+
+# Make AF bins ordered *for plotting*
+df$af_bin <- factor(df$af_bin, levels = af_bins)
+
+# Baseline: rarer variants are more numerous
+base <- exp(seq(log(6000), log(800), length.out = length(af_bins)))
+
+df$n_variants <- round(
+  base[as.integer(df$af_bin)] *
+    rev(seq(1.0, 0.4, length.out = length(severity)))[
+      match(df$consequence, severity)
+    ] *
+    runif(nrow(df), 0.8, 1.2)
+)
+
+df %>%
+  ggplot(aes(
+    x = consequence,
+    y = n_variants,
+    fill = af_bin
+  )) +
+  geom_col(position = "dodge") +
+  scale_fill_brewer(palette = "Blues")
+
+```
+
+The solution is to interpolate more colors with the `colorRampPalette` function, as many as we need. Use `cols <- colorRampPalette(RColorBrewer::brewer.pal(9, "Blues"))(n)`, where `n` is the number of colors you need. Modify the plotting code above. The only thing you need to change is what gets assigned to `cols`. Change `eval=TRUE` for the chunk below after you supply the command for the colors.
+
+```{r, eval=FALSE}
+# Your code here
+cols <- ??? # Just change this part, using the hint in the paragraph above
+
+df %>%
+  ggplot(aes(
+    x = consequence,
+    y = n_variants,
+    fill = af_bin
+  )) +
+  geom_col(position = "dodge") +
+  scale_fill_manual(
+    values = cols,
+    limits = af_bins
+  )
+
+```
+
+Note that you can pick any two colors along which to create a gradient. Try changing `"pink"` and `"red"` to other colors of your choice in the code below. You can use hex codes from here: [https://htmlcolorcodes.com/color-picker/](https://htmlcolorcodes.com/color-picker/).
+
+```{r}
+# Replace the two colors with any colors you want
+# You can use hex codes
+cols <- colorRampPalette(c("pink", "red"))(length(af_bins))
+df %>%
+  ggplot(aes(
+    x = consequence,
+    y = n_variants,
+    fill = af_bin
+  )) +
+  geom_col(position = "dodge") +
+  scale_fill_manual(
+    values = cols,
+    limits = af_bins
+  )
+```
+
+## Diverging color palettes
+
+Notice what happens when we use `scale_fill_gradient` to map `low = "blue"` and `high = "red"` in the simulated gene expression data below. The critical middle value of `0` isn't mapped to the neutral color `"white"`, and the negative values don't show up as `"blue"`.
+
+```{r}
+# Simulate data
+set.seed(1)
+
+df <- expand.grid(
+  gene   = paste0("G", 1:25),
+  sample = paste0("S", 1:8)
+)
+df$logFC <- rnorm(nrow(df), mean = 0, sd = 1)
+
+# Plot
+ggplot(df, aes(sample, gene, fill = logFC)) +
+  geom_tile() +
+  scale_fill_gradient(low = "blue", high = "red") +
+  ggtitle("Sequential scale (WRONG)")
+
+
+```
+
+Read the documentation for `scale_fill_gradient2` and modify the code above. Use the empty chunk below.
+
+```{r}
+# Your code here
+
+```
+
+
+# 5. Bad defaults
+
+Here we have a histogram of gene expression data for two groups. Are the bars stacked, are the Control bars in front, or are the Treatment bars in front?
+
+```{r}
+# Simulate data
+set.seed(5)
+n_genes <- 2000
+df <- data.frame(
+  expression = c(
+    # Condition A
+    c(
+      rep(0, 1200),                     # many unexpressed genes
+      rgamma(800, shape = 1.2, scale = 2)
+    ),
+    # Condition B
+    c(
+      rep(0, 900),
+      rgamma(1100, shape = 1.4, scale = 2.5)
+    )
+  ),
+  condition = rep(c("Treatment", "Control"), each = n_genes)
+)
+
+# Plot
+ggplot(df, aes(x = expression, fill = condition)) +
+  geom_histogram() +
+  scale_x_continuous(
+    name = "Gene expression (counts)",
+    expand = c(0, 0)
+  ) +
+  theme_minimal()
+
+
+
+```
+
+Change the `position` argument for `geom_histogram()` to make the two distributions directly comparable. Use the following chunk.
+
+```{r}
+# Your code here 
+
+```
+
+
+# 6. How to lie
+
+Here we simulate some exposure and disease data, which are correlated:
+
+```{r}
+# Simulate data
+n <- 120
+t <- 1:n
+
+df <- data.frame(
+  month = seq.Date(as.Date("2015-01-01"), by = "month", length.out = n)
+)
+
+# Exposure: smooth upward drift + mild seasonality
+df$exposure <- 40 + 0.03*t + 1.2*sin(2*pi*t/12)
+
+# True relationship: cases depend on exposure from 3 months ago + own seasonality
+lag_k <- 3
+expo_lag <- c(rep(NA, lag_k), df$exposure[1:(n - lag_k)])
+
+df$cases <- 55 + 4.0*(expo_lag - mean(df$exposure, na.rm = TRUE)) +
+  6*sin(2*pi*(t + 2)/12)
+
+# drop first lagged months (or keep them as NA)
+df <- df[!is.na(df$cases), ]
+
+
+df_long <- pivot_longer(df, c(exposure, cases), names_to = "series", values_to = "value")
+
+# Plot
+ggplot(df_long, aes(month, value)) +
+  geom_line(linewidth = 1) +
+  facet_wrap(~ series, ncol = 1, scales = "free_y") +
+  theme_minimal()
+```
+
+Suppose you want to deceive your gullible audience and suggest that cases are not increasing with the exposure. Modify the control parameters in the following plot to accomplish that.
+
+```{r}
+# ---- STUDENT CONTROLS ----
+cases_ylim <- c(30, 60)        # tighten to reveal, widen to hide
+expo_ylim  <- c(30, 45)        # tighten to exaggerate, widen to flatten
+# --------------------------
+
+a <- diff(cases_ylim) / diff(expo_ylim)
+b <- cases_ylim[1] - a * expo_ylim[1]
+
+ggplot(df, aes(month)) +
+  geom_line(aes(y = cases), linewidth = 1) +
+  geom_line(aes(y = a * exposure + b), linewidth = 1, linetype = 2) +
+  coord_cartesian(ylim = cases_ylim) +
+  scale_y_continuous(
+    name = "Cases",
+    sec.axis = sec_axis(~ (. - b) / a, name = "Exposure level")
+  ) +
+  theme_minimal()
+
+```
+
+
+# 7. Show and tell
+
+Find a bad, preferably funny graph and share it with the class.
+
+Here's one that I like:
+
+<https://i.redd.it/eyl7ae9vb3n41.png>
