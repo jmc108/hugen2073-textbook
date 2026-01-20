@@ -66,7 +66,9 @@ def sync_one_chapter(chapter_dir: pathlib.Path) -> None:
 
     pdfs = sorted(chapter_dir.glob("*.pdf"))
     if not pdfs:
-        raise RuntimeError(f"No PDFs found in {chapter_dir}")
+        print(f"Skipping {chapter_id}: no PDFs found in {chapter_dir}")
+        return
+
 
     prompt_txt = read_text_if_exists(chapter_dir / "prompt.txt")
     checks_md = read_text_if_exists(chapter_dir / "checks.md")

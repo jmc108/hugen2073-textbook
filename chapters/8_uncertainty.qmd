@@ -7,7 +7,7 @@ format:
       sidebar-width: 420px
 ---
 
-<div id="tutor-root" data-chapter="week05" class="tutor-floating"></div>
+<div id="tutor-root" data-chapter="8_uncertainty" class="tutor-floating"></div>
 <script src="../assets/tutor-chat.js"></script>
 <link rel="stylesheet" href="../assets/tutor-chat.css">
 
@@ -41,7 +41,7 @@ format:
 ```{=html}
 <div style="width: 100%; height: 800px; margin-top: 1.5em;">
   <iframe
-    src="../lecture_slides/1_r_and_base_r_graphics/3_r_base_r_graphics_with_example_2025s.pdf"
+    src="../lecture_slides/8_uncertainty/8_uncertainty.pdf"
     style="width: 100%; height: 100%; border: 1px solid #ccc;"
     title="Lecture slides">
   </iframe>
@@ -51,6 +51,8 @@ format:
 ## Required Reading
 
 ## Suggested Reading
+
+[Fundamentals of Data Visualization: Chapter 16](https://clauswilke.com/dataviz/)
 
 ## In-class Exercises
 
