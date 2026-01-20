@@ -1,3 +1,6 @@
 /.quarto/
 .Rproj.user
 .env
+
+*.bigWig
+.DS_Store

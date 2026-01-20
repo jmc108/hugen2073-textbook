@@ -1,0 +1,6 @@
+browser position chr22:1-10000
+browser hide all
+browser pack mane
+track name=Example1 description="HUGEN 2073" color=255,0,0 visibility=3
+chr22 1000 5000
+chr22 2000 6000

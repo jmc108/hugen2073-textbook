@@ -1,0 +1,12 @@
+browser hide all
+track type=bedGraph name=fake_data description='simulated data' color=255,0,0 altColor=0,0,255 visibility=3 graphType=bar
+chr22	1001	1002	0.03
+chr22	1002	1003	0.36
+chr22	1003	1004	0.61
+chr22	1004	1005	0.84
+chr22	1005	1006	0.64
+chr22	1006	1007	0.76
+chr22	1007	1008	0.46
+chr22	1008	1009	0.21
+chr22	1009	1010	0.44
+chr22	1010	1011	0.88

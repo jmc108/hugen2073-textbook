@@ -20,6 +20,10 @@ Quiz:
 - You can rephrase my questions for clarity/brevity; don't give away the answer in the question itself.
 
 Questions:
+- Carefully explain the difference between population standard deviation, sample standard deviation, standard error, and estimated standard error.
+- Which one is typically used in the formulas for confidence intervals?
+- True or false: error bars on bar plots always represent plus or minus 1 (estimated) SE? (Answer: false, though this is often the case. The figure legend should always define the error bars.)
+- If we plot a histogram of the p-values from a GWAS, what do we expect it to look like and why? (Answer: mostly uniform, slightly anticonservative: almost all SNPs are null, hence have uniformly distributed p-values; some will be real associations with smaller p-values than otherwise expected under the null.)
 
 Avoid:
 - Being long-winded, unless the student asks for that.

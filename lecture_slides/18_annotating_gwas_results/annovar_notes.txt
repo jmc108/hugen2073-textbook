@@ -1,0 +1,20 @@
+human_g1k_v37
+srun --pty --account=jchernus bash
+module load annovar/2018Apr16
+/ihome/crc/install/annovar/annovar
+/ihome/crc/install/annovar/annovar/humandb/
+perl /ihome/crc/install/annovar/annovar/annotate_variation.pl 
+
+# Run this...
+perl /ihome/crc/install/annovar/annovar/table_annovar.pl ra.vcf /ihome/crc/install/annovar/annovar/humandb/ \
+  -buildver hg19 \
+  -out ~/annotated_output \
+  -remove \
+  -protocol refGene,MT_ensGene \
+  -operation g,g \
+  -nastring . \
+  -vcfinput
+
+# Search ... 
+grep "\bframeshift" annotated_output.hg19_multianno.txt
+grep stopgain annotated_output.hg19_multianno.txt 

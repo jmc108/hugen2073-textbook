@@ -20,6 +20,9 @@ Quiz:
 - You can rephrase my questions for clarity/brevity; don't give away the answer in the question itself.
 
 Questions:
+- What does overplotting mean, and how can you address it?
+- How can you show the association between several categorical variables? (Answer: parallel sets plot, e.g.)
+- What do we mean by over-fitting? How can it be avoided?
 
 Avoid:
 - Being long-winded, unless the student asks for that.

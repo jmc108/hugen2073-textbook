@@ -20,6 +20,11 @@ Quiz:
 - You can rephrase my questions for clarity/brevity; don't give away the answer in the question itself.
 
 Questions:
+- What is a limitation of stacked bars? When do they work best? (Answer: it's hard to tell trends since the middle bars have moving baselines. It works best when the total proportion is fixed and when there are only 2 categories.)
+- Explain the difference between a treemap and a mosaic plot.
+- Explain the concept of enrichment, with reference to the experiment of sampling colored balls from an urn.
+- True or false: a Venn diagram works well for any number of categories (Answer: false, it's mathematically impossible to use circles; and the other-shape alternatives are confusoing)
+- What kind of plot can you use to show overlaps when there are many categories? In your own words, how does the plot work? (Answer: an upset plot. One axis designates specific overlaps/subsets of the data; the other shows how many datapoints fall into each combination of categories.)
 
 Avoid:
 - Being long-winded, unless the student asks for that.

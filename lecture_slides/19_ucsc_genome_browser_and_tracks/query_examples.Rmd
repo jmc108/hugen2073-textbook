@@ -1,0 +1,276 @@
+---
+  title: "UCSC Genome Browser query examples"
+output:
+  html_document:
+  toc: true
+toc_float: true
+code_folding: show
+---
+
+# Setup
+
+```{r setup, include=TRUE}
+library("tidyverse")
+library("RMySQL")
+query <- function(...) dbGetQuery(mychannel, ...)
+mychannel <- dbConnect(MySQL(), user="genome", host="genome-mysql.cse.ucsc.edu")
+```
+
+# Examples
+
+## Example 1 (slide 36)
+
+```{r}
+q <- "
+SELECT chromEnd
+FROM hg38.snp151
+WHERE name = 'rs3'
+;"
+
+r <- query(q)
+r
+```
+
+## Example 2 (slide 39)
+
+```{r}
+# Simulate GWAS results
+# The top SNP is on chr 19 at position 44908822
+GWAS <- data.frame(chr=rep(paste0("chr",1:22), rep(10,22)),
+                   pos=sample(x=1:10^7, size=10*22),
+                   p=runif(n=10*22, min=0,max=1)) %>% 
+  bind_rows(data.frame(chr="chr19", pos=44908822, p=1e-10)) %>% 
+  arrange(chr, pos)
+
+# Extract peak SNP info
+peakSNP <- GWAS %>%
+  filter(p == min(p)) %>%
+  filter(row_number() == 1) %>%
+  select(chr, pos)    
+chr <- peakSNP$chr
+upstream <- peakSNP$pos - 10000
+downstream <- peakSNP$pos + 10000
+
+q <- paste0("
+SELECT
+  name2
+FROM
+  hg38.wgEncodeGencodeBasicV39
+WHERE
+  (chrom = '", chr, "' AND ",
+  "strand = '+' AND ",
+  "txEnd > ", upstream, " AND ",
+  "txStart < ", downstream, ") OR ",
+  "(chrom = '", chr, "' AND ",
+  "strand = '-' AND ",
+  "txStart > ", upstream, " AND ",
+  "txEnd < ", downstream, ")
+;")
+
+r <- query(q) %>% unique()
+r
+```
+
+## Example 3 (slide 32)
+
+```{r}
+q <- paste0("
+SELECT
+  chrom, chromStart, chromEnd, name, refNCBI
+FROM
+  hg38.snp151
+WHERE
+  chrom = 'chr17' AND
+  chromStart >= 7571720 AND
+  chromEnd <= 7590868
+ORDER BY
+  chrom, chromStart;
+")
+
+r <- query(q)
+dim(r)
+head(r)
+```
+
+## Example 4 (slide 34)
+
+```{r}
+q <- paste0("
+SELECT
+  hg38.snp150.name,
+  hg38.snp150.chrom,
+  hg38.snp150.chromEnd,
+  hg38.gwasCatalog.genes
+FROM
+  hg38.snp150
+JOIN
+  hg38.gwasCatalog
+ON
+  hg38.snp150.name = hg38.gwasCatalog.name
+WHERE
+  hg38.gwasCatalog.trait = 'Pancreatic cancer' AND
+  hg38.snp150.func = 'missense'
+ORDER BY
+  hg38.snp150.chrom, hg38.snp150.chromEnd;
+")
+
+r <- query(q)
+dim(r)
+r
+```
+
+# Exercises
+
+Create a track showing for all genome-wide significant SNPs within 100kb of the gene SLC39A10.
+
+-   The label for each should show its rsID and the trait
+
+-   Color the variants brighter red the more significant they are (use the function provided)
+
+-   The default viewing window should show SLC39A10 and 50kb up- and down-stream in "full" mode
+
+## Exercise 1
+
+```{r}
+# Your code here
+
+```
+
+## Exercise 2
+
+The SNP rs62229686 was the lead variant at a particular locus in a multivariate GWAS of plasma lipid levels. The authors claim it is a missense variant in the AGPAT3 gene with CADD \< 20 (<https://www.nature.com/articles/s41467-023-42532-8>). Try to verify these claims.
+
+(You should notice there's a problem when trying to verify the CADD score through querying with R/SQL. What could you try instead?) You may also find it easier (necessary?) to use two queries for verifying the functional consequence and the gene.
+
+```{r}
+# Your code here
+convert_to_red <- function(x) {
+  # Rescale the vector to [0, 255]
+  scaled_x <- pmax(floor((x - min(x)) / (max(x) - min(x)) * 255),10)
+  return(scaled_x)
+}
+
+```
+
+# Solutions
+
+## Exercise 1
+
+```{r}
+# Use the hg38.ncbiRefSeqSelect gene track to get gene positions
+q <- "
+SELECT *
+FROM hg38.ncbiRefSeqSelect
+WHERE name2 = 'SLC39A10'
+;"
+r <- query(q)
+chr_temp <- r$chrom
+start_temp <- r$txStart - 100000
+end_temp <- r$txEnd + 100000
+
+# Now query the GWAS Catalog
+q <- paste0("
+SELECT chrom, chromStart, chromEnd, trait, pValue, name
+FROM hg38.gwasCatalog
+WHERE chrom = '",chr_temp,"' AND
+chromStart > ",start_temp," AND
+chromEnd < ",end_temp," AND
+pValue < 5E-8
+;")
+r <- query(q)
+
+# Encode the colors
+reds <- convert_to_red(-log10(as.numeric(r$pValue)))
+rgb_vector <- paste0(reds,",",0,",",0)
+
+# Assemble as a bed9 file
+bedfile <- data.frame(
+  chrom=r$chrom,
+  chromStart=r$chromStart,
+  chromEnd=r$chromEnd,
+  name=paste(r$name,gsub(x=r$trait, pattern=" ", replacement="_"),sep=":"),
+  score=0,
+  strand="+",
+  thickStart=r$chromStart,
+  thickEnd=r$chromEnd,
+  itemRgb=rgb_vector
+)
+
+# Write out file
+cat("browser position chr2:195557225-195837700\n",
+    file="~/Desktop/exercise1.bed")
+cat("browser hide all\n",
+            file="~/Desktop/exercise1.bed",
+            append=TRUE)
+cat("browser pack mane\n",
+            file="~/Desktop/exercise1.bed",
+            append=TRUE)
+cat("track name=exercise_1 description=\"SLC39A10 hits\" visibility=2 itemRgb=1\n",
+            file="~/Desktop/exercise1.bed",
+            append = TRUE)
+write.table(x=bedfile,
+            file="~/Desktop/exercise1.bed",
+            row.names=FALSE,
+            col.names=FALSE,
+            quote=FALSE,
+            sep="\t",
+            append=TRUE)
+```
+
+## Exercise 2
+
+We can pretty easily verify it being a missense variant in AGPAT3.
+
+```{r}
+# Get the position and functional consequence
+q <- "
+SELECT *
+FROM hg38.snp151
+WHERE name = 'rs62229686'
+;"
+
+r <- query(q)
+r
+r$func
+
+chr_temp <- r$chrom
+start_temp <- r$chromStart
+end_temp <- r$chromEnd
+
+# Get the gene
+q <- paste0("
+SELECT *
+FROM hg38.ncbiRefSeq
+WHERE chrom = '",chr_temp,"' AND
+txStart < ",start_temp," AND
+txEnd > ",end_temp,"
+;"
+)
+r <- query(q)
+table(r$name2)
+
+```
+
+For the CADD part, you can install bigWigToWig and run then it like this. Note that the CADD scores are in 4 separate files, one for each possible allele (A, C, G, T).
+
+```{r}
+# You may need to give yourself permission to run the program
+# Open your terminal and run this command:
+# chmod -v a+x ~/Downloads/bigWigToWig
+
+# This create a bigWigToWig command for us to run
+for (allele in c("a","g","t","c")) {
+
+  command_temp <- paste0(
+  "~/Downloads/bigWigToWig ",
+  "-chrom=",chr_temp," ",
+  "-start=",start_temp," ",
+  "-end=",end_temp," ",
+  "http://hgdownload.soe.ucsc.edu/gbdb/hg38/cadd1.7/",allele,".bw stdout"
+  )
+
+  # This causes R to run the command
+  system(command_temp)
+
+}
+```

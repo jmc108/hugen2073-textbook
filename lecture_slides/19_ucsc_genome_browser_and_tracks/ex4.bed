@@ -1,0 +1,6 @@
+track type=bedGraph name=Example2 description="HUGEN 2073 2" color=255,0,0 altColor=0,0,255 visibility=3 graphType=points
+chr22 1010 1011 10.1
+chr22 1011 1025 3
+chr22 1025 1030 -2
+chr22 1030 1033 -6
+chr22 1033 1040 -3

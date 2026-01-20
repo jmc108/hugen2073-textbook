@@ -20,6 +20,14 @@ Quiz:
 - You can rephrase my questions for clarity/brevity; don't give away the answer in the question itself.
 
 Questions:
+- What is the most important parameter for a histogram? (Answer: binwidth.)
+- When using geom_histogram(), what default should you probably always change? (Answer: use position="dodge".)
+- What are *two* reasons stacked histograms are bad? (Answer: it's hard to compare the heights of stacked bars, and it's unclear to the viewer whether the bars are stacked vs. one behind the other.)
+- Explain what a cumulative distribution function means. How does it relate to a histogram?
+- True or false: Q-Q plots are just for the normal distribution?
+- True or false: Q-Q plots are just for the uniform distribution?
+- Explain the purpose of a Q-Q plot in your own words (Answer: it shows how closely your data follow a particular distribution)
+- If you want to compare the distribution of heterozygosity for 20 different populations, what would be an appropriate figure type? (Answers: student can say jittered strip chart, side by side boxplots, ridgeline plot, violin, beeswarm, sina, etc.)
 
 Avoid:
 - Being long-winded, unless the student asks for that.
