@@ -77,7 +77,7 @@ data1 <- read.csv(url)
 # The point is not to let a specific hypothesis blind you to important patterns
 data1 %>% 
   ggplot() +
-  geom_point(aes(x=v3, y=v4))
+  geom_point(aes(x=v1, y=v2), size=0.1)
 
 ### 2
 # Make the same scatterplot, but drop almost all the terrible parameters and redundancies
