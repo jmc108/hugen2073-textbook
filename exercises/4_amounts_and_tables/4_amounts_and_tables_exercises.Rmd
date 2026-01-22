@@ -109,18 +109,17 @@ d_summary2 %>% ggplot() +
             vjust=-0.3)
 ```
 
-## Barplot 5
+## Barplots 5-6
 
 Now let's use data from ClinVar summarizing BRCA1/BRCA2 mutations.
 
-The data are in `cv.csv`, which you should download from the class book/website and read in. Apply `head` to see the variables. We also pre-process a little.
+The data are in `cv.csv`, which you should download from the class book/website and read in. Apply `head` to see the variables. We will also pre-process a little.
 
 ```{r}
 cv <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/4_amounts_and_tables/cv.csv")
 head(cv)
 ```
 
-## Barplot 6
 
 Before proceeding, copy and paste this code into the top of the next chunk to process the data a little more:
 

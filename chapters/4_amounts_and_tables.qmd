@@ -67,44 +67,58 @@ format:
 ### Expand to see the answers
 
 ```{webr}
+### Packages
 library(tidyverse)
 library(gtsummary)
 library(janitor)
 library(tibble)
 
+
+### Barplot 1
+# Read in data
 d <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/4_amounts_and_tables/d.csv")
 head(d)
 
-d_summary <- d %>% group_by(superpop_name) %>% summarize(sampsize=n())
+# Make summary tables
+d_summary <- d %>%
+  group_by(superpop_name) %>%
+  summarize(sampsize=n())
 d_summary
 
-d_summary2 <- d %>% group_by(pop) %>% summarize(sampsize=n())
+d_summary2 <- d %>%
+  group_by(pop) %>%
+  summarize(sampsize=n())
 d_summary2
 
-# Barplot 1
+# Make barplot 1
 d_summary %>% ggplot() + 
-  geom_col(aes(x=superpop_name, y=sampsize))
+  geom_col(aes(x=superpop_name, y=sampsize)) +
+  ggtitle("Barplot 1")
 
-# Barplot 2
+### Barplot 2
 d_summary %>% ggplot() + 
-  geom_col(aes(y=fct_reorder(superpop_name, sampsize), x=sampsize))
+  geom_col(aes(y=fct_reorder(superpop_name, sampsize), x=sampsize)) +
+  ggtitle("Barplot 2")
 
-# Barplot 3
+### Barplot 3
 d_summary2 %>% ggplot() + 
-  geom_col(aes(x=fct_reorder(pop, sampsize), y=sampsize))
+  geom_col(aes(x=fct_reorder(pop, sampsize), y=sampsize)) +
+  ggtitle("Barplot 3")
 
-# Barplot 4
+### Barplot 4
 d_summary2 %>% ggplot() + 
   geom_col(aes(x=fct_reorder(pop, sampsize), y=sampsize)) +
   geom_text(aes(x = fct_reorder(pop, sampsize),
                 y = sampsize,
                 label = sampsize),
-            vjust=-0.3)
+            vjust=-0.3) +
+  ggplot("Barplot 4")
 
-# Barplot 5
+### Barplots 5-6
 cv <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/4_amounts_and_tables/cv.csv")
 head(cv)
 
+# Helper code for reordering factor
 clinsig_levels <- c(
   "Benign",
   "Likely benign",
@@ -112,7 +126,6 @@ clinsig_levels <- c(
   "Likely pathogenic",
   "Pathogenic"
 )
-
 cv <- cv %>%
   mutate(
     clinsig = factor(
@@ -122,27 +135,31 @@ cv <- cv %>%
     )
   )
 
+# Make barplot 5
 cv %>% 
   ggplot() +
   geom_bar(aes(x=Type, fill=clinsig), position="dodge") +
   facet_wrap(~GeneSymbol) +
-  scale_fill_brewer(palette="Blues")
+  scale_fill_brewer(palette="Blues") +
+  ggtitle("Barplot 5")
 
-
+# Make barplot 6
 cv %>% 
   ggplot() +
   geom_bar(aes(x=clinsig, fill=Type), position="dodge") +
   facet_wrap(~GeneSymbol) +
-  scale_fill_brewer(palette="Accent")
+  scale_fill_brewer(palette="Accent") +
+  ggtitle("Barplot 6")
 
-# Barplot 7
+### Barplot 7
 cv %>% 
   ggplot() +
   geom_bar(aes(x=Type, fill=clinsig), position="fill", stat="count") +
   scale_fill_brewer(palette="Reds")
-  facet_wrap(~GeneSymbol) 
+  facet_wrap(~GeneSymbol) +
+  ggtitle("Barplot 7")
   
-# Barplot 8
+### Barplot 8
   maf_tbl <- tribble(
   ~snp,        ~maf,
   "rs429358",  0.471,
@@ -163,19 +180,22 @@ maf_tbl
 
 maf_tbl %>% 
   ggplot() +
-  geom_col(aes(x=snp, y=maf))
+  geom_col(aes(x=snp, y=maf)) +
+  ggtitle("Barplot 8")
 
-# Barplot 9
+### Barplot 9
 maf_tbl %>% 
   ggplot() +
-  geom_col(aes(y = reorder(snp, -maf), x=maf))
+  geom_col(aes(y = reorder(snp, -maf), x=maf)) +
+  ggtitle("Barplot 9")
 
-# Barplot 10
+### Barplot 10
 maf_tbl %>% 
   ggplot() +
-  geom_point(aes(y = reorder(snp, -maf), x=maf))
+  geom_point(aes(y = reorder(snp, -maf), x=maf)) +
+  ggtitle("Barplot 10")
 
-# Barplot 11
+### Barplot 11
 gwas_data <- tribble(
   ~snp,        ~maf,  ~beta,   ~pval,
   "rs101",     0.48,  0.012,   2e-20,
@@ -199,7 +219,8 @@ gwas_data
 
 gwas_data %>%
   ggplot() +
-  geom_point(aes(x=maf, y=abs(beta), size=-log10(pval)))
+  geom_point(aes(x=maf, y=abs(beta), size=-log10(pval)))+
+  ggtitle("Barplot 11")
 
 
 
