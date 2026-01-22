@@ -37,29 +37,9 @@ d_summary2
 
 
 ```{r}
-meta_url <- "https://raw.githubusercontent.com/sheffield-bioinformatics-core/wrangling-genomics/gh-pages/files/1000_genomes_meta.tsv"
-d <- readr::read_tsv(meta_url, show_col_types = FALSE) |>
-  janitor::clean_names()
-
-# Keep just what we need (names in this file are stable, but we’ll be explicit)
-d <- readr::read_tsv(meta_url, show_col_types = FALSE) |>
-  janitor::clean_names() |>
-  transmute(
-    sample = sample_name,
-    sex = factor(sex),
-    pop = population_code,
-    pop_name = population_name,
-    superpop = superpopulation_code,        # <-- FIX
-    superpop_name = superpopulation_name
-  )
-
-head(d)
-
-d_summary <- d %>% group_by(superpop_name) %>% summarize(sampsize=n())
-d_summary
-
-d_summary2 <- d %>% group_by(pop) %>% summarize(sampsize=n())
-d_summary2
+# Read in d here
+# Copy and paste code to make d_summary and d_summary2
+# Run head(d), and print the two summary tables
 ```
 
 # Exercises
@@ -69,8 +49,7 @@ d_summary2
 First, make a basic barplot showing the sample sizes (`sampsize`) for each population group in `d_summary`. Put `sampsize` on the y-axis for now. (You might try `geom_bar` first, but why doesn't that work? What geom do you need?)
 
 ```{r}
-d_summary %>% ggplot() + 
-  geom_col(aes(x=superpop_name, y=sampsize))
+# Your code here
 ```
 
 ## Barplot 2
@@ -84,8 +63,7 @@ There are (at least) two obvious improvement to make to this barplot.
 There is a simple fix for the first issue (which doesn't involve tilting the population names or changing the font). Implement it below. Also re-order the columns from largest to smallest. Use the `fct_reorder` function to help you. You need to give it two arguments. Check `?fct_reoder`, scroll down to the Examples section, and run the first example to see how it works.
 
 ```{r}
-d_summary %>% ggplot() + 
-  geom_col(aes(y=fct_reorder(superpop_name, sampsize), x=sampsize))
+# Your code here
 ```
 
 ## Barplot 3
@@ -93,8 +71,7 @@ d_summary %>% ggplot() +
 Now make a sorted bar graph for `d_summary2`, with vertical bars.
 
 ```{r}
-d_summary2 %>% ggplot() + 
-  geom_col(aes(x=fct_reorder(pop, sampsize), y=sampsize))
+# Your code here
 ```
 
 ## Barplot 4
@@ -102,12 +79,7 @@ d_summary2 %>% ggplot() +
 It's quite difficult to tell the difference in height between adjacent bars. Use `geom_text` to label each bar with its height. What aesthetics do you need to add for that layer? (Hint: check `?geom_text` and scroll down to the Aesthetics section, where the required aesthetics are in bold.)
 
 ```{r}
-d_summary2 %>% ggplot() + 
-  geom_col(aes(x=fct_reorder(pop, sampsize), y=sampsize)) +
-  geom_text(aes(x = fct_reorder(pop, sampsize),
-                y = sampsize,
-                label = sampsize),
-            vjust=-0.3)
+# Your code here
 ```
 
 ## Barplots 5-6
@@ -117,8 +89,7 @@ Now let's use data from ClinVar summarizing BRCA1/BRCA2 mutations.
 The data are in `cv.csv`, which you should download from the class book/website and read in. Apply `head` to see the variables. We will also pre-process a little.
 
 ```{r}
-cv <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/4_amounts_and_tables/cv.csv")
-head(cv)
+# Read in cv and apply head to it
 ```
 
 
@@ -164,35 +135,9 @@ Hints/guidelines
 - Using commands from the last exercise, assign an appropriate color palette to each. Think about what comparisons each plot emphasizes, and what kind of color palette is appropriate for each.
 
 ```{r}
-clinsig_levels <- c(
-  "Benign",
-  "Likely benign",
-  "Uncertain significance",
-  "Likely pathogenic",
-  "Pathogenic"
-)
+# Copy and paste the helper code from above
 
-cv <- cv %>%
-  mutate(
-    clinsig = factor(
-      clinsig,
-      levels = clinsig_levels,
-      ordered = TRUE
-    )
-  )
-
-cv %>% 
-  ggplot() +
-  geom_bar(aes(x=Type, fill=clinsig), position="dodge") +
-  facet_wrap(~GeneSymbol) +
-  scale_fill_brewer(palette="Blues")
-
-
-cv %>% 
-  ggplot() +
-  geom_bar(aes(x=clinsig, fill=Type), position="dodge") +
-  facet_wrap(~GeneSymbol) +
-  scale_fill_brewer(palette="Accent")
+# Your code for the two barplots also goes here
 ```
 
 ## Barplot 7
@@ -204,11 +149,7 @@ Hints:
 - Include `position="fill"` and `stat="count"`
 
 ```{r}
-cv %>% 
-  ggplot() +
-  geom_bar(aes(x=Type, fill=clinsig), position="fill", stat="count") +
-  scale_fill_brewer(palette="Reds")
-  facet_wrap(~GeneSymbol) 
+# Your code here
 ```
 
 ## Barplot 8
@@ -232,16 +173,14 @@ maf_tbl <- tribble(
   "rs34404554",0.463
 )
 
-maf_tbl
+kable(maf_tbl)
 
 ```
 
 Make a barplot of them. What's wrong with the plot?
 
 ```{r}
-maf_tbl %>% 
-  ggplot() +
-  geom_col(aes(x=snp, y=maf))
+# Your code here
 ```
 
 
@@ -250,9 +189,7 @@ maf_tbl %>%
 Note that you can reorder the bars with the `reorder` function, which will need two arguments.
 
 ```{r}
-maf_tbl %>% 
-  ggplot() +
-  geom_col(aes(y = reorder(snp, -maf), x=maf))
+# Your code here
 ```
 
 ## "Barplot" 10 (not actually a barplot)
@@ -260,9 +197,7 @@ maf_tbl %>%
 Now make a new version of the plot that solves the previous problem. (Use a different geom.)
 
 ```{r}
-maf_tbl %>% 
-  ggplot() +
-  geom_point(aes(y = reorder(snp, -maf), x=maf))
+# Your code here
 ```
 
 ## Plot 11 (not a barplot, either)
@@ -289,15 +224,13 @@ gwas_data <- tribble(
   "rs115",     0.23,  0.005,   4e-7
 )
 
-gwas_data
+kable(gwas_data)
 ```
 
 Make a plot that relates allele frequency to effect size (use the absolute value) while also showing statistical significance (be sure to transform the p-values).
 
 ```{r}
-gwas_data %>%
-  ggplot() +
-  geom_point(aes(x=maf, y=abs(beta), size=-log10(pval)))
+# Your code here
 ```
 
 ## 12 `gtsummary`
@@ -305,3 +238,8 @@ gwas_data %>%
 P.S.: Check out the `gtsummary` package for making publication-ready tables with minimal effort.
 
 [https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html](https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html)
+
+```{r}
+# Try gtsummaryt here?
+```
+
