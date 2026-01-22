@@ -1,0 +1,156 @@
+---
+title: "Distributions exercises"
+author: "Jon Chernus"
+output:
+  html_document:
+    code_folding: show
+---
+
+Here are the packages you need. You may need to install scRNAseq from Bioconductor with `BiocManager::install("scRNAseq")`.
+
+# Setup
+
+## Packages
+
+```{r}
+# Install these if needed
+# BiocManager::install("scRNAseq")
+library("tidyverse")
+library("scRNAseq")
+```
+
+## Data
+
+We'll use some (real) scRNAseq data from 20 samples.
+
+```{r}
+# Set up data
+counts <- assay(SegerstolpePancreasData(), "counts")
+d <- as.data.frame(counts[,201])
+for (i in 1:19) {
+  d <- cbind(d,counts[,200+i])
+}
+names(d) <- paste0("sample",1:ncol(d))
+head(d)
+dim(d)
+```
+
+
+# Exercises
+
+## One-variable histograms
+
+First, make a histogram of the raw counts for one of the samples.
+
+```{r}
+d %>% 
+  ggplot() +
+  geom_histogram(aes(x=sample1))
+```
+
+What's wrong with this histogram? Without changing the bins (yet), change the plot or data in a way to make the plot more informative. (Hint: transform the data.)
+
+```{r}
+d %>% 
+  ggplot() +
+  geom_histogram(aes(x=log2(sample1+1)))
+```
+
+One bin still dominates. But what if we want to simply categorize the genes into two bins, "undetected" and "detected"? See if simply telling `geom_histogram` to use 2 bins works.
+
+```{r}
+d %>% 
+  ggplot() +
+  geom_histogram(aes(x=log2(sample1+1)), bins=2)
+```
+
+Did that do what you intended? Is there one "undetected" and one "detected" bin? Time to try a different `geom_histogram` parameter, `breaks`, instead of `bins`. Note that `breaks` needs to specify a vector. Note this will not create equally wide bins.
+
+As an example, `breaks=c(0,1,2,3)` would specify bars covering the following intervals: [0,1), [1,2), and [2,3]. Notice that all but the last interval are "half-open", i.e., include the left but not the right endpoint.
+
+```{r}
+d %>% 
+  ggplot() +
+  geom_histogram(aes(x=log2(sample1+1)),
+                 breaks = c(-0,
+                            1,
+                            max(log2(d$sample1+1))
+                            )
+                 )
+```
+
+Not try using uniform bin widths of 1. Notice that (almost) no matter how you specify the bins, the x-axis seems to extend out past 10, although there are apparently no bins. What is happening there?
+
+```{r}
+d %>%
+  ggplot() +
+  geom_histogram(aes(x=log2(sample1+1)), binwidth=1)
+```
+
+Finally, try plotting the data without the undetected genes.
+
+```{r}
+d %>%
+  filter(sample1 > 0) %>% 
+  ggplot() +
+  geom_histogram(aes(x=log2(sample1+1)))
+```
+
+## Histograms with more than 1 variable
+
+Now let's compare the distributions of several variables. For a moment, imagine you wanted to plot histograms for sample1 and sample2 in the same plot. You would still want to include `geom_histogram()` with expression assigned to the `x` aesthetic. What would you need in order to draw separate distributions for sample1 and sample2?
+
+Take a moment to look at the data and think about what you'd try. Use this chunk as a sandbox for a moment before moving on to the answer. (You might must want to simply do `head(d))`.)
+
+```{r}
+head(d)
+
+```
+
+"The answer" is that it's impossible to do what we want with the data in this shape. Right now, the data are in "wide" format. A consequence is that there is no **single** column identifying what sample each expression belongs to. But that is exactly what we need in order to draw separate histograms in different colors for the different samples!
+
+Here's a toy example of what this means:
+```
+Wide format:
+
+            sample1   sample2   sample3
+(gene 1)    5         10        15
+(gene 2)    0         12        0
+
+
+
+Same data in long format:
+
+expression    gene    sample
+5             1       1
+10            1       2
+15            1       3
+0             2       1
+12            2       2
+0             2       3
+```
+
+The following chunk converts the data into long format with the `pivot_longer` function.
+
+```{r}
+dlong <- d %>% 
+  mutate(gene=row_number()) %>% 
+  pivot_longer(,
+               cols=sample1:sample20,
+               names_to="sample",
+               values_to="expression")
+head(dlong, n=20)
+
+```
+
+Now that you have the `sample` variable, make a single plot showing histograms for 3 samples. Include the `position` argument of `geom_histogram`, trying these 3 values for it: `identity`, `stack`, and `dodge`.
+
+```{r}
+dlong %>% 
+  filter(sample %in% c("sample1", "sample2", "sample3")) %>% 
+  filter(expression > 0) %>% 
+  ggplot() +
+  geom_histogram(
+    aes(x=log2(expression+1), fill=sample), position="dodge")
+```
+
