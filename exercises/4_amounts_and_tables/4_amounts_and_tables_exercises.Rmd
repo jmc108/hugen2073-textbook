@@ -15,6 +15,7 @@ library(tidyverse)
 library(gtsummary)
 library(janitor)
 library(tibble)
+library(knitr)
 ```
 
 ## Data

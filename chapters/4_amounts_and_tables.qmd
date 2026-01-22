@@ -72,23 +72,24 @@ library(tidyverse)
 library(gtsummary)
 library(janitor)
 library(tibble)
+library(knitr)
 
 
 ### Barplot 1
 # Read in data
 d <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/4_amounts_and_tables/d.csv")
-head(d)
+kable(head(d))
 
 # Make summary tables
 d_summary <- d %>%
   group_by(superpop_name) %>%
   summarize(sampsize=n())
-d_summary
+kable(d_summary)
 
 d_summary2 <- d %>%
   group_by(pop) %>%
   summarize(sampsize=n())
-d_summary2
+kable(d_summary2)
 
 # Make barplot 1
 d_summary %>% ggplot() + 
@@ -116,7 +117,7 @@ d_summary2 %>% ggplot() +
 
 ### Barplots 5-6
 cv <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/4_amounts_and_tables/cv.csv")
-head(cv)
+kable(head(cv))
 
 # Helper code for reordering factor
 clinsig_levels <- c(
@@ -176,7 +177,7 @@ cv %>%
   "rs34404554",0.463
 )
 
-maf_tbl
+kable(maf_tbl)
 
 maf_tbl %>% 
   ggplot() +
@@ -189,13 +190,13 @@ maf_tbl %>%
   geom_col(aes(y = reorder(snp, -maf), x=maf)) +
   ggtitle("Barplot 9")
 
-### Barplot 10
+### Plot 10
 maf_tbl %>% 
   ggplot() +
   geom_point(aes(y = reorder(snp, -maf), x=maf)) +
-  ggtitle("Barplot 10")
+  ggtitle("Plot 10")
 
-### Barplot 11
+### Plot 11
 gwas_data <- tribble(
   ~snp,        ~maf,  ~beta,   ~pval,
   "rs101",     0.48,  0.012,   2e-20,
@@ -215,13 +216,13 @@ gwas_data <- tribble(
   "rs115",     0.23,  0.005,   4e-7
 )
 
-gwas_data
+kable(gwas_data)
 
 
 gwas_data %>%
   ggplot() +
   geom_point(aes(x=maf, y=abs(beta), size=-log10(pval)))+
-  ggtitle("Barplot 11")
+  ggtitle("Plot 11")
 
 
 
