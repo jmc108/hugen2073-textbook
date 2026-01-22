@@ -160,7 +160,7 @@ cv %>%
 cv %>% 
   ggplot() +
   geom_bar(aes(x=Type, fill=clinsig), position="fill", stat="count") +
-  scale_fill_brewer(palette="Reds")
+  scale_fill_brewer(palette="Reds") +
   facet_wrap(~GeneSymbol) +
   ggtitle("Barplot 7")
 ```
