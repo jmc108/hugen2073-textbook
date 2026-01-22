@@ -68,13 +68,14 @@ format:
 
 ```{webr}
 ### Packages
-library(tidyverse)
 library(gtsummary)
 library(janitor)
 library(tibble)
 library(knitr)
+library(tidyverse)
+```
 
-
+```{webr}
 ### Barplot 1
 # Read in data
 d <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/4_amounts_and_tables/d.csv")
@@ -83,12 +84,12 @@ kable(head(d))
 # Make summary tables
 d_summary <- d %>%
   group_by(superpop_name) %>%
-  summarize(sampsize=n())
+  summarize(sampsize=dplyr::n())
 kable(d_summary)
 
 d_summary2 <- d %>%
   group_by(pop) %>%
-  summarize(sampsize=n())
+  summarize(sampsize=dplyr::n())
 kable(d_summary2)
 
 # Make barplot 1
@@ -113,8 +114,11 @@ d_summary2 %>% ggplot() +
                 y = sampsize,
                 label = sampsize),
             vjust=-0.3) +
-  ggplot("Barplot 4")
+  ggtitle("Barplot 4")
+```
 
+
+```{webr}
 ### Barplots 5-6
 cv <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/4_amounts_and_tables/cv.csv")
 kable(head(cv))
@@ -159,7 +163,9 @@ cv %>%
   scale_fill_brewer(palette="Reds")
   facet_wrap(~GeneSymbol) +
   ggtitle("Barplot 7")
+```
   
+```{webr}  
 ### Barplot 8
   maf_tbl <- tribble(
   ~snp,        ~maf,
@@ -183,7 +189,9 @@ maf_tbl %>%
   ggplot() +
   geom_col(aes(x=snp, y=maf)) +
   ggtitle("Barplot 8")
+```
 
+```{webr}
 ### Barplot 9
 maf_tbl %>% 
   ggplot() +
@@ -195,7 +203,9 @@ maf_tbl %>%
   ggplot() +
   geom_point(aes(y = reorder(snp, -maf), x=maf)) +
   ggtitle("Plot 10")
+```
 
+```{webr}
 ### Plot 11
 gwas_data <- tribble(
   ~snp,        ~maf,  ~beta,   ~pval,
