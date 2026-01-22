@@ -15,12 +15,17 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Force authenticated origin (avoid anonymous https / flaky 500s)
+        run: |
+          git remote set-url origin https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
+          git ls-remote origin >/dev/null
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-
-      # If your book rendering needs Python or R, add those here later.
-      # For a plain book (no code execution), you can omit.
 
       - name: Render
         uses: quarto-dev/quarto-actions/render@v2
@@ -30,5 +35,4 @@ jobs:
         with:
           target: gh-pages
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+          GITHUB_TOKEN: ${{ github.token }}
