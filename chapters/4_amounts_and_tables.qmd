@@ -217,6 +217,7 @@ gwas_data <- tribble(
 
 gwas_data
 
+
 gwas_data %>%
   ggplot() +
   geom_point(aes(x=maf, y=abs(beta), size=-log10(pval)))+
