@@ -1,0 +1,3116 @@
+,sample,sex,pop,pop_name,superpop,superpop_name
+1,HG00098,male,GBR,British,EUR,European Ancestry
+2,HG00101,male,GBR,British,EUR,European Ancestry
+3,HG00106,female,GBR,British,EUR,European Ancestry
+4,HG00113,male,GBR,British,EUR,European Ancestry
+5,HG00118,female,GBR,British,EUR,European Ancestry
+6,HG00120,female,GBR,British,EUR,European Ancestry
+7,HG00125,female,GBR,British,EUR,European Ancestry
+8,HG00132,female,GBR,British,EUR,European Ancestry
+9,HG00137,female,GBR,British,EUR,European Ancestry
+10,HG00144,female,GBR,British,EUR,European Ancestry
+11,HG00149,male,GBR,British,EUR,European Ancestry
+12,HG00151,male,GBR,British,EUR,European Ancestry
+13,HG00156,male,GBR,British,EUR,European Ancestry
+14,HG00182,male,FIN,Finnish,EUR,European Ancestry
+15,HG00187,male,FIN,Finnish,EUR,European Ancestry
+16,HG00233,female,GBR,British,EUR,European Ancestry
+17,HG00238,female,GBR,British,EUR,European Ancestry
+18,HG00240,female,GBR,British,EUR,European Ancestry
+19,HG00245,female,GBR,British,EUR,European Ancestry
+20,HG00423,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+21,HG00428,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+22,HG00442,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+23,HG00447,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+24,HG00459,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+25,HG00473,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+26,HG00478,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+27,HG00480,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+28,HG00500,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+29,HG00512,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+30,HG00524,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+31,HG00531,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+32,HG00308,male,FIN,Finnish,EUR,European Ancestry
+33,HG00310,male,FIN,Finnish,EUR,European Ancestry
+34,HG00315,female,FIN,Finnish,EUR,European Ancestry
+35,HG00327,female,FIN,Finnish,EUR,European Ancestry
+36,HG00334,female,FIN,Finnish,EUR,European Ancestry
+37,HG00339,female,FIN,Finnish,EUR,European Ancestry
+38,HG00341,male,FIN,Finnish,EUR,European Ancestry
+39,HG00346,female,FIN,Finnish,EUR,European Ancestry
+40,HG00353,female,FIN,Finnish,EUR,European Ancestry
+41,HG00358,male,FIN,Finnish,EUR,European Ancestry
+42,HG00360,male,FIN,Finnish,Finnish,EUR,European Ancestry,West Eurasia (SGDP)
+43,HG00365,female,FIN,Finnish,EUR,European Ancestry
+44,HG00372,male,FIN,Finnish,EUR,European Ancestry
+45,HG00377,female,FIN,Finnish,EUR,European Ancestry
+46,HG00384,female,FIN,Finnish,EUR,European Ancestry
+47,HG00404,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+48,HG00409,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+49,HG00694,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+50,HG00699,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+51,HG00702,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+52,HG00707,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+53,HG00733,female,PUR,Puerto Rican,AMR,American Ancestry
+54,HG00738,male,PUR,Puerto Rican,AMR,American Ancestry
+55,HG00740,female,PUR,Puerto Rican,AMR,American Ancestry
+56,HG00536,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+57,HG00543,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+58,HG00555,female,PUR,Puerto Rican,AMR,American Ancestry
+59,HG00567,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+60,HG00579,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+61,HG00581,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+62,HG00593,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+63,HG00598,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+64,HG00613,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+65,HG00620,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+66,HG00625,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+67,HG00148,male,GBR,British,EUR,European Ancestry
+68,HG00632,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+69,HG00150,female,GBR,British,EUR,European Ancestry
+70,HG00637,male,PUR,Puerto Rican,AMR,American Ancestry
+71,HG00155,male,GBR,British,EUR,European Ancestry
+72,HG00651,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+73,HG00174,female,FIN,Finnish,Finnish,EUR,European Ancestry,West Eurasia (SGDP)
+74,HG00656,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+75,HG00179,female,FIN,Finnish,EUR,European Ancestry
+76,HG00663,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+77,HG00181,male,FIN,Finnish,EUR,European Ancestry
+78,HG00675,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+79,HG00186,male,FIN,Finnish,EUR,European Ancestry
+80,HG01109,male,PUR,Puerto Rican,AMR,American Ancestry
+81,HG00232,female,GBR,British,EUR,European Ancestry
+82,HG01111,female,PUR,Puerto Rican,AMR,American Ancestry
+83,HG00237,female,GBR,British,EUR,European Ancestry
+84,HG00244,male,GBR,British,EUR,European Ancestry
+85,HG01130,male,CLM,Colombian,AMR,American Ancestry
+86,HG00249,female,GBR,British,EUR,European Ancestry
+87,HG01135,male,CLM,Colombian,AMR,American Ancestry
+88,HG00251,male,GBR,British,EUR,European Ancestry
+89,HG01142,male,CLM,Colombian,AMR,American Ancestry
+90,HG00256,male,GBR,British,EUR,European Ancestry
+91,HG01161,male,PUR,Puerto Rican,AMR,American Ancestry
+92,HG00263,female,GBR,British,EUR,European Ancestry
+93,HG00252,male,GBR,British,EUR,European Ancestry
+94,HG00268,female,FIN,Finnish,EUR,European Ancestry
+95,HG00257,female,GBR,British,EUR,European Ancestry
+96,HG00270,female,FIN,Finnish,EUR,European Ancestry
+97,HG00264,male,GBR,British,EUR,European Ancestry
+98,HG00275,female,FIN,Finnish,EUR,European Ancestry
+99,HG00269,female,FIN,Finnish,EUR,European Ancestry
+100,HG00282,female,FIN,Finnish,EUR,European Ancestry
+101,HG00271,male,FIN,Finnish,EUR,European Ancestry
+102,HG00276,female,FIN,Finnish,EUR,European Ancestry
+103,HG00319,female,FIN,Finnish,EUR,European Ancestry
+104,HG00288,female,FIN,Finnish,EUR,European Ancestry
+105,HG00321,male,FIN,Finnish,EUR,European Ancestry
+106,HG00290,male,FIN,Finnish,EUR,European Ancestry
+107,HG00326,female,FIN,Finnish,EUR,European Ancestry
+108,HG00978,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+109,HG00338,male,FIN,Finnish,EUR,European Ancestry
+110,HG01046,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+111,HG00345,male,FIN,Finnish,EUR,European Ancestry
+112,HG01053,female,PUR,Puerto Rican,AMR,American Ancestry
+113,HG00357,female,FIN,Finnish,EUR,European Ancestry
+114,HG01058,female,PUR,Puerto Rican,AMR,American Ancestry
+115,HG00364,female,FIN,Finnish,EUR,European Ancestry
+116,HG01060,male,PUR,Puerto Rican,AMR,American Ancestry
+117,HG00369,male,FIN,Finnish,EUR,European Ancestry
+118,HG01072,male,PUR,Puerto Rican,AMR,American Ancestry
+119,HG00371,male,FIN,Finnish,EUR,European Ancestry
+120,HG01077,female,PUR,Puerto Rican,AMR,American Ancestry
+121,HG00376,female,FIN,Finnish,EUR,European Ancestry
+122,HG01084,female,PUR,Puerto Rican,AMR,American Ancestry
+123,HG00383,female,FIN,Finnish,EUR,European Ancestry
+124,HG01089,female,PUR,Puerto Rican,AMR,American Ancestry
+125,HG00403,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+126,HG01096,male,PUR,Puerto Rican,AMR,American Ancestry
+127,HG00408,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+128,HG01104,male,PUR,Puerto Rican,AMR,American Ancestry
+129,HG00097,female,GBR,British,EUR,European Ancestry
+130,HG01173,male,PUR,Puerto Rican,AMR,American Ancestry
+131,HG00100,female,GBR,British,EUR,European Ancestry
+132,HG01178,male,PUR,Puerto Rican,AMR,American Ancestry
+133,HG00105,male,GBR,British,EUR,European Ancestry
+134,HG01192,male,PUR,Puerto Rican,AMR,American Ancestry
+135,HG00112,male,GBR,British,EUR,European Ancestry
+136,HG01197,male,PUR,Puerto Rican,AMR,American Ancestry
+137,HG00117,male,GBR,British,EUR,European Ancestry
+138,HG01200,male,PUR,Puerto Rican,AMR,American Ancestry
+139,HG00124,female,GBR,British,EUR,European Ancestry
+140,HG01205,female,PUR,Puerto Rican,AMR,American Ancestry
+141,HG00129,male,GBR,British,EUR,European Ancestry
+142,HG01243,male,PUR,Puerto Rican,AMR,American Ancestry
+143,HG00131,male,GBR,British,EUR,European Ancestry
+144,HG01248,female,PUR,Puerto Rican,AMR,American Ancestry
+145,HG00136,male,GBR,British,EUR,European Ancestry
+146,HG01250,male,CLM,Colombian,AMR,American Ancestry
+147,HG00143,male,GBR,British,EUR,European Ancestry
+148,HG01255,male,CLM,Colombian,AMR,American Ancestry
+149,HG00410,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+150,HG00422,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+151,HG01488,male,CLM,Colombian,AMR,American Ancestry
+152,HG00427,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+153,HG01490,female,CLM,Colombian,AMR,American Ancestry
+154,HG00446,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+155,HG01495,female,CLM,Colombian,AMR,American Ancestry
+156,HG00453,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+157,HG01503,male,IBS,Iberian,Spanish,EUR,European Ancestry,West Eurasia (SGDP)
+158,HG00458,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+159,HG00465,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+160,HG01438,female,CLM,Colombian,AMR,American Ancestry
+161,HG00472,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+162,HG01440,male,CLM,Colombian,AMR,American Ancestry
+163,HG00477,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+164,HG00530,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+165,HG01457,male,CLM,Colombian,AMR,American Ancestry
+166,HG01464,male,CLM,Colombian,AMR,American Ancestry
+167,HG01596,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+168,HG01604,female,IBS,Iberian,EUR,European Ancestry
+169,HG00535,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+170,HG01609,male,IBS,Iberian,EUR,European Ancestry
+171,HG00542,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+172,HG01611,male,IBS,Iberian,EUR,European Ancestry
+173,HG00554,female,PUR,Puerto Rican,AMR,American Ancestry
+174,HG01274,male,CLM,Colombian,AMR,American Ancestry
+175,HG00559,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+176,HG01279,female,CLM,Colombian,AMR,American Ancestry
+177,HG00561,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+178,HG01281,female,CLM,Colombian,AMR,American Ancestry
+179,HG00566,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+180,HG01286,male,PUR,Puerto Rican,AMR,American Ancestry
+181,HG00578,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+182,HG00580,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+183,HG01325,male,PUR,Puerto Rican,AMR,American Ancestry
+184,HG00585,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+185,HG01344,male,CLM,Colombian,AMR,American Ancestry
+186,HG00592,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+187,HG01349,female,CLM,Colombian,AMR,American Ancestry
+188,HG00597,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+189,HG01351,female,CLM,Colombian,AMR,American Ancestry
+190,HG01356,male,CLM,Colombian,AMR,American Ancestry
+191,HG00693,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+192,HG01363,female,CLM,Colombian,AMR,American Ancestry
+193,HG00698,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+194,HG01375,female,CLM,Colombian,AMR,American Ancestry
+195,HG00701,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+196,HG01565,male,PEL,Peruvian,AMR,American Ancestry
+197,HG00706,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+198,HG01572,female,PEL,Peruvian,AMR,American Ancestry
+199,HG00718,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+200,HG01577,male,PEL,Peruvian,AMR,American Ancestry
+201,HG00732,female,PUR,Puerto Rican,AMR,American Ancestry
+202,HG01589,male,PJL,Punjabi,SAS,South Asian Ancestry
+203,HG00737,female,PUR,Puerto Rican,AMR,American Ancestry
+204,HG01508,male,IBS,Iberian,EUR,European Ancestry
+205,HG01172,male,PUR,Puerto Rican,AMR,American Ancestry
+206,HG01510,female,IBS,Iberian,EUR,European Ancestry
+207,HG01177,female,PUR,Puerto Rican,AMR,American Ancestry
+208,HG01515,male,IBS,Iberian,EUR,European Ancestry
+209,HG01184,female,PUR,Puerto Rican,AMR,American Ancestry
+210,HG01522,female,IBS,Iberian,EUR,European Ancestry
+211,HG01189,male,PUR,Puerto Rican,AMR,American Ancestry
+212,HG01527,male,IBS,Iberian,EUR,European Ancestry
+213,HG01191,female,PUR,Puerto Rican,AMR,American Ancestry
+214,HG01204,male,PUR,Puerto Rican,AMR,American Ancestry
+215,HG01402,male,PUR,Puerto Rican,AMR,American Ancestry
+216,HG01242,female,PUR,Puerto Rican,AMR,American Ancestry
+217,HG01414,female,PUR,Puerto Rican,AMR,American Ancestry
+218,HG01247,male,PUR,Puerto Rican,AMR,American Ancestry
+219,HG01919,female,PEL,Peruvian,AMR,American Ancestry
+220,HG01254,female,CLM,Colombian,AMR,American Ancestry
+221,HG01921,female,PEL,Peruvian,AMR,American Ancestry
+222,HG01259,male,CLM,Colombian,AMR,American Ancestry
+223,HG01926,male,PEL,Peruvian,AMR,American Ancestry
+224,HG01261,male,CLM,Colombian,AMR,American Ancestry
+225,HG01933,female,PEL,Peruvian,AMR,American Ancestry
+226,HG00612,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+227,HG01938,male,PEL,Peruvian,AMR,American Ancestry
+228,HG01940,female,PEL,Peruvian,AMR,American Ancestry
+229,HG00629,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+230,HG01616,female,IBS,Iberian,EUR,European Ancestry
+231,HG00631,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+232,HG01623,female,IBS,Iberian,EUR,European Ancestry
+233,HG00636,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+234,HG01628,female,IBS,Iberian,EUR,European Ancestry
+235,HG00650,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+236,HG01630,male,IBS,Iberian,EUR,European Ancestry
+237,HG00655,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+238,HG01673,female,IBS,Iberian,EUR,European Ancestry
+239,HG00662,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+240,HG01863,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+241,HG00674,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+242,HG01868,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+243,HG01103,female,PUR,Puerto Rican,AMR,American Ancestry
+244,HG01870,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+245,HG01108,female,PUR,Puerto Rican,AMR,American Ancestry
+246,HG01882,male,ACB,African Caribbean,AFR,African Ancestry
+247,HG01110,male,PUR,Puerto Rican,AMR,American Ancestry
+248,HG01767,male,IBS,Iberian,EUR,European Ancestry
+249,HG01122,female,CLM,Colombian,AMR,American Ancestry
+250,HG01774,male,IBS,Iberian,EUR,European Ancestry
+251,HG01134,female,CLM,Colombian,AMR,American Ancestry
+252,HG01779,female,IBS,Iberian,EUR,European Ancestry
+253,HG01139,male,CLM,Colombian,AMR,American Ancestry
+254,HG01781,male,IBS,Iberian,EUR,European Ancestry
+255,HG01141,female,CLM,Colombian,AMR,American Ancestry
+256,HG01786,female,IBS,Iberian,EUR,European Ancestry
+257,HG01064,female,PUR,Puerto Rican,AMR,American Ancestry
+258,HG01678,male,IBS,Iberian,EUR,European Ancestry
+259,HG01069,male,PUR,Puerto Rican,AMR,American Ancestry
+260,HG01680,male,IBS,Iberian,EUR,European Ancestry
+261,HG01071,female,PUR,Puerto Rican,AMR,American Ancestry
+262,HG01685,female,IBS,Iberian,EUR,European Ancestry
+263,HG01083,female,PUR,Puerto Rican,AMR,American Ancestry
+264,HG01697,female,IBS,Iberian,EUR,European Ancestry
+265,HG01088,male,PUR,Puerto Rican,AMR,American Ancestry
+266,HG01700,male,IBS,Iberian,EUR,European Ancestry
+267,HG01705,male,IBS,Iberian,EUR,European Ancestry
+268,HG01095,female,PUR,Puerto Rican,AMR,American Ancestry
+269,HG01748,male,IBS,Iberian,EUR,European Ancestry
+270,HG01273,male,CLM,Colombian,AMR,American Ancestry
+271,HG01755,female,IBS,Iberian,EUR,European Ancestry
+272,HG01278,female,CLM,Colombian,AMR,American Ancestry
+273,HG01762,female,IBS,Iberian,EUR,European Ancestry
+274,HG01280,male,CLM,Colombian,AMR,American Ancestry
+275,HG01887,male,ACB,African Caribbean,AFR,African Ancestry
+276,HG01305,male,PUR,Puerto Rican,AMR,American Ancestry
+277,HG01894,female,ACB,African Caribbean,AFR,African Ancestry
+278,HG01312,female,PUR,Puerto Rican,AMR,American Ancestry
+279,HG01914,male,ACB,African Caribbean,AFR,African Ancestry
+280,HG01798,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+281,HG01343,female,CLM,Colombian,AMR,American Ancestry
+282,HG01801,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+283,HG01348,female,CLM,Colombian,AMR,American Ancestry
+284,HG01806,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+285,HG01350,male,CLM,Colombian,AMR,American Ancestry
+286,HG01813,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+287,HG01355,female,CLM,Colombian,AMR,American Ancestry
+288,HG01844,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+289,HG01362,male,CLM,Colombian,AMR,American Ancestry
+290,HG01849,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+291,HG01367,female,CLM,Colombian,AMR,American Ancestry
+292,HG01851,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+293,HG00864,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+294,HG02018,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+295,HG01052,female,PUR,Puerto Rican,AMR,American Ancestry
+296,HG02020,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+297,HG01538,female,IBS,Iberian,EUR,European Ancestry
+298,HG02025,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+299,HG01552,male,CLM,Colombian,AMR,American Ancestry
+300,HG02032,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+301,HG01571,male,PEL,Peruvian,AMR,American Ancestry
+302,HG02102,female,PEL,Peruvian,AMR,American Ancestry
+303,HG01583,male,PJL,Punjabi,SAS,South Asian Ancestry
+304,HG02107,male,ACB,African Caribbean,AFR,African Ancestry
+305,HG02121,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+306,HG01374,male,CLM,Colombian,AMR,American Ancestry
+307,HG02126,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+308,HG01379,female,CLM,Colombian,AMR,American Ancestry
+309,HG02133,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+310,HG01393,female,PUR,Puerto Rican,AMR,American Ancestry
+311,HG01969,female,PEL,Peruvian,AMR,American Ancestry
+312,HG01398,male,PUR,Puerto Rican,AMR,American Ancestry
+313,HG01971,female,PEL,Peruvian,AMR,American Ancestry
+314,HG01413,male,PUR,Puerto Rican,AMR,American Ancestry
+315,HG01976,female,PEL,Peruvian,AMR,American Ancestry
+316,HG01432,female,CLM,Colombian,AMR,American Ancestry
+317,HG01983,female,PEL,Peruvian,AMR,American Ancestry
+318,HG01437,male,CLM,Colombian,AMR,American Ancestry
+319,HG01988,male,ACB,African Caribbean,AFR,African Ancestry
+320,HG01444,female,CLM,Colombian,AMR,American Ancestry
+321,HG02049,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+322,HG01456,female,CLM,Colombian,AMR,American Ancestry
+323,HG02051,male,ACB,African Caribbean,AFR,African Ancestry
+324,HG01463,female,CLM,Colombian,AMR,American Ancestry
+325,HG02056,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+326,HG01468,female,CLM,Colombian,AMR,American Ancestry
+327,HG02068,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+328,HG02070,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+329,HG02138,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+330,HG01494,male,CLM,Colombian,AMR,American Ancestry
+331,HG02140,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+332,HG01499,male,CLM,Colombian,AMR,American Ancestry
+333,HG02145,male,ACB,African Caribbean,AFR,African Ancestry
+334,HG01502,male,IBS,Iberian,EUR,European Ancestry
+335,HG02152,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+336,HG01595,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+337,HG02164,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+338,HG01603,male,IBS,Iberian,EUR,European Ancestry
+339,HG01608,male,IBS,Iberian,EUR,European Ancestry
+340,HG01610,male,IBS,Iberian,EUR,European Ancestry
+341,HG02188,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+342,HG01507,female,IBS,Iberian,EUR,European Ancestry
+343,HG02190,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+344,HG01514,female,IBS,Iberian,EUR,European Ancestry
+345,HG02215,female,GBR,British,EUR,European Ancestry
+346,HG01519,female,IBS,Iberian,EUR,European Ancestry
+347,HG01990,male,ACB,African Caribbean,AFR,African Ancestry
+348,HG01521,male,IBS,Iberian,EUR,European Ancestry
+349,HG01526,male,IBS,Iberian,EUR,European Ancestry
+350,HG02006,female,PEL,Peruvian,AMR,American Ancestry
+351,HG01704,female,IBS,Iberian,EUR,European Ancestry
+352,HG02013,male,ACB,African Caribbean,AFR,African Ancestry
+353,HG01709,male,IBS,Iberian,EUR,European Ancestry
+354,HG02075,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+355,HG01711,female,IBS,Iberian,EUR,European Ancestry
+356,HG02082,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+357,HG01747,male,IBS,Iberian,EUR,European Ancestry
+358,HG02087,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+359,HG01761,male,IBS,Iberian,EUR,European Ancestry
+360,HG01945,female,PEL,Peruvian,AMR,American Ancestry
+361,HG01615,male,IBS,Iberian,EUR,European Ancestry
+362,HG01952,male,PEL,Peruvian,AMR,American Ancestry
+363,HG01622,female,IBS,Iberian,EUR,European Ancestry
+364,HG02253,male,PEL,Peruvian,AMR,American Ancestry
+365,HG01627,male,IBS,Iberian,EUR,European Ancestry
+366,HG02258,male,ACB,African Caribbean,AFR,African Ancestry
+367,HG01672,male,IBS,Iberian,EUR,European Ancestry
+368,HG02260,female,PEL,Peruvian,AMR,American Ancestry
+369,HG01677,female,IBS,Iberian,EUR,European Ancestry
+370,HG02265,male,PEL,Peruvian,AMR,American Ancestry
+371,HG01684,female,IBS,Iberian,EUR,European Ancestry
+372,HG02272,female,PEL,Peruvian,AMR,American Ancestry
+373,HG01696,male,IBS,Iberian,EUR,European Ancestry
+374,HG02486,male,ACB,African Caribbean,AFR,African Ancestry
+375,HG01862,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+376,HG02493,male,PJL,Punjabi,SAS,South Asian Ancestry
+377,HG01867,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+378,HG02501,male,ACB,African Caribbean,AFR,African Ancestry
+379,HG01874,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+380,HG02513,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+381,HG01879,male,ACB,African Caribbean,AFR,African Ancestry
+382,HG02450,female,ACB,African Caribbean,AFR,African Ancestry
+383,HG01881,female,ACB,African Caribbean,AFR,African Ancestry
+384,HG02455,male,ACB,African Caribbean,AFR,African Ancestry
+385,HG01944,male,PEL,Peruvian,AMR,American Ancestry
+386,HG02462,female,GWD,Gambian Mandinka,AFR,African Ancestry
+387,HG01949,female,PEL,Peruvian,AMR,American Ancestry
+388,HG02479,female,ACB,African Caribbean,AFR,African Ancestry
+389,HG01951,female,PEL,Peruvian,AMR,American Ancestry
+390,HG02481,male,ACB,African Caribbean,AFR,African Ancestry
+391,HG01956,female,ACB,African Caribbean,AFR,African Ancestry
+392,HG02304,male,PEL,Peruvian,AMR,American Ancestry
+393,HG01968,female,PEL,Peruvian,AMR,American Ancestry
+394,HG02309,female,ACB,African Caribbean,AFR,African Ancestry
+395,HG01970,male,PEL,Peruvian,AMR,American Ancestry
+396,HG02316,male,ACB,African Caribbean,AFR,African Ancestry
+397,HG01975,female,PEL,Peruvian,AMR,American Ancestry
+398,HG02323,male,ACB,African Caribbean,AFR,African Ancestry
+399,HG01982,male,PEL,Peruvian,AMR,American Ancestry
+400,HG02330,male,ACB,African Caribbean,AFR,African Ancestry
+401,HG01987,male,ACB,African Caribbean,AFR,African Ancestry
+402,HG02277,male,PEL,Peruvian,AMR,American Ancestry
+403,HG01886,female,ACB,African Caribbean,AFR,African Ancestry
+404,HG02284,male,ACB,African Caribbean,AFR,African Ancestry
+405,HG01893,female,PEL,Peruvian,AMR,American Ancestry
+406,HG02291,male,PEL,Peruvian,AMR,American Ancestry
+407,HG01898,female,PEL,Peruvian,AMR,American Ancestry
+408,HG01918,female,PEL,Peruvian,AMR,American Ancestry
+409,HG02373,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+410,HG01766,female,IBS,Iberian,EUR,European Ancestry
+411,HG02380,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+412,HG01773,female,IBS,Iberian,EUR,European Ancestry
+413,HG02222,female,IBS,Iberian,EUR,European Ancestry
+414,HG01778,male,IBS,Iberian,EUR,European Ancestry
+415,HG02234,male,IBS,Iberian,EUR,European Ancestry
+416,HG01780,male,IBS,Iberian,EUR,European Ancestry
+417,HG02239,female,IBS,Iberian,EUR,European Ancestry
+418,HG01785,male,IBS,Iberian,EUR,European Ancestry
+419,HG01920,male,PEL,Peruvian,AMR,American Ancestry
+420,HG02429,male,ACB,African Caribbean,AFR,African Ancestry
+421,HG01925,female,PEL,Peruvian,AMR,American Ancestry
+422,HG02436,male,ACB,African Caribbean,AFR,African Ancestry
+423,HG01932,male,PEL,Peruvian,AMR,American Ancestry
+424,HG02385,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+425,HG01937,male,PEL,Peruvian,AMR,American Ancestry
+426,HG02392,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+427,HG01817,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+428,HG02397,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+429,HG01843,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+430,HG02568,female,GWD,Gambian Mandinka,AFR,African Ancestry
+431,HG01848,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+432,HG02570,male,GWD,Gambian Mandinka,AFR,African Ancestry
+433,HG01850,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+434,HG01855,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+435,HG02582,male,GWD,Gambian Mandinka,AFR,African Ancestry
+436,HG01797,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+437,HG01800,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+438,HG01805,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+439,HG02537,female,ACB,African Caribbean,AFR,African Ancestry
+440,HG01812,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+441,HG02549,female,ACB,African Caribbean,AFR,African Ancestry
+442,HG02012,female,ACB,African Caribbean,AFR,African Ancestry
+443,HG02106,female,PEL,Peruvian,AMR,American Ancestry
+444,HG02727,male,PJL,Punjabi,SAS,South Asian Ancestry
+445,HG02113,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+446,HG02734,female,PJL,Punjabi,SAS,South Asian Ancestry
+447,HG02120,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+448,HG02132,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+449,HG02760,female,GWD,Gambian Mandinka,AFR,African Ancestry
+450,HG02137,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+451,HG02594,male,GWD,Gambian Mandinka,AFR,African Ancestry
+452,HG02144,female,ACB,African Caribbean,AFR,African Ancestry
+453,HG02151,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+454,HG02602,male,PJL,Punjabi,SAS,South Asian Ancestry
+455,HG02156,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+456,HG02614,female,GWD,Gambian Mandinka,AFR,African Ancestry
+457,HG02048,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+458,HG02676,female,GWD,Gambian Mandinka,AFR,African Ancestry
+459,HG02050,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+460,HG02055,male,ACB,African Caribbean,AFR,African Ancestry
+461,HG02688,female,PJL,Punjabi,SAS,South Asian Ancestry
+462,HG02067,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+463,HG02690,male,PJL,Punjabi,SAS,South Asian Ancestry
+464,HG02252,female,PEL,Peruvian,AMR,American Ancestry
+465,HG02703,female,GWD,Gambian Mandinka,AFR,African Ancestry
+466,HG02257,female,ACB,African Caribbean,AFR,African Ancestry
+467,HG02715,male,GWD,Gambian Mandinka,AFR,African Ancestry
+468,HG02271,male,PEL,Peruvian,AMR,American Ancestry
+469,HG02722,female,GWD,Gambian Mandinka,AFR,African Ancestry
+470,HG02645,male,GWD,Gambian Mandinka,AFR,African Ancestry
+471,HG02017,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+472,HG02652,female,PJL,Punjabi,SAS,South Asian Ancestry
+473,HG02024,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+474,HG02657,male,PJL,Punjabi,SAS,South Asian Ancestry
+475,HG02029,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+476,HG02772,female,GWD,Gambian Mandinka,AFR,African Ancestry
+477,HG02031,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+478,HG02784,female,PJL,Punjabi,SAS,South Asian Ancestry
+479,HG02283,male,ACB,African Caribbean,AFR,African Ancestry
+480,HG02621,female,GWD,Gambian Mandinka,AFR,African Ancestry
+481,HG02303,female,PEL,Peruvian,AMR,American Ancestry
+482,HG02219,male,IBS,Iberian,EUR,European Ancestry
+483,HG02221,male,IBS,Iberian,EUR,European Ancestry
+484,HG02943,female,ESN,Esan,Esan,AFR,African Ancestry,Africa (SGDP)
+485,HG02233,male,IBS,Iberian,EUR,European Ancestry
+486,HG02238,male,IBS,Iberian,EUR,European Ancestry
+487,HG03097,female,MSL,Mende,AFR,African Ancestry
+488,HG02240,female,IBS,Iberian,EUR,European Ancestry
+489,HG03100,male,ESN,Esan,Esan,AFR,African Ancestry,Africa (SGDP)
+490,HG02074,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+491,HG03105,female,ESN,Esan,AFR,African Ancestry
+492,HG02079,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+493,HG03112,male,ESN,Esan,AFR,African Ancestry
+494,HG02081,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+495,HG03117,female,ESN,Esan,AFR,African Ancestry
+496,HG02086,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+497,HG03009,male,BEB,Bengali,SAS,South Asian Ancestry
+498,HG03016,female,PJL,Punjabi,SAS,South Asian Ancestry
+499,HG02182,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+500,HG03028,female,GWD,Gambian Mandinka,AFR,African Ancestry
+501,HG02187,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+502,HG03066,male,MSL,Mende,AFR,African Ancestry
+503,HG02485,female,ACB,African Caribbean,AFR,African Ancestry
+504,HG03073,female,MSL,Mende,AFR,African Ancestry
+505,HG02492,male,PJL,Punjabi,SAS,South Asian Ancestry
+506,HG03078,male,MSL,Mende,Mende,AFR,African Ancestry,Africa (SGDP)
+507,HG02497,female,ACB,African Caribbean,AFR,African Ancestry
+508,HG02505,female,ACB,African Caribbean,AFR,African Ancestry
+509,HG03085,female,MSL,Mende,Mende,AFR,African Ancestry,Africa (SGDP)
+510,HG02512,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+511,HG02789,male,PJL,Punjabi,SAS,South Asian Ancestry
+512,HG02791,male,PJL,Punjabi,SAS,South Asian Ancestry
+513,HG02536,male,ACB,African Caribbean,AFR,African Ancestry
+514,HG02804,male,GWD,Gambian Mandinka,AFR,African Ancestry
+515,HG02555,female,ACB,African Caribbean,AFR,African Ancestry
+516,HG02562,female,GWD,Gambian Mandinka,AFR,African Ancestry
+517,HG02574,female,GWD,Gambian Mandinka,Gambian,AFR,African Ancestry,Africa (SGDP)
+518,HG03054,male,MSL,Mende,AFR,African Ancestry
+519,HG02586,female,GWD,Gambian Mandinka,AFR,African Ancestry
+520,HG02461,male,GWD,Gambian Mandinka,AFR,African Ancestry
+521,HG03061,female,MSL,Mende,AFR,African Ancestry
+522,HG02854,male,GWD,Gambian Mandinka,AFR,African Ancestry
+523,HG02478,male,ACB,African Caribbean,AFR,African Ancestry
+524,HG02861,female,GWD,Gambian Mandinka,AFR,African Ancestry
+525,HG02480,female,ACB,African Caribbean,AFR,African Ancestry
+526,HG02878,male,GWD,Gambian Mandinka,AFR,African Ancestry
+527,HG02353,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+528,HG02885,female,GWD,Gambian Mandinka,AFR,African Ancestry
+529,HG02360,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+530,HG02974,female,ESN,Esan,AFR,African Ancestry
+531,HG02372,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+532,HG02979,female,ESN,Esan,AFR,African Ancestry
+533,HG02377,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+534,HG02981,male,ESN,Esan,AFR,African Ancestry
+535,HG02409,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+536,HG02811,female,GWD,Gambian Mandinka,AFR,African Ancestry
+537,HG02428,male,ACB,African Caribbean,AFR,African Ancestry
+538,HG02816,male,GWD,Gambian Mandinka,AFR,African Ancestry
+539,HG02442,male,ACB,African Caribbean,AFR,African Ancestry
+540,HG03369,female,ESN,Esan,AFR,African Ancestry
+541,HG02308,female,ACB,African Caribbean,AFR,African Ancestry
+542,HG02315,female,ACB,African Caribbean,AFR,African Ancestry
+543,HG03376,male,MSL,Mende,AFR,African Ancestry
+544,HG02322,female,ACB,African Caribbean,AFR,African Ancestry
+545,HG02334,male,ACB,African Caribbean,AFR,African Ancestry
+546,HG03388,male,MSL,Mende,AFR,African Ancestry
+547,HG02339,female,ACB,African Caribbean,AFR,African Ancestry
+548,HG02601,female,PJL,Punjabi,SAS,South Asian Ancestry
+549,HG03237,male,PJL,Punjabi,SAS,South Asian Ancestry
+550,HG02613,male,GWD,Gambian Mandinka,AFR,African Ancestry
+551,HG02384,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+552,HG02389,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+553,HG03268,male,ESN,Esan,AFR,African Ancestry
+554,HG02391,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+555,HG02396,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+556,HG03458,female,MSL,Mende,AFR,African Ancestry
+557,HG03460,male,MSL,Mende,AFR,African Ancestry
+558,HG02769,female,GWD,Gambian Mandinka,AFR,African Ancestry
+559,HG02771,male,GWD,Gambian Mandinka,AFR,African Ancestry
+560,HG03472,male,MSL,Mende,AFR,African Ancestry
+561,HG03270,female,ESN,Esan,AFR,African Ancestry
+562,HG02783,male,PJL,Punjabi,Punjabi,SAS,South Asia (SGDP),South Asian Ancestry
+563,HG03294,female,ESN,Esan,AFR,African Ancestry
+564,HG02790,female,PJL,Punjabi,Punjabi,SAS,South Asia (SGDP),South Asian Ancestry
+565,HG02808,female,GWD,Gambian Mandinka,AFR,African Ancestry
+566,HG03124,male,ESN,Esan,AFR,African Ancestry
+567,HG02675,male,GWD,Gambian Mandinka,AFR,African Ancestry
+568,HG03129,female,ESN,Esan,AFR,African Ancestry
+569,HG02682,female,PJL,Punjabi,SAS,South Asian Ancestry
+570,HG02687,male,PJL,Punjabi,SAS,South Asian Ancestry
+571,HG03136,male,ESN,Esan,AFR,African Ancestry
+572,HG02726,female,PJL,Punjabi,SAS,South Asian Ancestry
+573,HG02733,male,PJL,Punjabi,SAS,South Asian Ancestry
+574,HG03410,female,MSL,Mende,AFR,African Ancestry
+575,HG03439,male,MSL,Mende,AFR,African Ancestry
+576,HG02757,female,GWD,Gambian Mandinka,AFR,African Ancestry
+577,HG03446,female,MSL,Mende,AFR,African Ancestry
+578,HG02694,female,PJL,Punjabi,SAS,South Asian Ancestry
+579,HG03193,male,ESN,Esan,AFR,African Ancestry
+580,HG02699,male,PJL,Punjabi,SAS,South Asian Ancestry
+581,HG03198,female,ESN,Esan,AFR,African Ancestry
+582,HG02702,male,GWD,Gambian Mandinka,AFR,African Ancestry
+583,HG03225,male,MSL,Mende,AFR,African Ancestry
+584,HG02721,male,GWD,Gambian Mandinka,AFR,African Ancestry
+585,HG02810,male,GWD,Gambian Mandinka,AFR,African Ancestry
+586,HG03352,male,ESN,Esan,AFR,African Ancestry
+587,HG03162,female,ESN,Esan,AFR,African Ancestry
+588,HG02839,male,GWD,Gambian Mandinka,AFR,African Ancestry
+589,HG02649,female,PJL,Punjabi,SAS,South Asian Ancestry
+590,HG03484,male,MSL,Mende,AFR,African Ancestry
+591,HG02651,male,PJL,Punjabi,SAS,South Asian Ancestry
+592,HG02656,male,PJL,Punjabi,SAS,South Asian Ancestry
+593,HG03491,female,PJL,Punjabi,SAS,South Asian Ancestry
+594,HG03511,female,ESN,Esan,AFR,African Ancestry
+595,HG02860,male,GWD,Gambian Mandinka,AFR,African Ancestry
+596,HG02884,male,GWD,Gambian Mandinka,AFR,African Ancestry
+597,HG03693,male,STU,Tamil,SAS,South Asian Ancestry
+598,HG02620,male,GWD,Gambian Mandinka,AFR,African Ancestry
+599,HG03698,female,STU,Tamil,SAS,South Asian Ancestry
+600,HG03706,female,PJL,Punjabi,SAS,South Asian Ancestry
+601,HG03713,male,ITU,Telugu,SAS,South Asian Ancestry
+602,HG03015,male,PJL,Punjabi,SAS,South Asian Ancestry
+603,HG03718,male,ITU,Telugu,SAS,South Asian Ancestry
+604,HG03022,female,PJL,Punjabi,SAS,South Asian Ancestry
+605,HG03720,male,ITU,Telugu,SAS,South Asian Ancestry
+606,HG03027,male,GWD,Gambian Mandinka,AFR,African Ancestry
+607,HG03039,male,GWD,Gambian Mandinka,AFR,African Ancestry
+608,HG03600,male,BEB,Bengali,SAS,South Asian Ancestry
+609,HG03046,female,GWD,Gambian Mandinka,AFR,African Ancestry
+610,HG03624,male,PJL,Punjabi,SAS,South Asian Ancestry
+611,HG03058,female,MSL,Mende,AFR,African Ancestry
+612,HG03629,male,PJL,Punjabi,SAS,South Asian Ancestry
+613,HG03060,male,MSL,Mende,AFR,African Ancestry
+614,HG03744,male,STU,Tamil,SAS,South Asian Ancestry
+615,HG03756,female,STU,Tamil,SAS,South Asian Ancestry
+616,HG02891,female,GWD,Gambian Mandinka,AFR,African Ancestry
+617,HG02896,female,GWD,Gambian Mandinka,AFR,African Ancestry
+618,HG03770,female,ITU,Telugu,SAS,South Asian Ancestry
+619,HG02923,male,ESN,Esan,AFR,African Ancestry
+620,HG03631,female,PJL,Punjabi,SAS,South Asian Ancestry
+621,HG03636,male,PJL,Punjabi,SAS,South Asian Ancestry
+622,HG02947,male,ESN,Esan,AFR,African Ancestry
+623,HG03643,female,STU,Tamil,SAS,South Asian Ancestry
+624,HG03072,male,MSL,Mende,AFR,African Ancestry
+625,HG03667,male,PJL,Punjabi,SAS,South Asian Ancestry
+626,HG03077,male,MSL,Mende,AFR,African Ancestry
+627,HG03679,male,STU,Tamil,SAS,South Asian Ancestry
+628,HG03084,male,MSL,Mende,AFR,African Ancestry
+629,HG03681,male,STU,Tamil,SAS,South Asian Ancestry
+630,HG03091,female,MSL,Mende,AFR,African Ancestry
+631,HG03686,male,STU,Tamil,SAS,South Asian Ancestry
+632,HG03547,male,MSL,Mende,AFR,African Ancestry
+633,HG03559,male,MSL,Mende,AFR,African Ancestry
+634,HG03212,female,MSL,Mende,AFR,African Ancestry
+635,HG03224,male,MSL,Mende,AFR,African Ancestry
+636,HG03578,female,MSL,Mende,AFR,African Ancestry
+637,HG03229,female,PJL,Punjabi,SAS,South Asian Ancestry
+638,HG03585,male,BEB,Bengali,SAS,South Asian Ancestry
+639,HG03096,male,MSL,Mende,AFR,African Ancestry
+640,HG03802,female,BEB,Bengali,SAS,South Asian Ancestry
+641,HG03109,male,ESN,Esan,AFR,African Ancestry
+642,HG03111,female,ESN,Esan,AFR,African Ancestry
+643,HG03814,female,BEB,Bengali,SAS,South Asian Ancestry
+644,HG03821,male,BEB,Bengali,SAS,South Asian Ancestry
+645,HG04014,female,ITU,Telugu,SAS,South Asian Ancestry
+646,HG04019,male,ITU,Telugu,SAS,South Asian Ancestry
+647,HG02973,male,ESN,Esan,AFR,African Ancestry
+648,HG04026,female,ITU,Telugu,SAS,South Asian Ancestry
+649,HG04033,male,STU,Tamil,SAS,South Asian Ancestry
+650,HG04038,female,STU,Tamil,SAS,South Asian Ancestry
+651,HG03123,female,ESN,Esan,AFR,African Ancestry
+652,HG03130,male,ESN,Esan,AFR,African Ancestry
+653,HG03941,male,BEB,Bengali,SAS,South Asian Ancestry
+654,HG03135,female,ESN,Esan,AFR,African Ancestry
+655,HG03953,male,STU,Tamil,SAS,South Asian Ancestry
+656,HG03159,female,ESN,Esan,AFR,African Ancestry
+657,HG03960,male,ITU,Telugu,SAS,South Asian Ancestry
+658,HG03965,male,ITU,Telugu,SAS,South Asian Ancestry
+659,HG03166,male,ESN,Esan,AFR,African Ancestry
+660,HG03908,male,BEB,Bengali,SAS,South Asian Ancestry
+661,HG03910,female,BEB,Bengali,SAS,South Asian Ancestry
+662,HG03476,female,MSL,Mende,AFR,African Ancestry
+663,HG03488,female,PJL,Punjabi,SAS,South Asian Ancestry
+664,HG03922,female,BEB,Bengali,SAS,South Asian Ancestry
+665,HG03490,male,PJL,Punjabi,SAS,South Asian Ancestry
+666,HG03934,female,BEB,Bengali,SAS,South Asian Ancestry
+667,HG03826,female,BEB,Bengali,SAS,South Asian Ancestry
+668,HG03515,male,ESN,Esan,AFR,African Ancestry
+669,HG03833,male,BEB,Bengali,SAS,South Asian Ancestry
+670,HG03838,female,STU,Tamil,SAS,South Asian Ancestry
+671,HG03845,male,STU,Tamil,SAS,South Asian Ancestry
+672,HG03267,female,ESN,Esan,AFR,African Ancestry
+673,HG03857,female,STU,Tamil,SAS,South Asian Ancestry
+674,HG03572,female,MSL,Mende,AFR,African Ancestry
+675,HG03864,male,ITU,Telugu,SAS,South Asian Ancestry
+676,HG03577,male,MSL,Mende,AFR,African Ancestry
+677,HG03869,male,ITU,Telugu,SAS,South Asian Ancestry
+678,HG03584,female,MSL,Mende,AFR,African Ancestry
+679,HG03871,male,ITU,Telugu,SAS,South Asian Ancestry
+680,HG03589,female,BEB,Bengali,SAS,South Asian Ancestry
+681,HG03775,male,ITU,Telugu,SAS,South Asian Ancestry
+682,HG03782,female,ITU,Telugu,SAS,South Asian Ancestry
+683,HG03539,female,GWD,Gambian Mandinka,AFR,African Ancestry
+684,HG03787,female,ITU,Telugu,SAS,South Asian Ancestry
+685,HG03558,female,MSL,Mende,AFR,African Ancestry
+686,HG03565,male,MSL,Mende,AFR,African Ancestry
+687,HG03888,female,STU,Tamil,SAS,South Asian Ancestry
+688,HG03890,male,STU,Tamil,SAS,South Asian Ancestry
+689,HG03895,female,STU,Tamil,SAS,South Asian Ancestry
+690,HG03419,female,MSL,Mende,AFR,African Ancestry
+691,HG03433,male,MSL,Mende,AFR,African Ancestry
+692,HG03977,female,ITU,Telugu,SAS,South Asian Ancestry
+693,HG03445,male,MSL,Mende,AFR,African Ancestry
+694,HG03989,female,STU,Tamil,SAS,South Asian Ancestry
+695,HG03452,female,MSL,Mende,AFR,African Ancestry
+696,HG03991,male,STU,Tamil,SAS,South Asian Ancestry
+697,HG03457,male,MSL,Mende,AFR,African Ancestry
+698,HG04002,male,ITU,Telugu,SAS,South Asian Ancestry
+699,HG03464,female,MSL,Mende,AFR,African Ancestry
+700,NA10865,male,CEU,CEPH,EUR,European Ancestry
+701,HG03469,male,MSL,Mende,AFR,African Ancestry
+702,NA11832,female,CEU,CEPH,EUR,European Ancestry
+703,NA11882,female,CEU,CEPH,EUR,European Ancestry
+704,HG03279,female,ESN,Esan,AFR,African Ancestry
+705,NA11894,female,CEU,CEPH,EUR,European Ancestry
+706,NA11919,male,CEU,CEPH,EUR,European Ancestry
+707,HG03298,male,ESN,Esan,AFR,African Ancestry
+708,NA11933,female,CEU,CEPH,EUR,European Ancestry
+709,HG03301,male,ESN,Esan,AFR,African Ancestry
+710,NA11995,female,CEU,CEPH,EUR,European Ancestry
+711,NA12006,female,CEU,CEPH,EUR,European Ancestry
+712,NA12044,female,CEU,CEPH,EUR,European Ancestry
+713,HG03370,male,ESN,Esan,AFR,African Ancestry
+714,NA12056,male,CEU,CEPH,EUR,European Ancestry
+715,HG03382,male,MSL,Mende,AFR,African Ancestry
+716,NA12145,female,CEU,CEPH,EUR,European Ancestry
+717,HG03394,male,MSL,Mende,AFR,African Ancestry
+718,NA12234,female,CEU,CEPH,EUR,European Ancestry
+719,HG03313,male,ESN,Esan,AFR,African Ancestry
+720,NA12239,female,CEU,CEPH,EUR,European Ancestry
+721,NA12272,male,CEU,CEPH,EUR,European Ancestry
+722,HG03351,female,ESN,Esan,AFR,African Ancestry
+723,NA12335,male,CEU,CEPH,EUR,European Ancestry
+724,HG03363,female,ESN,Esan,AFR,African Ancestry
+725,NA12342,male,CEU,CEPH,EUR,European Ancestry
+726,HG03692,female,STU,Tamil,SAS,South Asian Ancestry
+727,NA12347,male,CEU,CEPH,EUR,European Ancestry
+728,HG03697,male,STU,Tamil,SAS,South Asian Ancestry
+729,NA12400,female,CEU,CEPH,EUR,European Ancestry
+730,NA12708,female,CEU,CEPH,EUR,European Ancestry
+731,HG03705,male,PJL,Punjabi,SAS,South Asian Ancestry
+732,NA12739,male,CEU,CEPH,EUR,European Ancestry
+733,HG03774,female,ITU,Telugu,SAS,South Asian Ancestry
+734,NA12753,female,CEU,CEPH,EUR,European Ancestry
+735,HG03779,male,ITU,Telugu,SAS,South Asian Ancestry
+736,NA12760,male,CEU,CEPH,EUR,European Ancestry
+737,HG03781,female,ITU,Telugu,SAS,South Asian Ancestry
+738,NA12777,male,CEU,CEPH,EUR,European Ancestry
+739,HG03786,male,ITU,Telugu,SAS,South Asian Ancestry
+740,NA12828,female,CEU,CEPH,EUR,European Ancestry
+741,HG03793,female,BEB,Bengali,SAS,South Asian Ancestry
+742,NA12830,female,CEU,CEPH,EUR,European Ancestry
+743,HG04211,male,ITU,Telugu,SAS,South Asian Ancestry
+744,HG03832,female,BEB,Bengali,SAS,South Asian Ancestry
+745,HG04216,female,ITU,Telugu,SAS,South Asian Ancestry
+746,HG03837,male,STU,Tamil,SAS,South Asian Ancestry
+747,HG03844,male,STU,Tamil,SAS,South Asian Ancestry
+748,HG04235,male,ITU,Telugu,SAS,South Asian Ancestry
+749,HG03750,male,STU,Tamil,SAS,South Asian Ancestry
+750,NA06984,male,CEU,CEPH,EUR,European Ancestry
+751,HG03755,male,STU,Tamil,SAS,South Asian Ancestry
+752,NA06989,female,CEU,CEPH,EUR,European Ancestry
+753,HG03762,female,PJL,Punjabi,SAS,South Asian Ancestry
+754,NA06991,female,CEU,CEPH,EUR,European Ancestry
+755,HG03767,male,PJL,Punjabi,SAS,South Asian Ancestry
+756,NA07014,female,CEU,CEPH,EUR,European Ancestry
+757,NA07019,female,CEU,CEPH,EUR,European Ancestry
+758,HG03642,female,STU,Tamil,SAS,South Asian Ancestry
+759,NA07045,female,CEU,CEPH,EUR,European Ancestry
+760,NA07348,female,CEU,CEPH,EUR,European Ancestry
+761,HG03717,female,ITU,Telugu,SAS,South Asian Ancestry
+762,HG03729,male,ITU,Telugu,SAS,South Asian Ancestry
+763,HG03731,female,ITU,Telugu,SAS,South Asian Ancestry
+764,HG03736,female,STU,Tamil,SAS,South Asian Ancestry
+765,HG04134,male,BEB,Bengali,SAS,South Asian Ancestry
+766,HG03743,male,STU,Tamil,SAS,South Asian Ancestry
+767,HG04141,female,BEB,Bengali,SAS,South Asian Ancestry
+768,HG03673,female,STU,Tamil,SAS,South Asian Ancestry
+769,HG04146,male,BEB,Bengali,SAS,South Asian Ancestry
+770,HG03680,male,STU,Tamil,SAS,South Asian Ancestry
+771,HG03685,male,STU,Tamil,SAS,South Asian Ancestry
+772,HG04189,female,BEB,Bengali,SAS,South Asian Ancestry
+773,HG04209,female,ITU,Telugu,SAS,South Asian Ancestry
+774,NA10839,female,CEU,CEPH,EUR,European Ancestry
+775,HG03604,female,BEB,Bengali,SAS,South Asian Ancestry
+776,NA10846,male,CEU,CEPH,EUR,European Ancestry
+777,HG03611,female,BEB,Bengali,SAS,South Asian Ancestry
+778,NA10853,male,CEU,CEPH,EUR,European Ancestry
+779,HG03616,female,BEB,Bengali,SAS,South Asian Ancestry
+780,NA10860,male,CEU,CEPH,EUR,European Ancestry
+781,HG04099,female,STU,Tamil,SAS,South Asian Ancestry
+782,HG04153,female,BEB,Bengali,SAS,South Asian Ancestry
+783,HG04107,male,STU,Tamil,SAS,South Asian Ancestry
+784,HG04158,male,BEB,Bengali,SAS,South Asian Ancestry
+785,HG04177,female,BEB,Bengali,SAS,South Asian Ancestry
+786,HG04140,male,BEB,Bengali,SAS,South Asian Ancestry
+787,HG04076,female,ITU,Telugu,SAS,South Asian Ancestry
+788,HG03882,female,ITU,Telugu,SAS,South Asian Ancestry
+789,HG04090,female,ITU,Telugu,SAS,South Asian Ancestry
+790,HG03887,male,STU,Tamil,SAS,South Asian Ancestry
+791,NA12842,male,CEU,CEPH,EUR,European Ancestry
+792,HG03894,female,STU,Tamil,SAS,South Asian Ancestry
+793,NA12873,female,CEU,CEPH,EUR,European Ancestry
+794,HG03899,male,STU,Tamil,SAS,South Asian Ancestry
+795,NA12878,female,CEU,CEPH,EUR,European Ancestry
+796,HG03902,male,BEB,Bengali,SAS,South Asian Ancestry
+797,NA12892,female,CEU,CEPH,EUR,European Ancestry
+798,HG04056,male,ITU,Telugu,SAS,South Asian Ancestry
+799,NA18484,female,YRI,Yoruba,AFR,African Ancestry
+800,HG04063,female,ITU,Telugu,SAS,South Asian Ancestry
+801,NA18489,female,YRI,Yoruba,AFR,African Ancestry
+802,HG04070,female,ITU,Telugu,SAS,South Asian Ancestry
+803,NA18504,male,YRI,Yoruba,AFR,African Ancestry
+804,HG04075,female,STU,Tamil,SAS,South Asian Ancestry
+805,NA18509,male,YRI,Yoruba,AFR,African Ancestry
+806,HG04094,male,ITU,Telugu,SAS,South Asian Ancestry
+807,NA18511,female,YRI,Yoruba,AFR,African Ancestry
+808,HG03849,female,STU,Tamil,SAS,South Asian Ancestry
+809,NA18516,male,YRI,Yoruba,AFR,African Ancestry
+810,HG03851,male,STU,Tamil,SAS,South Asian Ancestry
+811,NA18523,female,YRI,Yoruba,AFR,African Ancestry
+812,HG03856,male,STU,Tamil,SAS,South Asian Ancestry
+813,NA18528,female,CHB,Han Chinese,EAS,East Asian Ancestry
+814,HG03863,female,ITU,Telugu,SAS,South Asian Ancestry
+815,NA18530,male,CHB,Han Chinese,EAS,East Asian Ancestry
+816,HG03868,female,ITU,Telugu,SAS,South Asian Ancestry
+817,NA18535,female,CHB,Han Chinese,EAS,East Asian Ancestry
+818,HG03870,male,ITU,Telugu,SAS,South Asian Ancestry
+819,NA18542,female,CHB,Han Chinese,EAS,East Asian Ancestry
+820,HG03875,male,ITU,Telugu,SAS,South Asian Ancestry
+821,NA18547,female,CHB,Han Chinese,EAS,East Asian Ancestry
+822,HG04152,male,BEB,Bengali,SAS,South Asian Ancestry
+823,NA18559,male,CHB,Han Chinese,EAS,East Asian Ancestry
+824,NA18561,male,CHB,Han Chinese,EAS,East Asian Ancestry
+825,HG04164,male,BEB,Bengali,SAS,South Asian Ancestry
+826,NA18566,female,CHB,Han Chinese,EAS,East Asian Ancestry
+827,HG04171,female,BEB,Bengali,SAS,South Asian Ancestry
+828,NA18573,female,CHB,Han Chinese,EAS,East Asian Ancestry
+829,HG04176,male,BEB,Bengali,SAS,South Asian Ancestry
+830,NA18592,female,CHB,Han Chinese,EAS,East Asian Ancestry
+831,HG03971,male,ITU,Telugu,SAS,South Asian Ancestry
+832,NA18597,female,CHB,Han Chinese,EAS,East Asian Ancestry
+833,HG03976,male,ITU,Telugu,SAS,South Asian Ancestry
+834,NA18605,male,CHB,Han Chinese,EAS,East Asian Ancestry
+835,NA18612,male,CHB,Han Chinese,EAS,East Asian Ancestry
+836,HG03990,male,STU,Tamil,SAS,South Asian Ancestry
+837,NA18617,female,CHB,Han Chinese,EAS,East Asian Ancestry
+838,HG03995,female,STU,Tamil,SAS,South Asian Ancestry
+839,NA18624,male,CHB,Han Chinese,EAS,East Asian Ancestry
+840,HG04001,female,ITU,Telugu,SAS,South Asian Ancestry
+841,NA18629,male,CHB,Han Chinese,EAS,East Asian Ancestry
+842,HG03940,female,BEB,Bengali,SAS,South Asian Ancestry
+843,NA18631,female,CHB,Han Chinese,EAS,East Asian Ancestry
+844,HG03945,female,STU,Tamil,SAS,South Asian Ancestry
+845,NA18636,male,CHB,Han Chinese,EAS,East Asian Ancestry
+846,HG03969,male,ITU,Telugu,SAS,South Asian Ancestry
+847,NA18643,male,CHB,Han Chinese,EAS,East Asian Ancestry
+848,HG04006,male,STU,Tamil,SAS,South Asian Ancestry
+849,NA18648,male,CHB,Han Chinese,EAS,East Asian Ancestry
+850,HG04018,female,ITU,Telugu,SAS,South Asian Ancestry
+851,NA18749,male,CHB,Han Chinese,EAS,East Asian Ancestry
+852,HG04020,male,ITU,Telugu,SAS,South Asian Ancestry
+853,NA18794,male,CHB,Han Chinese,EAS,East Asian Ancestry
+854,HG04025,female,ITU,Telugu,SAS,South Asian Ancestry
+855,NA18915,male,YRI,Yoruba,AFR,African Ancestry
+856,HG04037,female,STU,Tamil,SAS,South Asian Ancestry
+857,NA18934,male,YRI,Yoruba,AFR,African Ancestry
+858,HG03907,female,BEB,Bengali,SAS,South Asian Ancestry
+859,NA18939,female,JPT,Japanese,EAS,East Asian Ancestry
+860,HG03914,male,BEB,Bengali,SAS,South Asian Ancestry
+861,NA18941,female,JPT,Japanese,EAS,East Asian Ancestry
+862,HG03919,female,BEB,Bengali,SAS,South Asian Ancestry
+863,NA18946,female,JPT,Japanese,EAS,East Asian Ancestry
+864,HG03926,male,BEB,Bengali,SAS,South Asian Ancestry
+865,NA18953,male,JPT,Japanese,EAS,East Asian Ancestry
+866,NA18534,male,CHB,Han Chinese,EAS,East Asian Ancestry
+867,NA18960,male,JPT,Japanese,EAS,East Asian Ancestry
+868,NA18539,female,CHB,Han Chinese,EAS,East Asian Ancestry
+869,NA18965,male,JPT,Japanese,EAS,East Asian Ancestry
+870,NA18541,female,CHB,Han Chinese,EAS,East Asian Ancestry
+871,NA18972,female,JPT,Japanese,EAS,East Asian Ancestry
+872,NA18546,male,CHB,Han Chinese,EAS,East Asian Ancestry
+873,NA18977,male,JPT,Japanese,EAS,East Asian Ancestry
+874,NA18553,female,CHB,Han Chinese,EAS,East Asian Ancestry
+875,NA18984,male,JPT,Japanese,EAS,East Asian Ancestry
+876,NA18558,male,CHB,Han Chinese,EAS,East Asian Ancestry
+877,NA18989,male,JPT,Japanese,EAS,East Asian Ancestry
+878,NA18560,female,CHB,Han Chinese,EAS,East Asian Ancestry
+879,NA18991,female,JPT,Japanese,EAS,East Asian Ancestry
+880,NA18565,female,CHB,Han Chinese,EAS,East Asian Ancestry
+881,NA19127,female,YRI,Yoruba,AFR,African Ancestry
+882,NA18572,male,CHB,Han Chinese,EAS,East Asian Ancestry
+883,NA19139,male,YRI,Yoruba,AFR,African Ancestry
+884,NA18577,female,CHB,Han Chinese,EAS,East Asian Ancestry
+885,NA19141,male,YRI,Yoruba,AFR,African Ancestry
+886,NA18591,female,CHB,Han Chinese,EAS,East Asian Ancestry
+887,NA19146,male,YRI,Yoruba,AFR,African Ancestry
+888,NA18596,female,CHB,Han Chinese,EAS,East Asian Ancestry
+889,NA19153,male,YRI,Yoruba,AFR,African Ancestry
+890,NA18609,male,CHB,Han Chinese,EAS,East Asian Ancestry
+891,NA19160,male,YRI,Yoruba,AFR,African Ancestry
+892,NA18611,male,CHB,Han Chinese,EAS,East Asian Ancestry
+893,NA19172,female,YRI,Yoruba,AFR,African Ancestry
+894,NA18616,female,CHB,Han Chinese,EAS,East Asian Ancestry
+895,NA19177,male,YRI,Yoruba,AFR,African Ancestry
+896,NA18623,male,CHB,Han Chinese,EAS,East Asian Ancestry
+897,NA19184,male,YRI,Yoruba,AFR,African Ancestry
+898,NA18628,female,CHB,Han Chinese,EAS,East Asian Ancestry
+899,NA19189,male,YRI,Yoruba,AFR,African Ancestry
+900,NA18630,female,CHB,Han Chinese,EAS,East Asian Ancestry
+901,NA19191,male,YRI,Yoruba,AFR,African Ancestry
+902,NA18635,male,CHB,Han Chinese,EAS,East Asian Ancestry
+903,NA19312,male,LWK,Luhya,AFR,African Ancestry
+904,NA18642,female,CHB,Han Chinese,EAS,East Asian Ancestry
+905,NA19317,male,LWK,Luhya,AFR,African Ancestry
+906,NA18647,male,CHB,Han Chinese,EAS,East Asian Ancestry
+907,NA19324,female,LWK,Luhya,AFR,African Ancestry
+908,NA18748,male,CHB,Han Chinese,EAS,East Asian Ancestry
+909,NA19331,male,LWK,Luhya,AFR,African Ancestry
+910,NA10864,female,CEU,CEPH,EUR,European Ancestry
+911,NA19350,male,LWK,Luhya,AFR,African Ancestry
+912,NA11829,male,CEU,CEPH,EUR,European Ancestry
+913,NA19355,female,LWK,Luhya,AFR,African Ancestry
+914,NA11831,male,CEU,CEPH,EUR,European Ancestry
+915,NA19374,male,LWK,Luhya,AFR,African Ancestry
+916,NA11843,male,CEU,CEPH,EUR,European Ancestry
+917,NA19379,female,LWK,Luhya,AFR,African Ancestry
+918,NA11881,male,CEU,CEPH,EUR,European Ancestry
+919,NA19381,female,LWK,Luhya,AFR,African Ancestry
+920,NA11893,male,CEU,CEPH,EUR,European Ancestry
+921,NA19393,male,LWK,Luhya,AFR,African Ancestry
+922,NA11918,female,CEU,CEPH,EUR,European Ancestry
+923,NA19398,female,LWK,Luhya,AFR,African Ancestry
+924,NA11920,female,CEU,CEPH,EUR,European Ancestry
+925,NA19401,female,LWK,Luhya,AFR,African Ancestry
+926,NA11932,male,CEU,CEPH,EUR,European Ancestry
+927,NA19076,male,JPT,Japanese,EAS,East Asian Ancestry
+928,NA11994,male,CEU,CEPH,EUR,European Ancestry
+929,NA19083,male,JPT,Japanese,EAS,East Asian Ancestry
+930,NA12005,male,CEU,CEPH,EUR,European Ancestry
+931,NA19088,male,JPT,Japanese,EAS,East Asian Ancestry
+932,NA12043,male,CEU,CEPH,EUR,European Ancestry
+933,NA19090,female,JPT,Japanese,EAS,East Asian Ancestry
+934,NA12144,male,CEU,CEPH,EUR,European Ancestry
+935,NA19095,female,YRI,Yoruba,AFR,African Ancestry
+936,NA12156,female,CEU,CEPH,EUR,European Ancestry
+937,NA19103,male,YRI,Yoruba,AFR,African Ancestry
+938,NA12264,male,CEU,CEPH,EUR,European Ancestry
+939,NA19108,female,YRI,Yoruba,AFR,African Ancestry
+940,NA12283,female,CEU,CEPH,EUR,European Ancestry
+941,NA19115,female,YRI,Yoruba,AFR,African Ancestry
+942,NA12341,female,CEU,CEPH,EUR,European Ancestry
+943,NA19122,female,YRI,Yoruba,AFR,African Ancestry
+944,NA12865,female,CEU,CEPH,EUR,European Ancestry
+945,NA19196,female,YRI,Yoruba,AFR,African Ancestry
+946,NA12872,male,CEU,CEPH,EUR,European Ancestry
+947,NA19204,female,YRI,Yoruba,AFR,African Ancestry
+948,NA12877,male,CEU,CEPH,EUR,European Ancestry
+949,NA19209,female,YRI,Yoruba,AFR,African Ancestry
+950,NA12889,male,CEU,CEPH,EUR,European Ancestry
+951,NA19211,male,YRI,Yoruba,AFR,African Ancestry
+952,NA12891,male,CEU,CEPH,EUR,European Ancestry
+953,NA19223,male,YRI,Yoruba,AFR,African Ancestry
+954,NA18488,female,YRI,Yoruba,AFR,African Ancestry
+955,NA19235,female,YRI,Yoruba,AFR,African Ancestry
+956,NA18503,male,YRI,Yoruba,AFR,African Ancestry
+957,NA19247,female,YRI,Yoruba,AFR,African Ancestry
+958,NA18508,female,YRI,Yoruba,AFR,African Ancestry
+959,NA19254,female,YRI,Yoruba,AFR,African Ancestry
+960,NA18510,male,YRI,Yoruba,AFR,African Ancestry
+961,NA18852,female,YRI,Yoruba,AFR,African Ancestry
+962,NA18515,male,YRI,Yoruba,AFR,African Ancestry
+963,NA18857,male,YRI,Yoruba,AFR,African Ancestry
+964,NA18522,male,YRI,Yoruba,AFR,African Ancestry
+965,NA18864,female,YRI,Yoruba,AFR,African Ancestry
+966,NA18527,female,CHB,Han Chinese,EAS,East Asian Ancestry
+967,NA18869,male,YRI,Yoruba,AFR,African Ancestry
+968,NA12485,male,CEU,CEPH,EUR,European Ancestry
+969,NA18871,male,YRI,Yoruba,AFR,African Ancestry
+970,NA12707,male,CEU,CEPH,EUR,European Ancestry
+971,NA18876,female,YRI,Yoruba,AFR,African Ancestry
+972,NA12740,female,CEU,CEPH,EUR,European Ancestry
+973,NA18908,male,YRI,Yoruba,AFR,African Ancestry
+974,NA12752,male,CEU,CEPH,EUR,European Ancestry
+975,NA18910,male,YRI,Yoruba,AFR,African Ancestry
+976,NA12776,female,CEU,CEPH,EUR,European Ancestry
+977,NA19002,female,JPT,Japanese,EAS,East Asian Ancestry
+978,NA12815,female,CEU,CEPH,EUR,European Ancestry
+979,NA19007,male,JPT,Japanese,EAS,East Asian Ancestry
+980,NA12827,male,CEU,CEPH,EUR,European Ancestry
+981,NA19019,female,LWK,Luhya,AFR,African Ancestry
+982,NA18856,male,YRI,Yoruba,AFR,African Ancestry
+983,NA19026,male,LWK,Luhya,AFR,African Ancestry
+984,NA18863,male,YRI,Yoruba,AFR,African Ancestry
+985,NA19038,female,LWK,Luhya,AFR,African Ancestry
+986,NA18868,male,YRI,Yoruba,AFR,African Ancestry
+987,NA19057,female,JPT,Japanese,EAS,East Asian Ancestry
+988,NA18870,female,YRI,Yoruba,AFR,African Ancestry
+989,NA19064,female,JPT,Japanese,EAS,East Asian Ancestry
+990,NA18875,female,YRI,Yoruba,AFR,African Ancestry
+991,NA19432,female,LWK,Luhya,AFR,African Ancestry
+992,NA18907,female,YRI,Yoruba,AFR,African Ancestry
+993,NA19437,female,LWK,Luhya,AFR,African Ancestry
+994,NA06995,male,CEU,CEPH,EUR,European Ancestry
+995,NA19444,male,LWK,Luhya,AFR,African Ancestry
+996,NA07037,female,CEU,CEPH,EUR,European Ancestry
+997,NA19449,female,LWK,Luhya,AFR,African Ancestry
+998,NA07051,male,CEU,CEPH,EUR,European Ancestry
+999,NA19451,male,LWK,Luhya,AFR,African Ancestry
+1000,NA07056,female,CEU,CEPH,EUR,European Ancestry
+1001,NA19456,female,LWK,Luhya,AFR,African Ancestry
+1002,NA07347,male,CEU,CEPH,EUR,European Ancestry
+1003,NA19463,female,LWK,Luhya,AFR,African Ancestry
+1004,HG04210,male,STU,Tamil,SAS,South Asian Ancestry
+1005,NA19468,female,LWK,Luhya,AFR,African Ancestry
+1006,NA19470,female,LWK,Luhya,AFR,African Ancestry
+1007,HG04222,male,ITU,Telugu,SAS,South Asian Ancestry
+1008,NA19475,female,LWK,Luhya,AFR,African Ancestry
+1009,HG04227,female,STU,Tamil,SAS,South Asian Ancestry
+1010,NA19653,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1011,HG04239,male,ITU,Telugu,SAS,South Asian Ancestry
+1012,NA19658,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1013,NA10838,male,CEU,CEPH,EUR,European Ancestry
+1014,NA19660,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1015,NA10840,female,CEU,CEPH,EUR,European Ancestry
+1016,NA19665,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1017,NA10845,male,CEU,CEPH,EUR,European Ancestry
+1018,NA20504,female,TSI,Toscani,EUR,European Ancestry
+1019,NA10852,female,CEU,CEPH,EUR,European Ancestry
+1020,NA20509,male,TSI,Toscani,EUR,European Ancestry
+1021,NA10857,male,CEU,CEPH,EUR,European Ancestry
+1022,NA20511,male,TSI,Toscani,EUR,European Ancestry
+1023,HG04183,female,BEB,Bengali,SAS,South Asian Ancestry
+1024,NA20516,male,TSI,Toscani,EUR,European Ancestry
+1025,HG04188,male,BEB,Bengali,SAS,South Asian Ancestry
+1026,NA20528,male,TSI,Toscani,EUR,European Ancestry
+1027,HG04195,female,BEB,Bengali,SAS,South Asian Ancestry
+1028,NA20530,female,TSI,Toscani,EUR,European Ancestry
+1029,NA20535,female,TSI,Toscani,EUR,European Ancestry
+1030,NA18914,male,YRI,Yoruba,AFR,African Ancestry
+1031,NA20542,female,TSI,Toscani,EUR,European Ancestry
+1032,NA18933,female,YRI,Yoruba,AFR,African Ancestry
+1033,NA20585,female,TSI,Toscani,EUR,European Ancestry
+1034,NA18940,male,JPT,Japanese,Japanese,EAS,East Asia (SGDP),East Asian Ancestry
+1035,NA20756,female,TSI,Toscani,EUR,European Ancestry
+1036,NA18945,male,JPT,Japanese,EAS,East Asian Ancestry
+1037,NA20763,male,TSI,Toscani,EUR,European Ancestry
+1038,NA18952,male,JPT,Japanese,EAS,East Asian Ancestry
+1039,NA20768,female,TSI,Toscani,EUR,European Ancestry
+1040,NA18957,female,JPT,Japanese,EAS,East Asian Ancestry
+1041,NA20770,male,TSI,Toscani,EUR,European Ancestry
+1042,NA18964,female,JPT,Japanese,EAS,East Asian Ancestry
+1043,NA20775,female,TSI,Toscani,EUR,European Ancestry
+1044,NA18969,female,JPT,Japanese,EAS,East Asian Ancestry
+1045,NA20787,male,TSI,Toscani,EUR,European Ancestry
+1046,NA18971,male,JPT,Japanese,EAS,East Asian Ancestry
+1047,NA20799,female,TSI,Toscani,EUR,European Ancestry
+1048,NA18976,female,JPT,Japanese,EAS,East Asian Ancestry
+1049,NA20802,female,TSI,Toscani,EUR,European Ancestry
+1050,NA18983,male,JPT,Japanese,EAS,East Asian Ancestry
+1051,NA20807,female,TSI,Toscani,EUR,European Ancestry
+1052,NA18988,male,JPT,Japanese,EAS,East Asian Ancestry
+1053,NA20814,male,TSI,Toscani,EUR,European Ancestry
+1054,NA18990,male,JPT,Japanese,EAS,East Asian Ancestry
+1055,NA20819,female,TSI,Toscani,EUR,European Ancestry
+1056,NA18995,male,JPT,Japanese,EAS,East Asian Ancestry
+1057,NA20821,female,TSI,Toscani,EUR,European Ancestry
+1058,NA19203,male,YRI,Yoruba,AFR,African Ancestry
+1059,NA20826,female,TSI,Toscani,EUR,European Ancestry
+1060,NA19208,male,YRI,Yoruba,AFR,African Ancestry
+1061,NA20845,male,GIH,Gujarati,SAS,South Asian Ancestry
+1062,NA19210,male,YRI,Yoruba,AFR,African Ancestry
+1063,NA20852,male,GIH,Gujarati,SAS,South Asian Ancestry
+1064,NA19215,female,YRI,Yoruba,AFR,African Ancestry
+1065,NA19730,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1066,NA19222,female,YRI,Yoruba,AFR,African Ancestry
+1067,NA19735,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1068,NA19239,male,YRI,Yoruba,AFR,African Ancestry
+1069,NA19742,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1070,NA19258,male,YRI,Yoruba,AFR,African Ancestry
+1071,NA19747,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1072,NA19309,male,LWK,Luhya,AFR,African Ancestry
+1073,NA19070,male,JPT,Japanese,EAS,East Asian Ancestry
+1074,NA19759,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1075,NA19075,male,JPT,Japanese,EAS,East Asian Ancestry
+1076,NA19761,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1077,NA19082,male,JPT,Japanese,EAS,East Asian Ancestry
+1078,NA19766,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1079,NA19087,female,JPT,Japanese,EAS,East Asian Ancestry
+1080,NA19773,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1081,NA19094,female,YRI,Yoruba,AFR,African Ancestry
+1082,NA19778,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1083,NA19099,female,YRI,Yoruba,AFR,African Ancestry
+1084,NA19780,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1085,NA19102,female,YRI,Yoruba,AFR,African Ancestry
+1086,NA19785,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1087,NA19107,male,YRI,Yoruba,AFR,African Ancestry
+1088,NA19672,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1089,NA19114,female,YRI,Yoruba,AFR,African Ancestry
+1090,NA19677,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1091,NA19119,male,YRI,Yoruba,AFR,African Ancestry
+1092,NA19684,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1093,NA19121,male,YRI,Yoruba,AFR,African Ancestry
+1094,NA19704,female,ASW,African Ancestry SW,AFR,African Ancestry
+1095,NA19429,male,LWK,Luhya,AFR,African Ancestry
+1096,NA19711,male,ASW,African Ancestry SW,AFR,African Ancestry
+1097,NA19431,female,LWK,Luhya,AFR,African Ancestry
+1098,NA19716,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1099,NA19436,female,LWK,Luhya,AFR,African Ancestry
+1100,NA19723,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1101,NA19443,male,LWK,Luhya,AFR,African Ancestry
+1102,NA19728,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1103,NA19448,male,LWK,Luhya,AFR,African Ancestry
+1104,NA19792,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1105,NA19455,male,LWK,Luhya,AFR,African Ancestry
+1106,NA19462,female,LWK,Luhya,AFR,African Ancestry
+1107,NA19836,female,ASW,African Ancestry SW,AFR,African Ancestry
+1108,NA19467,female,LWK,Luhya,AFR,African Ancestry
+1109,NA19901,female,ASW,African Ancestry SW,AFR,African Ancestry
+1110,NA19474,female,LWK,Luhya,AFR,African Ancestry
+1111,NA19913,female,ASW,African Ancestry SW,AFR,African Ancestry
+1112,NA19652,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1113,NA19918,male,ASW,African Ancestry SW,AFR,African Ancestry
+1114,NA19657,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1115,NA19920,male,ASW,African Ancestry SW,AFR,African Ancestry
+1116,NA19664,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1117,NA19982,male,ASW,African Ancestry SW,AFR,African Ancestry
+1118,NA19311,male,LWK,Luhya,AFR,African Ancestry
+1119,NA20129,female,ASW,African Ancestry SW,AFR,African Ancestry
+1120,NA19316,female,LWK,Luhya,AFR,African Ancestry
+1121,NA20282,female,ASW,African Ancestry SW,AFR,African Ancestry
+1122,NA19323,female,LWK,Luhya,AFR,African Ancestry
+1123,NA20287,female,ASW,African Ancestry SW,AFR,African Ancestry
+1124,NA19328,female,LWK,Luhya,AFR,African Ancestry
+1125,NA20294,female,ASW,African Ancestry SW,AFR,African Ancestry
+1126,NA19347,male,LWK,Luhya,AFR,African Ancestry
+1127,NA20299,female,ASW,African Ancestry SW,AFR,African Ancestry
+1128,NA19359,male,LWK,Luhya,AFR,African Ancestry
+1129,NA20302,male,ASW,African Ancestry SW,AFR,African Ancestry
+1130,NA19373,male,LWK,Luhya,AFR,African Ancestry
+1131,NA20314,female,ASW,African Ancestry SW,AFR,African Ancestry
+1132,NA19378,female,LWK,Luhya,AFR,African Ancestry
+1133,NA20319,female,ASW,African Ancestry SW,AFR,African Ancestry
+1134,NA19380,male,LWK,Luhya,AFR,African Ancestry
+1135,NA20321,female,ASW,African Ancestry SW,AFR,African Ancestry
+1136,NA19385,male,LWK,Luhya,AFR,African Ancestry
+1137,NA20333,female,ASW,African Ancestry SW,AFR,African Ancestry
+1138,NA19397,male,LWK,Luhya,AFR,African Ancestry
+1139,NA20340,male,ASW,African Ancestry SW,AFR,African Ancestry
+1140,NA19001,female,JPT,Japanese,EAS,East Asian Ancestry
+1141,NA20345,male,ASW,African Ancestry SW,AFR,African Ancestry
+1142,NA19006,male,JPT,Japanese,EAS,East Asian Ancestry
+1143,NA20357,female,ASW,African Ancestry SW,AFR,African Ancestry
+1144,NA19020,male,LWK,Luhya,AFR,African Ancestry
+1145,NA20364,female,ASW,African Ancestry SW,AFR,African Ancestry
+1146,NA19025,male,LWK,Luhya,AFR,African Ancestry
+1147,NA20864,male,GIH,Gujarati,SAS,South Asian Ancestry
+1148,NA19037,female,LWK,Luhya,AFR,African Ancestry
+1149,NA20869,female,GIH,Gujarati,SAS,South Asian Ancestry
+1150,NA19044,male,LWK,Luhya,Luhya,AFR,African Ancestry,Africa (SGDP)
+1151,NA20871,male,GIH,Gujarati,SAS,South Asian Ancestry
+1152,NA19056,male,JPT,Japanese,EAS,East Asian Ancestry
+1153,NA20876,female,GIH,Gujarati,SAS,South Asian Ancestry
+1154,NA19063,male,JPT,Japanese,EAS,East Asian Ancestry
+1155,NA20903,male,GIH,Gujarati,SAS,South Asian Ancestry
+1156,NA19068,male,JPT,Japanese,EAS,East Asian Ancestry
+1157,NA20908,female,GIH,Gujarati,SAS,South Asian Ancestry
+1158,NA19734,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1159,NA20910,female,GIH,Gujarati,SAS,South Asian Ancestry
+1160,NA19741,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1161,NA21088,female,GIH,Gujarati,SAS,South Asian Ancestry
+1162,NA19746,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1163,NA21090,male,GIH,Gujarati,SAS,South Asian Ancestry
+1164,NA19753,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1165,NA20883,male,GIH,Gujarati,SAS,South Asian Ancestry
+1166,NA19758,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1167,NA20888,female,GIH,Gujarati,SAS,South Asian Ancestry
+1168,NA19760,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1169,NA20890,male,GIH,Gujarati,SAS,South Asian Ancestry
+1170,NA19772,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1171,NA20895,male,GIH,Gujarati,SAS,South Asian Ancestry
+1172,NA19777,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1173,NA21122,female,GIH,Gujarati,SAS,South Asian Ancestry
+1174,NA19784,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1175,NA21127,male,GIH,Gujarati,SAS,South Asian Ancestry
+1176,NA19669,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1177,NA21134,male,GIH,Gujarati,SAS,South Asian Ancestry
+1178,NA19671,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1179,NA21141,female,GIH,Gujarati,SAS,South Asian Ancestry
+1180,NA19676,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1181,NA19683,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1182,NA19703,male,ASW,African Ancestry SW,AFR,African Ancestry
+1183,NA19708,female,ASW,African Ancestry SW,AFR,African Ancestry
+1184,NA19722,female,MXL,Mexican Ancestry,AMR,American Ancestry
+1185,NA19727,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1186,NA19138,male,YRI,Yoruba,AFR,African Ancestry
+1187,NA19140,female,YRI,Yoruba,AFR,African Ancestry
+1188,NA19145,male,YRI,Yoruba,AFR,African Ancestry
+1189,NA19152,female,YRI,Yoruba,AFR,African Ancestry
+1190,NA19171,male,YRI,Yoruba,AFR,African Ancestry
+1191,NA19176,female,YRI,Yoruba,AFR,African Ancestry
+1192,NA19190,female,YRI,Yoruba,AFR,African Ancestry
+1193,NA21095,male,GIH,Gujarati,SAS,South Asian Ancestry
+1194,NA19195,male,YRI,Yoruba,AFR,African Ancestry
+1195,NA21103,female,GIH,Gujarati,SAS,South Asian Ancestry
+1196,NA20414,female,ASW,African Ancestry SW,AFR,African Ancestry
+1197,NA21108,female,GIH,Gujarati,SAS,South Asian Ancestry
+1198,NA20503,female,TSI,Toscani,EUR,European Ancestry
+1199,NA21110,female,GIH,Gujarati,SAS,South Asian Ancestry
+1200,NA20508,female,TSI,Toscani,EUR,European Ancestry
+1201,NA21115,male,GIH,Gujarati,SAS,South Asian Ancestry
+1202,NA20510,male,TSI,Toscani,EUR,European Ancestry
+1203,NA20515,male,TSI,Toscani,EUR,European Ancestry
+1204,NA20522,female,TSI,Toscani,EUR,European Ancestry
+1205,NA20527,male,TSI,Toscani,EUR,European Ancestry
+1206,NA20534,male,TSI,Toscani,EUR,European Ancestry
+1207,NA20539,male,TSI,Toscani,EUR,European Ancestry
+1208,NA20541,female,TSI,Toscani,EUR,European Ancestry
+1209,NA20589,female,TSI,Toscani,EUR,European Ancestry
+1210,NA20755,male,TSI,Toscani,EUR,European Ancestry
+1211,NA20762,male,TSI,Toscani,EUR,European Ancestry
+1212,NA20767,male,TSI,Toscani,EUR,European Ancestry
+1213,NA20774,female,TSI,Toscani,EUR,European Ancestry
+1214,NA20786,female,TSI,Toscani,EUR,European Ancestry
+1215,NA20798,male,TSI,Toscani,EUR,European Ancestry
+1216,NA20801,male,TSI,Toscani,EUR,European Ancestry
+1217,NA20806,male,TSI,Toscani,EUR,European Ancestry
+1218,NA20813,female,TSI,Toscani,EUR,European Ancestry
+1219,NA20818,female,TSI,Toscani,EUR,European Ancestry
+1220,NA20832,female,TSI,Toscani,EUR,European Ancestry
+1221,NA20849,female,GIH,Gujarati,SAS,South Asian Ancestry
+1222,NA20851,female,GIH,Gujarati,SAS,South Asian Ancestry
+1223,NA19789,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1224,NA19796,male,MXL,Mexican Ancestry,AMR,American Ancestry
+1225,NA19828,male,ASW,African Ancestry SW,AFR,African Ancestry
+1226,NA19835,female,ASW,African Ancestry SW,AFR,African Ancestry
+1227,NA19900,male,ASW,African Ancestry SW,AFR,African Ancestry
+1228,NA19917,female,ASW,African Ancestry SW,AFR,African Ancestry
+1229,NA19924,female,ASW,African Ancestry SW,AFR,African Ancestry
+1230,NA20128,female,ASW,African Ancestry SW,AFR,African Ancestry
+1231,NA20274,female,ASW,African Ancestry SW,AFR,African Ancestry
+1232,NA20279,male,ASW,African Ancestry SW,AFR,African Ancestry
+1233,NA20281,male,ASW,African Ancestry SW,AFR,African Ancestry
+1234,NA20298,male,ASW,African Ancestry SW,AFR,African Ancestry
+1235,NA20301,female,ASW,African Ancestry SW,AFR,African Ancestry
+1236,NA20313,female,ASW,African Ancestry SW,AFR,African Ancestry
+1237,NA20318,male,ASW,African Ancestry SW,AFR,African Ancestry
+1238,NA20320,female,ASW,African Ancestry SW,AFR,African Ancestry
+1239,NA20332,female,ASW,African Ancestry SW,AFR,African Ancestry
+1240,NA20337,female,ASW,African Ancestry SW,AFR,African Ancestry
+1241,NA20344,female,ASW,African Ancestry SW,AFR,African Ancestry
+1242,NA20349,male,ASW,African Ancestry SW,AFR,African Ancestry
+1243,NA20351,male,ASW,African Ancestry SW,AFR,African Ancestry
+1244,NA20356,male,ASW,African Ancestry SW,AFR,African Ancestry
+1245,NA20363,female,ASW,African Ancestry SW,AFR,African Ancestry
+1246,NA21094,male,GIH,Gujarati,SAS,South Asian Ancestry
+1247,NA21099,male,GIH,Gujarati,SAS,South Asian Ancestry
+1248,NA21102,female,GIH,Gujarati,SAS,South Asian Ancestry
+1249,NA21107,male,GIH,Gujarati,SAS,South Asian Ancestry
+1250,NA21114,male,GIH,Gujarati,SAS,South Asian Ancestry
+1251,NA20856,female,GIH,Gujarati,SAS,South Asian Ancestry
+1252,NA20863,male,GIH,Gujarati,SAS,South Asian Ancestry
+1253,NA20868,female,GIH,Gujarati,SAS,South Asian Ancestry
+1254,NA20870,male,GIH,Gujarati,SAS,South Asian Ancestry
+1255,NA20875,female,GIH,Gujarati,SAS,South Asian Ancestry
+1256,NA20899,female,GIH,Gujarati,SAS,South Asian Ancestry
+1257,NA20902,female,GIH,Gujarati,SAS,South Asian Ancestry
+1258,NA20907,female,GIH,Gujarati,SAS,South Asian Ancestry
+1259,NA21087,male,GIH,Gujarati,SAS,South Asian Ancestry
+1260,NA20882,female,GIH,Gujarati,SAS,South Asian Ancestry
+1261,NA20887,male,GIH,Gujarati,SAS,South Asian Ancestry
+1262,NA20894,female,GIH,Gujarati,SAS,South Asian Ancestry
+1263,NA21119,male,GIH,Gujarati,SAS,South Asian Ancestry
+1264,NA21121,female,GIH,Gujarati,SAS,South Asian Ancestry
+1265,NA21126,male,GIH,Gujarati,SAS,South Asian Ancestry
+1266,NA21133,male,GIH,Gujarati,SAS,South Asian Ancestry
+1267,HG00145,male,GBR,British,EUR,European Ancestry
+1268,HG00152,male,GBR,British,EUR,European Ancestry
+1269,HG00157,male,GBR,British,EUR,European Ancestry
+1270,HG00171,female,FIN,Finnish,EUR,European Ancestry
+1271,HG00176,female,FIN,Finnish,EUR,European Ancestry
+1272,HG00183,male,FIN,Finnish,EUR,European Ancestry
+1273,HG00188,male,FIN,Finnish,EUR,European Ancestry
+1274,HG00190,male,FIN,Finnish,Finnish,EUR,European Ancestry,West Eurasia (SGDP)
+1275,HG00234,male,GBR,British,EUR,European Ancestry
+1276,HG00239,female,GBR,British,EUR,European Ancestry
+1277,HG00246,male,GBR,British,EUR,European Ancestry
+1278,HG00253,female,GBR,British,EUR,European Ancestry
+1279,HG00258,female,GBR,British,EUR,European Ancestry
+1280,HG00260,male,GBR,British,EUR,European Ancestry
+1281,HG00265,male,GBR,British,EUR,European Ancestry
+1282,HG00272,female,FIN,Finnish,EUR,European Ancestry
+1283,HG00277,male,FIN,Finnish,EUR,European Ancestry
+1284,HG00284,male,FIN,Finnish,EUR,European Ancestry
+1285,HG00304,female,FIN,Finnish,EUR,European Ancestry
+1286,HG00309,female,FIN,Finnish,EUR,European Ancestry
+1287,HG00147,female,GBR,British,EUR,European Ancestry
+1288,HG00311,male,FIN,Finnish,EUR,European Ancestry
+1289,HG00154,female,GBR,British,EUR,European Ancestry
+1290,HG00323,female,FIN,Finnish,EUR,European Ancestry
+1291,HG00159,male,GBR,British,EUR,European Ancestry
+1292,HG00328,female,FIN,Finnish,EUR,European Ancestry
+1293,HG00173,female,FIN,Finnish,EUR,European Ancestry
+1294,HG00330,female,FIN,Finnish,EUR,European Ancestry
+1295,HG00178,female,FIN,Finnish,EUR,European Ancestry
+1296,HG00335,male,FIN,Finnish,EUR,European Ancestry
+1297,HG00180,female,FIN,Finnish,EUR,European Ancestry
+1298,HG00342,male,FIN,Finnish,EUR,European Ancestry
+1299,HG00185,male,FIN,Finnish,EUR,European Ancestry
+1300,HG00359,female,FIN,Finnish,EUR,European Ancestry
+1301,HG00231,female,GBR,British,EUR,European Ancestry
+1302,HG00361,female,FIN,Finnish,EUR,European Ancestry
+1303,HG00236,female,GBR,British,EUR,European Ancestry
+1304,HG00366,male,FIN,Finnish,EUR,European Ancestry
+1305,HG00243,male,GBR,British,EUR,European Ancestry
+1306,HG00373,female,FIN,Finnish,EUR,European Ancestry
+1307,HG00248,female,GBR,British,EUR,European Ancestry
+1308,HG00378,female,FIN,Finnish,EUR,European Ancestry
+1309,HG00250,female,GBR,British,EUR,European Ancestry
+1310,HG00380,female,FIN,Finnish,EUR,European Ancestry
+1311,HG00255,female,GBR,British,EUR,European Ancestry
+1312,HG00405,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1313,HG00262,female,GBR,British,EUR,European Ancestry
+1314,HG00099,female,GBR,British,EUR,European Ancestry
+1315,HG00267,male,FIN,Finnish,EUR,European Ancestry
+1316,HG00102,female,GBR,British,EUR,European Ancestry
+1317,HG00274,female,FIN,Finnish,EUR,European Ancestry
+1318,HG00107,male,GBR,British,EUR,European Ancestry
+1319,HG00281,female,FIN,Finnish,EUR,European Ancestry
+1320,HG00114,male,GBR,British,EUR,European Ancestry
+1321,HG00534,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1322,HG00119,male,GBR,British,EUR,European Ancestry
+1323,HG00553,male,PUR,Puerto Rican,AMR,American Ancestry
+1324,HG00121,female,GBR,British,EUR,European Ancestry
+1325,HG00558,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1326,HG00126,male,GBR,British,English,EUR,European Ancestry,West Eurasia (SGDP)
+1327,HG00560,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1328,HG00133,female,GBR,British,EUR,European Ancestry
+1329,HG00565,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1330,HG00138,male,GBR,British,EUR,European Ancestry
+1331,HG00577,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1332,HG00140,male,GBR,British,EUR,European Ancestry
+1333,HG00584,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1334,HG00589,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1335,HG00591,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1336,HG00596,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1337,HG00609,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1338,HG00611,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1339,HG00306,female,FIN,Finnish,EUR,European Ancestry
+1340,HG00313,female,FIN,Finnish,EUR,European Ancestry
+1341,HG00318,female,FIN,Finnish,EUR,European Ancestry
+1342,HG00320,female,FIN,Finnish,EUR,European Ancestry
+1343,HG00325,male,FIN,Finnish,EUR,European Ancestry
+1344,HG00332,female,FIN,Finnish,EUR,European Ancestry
+1345,HG00337,female,FIN,Finnish,EUR,European Ancestry
+1346,HG00429,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1347,HG00344,female,FIN,Finnish,EUR,European Ancestry
+1348,HG00436,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1349,HG00349,female,FIN,Finnish,EUR,European Ancestry
+1350,HG00443,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1351,HG00351,male,FIN,Finnish,EUR,European Ancestry
+1352,HG00448,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1353,HG00356,female,FIN,Finnish,EUR,European Ancestry
+1354,HG00450,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1355,HG00368,female,FIN,Finnish,EUR,European Ancestry
+1356,HG00474,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1357,HG00375,male,FIN,Finnish,EUR,European Ancestry
+1358,HG00479,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1359,HG00382,male,FIN,Finnish,EUR,European Ancestry
+1360,HG00501,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1361,HG00407,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1362,HG00513,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1363,HG00096,male,GBR,British,EUR,European Ancestry
+1364,HG00525,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1365,HG00104,female,GBR,British,EUR,European Ancestry
+1366,HG00614,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1367,HG00109,male,GBR,British,EUR,European Ancestry
+1368,HG00619,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1369,HG00111,female,GBR,British,EUR,European Ancestry
+1370,HG00621,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1371,HG00116,male,GBR,British,EUR,European Ancestry
+1372,HG00626,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1373,HG00123,female,GBR,British,EUR,European Ancestry
+1374,HG00128,female,GBR,British,English,EUR,European Ancestry,West Eurasia (SGDP)
+1375,HG00638,female,PUR,Puerto Rican,AMR,American Ancestry
+1376,HG00130,female,GBR,British,EUR,European Ancestry
+1377,HG00640,male,PUR,Puerto Rican,AMR,American Ancestry
+1378,HG00135,female,GBR,British,EUR,European Ancestry
+1379,HG00652,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1380,HG00142,male,GBR,British,EUR,European Ancestry
+1381,HG00657,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1382,HG00685,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1383,HG00664,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1384,HG00692,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1385,HG00671,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1386,HG00700,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1387,HG00532,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1388,HG00705,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1389,HG00537,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1390,HG00717,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1391,HG00544,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1392,HG00729,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1393,HG00551,female,PUR,Puerto Rican,AMR,American Ancestry
+1394,HG00731,male,PUR,Puerto Rican,AMR,American Ancestry
+1395,HG00556,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1396,HG00736,male,PUR,Puerto Rican,AMR,American Ancestry
+1397,HG00582,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1398,HG00419,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1399,HG00594,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1400,HG00421,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1401,HG00599,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1402,HG00438,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1403,HG00607,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1404,HG00445,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1405,HG00452,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1406,HG00683,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1407,HG00457,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1408,HG00690,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1409,HG00464,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1410,HG00703,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1411,HG00476,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1412,HG00708,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1413,HG00623,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1414,HG00734,female,PUR,Puerto Rican,AMR,American Ancestry
+1415,HG00628,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1416,HG00739,male,PUR,Puerto Rican,AMR,American Ancestry
+1417,HG00630,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1418,HG00741,female,PUR,Puerto Rican,AMR,American Ancestry
+1419,HG00635,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1420,HG01105,female,PUR,Puerto Rican,AMR,American Ancestry
+1421,HG00642,male,PUR,Puerto Rican,AMR,American Ancestry
+1422,HG01112,male,CLM,Colombian,AMR,American Ancestry
+1423,HG00654,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1424,HG01124,male,CLM,Colombian,AMR,American Ancestry
+1425,HG00673,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1426,HG01131,female,CLM,Colombian,AMR,American Ancestry
+1427,HG00743,female,PUR,Puerto Rican,AMR,American Ancestry
+1428,HG01136,male,CLM,Colombian,AMR,American Ancestry
+1429,HG00844,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1430,HG01148,male,CLM,Colombian,AMR,American Ancestry
+1431,HG00851,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1432,HG01150,female,CLM,Colombian,AMR,American Ancestry
+1433,HG00983,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1434,HG01162,female,PUR,Puerto Rican,AMR,American Ancestry
+1435,HG01049,female,PUR,Puerto Rican,AMR,American Ancestry
+1436,HG01167,male,PUR,Puerto Rican,AMR,American Ancestry
+1437,HG01051,male,PUR,Puerto Rican,AMR,American Ancestry
+1438,HG01174,female,PUR,Puerto Rican,AMR,American Ancestry
+1439,HG01056,male,PUR,Puerto Rican,AMR,American Ancestry
+1440,HG01198,female,PUR,Puerto Rican,AMR,American Ancestry
+1441,HG01107,male,PUR,Puerto Rican,AMR,American Ancestry
+1442,HG01206,male,PUR,Puerto Rican,AMR,American Ancestry
+1443,HG01114,female,CLM,Colombian,AMR,American Ancestry
+1444,HG01249,female,PUR,Puerto Rican,AMR,American Ancestry
+1445,HG01119,female,CLM,Colombian,AMR,American Ancestry
+1446,HG01251,female,CLM,Colombian,AMR,American Ancestry
+1447,HG01121,male,CLM,Colombian,AMR,American Ancestry
+1448,HG01256,male,CLM,Colombian,AMR,American Ancestry
+1449,HG01126,male,CLM,Colombian,AMR,American Ancestry
+1450,HG01061,female,PUR,Puerto Rican,AMR,American Ancestry
+1451,HG01133,male,CLM,Colombian,AMR,American Ancestry
+1452,HG01066,male,PUR,Puerto Rican,AMR,American Ancestry
+1453,HG01138,male,CLM,Colombian,AMR,American Ancestry
+1454,HG01073,female,PUR,Puerto Rican,AMR,American Ancestry
+1455,HG01140,female,CLM,Colombian,AMR,American Ancestry
+1456,HG01080,female,PUR,Puerto Rican,AMR,American Ancestry
+1457,HG01164,male,PUR,Puerto Rican,AMR,American Ancestry
+1458,HG01085,male,PUR,Puerto Rican,AMR,American Ancestry
+1459,HG01169,female,PUR,Puerto Rican,AMR,American Ancestry
+1460,HG01092,female,PUR,Puerto Rican,AMR,American Ancestry
+1461,HG01171,female,PUR,Puerto Rican,AMR,American Ancestry
+1462,HG01097,male,PUR,Puerto Rican,AMR,American Ancestry
+1463,HG01176,male,PUR,Puerto Rican,AMR,American Ancestry
+1464,HG01100,female,PUR,Puerto Rican,AMR,American Ancestry
+1465,HG01183,female,PUR,Puerto Rican,AMR,American Ancestry
+1466,HG00866,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1467,HG01188,female,PUR,Puerto Rican,AMR,American Ancestry
+1468,HG01028,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1469,HG01190,male,PUR,Puerto Rican,AMR,American Ancestry
+1470,HG01047,male,PUR,Puerto Rican,AMR,American Ancestry
+1471,HG01054,male,PUR,Puerto Rican,AMR,American Ancestry
+1472,HG01241,male,PUR,Puerto Rican,AMR,American Ancestry
+1473,HG01275,female,CLM,Colombian,AMR,American Ancestry
+1474,HG01253,male,CLM,Colombian,AMR,American Ancestry
+1475,HG01302,male,PUR,Puerto Rican,AMR,American Ancestry
+1476,HG01258,male,CLM,Colombian,AMR,American Ancestry
+1477,HG01260,female,CLM,Colombian,AMR,American Ancestry
+1478,HG01063,male,PUR,Puerto Rican,AMR,American Ancestry
+1479,HG01489,female,CLM,Colombian,AMR,American Ancestry
+1480,HG01068,female,PUR,Puerto Rican,AMR,American Ancestry
+1481,HG01491,male,CLM,Colombian,AMR,American Ancestry
+1482,HG01070,female,PUR,Puerto Rican,AMR,American Ancestry
+1483,HG01496,female,CLM,Colombian,AMR,American Ancestry
+1484,HG01075,male,PUR,Puerto Rican,AMR,American Ancestry
+1485,HG01504,female,IBS,Iberian,Spanish,EUR,European Ancestry,West Eurasia (SGDP)
+1486,HG01082,male,PUR,Puerto Rican,AMR,American Ancestry
+1487,HG01326,female,PUR,Puerto Rican,AMR,American Ancestry
+1488,HG01087,female,PUR,Puerto Rican,AMR,American Ancestry
+1489,HG01345,female,CLM,Colombian,AMR,American Ancestry
+1490,HG01094,male,PUR,Puerto Rican,AMR,American Ancestry
+1491,HG01352,female,CLM,Colombian,AMR,American Ancestry
+1492,HG01099,male,PUR,Puerto Rican,AMR,American Ancestry
+1493,HG01357,female,CLM,Colombian,AMR,American Ancestry
+1494,HG01102,female,PUR,Puerto Rican,AMR,American Ancestry
+1495,HG01474,female,CLM,Colombian,AMR,American Ancestry
+1496,HG01369,female,CLM,Colombian,AMR,American Ancestry
+1497,HG01479,male,CLM,Colombian,AMR,American Ancestry
+1498,HG01597,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1499,HG01600,female,KHV,Kinh,Kinh Vietnamese,EAS,East Asia (SGDP),East Asian Ancestry
+1500,HG01486,female,CLM,Colombian,AMR,American Ancestry
+1501,HG01605,female,IBS,Iberian,EUR,European Ancestry
+1502,HG01493,female,CLM,Colombian,AMR,American Ancestry
+1503,HG01612,female,IBS,Iberian,EUR,European Ancestry
+1504,HG01498,female,CLM,Colombian,AMR,American Ancestry
+1505,HG01376,female,CLM,Colombian,AMR,American Ancestry
+1506,HG01501,female,IBS,Iberian,EUR,European Ancestry
+1507,HG01383,male,CLM,Colombian,AMR,American Ancestry
+1508,HG01378,female,CLM,Colombian,AMR,American Ancestry
+1509,HG01390,female,CLM,Colombian,AMR,American Ancestry
+1510,HG01385,female,CLM,Colombian,AMR,American Ancestry
+1511,HG01395,male,PUR,Puerto Rican,AMR,American Ancestry
+1512,HG01392,male,PUR,Puerto Rican,AMR,American Ancestry
+1513,HG01403,female,PUR,Puerto Rican,AMR,American Ancestry
+1514,HG01405,male,PUR,Puerto Rican,AMR,American Ancestry
+1515,HG01439,female,CLM,Colombian,AMR,American Ancestry
+1516,HG01412,male,PUR,Puerto Rican,AMR,American Ancestry
+1517,HG01441,female,CLM,Colombian,AMR,American Ancestry
+1518,HG01342,female,CLM,Colombian,AMR,American Ancestry
+1519,HG01347,male,CLM,Colombian,AMR,American Ancestry
+1520,HG01465,female,CLM,Colombian,AMR,American Ancestry
+1521,HG01354,female,CLM,Colombian,AMR,American Ancestry
+1522,HG01509,male,IBS,Iberian,EUR,European Ancestry
+1523,HG01359,male,CLM,Colombian,AMR,American Ancestry
+1524,HG01511,female,IBS,Iberian,EUR,European Ancestry
+1525,HG01361,female,CLM,Colombian,AMR,American Ancestry
+1526,HG01516,female,IBS,Iberian,EUR,European Ancestry
+1527,HG01366,female,CLM,Colombian,AMR,American Ancestry
+1528,HG01523,male,IBS,Iberian,EUR,European Ancestry
+1529,HG01272,female,CLM,Colombian,AMR,American Ancestry
+1530,HG01528,female,IBS,Iberian,EUR,European Ancestry
+1531,HG01277,male,CLM,Colombian,AMR,American Ancestry
+1532,HG01530,male,IBS,Iberian,EUR,European Ancestry
+1533,HG01284,female,CLM,Colombian,AMR,American Ancestry
+1534,HG01617,male,IBS,Iberian,EUR,European Ancestry
+1535,HG01311,male,PUR,Puerto Rican,AMR,American Ancestry
+1536,HG01624,male,IBS,Iberian,EUR,European Ancestry
+1537,HG01323,female,PUR,Puerto Rican,AMR,American Ancestry
+1538,HG01629,male,IBS,Iberian,EUR,European Ancestry
+1539,HG01506,male,IBS,Iberian,EUR,European Ancestry
+1540,HG01631,male,IBS,Iberian,EUR,European Ancestry
+1541,HG01513,female,IBS,Iberian,EUR,European Ancestry
+1542,HG01667,male,IBS,Iberian,EUR,European Ancestry
+1543,HG01518,male,IBS,Iberian,EUR,European Ancestry
+1544,HG01674,male,IBS,Iberian,EUR,European Ancestry
+1545,HG01520,female,IBS,Iberian,EUR,European Ancestry
+1546,HG01566,female,PEL,Peruvian,AMR,American Ancestry
+1547,HG01525,female,IBS,Iberian,EUR,European Ancestry
+1548,HG01573,female,PEL,Peruvian,AMR,American Ancestry
+1549,HG01431,male,CLM,Colombian,AMR,American Ancestry
+1550,HG01578,female,PEL,Peruvian,AMR,American Ancestry
+1551,HG01443,male,CLM,Colombian,AMR,American Ancestry
+1552,HG01679,female,IBS,Iberian,EUR,European Ancestry
+1553,HG01455,male,CLM,Colombian,AMR,American Ancestry
+1554,HG01681,female,IBS,Iberian,EUR,European Ancestry
+1555,HG01462,female,CLM,Colombian,AMR,American Ancestry
+1556,HG01686,male,IBS,Iberian,EUR,European Ancestry
+1557,HG01698,male,IBS,Iberian,EUR,European Ancestry
+1558,HG01599,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1559,HG01701,male,IBS,Iberian,EUR,European Ancestry
+1560,HG01602,female,IBS,Iberian,EUR,European Ancestry
+1561,HG01946,male,PEL,Peruvian,AMR,American Ancestry
+1562,HG01607,female,IBS,Iberian,EUR,European Ancestry
+1563,HG01953,male,PEL,Peruvian,AMR,American Ancestry
+1564,HG01614,female,IBS,Iberian,EUR,European Ancestry
+1565,HG01958,female,ACB,African Caribbean,AFR,African Ancestry
+1566,HG01619,male,IBS,Iberian,EUR,European Ancestry
+1567,HG01960,female,ACB,African Caribbean,AFR,African Ancestry
+1568,HG01621,male,IBS,Iberian,EUR,European Ancestry
+1569,HG01965,female,PEL,Peruvian,AMR,American Ancestry
+1570,HG01626,female,IBS,Iberian,EUR,European Ancestry
+1571,HG01922,female,PEL,Peruvian,AMR,American Ancestry
+1572,HG01633,male,IBS,Iberian,EUR,European Ancestry
+1573,HG01927,female,PEL,Peruvian,AMR,American Ancestry
+1574,HG01669,male,IBS,Iberian,EUR,European Ancestry
+1575,HG01934,male,PEL,Peruvian,AMR,American Ancestry
+1576,HG01671,male,IBS,Iberian,EUR,European Ancestry
+1577,HG01939,female,PEL,Peruvian,AMR,American Ancestry
+1578,HG01861,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1579,HG01941,male,PEL,Peruvian,AMR,American Ancestry
+1580,HG01866,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1581,HG01864,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1582,HG01873,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1583,HG01869,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1584,HG01878,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1585,HG01871,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1586,HG01880,female,ACB,African Caribbean,AFR,African Ancestry
+1587,HG01883,female,ACB,African Caribbean,AFR,African Ancestry
+1588,HG01789,male,GBR,British,EUR,European Ancestry
+1589,HG01768,female,IBS,Iberian,EUR,European Ancestry
+1590,HG01791,male,GBR,British,EUR,European Ancestry
+1591,HG01770,female,IBS,Iberian,EUR,European Ancestry
+1592,HG01796,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1593,HG01775,male,IBS,Iberian,EUR,European Ancestry
+1594,HG01804,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1595,HG01782,female,IBS,Iberian,EUR,European Ancestry
+1596,HG01809,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1597,HG01811,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1598,HG01888,male,ACB,African Caribbean,AFR,African Ancestry
+1599,HG01532,male,IBS,Iberian,EUR,European Ancestry
+1600,HG01890,male,ACB,African Caribbean,AFR,African Ancestry
+1601,HG01537,female,IBS,Iberian,EUR,European Ancestry
+1602,HG01895,male,ACB,African Caribbean,AFR,African Ancestry
+1603,HG01551,female,CLM,Colombian,AMR,American Ancestry
+1604,HG01915,female,ACB,African Caribbean,AFR,African Ancestry
+1605,HG01556,male,CLM,Colombian,AMR,American Ancestry
+1606,HG01972,female,PEL,Peruvian,AMR,American Ancestry
+1607,HG01703,male,IBS,Iberian,EUR,European Ancestry
+1608,HG01977,male,PEL,Peruvian,AMR,American Ancestry
+1609,HG01708,male,IBS,Iberian,EUR,European Ancestry
+1610,HG01984,male,PEL,Peruvian,AMR,American Ancestry
+1611,HG01710,female,IBS,Iberian,EUR,European Ancestry
+1612,HG01706,female,IBS,Iberian,EUR,European Ancestry
+1613,HG01746,female,IBS,Iberian,EUR,European Ancestry
+1614,HG01756,male,IBS,Iberian,EUR,European Ancestry
+1615,HG01765,male,IBS,Iberian,EUR,European Ancestry
+1616,HG01763,female,IBS,Iberian,EUR,European Ancestry
+1617,HG01816,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1618,HG01840,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1619,HG01842,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1620,HG01845,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1621,HG01847,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1622,HG01852,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1623,HG01859,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1624,HG01857,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1625,HG01676,female,IBS,Iberian,EUR,European Ancestry
+1626,HG01794,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1627,HG01683,male,IBS,Iberian,EUR,European Ancestry
+1628,HG01799,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1629,HG01695,female,IBS,Iberian,EUR,European Ancestry
+1630,HG01802,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1631,HG01772,female,IBS,Iberian,EUR,European Ancestry
+1632,HG01807,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1633,HG01777,male,IBS,Iberian,EUR,European Ancestry
+1634,HG02071,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1635,HG01784,female,IBS,Iberian,EUR,European Ancestry
+1636,HG02076,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1637,HG01993,female,PEL,Peruvian,AMR,American Ancestry
+1638,HG02083,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1639,HG01998,male,PEL,Peruvian,AMR,American Ancestry
+1640,HG02088,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1641,HG02004,female,PEL,Peruvian,AMR,American Ancestry
+1642,HG02090,male,PEL,Peruvian,AMR,American Ancestry
+1643,HG02009,male,ACB,African Caribbean,AFR,African Ancestry
+1644,HG02139,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1645,HG02011,male,ACB,African Caribbean,AFR,African Ancestry
+1646,HG02141,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1647,HG02016,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1648,HG02146,male,PEL,Peruvian,AMR,American Ancestry
+1649,HG02047,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1650,HG02153,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1651,HG02054,female,ACB,African Caribbean,AFR,African Ancestry
+1652,HG02095,female,ACB,African Caribbean,AFR,African Ancestry
+1653,HG02059,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1654,HG02108,female,ACB,African Caribbean,AFR,African Ancestry
+1655,HG02061,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1656,HG02122,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1657,HG01885,male,ACB,African Caribbean,AFR,African Ancestry
+1658,HG02127,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1659,HG01892,male,PEL,Peruvian,AMR,American Ancestry
+1660,HG02134,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1661,HG01897,male,ACB,African Caribbean,AFR,African Ancestry
+1662,HG01912,male,ACB,African Caribbean,AFR,African Ancestry
+1663,HG02259,male,PEL,Peruvian,AMR,American Ancestry
+1664,HG01917,male,PEL,Peruvian,AMR,American Ancestry
+1665,HG02261,male,PEL,Peruvian,AMR,American Ancestry
+1666,HG00141,male,GBR,British,EUR,European Ancestry
+1667,HG01943,male,PEL,Peruvian,AMR,American Ancestry
+1668,HG02266,female,PEL,Peruvian,AMR,American Ancestry
+1669,HG00146,female,GBR,British,EUR,European Ancestry
+1670,HG01948,female,PEL,Peruvian,AMR,American Ancestry
+1671,HG02273,female,PEL,Peruvian,AMR,American Ancestry
+1672,HG00153,female,GBR,British,EUR,European Ancestry
+1673,HG01950,male,PEL,Peruvian,AMR,American Ancestry
+1674,HG01989,female,ACB,African Caribbean,AFR,African Ancestry
+1675,HG00158,female,GBR,British,EUR,European Ancestry
+1676,HG01955,female,PEL,Peruvian,AMR,American Ancestry
+1677,HG01991,male,PEL,Peruvian,AMR,American Ancestry
+1678,HG00160,male,GBR,British,EUR,European Ancestry
+1679,HG01967,male,PEL,Peruvian,AMR,American Ancestry
+1680,HG02002,male,PEL,Peruvian,AMR,American Ancestry
+1681,HG00177,female,FIN,Finnish,EUR,European Ancestry
+1682,HG01974,male,PEL,Peruvian,AMR,American Ancestry
+1683,HG02014,male,ACB,African Caribbean,AFR,African Ancestry
+1684,HG00189,male,FIN,Finnish,EUR,European Ancestry
+1685,HG01979,male,PEL,Peruvian,AMR,American Ancestry
+1686,HG02052,female,ACB,African Caribbean,AFR,African Ancestry
+1687,HG00235,female,GBR,British,EUR,European Ancestry
+1688,HG01981,female,PEL,Peruvian,AMR,American Ancestry
+1689,HG02057,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1690,HG00242,male,GBR,British,EUR,European Ancestry
+1691,HG01986,male,ACB,African Caribbean,AFR,African Ancestry
+1692,HG02064,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1693,HG00247,female,GBR,British,EUR,European Ancestry
+1694,HG02105,female,PEL,Peruvian,AMR,American Ancestry
+1695,HG02069,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1696,HG00254,female,GBR,British,EUR,European Ancestry
+1697,HG02129,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1698,HG02019,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1699,HG00259,female,GBR,British,EUR,European Ancestry
+1700,HG02131,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1701,HG02021,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1702,HG00261,female,GBR,British,EUR,European Ancestry
+1703,HG02023,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1704,HG02026,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1705,HG00266,female,FIN,Finnish,EUR,European Ancestry
+1706,HG02028,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1707,HG02040,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1708,HG00273,male,FIN,Finnish,EUR,European Ancestry
+1709,HG02030,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1710,HG02223,female,IBS,Iberian,EUR,European Ancestry
+1711,HG00278,male,FIN,Finnish,EUR,European Ancestry
+1712,HG02035,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1713,HG02230,female,IBS,Iberian,EUR,European Ancestry
+1714,HG00280,male,FIN,Finnish,EUR,European Ancestry
+1715,HG02073,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1716,HG02235,female,IBS,Iberian,EUR,European Ancestry
+1717,HG00285,female,FIN,Finnish,EUR,European Ancestry
+1718,HG02078,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1719,HG02165,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1720,HG00312,male,FIN,Finnish,EUR,European Ancestry
+1721,HG02080,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1722,HG02184,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1723,HG00324,female,FIN,Finnish,EUR,European Ancestry
+1724,HG02085,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1725,HG02189,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1726,HG00329,male,FIN,Finnish,EUR,European Ancestry
+1727,HG01924,female,PEL,Peruvian,AMR,American Ancestry
+1728,HG02494,female,PJL,Punjabi,Punjabi,SAS,South Asia (SGDP),South Asian Ancestry
+1729,HG00331,female,FIN,Finnish,EUR,European Ancestry
+1730,HG01936,female,PEL,Peruvian,AMR,American Ancestry
+1731,HG02502,female,ACB,African Caribbean,AFR,African Ancestry
+1732,HG00336,male,FIN,Finnish,EUR,European Ancestry
+1733,HG02136,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1734,HG02514,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1735,HG00343,female,FIN,Finnish,EUR,European Ancestry
+1736,HG02143,male,ACB,African Caribbean,AFR,African Ancestry
+1737,HG02521,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1738,HG00350,female,FIN,Finnish,EUR,European Ancestry
+1739,HG02148,female,PEL,Peruvian,AMR,American Ancestry
+1740,HG02348,female,PEL,Peruvian,AMR,American Ancestry
+1741,HG00355,female,FIN,Finnish,EUR,European Ancestry
+1742,HG02150,male,PEL,Peruvian,AMR,American Ancestry
+1743,HG02355,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1744,HG00362,female,FIN,Finnish,EUR,European Ancestry
+1745,HG02155,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1746,HG02367,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1747,HG00367,female,FIN,Finnish,EUR,European Ancestry
+1748,HG02408,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1749,HG02374,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1750,HG00379,female,FIN,Finnish,EUR,European Ancestry
+1751,HG02410,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1752,HG02379,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1753,HG00381,female,FIN,Finnish,EUR,European Ancestry
+1754,HG02381,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1755,HG00406,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1756,HG02427,female,ACB,African Caribbean,AFR,African Ancestry
+1757,HG02278,female,PEL,Peruvian,AMR,American Ancestry
+1758,HG00103,male,GBR,British,EUR,European Ancestry
+1759,HG02439,male,ACB,African Caribbean,AFR,African Ancestry
+1760,HG02280,female,ACB,African Caribbean,AFR,African Ancestry
+1761,HG00108,male,GBR,British,EUR,European Ancestry
+1762,HG02282,female,ACB,African Caribbean,AFR,African Ancestry
+1763,HG02285,male,PEL,Peruvian,AMR,American Ancestry
+1764,HG00110,female,GBR,British,EUR,European Ancestry
+1765,HG02287,female,PEL,Peruvian,AMR,American Ancestry
+1766,HG02292,female,PEL,Peruvian,AMR,American Ancestry
+1767,HG00115,male,GBR,British,EUR,European Ancestry
+1768,HG02299,male,PEL,Peruvian,AMR,American Ancestry
+1769,HG02300,male,PEL,Peruvian,AMR,American Ancestry
+1770,HG00122,female,GBR,British,EUR,European Ancestry
+1771,HG02302,male,PEL,Peruvian,AMR,American Ancestry
+1772,HG02401,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1773,HG00127,female,GBR,British,EUR,European Ancestry
+1774,HG02406,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1775,HG00134,female,GBR,British,EUR,European Ancestry
+1776,HG02220,female,IBS,Iberian,EUR,European Ancestry
+1777,HG02420,male,ACB,African Caribbean,AFR,African Ancestry
+1778,HG00139,male,GBR,British,EUR,European Ancestry
+1779,HG02225,female,IBS,Iberian,EUR,European Ancestry
+1780,HG02425,female,PEL,Peruvian,AMR,American Ancestry
+1781,HG02232,female,IBS,Iberian,EUR,European Ancestry
+1782,HG02449,male,ACB,African Caribbean,AFR,African Ancestry
+1783,HG02237,female,IBS,Iberian,EUR,European Ancestry
+1784,HG02451,female,ACB,African Caribbean,AFR,African Ancestry
+1785,HG02345,female,PEL,Peruvian,AMR,American Ancestry
+1786,HG02364,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1787,HG02470,male,ACB,African Caribbean,AFR,African Ancestry
+1788,HG02371,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1789,HG02383,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1790,HG02545,male,ACB,African Caribbean,AFR,African Ancestry
+1791,HG02388,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1792,HG02557,male,ACB,African Caribbean,AFR,African Ancestry
+1793,HG02390,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1794,HG02395,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1795,HG02571,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1796,HG02307,male,ACB,African Caribbean,AFR,African Ancestry
+1797,HG02583,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1798,HG02314,male,ACB,African Caribbean,AFR,African Ancestry
+1799,HG02588,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1800,HG02321,female,ACB,African Caribbean,AFR,African Ancestry
+1801,HG02312,female,PEL,Peruvian,AMR,American Ancestry
+1802,HG00418,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1803,HG02256,female,ACB,African Caribbean,AFR,African Ancestry
+1804,HG02317,male,ACB,African Caribbean,AFR,African Ancestry
+1805,HG00420,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1806,HG02275,female,PEL,Peruvian,AMR,American Ancestry
+1807,HG02343,male,ACB,African Caribbean,AFR,African Ancestry
+1808,HG00437,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1809,HG02179,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1810,HG02386,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1811,HG00444,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1812,HG02181,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1813,HG02398,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1814,HG00449,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1815,HG02186,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1816,HG02691,female,PJL,Punjabi,SAS,South Asian Ancestry
+1817,HG00451,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1818,HG02489,male,ACB,African Caribbean,AFR,African Ancestry
+1819,HG02696,male,PJL,Punjabi,SAS,South Asian Ancestry
+1820,HG00463,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1821,HG02491,female,PJL,Punjabi,SAS,South Asian Ancestry
+1822,HG00475,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1823,HG02496,male,ACB,African Caribbean,AFR,African Ancestry
+1824,HG02716,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1825,HG00502,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1826,HG02511,female,ACB,African Caribbean,AFR,African Ancestry
+1827,HG00514,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1828,HG02523,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+1829,HG00526,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1830,HG02662,female,PJL,Punjabi,SAS,South Asian Ancestry
+1831,HG02595,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1832,HG00742,male,PUR,Puerto Rican,AMR,American Ancestry
+1833,HG02667,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1834,HG02603,male,PJL,Punjabi,SAS,South Asian Ancestry
+1835,HG00759,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1836,HG02679,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1837,HG02610,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1838,HG00766,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1839,HG02681,male,PJL,Punjabi,SAS,South Asian Ancestry
+1840,HG02728,female,PJL,Punjabi,SAS,South Asian Ancestry
+1841,HG00867,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1842,HG02686,male,PJL,Punjabi,SAS,South Asian Ancestry
+1843,HG02735,male,PJL,Punjabi,SAS,South Asian Ancestry
+1844,HG00879,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1845,HG02597,male,PJL,Punjabi,SAS,South Asian Ancestry
+1846,HG02759,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1847,HG00881,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1848,HG02600,male,PJL,Punjabi,SAS,South Asian Ancestry
+1849,HG00956,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1850,HG02605,female,PJL,Punjabi,SAS,South Asian Ancestry
+1851,HG02646,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1852,HG00982,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1853,HG01029,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+1854,HG02658,female,PJL,Punjabi,SAS,South Asian Ancestry
+1855,HG01031,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+1856,HG02554,male,ACB,African Caribbean,AFR,African Ancestry
+1857,HG02660,male,PJL,Punjabi,SAS,South Asian Ancestry
+1858,HG01048,male,PUR,Puerto Rican,AMR,American Ancestry
+1859,HG01050,female,PUR,Puerto Rican,AMR,American Ancestry
+1860,HG02561,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1861,HG02778,female,PJL,Punjabi,SAS,South Asian Ancestry
+1862,HG01055,female,PUR,Puerto Rican,AMR,American Ancestry
+1863,HG02624,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1864,HG02780,male,PJL,Punjabi,SAS,South Asian Ancestry
+1865,HG00610,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1866,HG02629,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1867,HG02785,female,PJL,Punjabi,SAS,South Asian Ancestry
+1868,HG00615,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1869,HG00622,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1870,HG02643,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1871,HG02684,male,PJL,Punjabi,SAS,South Asian Ancestry
+1872,HG00627,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1873,HG02465,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1874,HG02689,male,PJL,Punjabi,SAS,South Asian Ancestry
+1875,HG00634,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1876,HG02477,female,ACB,African Caribbean,AFR,African Ancestry
+1877,HG02792,male,PJL,Punjabi,SAS,South Asian Ancestry
+1878,HG00639,female,PUR,Puerto Rican,AMR,American Ancestry
+1879,HG02484,male,ACB,African Caribbean,AFR,African Ancestry
+1880,HG00641,female,PUR,Puerto Rican,AMR,American Ancestry
+1881,HG02573,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1882,HG02805,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1883,HG00653,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1884,HG02580,female,ACB,African Caribbean,AFR,African Ancestry
+1885,HG00658,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1886,HG02585,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1887,HG02817,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1888,HG00672,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1889,HG02648,male,PJL,Punjabi,SAS,South Asian Ancestry
+1890,HG02836,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1891,HG00684,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1892,HG00689,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1893,HG02655,female,PJL,Punjabi,SAS,South Asian Ancestry
+1894,HG00691,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1895,HG02698,male,PJL,Punjabi,SAS,South Asian Ancestry
+1896,HG02634,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1897,HG00704,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1898,HG02982,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1899,HG00709,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1900,HG03012,male,BEB,Bengali,SAS,South Asian Ancestry
+1901,HG00716,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1902,HG03007,female,BEB,Bengali,Bengali,SAS,South Asia (SGDP),South Asian Ancestry
+1903,HG00728,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1904,HG03019,female,PJL,Punjabi,SAS,South Asian Ancestry
+1905,HG03024,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1906,HG03021,male,PJL,Punjabi,SAS,South Asian Ancestry
+1907,HG00735,female,PUR,Puerto Rican,AMR,American Ancestry
+1908,HG03118,male,ESN,Esan,AFR,African Ancestry
+1909,HG00533,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1910,HG03120,male,ESN,Esan,AFR,African Ancestry
+1911,HG00538,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1912,HG02888,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1913,HG00552,male,PUR,Puerto Rican,AMR,American Ancestry
+1914,HG02890,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1915,HG03132,female,ESN,Esan,AFR,African Ancestry
+1916,HG00557,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1917,HG02895,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1918,HG00583,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1919,HG02922,female,ESN,Esan,AFR,African Ancestry
+1920,HG02855,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1921,HG00590,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1922,HG00595,male,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1923,HG02941,male,ESN,Esan,AFR,African Ancestry
+1924,HG02879,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1925,HG00608,female,CHS,Southern Han Chinese,EAS,East Asian Ancestry
+1926,HG02946,female,ESN,Esan,AFR,African Ancestry
+1927,HG02881,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1928,HG01168,female,PUR,Puerto Rican,AMR,American Ancestry
+1929,HG02787,female,PJL,Punjabi,SAS,South Asian Ancestry
+1930,HG01170,male,PUR,Puerto Rican,AMR,American Ancestry
+1931,HG03048,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1932,HG01175,female,PUR,Puerto Rican,AMR,American Ancestry
+1933,HG02799,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1934,HG01182,male,PUR,Puerto Rican,AMR,American Ancestry
+1935,HG02807,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1936,HG03055,female,MSL,Mende,AFR,African Ancestry
+1937,HG01187,male,PUR,Puerto Rican,AMR,American Ancestry
+1938,HG02763,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1939,HG01199,male,PUR,Puerto Rican,AMR,American Ancestry
+1940,HG02768,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1941,HG03074,male,MSL,Mende,AFR,African Ancestry
+1942,HG01252,male,CLM,Colombian,AMR,American Ancestry
+1943,HG03079,female,MSL,Mende,AFR,African Ancestry
+1944,HG01257,female,CLM,Colombian,AMR,American Ancestry
+1945,HG02775,female,PJL,Punjabi,SAS,South Asian Ancestry
+1946,HG03081,male,MSL,Mende,AFR,African Ancestry
+1947,HG01062,female,PUR,Puerto Rican,AMR,American Ancestry
+1948,HG02814,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1949,HG03086,female,MSL,Mende,AFR,African Ancestry
+1950,HG01067,female,PUR,Puerto Rican,AMR,American Ancestry
+1951,HG02819,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1952,HG03163,male,ESN,Esan,AFR,African Ancestry
+1953,HG01074,male,PUR,Puerto Rican,AMR,American Ancestry
+1954,HG03168,female,ESN,Esan,AFR,African Ancestry
+1955,HG01079,male,PUR,Puerto Rican,AMR,American Ancestry
+1956,HG01081,female,PUR,Puerto Rican,AMR,American Ancestry
+1957,HG02840,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1958,HG03175,male,ESN,Esan,AFR,African Ancestry
+1959,HG01086,female,PUR,Puerto Rican,AMR,American Ancestry
+1960,HG03040,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1961,HG02968,male,ESN,Esan,AFR,African Ancestry
+1962,HG01098,female,PUR,Puerto Rican,AMR,American Ancestry
+1963,HG03045,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1964,HG02970,female,ESN,Esan,AFR,African Ancestry
+1965,HG01101,male,PUR,Puerto Rican,AMR,American Ancestry
+1966,HG03052,female,MSL,Mende,AFR,African Ancestry
+1967,HG01269,female,CLM,Colombian,AMR,American Ancestry
+1968,HG03057,male,MSL,Mende,AFR,African Ancestry
+1969,HG01271,male,CLM,Colombian,AMR,American Ancestry
+1970,HG02725,female,PJL,Punjabi,SAS,South Asian Ancestry
+1971,HG01276,female,CLM,Colombian,AMR,American Ancestry
+1972,HG02737,female,PJL,Punjabi,SAS,South Asian Ancestry
+1973,HG01303,female,PUR,Puerto Rican,AMR,American Ancestry
+1974,HG02756,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1975,HG02944,male,ESN,Esan,AFR,African Ancestry
+1976,HG01308,male,PUR,Puerto Rican,AMR,American Ancestry
+1977,HG02852,female,GWD,Gambian Mandinka,AFR,African Ancestry
+1978,HG03478,male,MSL,Mende,AFR,African Ancestry
+1979,HG01106,male,PUR,Puerto Rican,AMR,American Ancestry
+1980,HG03485,female,MSL,Mende,AFR,African Ancestry
+1981,HG01113,female,CLM,Colombian,AMR,American Ancestry
+1982,HG03492,male,PJL,Punjabi,SAS,South Asian Ancestry
+1983,HG01125,female,CLM,Colombian,AMR,American Ancestry
+1984,HG02953,male,ESN,Esan,AFR,African Ancestry
+1985,HG01137,female,CLM,Colombian,AMR,American Ancestry
+1986,HG01149,female,CLM,Colombian,AMR,American Ancestry
+1987,HG03461,female,MSL,Mende,AFR,African Ancestry
+1988,HG02977,male,ESN,Esan,AFR,African Ancestry
+1989,HG01334,male,GBR,British,EUR,European Ancestry
+1990,HG03473,female,MSL,Mende,AFR,African Ancestry
+1991,HG01341,male,CLM,Colombian,AMR,American Ancestry
+1992,HG03196,male,ESN,Esan,AFR,African Ancestry
+1993,HG03238,female,PJL,Punjabi,SAS,South Asian Ancestry
+1994,HG01346,female,CLM,Colombian,AMR,American Ancestry
+1995,HG03209,male,MSL,Mende,AFR,African Ancestry
+1996,HG03240,male,GWD,Gambian Mandinka,AFR,African Ancestry
+1997,HG01353,male,CLM,Colombian,AMR,American Ancestry
+1998,HG03228,male,PJL,Punjabi,SAS,South Asian Ancestry
+1999,HG01358,male,CLM,Colombian,AMR,American Ancestry
+2000,HG03271,male,ESN,Esan,AFR,African Ancestry
+2001,HG01360,female,CLM,Colombian,AMR,American Ancestry
+2002,HG03235,female,PJL,Punjabi,SAS,South Asian Ancestry
+2003,HG03295,male,ESN,Esan,AFR,African Ancestry
+2004,HG01365,male,CLM,Colombian,AMR,American Ancestry
+2005,HG03095,female,MSL,Mende,AFR,African Ancestry
+2006,HG03303,female,ESN,Esan,AFR,African Ancestry
+2007,HG01531,female,IBS,Iberian,EUR,European Ancestry
+2008,HG03103,male,ESN,Esan,AFR,African Ancestry
+2009,HG03372,female,ESN,Esan,AFR,African Ancestry
+2010,HG01536,male,IBS,Iberian,EUR,European Ancestry
+2011,HG03108,female,ESN,Esan,AFR,African Ancestry
+2012,HG01550,male,CLM,Colombian,AMR,American Ancestry
+2013,HG03391,male,MSL,Mende,AFR,African Ancestry
+2014,HG01567,female,PEL,Peruvian,AMR,American Ancestry
+2015,HG03115,male,ESN,Esan,AFR,African Ancestry
+2016,HG01579,male,PEL,Peruvian,AMR,American Ancestry
+2017,HG01586,male,PJL,Punjabi,SAS,South Asian Ancestry
+2018,HG03247,female,GWD,Gambian Mandinka,AFR,African Ancestry
+2019,HG01372,female,CLM,Colombian,AMR,American Ancestry
+2020,HG03259,female,GWD,Gambian Mandinka,AFR,African Ancestry
+2021,HG01377,male,CLM,Colombian,AMR,American Ancestry
+2022,HG01384,female,CLM,Colombian,AMR,American Ancestry
+2023,HG03367,male,ESN,Esan,AFR,African Ancestry
+2024,HG03517,female,ESN,Esan,AFR,African Ancestry
+2025,HG01389,male,CLM,Colombian,AMR,American Ancestry
+2026,HG03548,female,MSL,Mende,AFR,African Ancestry
+2027,HG01391,female,CLM,Colombian,AMR,American Ancestry
+2028,HG03567,female,MSL,Mende,AFR,African Ancestry
+2029,HG01396,female,PUR,Puerto Rican,AMR,American Ancestry
+2030,HG03428,female,MSL,Mende,AFR,African Ancestry
+2031,HG03343,male,ESN,Esan,AFR,African Ancestry
+2032,HG03442,male,MSL,Mende,AFR,African Ancestry
+2033,HG01435,female,CLM,Colombian,AMR,American Ancestry
+2034,HG01442,male,CLM,Colombian,AMR,American Ancestry
+2035,HG03199,male,ESN,Esan,AFR,African Ancestry
+2036,HG01447,female,CLM,Colombian,AMR,American Ancestry
+2037,HG03202,male,ESN,Esan,AFR,African Ancestry
+2038,HG03127,male,ESN,Esan,AFR,African Ancestry
+2039,HG03694,male,STU,Tamil,SAS,South Asian Ancestry
+2040,HG01459,female,CLM,Colombian,AMR,American Ancestry
+2041,HG01461,male,CLM,Colombian,AMR,American Ancestry
+2042,HG03139,male,ESN,Esan,AFR,African Ancestry
+2043,HG03702,male,PJL,Punjabi,SAS,South Asian Ancestry
+2044,HG01466,female,CLM,Colombian,AMR,American Ancestry
+2045,HG03280,male,ESN,Esan,AFR,African Ancestry
+2046,HG01505,male,IBS,Iberian,EUR,European Ancestry
+2047,HG03297,female,ESN,Esan,AFR,African Ancestry
+2048,HG03714,female,ITU,Telugu,SAS,South Asian Ancestry
+2049,HG01512,male,IBS,Iberian,EUR,European Ancestry
+2050,HG03300,female,ESN,Esan,AFR,African Ancestry
+2051,HG03598,female,BEB,Bengali,SAS,South Asian Ancestry
+2052,HG01517,female,IBS,Iberian,EUR,European Ancestry
+2053,HG03606,male,BEB,Bengali,SAS,South Asian Ancestry
+2054,HG01524,male,IBS,Iberian,EUR,European Ancestry
+2055,HG03064,female,MSL,Mende,AFR,African Ancestry
+2056,HG01529,male,IBS,Iberian,EUR,European Ancestry
+2057,HG03069,male,MSL,Mende,AFR,African Ancestry
+2058,HG01593,female,PJL,Punjabi,SAS,South Asian Ancestry
+2059,HG03076,female,MSL,Mende,AFR,African Ancestry
+2060,HG03625,female,PJL,Punjabi,SAS,South Asian Ancestry
+2061,HG01598,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2062,HG03088,female,MSL,Mende,AFR,African Ancestry
+2063,HG03745,male,STU,Tamil,SAS,South Asian Ancestry
+2064,HG01601,male,IBS,Iberian,EUR,European Ancestry
+2065,HG03752,female,STU,Tamil,SAS,South Asian Ancestry
+2066,HG01606,male,IBS,Iberian,EUR,European Ancestry
+2067,HG03160,male,ESN,Esan,AFR,African Ancestry
+2068,HG03757,female,STU,Tamil,SAS,South Asian Ancestry
+2069,HG01613,female,IBS,Iberian,EUR,European Ancestry
+2070,HG03172,male,ESN,Esan,AFR,African Ancestry
+2071,HG03189,female,ESN,Esan,AFR,African Ancestry
+2072,HG03771,male,ITU,Telugu,SAS,South Asian Ancestry
+2073,HG01485,male,CLM,Colombian,AMR,American Ancestry
+2074,HG03521,male,ESN,Esan,AFR,African Ancestry
+2075,HG01492,female,CLM,Colombian,AMR,American Ancestry
+2076,HG03538,male,GWD,Gambian Mandinka,AFR,African Ancestry
+2077,HG03733,female,STU,Tamil,SAS,South Asian Ancestry
+2078,HG01497,male,CLM,Colombian,AMR,American Ancestry
+2079,HG03738,male,STU,Tamil,SAS,South Asian Ancestry
+2080,HG01500,male,IBS,Iberian,EUR,European Ancestry
+2081,HG03557,female,MSL,Mende,AFR,African Ancestry
+2082,HG03740,male,STU,Tamil,SAS,South Asian Ancestry
+2083,HG01618,female,IBS,Iberian,EUR,European Ancestry
+2084,HG03644,male,STU,Tamil,SAS,South Asian Ancestry
+2085,HG01620,female,IBS,Iberian,EUR,European Ancestry
+2086,HG03649,male,PJL,Punjabi,SAS,South Asian Ancestry
+2087,HG01625,male,IBS,Iberian,EUR,European Ancestry
+2088,HG03571,male,MSL,Mende,AFR,African Ancestry
+2089,HG01632,female,IBS,Iberian,EUR,European Ancestry
+2090,HG01668,female,IBS,Iberian,EUR,European Ancestry
+2091,HG03583,female,MSL,Mende,AFR,African Ancestry
+2092,HG03663,male,PJL,Punjabi,SAS,South Asian Ancestry
+2093,HG01670,female,IBS,Iberian,EUR,European Ancestry
+2094,HG03668,female,PJL,Punjabi,SAS,South Asian Ancestry
+2095,HG01675,male,IBS,Iberian,EUR,European Ancestry
+2096,HG03595,female,BEB,Bengali,SAS,South Asian Ancestry
+2097,HG01682,male,IBS,Iberian,EUR,European Ancestry
+2098,HG03634,female,PJL,Punjabi,SAS,South Asian Ancestry
+2099,HG03687,male,STU,Tamil,SAS,South Asian Ancestry
+2100,HG01687,female,IBS,Iberian,EUR,European Ancestry
+2101,HG01694,male,IBS,Iberian,EUR,European Ancestry
+2102,HG03788,male,ITU,Telugu,SAS,South Asian Ancestry
+2103,HG01699,male,IBS,Iberian,EUR,European Ancestry
+2104,HG03646,male,STU,Tamil,SAS,South Asian Ancestry
+2105,HG03790,male,ITU,Telugu,SAS,South Asian Ancestry
+2106,HG01815,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+2107,HG03653,female,PJL,Punjabi,SAS,South Asian Ancestry
+2108,HG01841,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2109,HG03660,male,PJL,Punjabi,SAS,South Asian Ancestry
+2110,HG01846,male,KHV,Kinh,Kinh Vietnamese,EAS,East Asia (SGDP),East Asian Ancestry
+2111,HG03672,male,STU,Tamil,SAS,South Asian Ancestry
+2112,HG01853,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2113,HG03684,female,STU,Tamil,SAS,South Asian Ancestry
+2114,HG03593,male,BEB,Bengali,SAS,South Asian Ancestry
+2115,HG01858,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2116,HG03689,female,STU,Tamil,SAS,South Asian Ancestry
+2117,HG03803,male,BEB,Bengali,SAS,South Asian Ancestry
+2118,HG01942,female,PEL,Peruvian,AMR,American Ancestry
+2119,HG03691,male,STU,Tamil,SAS,South Asian Ancestry
+2120,HG03808,female,BEB,Bengali,SAS,South Asian Ancestry
+2121,HG01947,male,PEL,Peruvian,AMR,American Ancestry
+2122,HG03696,male,STU,Tamil,SAS,South Asian Ancestry
+2123,HG03815,male,BEB,Bengali,SAS,South Asian Ancestry
+2124,HG01954,female,PEL,Peruvian,AMR,American Ancestry
+2125,HG03973,female,ITU,Telugu,SAS,South Asian Ancestry
+2126,HG01959,female,ACB,African Caribbean,AFR,African Ancestry
+2127,HG03709,female,PJL,Punjabi,SAS,South Asian Ancestry
+2128,HG03978,male,ITU,Telugu,SAS,South Asian Ancestry
+2129,HG01961,male,PEL,Peruvian,AMR,American Ancestry
+2130,HG03711,male,STU,Tamil,SAS,South Asian Ancestry
+2131,HG03985,male,STU,Tamil,SAS,South Asian Ancestry
+2132,HG01973,female,PEL,Peruvian,AMR,American Ancestry
+2133,HG01978,female,PEL,Peruvian,AMR,American Ancestry
+2134,HG03401,female,MSL,Mende,AFR,African Ancestry
+2135,HG04003,male,STU,Tamil,SAS,South Asian Ancestry
+2136,HG01980,female,PEL,Peruvian,AMR,American Ancestry
+2137,HG03432,male,MSL,Mende,AFR,African Ancestry
+2138,HG01985,female,ACB,African Caribbean,AFR,African Ancestry
+2139,HG03437,female,MSL,Mende,AFR,African Ancestry
+2140,HG03911,male,BEB,Bengali,SAS,South Asian Ancestry
+2141,HG01884,female,ACB,African Caribbean,AFR,African Ancestry
+2142,HG03449,female,MSL,Mende,AFR,African Ancestry
+2143,HG03916,female,BEB,Bengali,SAS,South Asian Ancestry
+2144,HG01889,female,ACB,African Caribbean,AFR,African Ancestry
+2145,HG03451,male,MSL,Mende,AFR,African Ancestry
+2146,HG03928,female,BEB,Bengali,SAS,South Asian Ancestry
+2147,HG01891,female,ACB,African Caribbean,AFR,African Ancestry
+2148,HG01896,female,ACB,African Caribbean,AFR,African Ancestry
+2149,HG03822,male,BEB,Bengali,SAS,South Asian Ancestry
+2150,HG01916,female,ACB,African Caribbean,AFR,African Ancestry
+2151,HG03470,female,MSL,Mende,AFR,African Ancestry
+2152,HG01790,female,GBR,British,EUR,European Ancestry
+2153,HG03846,male,STU,Tamil,SAS,South Asian Ancestry
+2154,HG01795,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+2155,HG03499,female,ESN,Esan,AFR,African Ancestry
+2156,HG03884,female,STU,Tamil,SAS,South Asian Ancestry
+2157,HG01808,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+2158,HG03514,female,ESN,Esan,AFR,African Ancestry
+2159,HG03896,male,STU,Tamil,SAS,South Asian Ancestry
+2160,HG01810,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+2161,HG03603,male,BEB,Bengali,SAS,South Asian Ancestry
+2162,HG03615,male,BEB,Bengali,SAS,South Asian Ancestry
+2163,HG01771,male,IBS,Iberian,EUR,European Ancestry
+2164,HG03937,female,BEB,Bengali,SAS,South Asian Ancestry
+2165,HG01776,female,IBS,Iberian,EUR,European Ancestry
+2166,HG03944,female,STU,Tamil,SAS,South Asian Ancestry
+2167,HG01783,male,IBS,Iberian,EUR,European Ancestry
+2168,HG03949,female,STU,Tamil,SAS,South Asian Ancestry
+2169,HG01923,male,PEL,Peruvian,AMR,American Ancestry
+2170,HG03951,female,STU,Tamil,SAS,South Asian Ancestry
+2171,HG01928,male,PEL,Peruvian,AMR,American Ancestry
+2172,HG03963,male,ITU,Telugu,SAS,South Asian Ancestry
+2173,HG03947,female,STU,Tamil,SAS,South Asian Ancestry
+2174,HG01935,male,PEL,Peruvian,AMR,American Ancestry
+2175,HG03968,female,ITU,Telugu,SAS,South Asian Ancestry
+2176,HG01702,female,IBS,Iberian,EUR,European Ancestry
+2177,HG01707,female,IBS,Iberian,EUR,European Ancestry
+2178,HG03886,female,STU,Tamil,SAS,South Asian Ancestry
+2179,HG04060,male,ITU,Telugu,SAS,South Asian Ancestry
+2180,HG01757,female,IBS,Iberian,EUR,European Ancestry
+2181,HG03898,female,STU,Tamil,SAS,South Asian Ancestry
+2182,HG04096,male,ITU,Telugu,SAS,South Asian Ancestry
+2183,HG04015,male,ITU,Telugu,SAS,South Asian Ancestry
+2184,HG01860,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2185,HG04022,male,ITU,Telugu,SAS,South Asian Ancestry
+2186,HG01865,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2187,HG03824,male,BEB,Bengali,SAS,South Asian Ancestry
+2188,HG04039,male,STU,Tamil,SAS,South Asian Ancestry
+2189,HG01872,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2190,HG03829,female,BEB,Bengali,SAS,South Asian Ancestry
+2191,HG03858,female,STU,Tamil,SAS,South Asian Ancestry
+2192,HG02091,female,PEL,Peruvian,AMR,American Ancestry
+2193,HG03872,male,ITU,Telugu,SAS,South Asian Ancestry
+2194,HG02104,male,PEL,Peruvian,AMR,American Ancestry
+2195,HG03836,female,STU,Tamil,SAS,South Asian Ancestry
+2196,NA18536,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2197,HG02111,female,ACB,African Caribbean,AFR,African Ancestry
+2198,HG03848,male,STU,Tamil,SAS,South Asian Ancestry
+2199,NA18543,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2200,HG02116,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2201,NA18548,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2202,HG02128,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2203,HG03800,male,BEB,Bengali,SAS,South Asian Ancestry
+2204,NA18550,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2205,HG02130,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2206,HG03805,female,BEB,Bengali,SAS,South Asian Ancestry
+2207,NA18555,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2208,HG02135,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2209,HG03812,male,BEB,Bengali,SAS,South Asian Ancestry
+2210,NA18562,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2211,HG02142,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2212,HG03817,female,BEB,Bengali,SAS,South Asian Ancestry
+2213,NA18567,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2214,HG02147,female,PEL,Peruvian,AMR,American Ancestry
+2215,HG03850,male,STU,Tamil,SAS,South Asian Ancestry
+2216,NA18574,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2217,HG02154,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+2218,HG03862,female,ITU,Telugu,SAS,South Asian Ancestry
+2219,NA18579,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2220,HG02250,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+2221,HG03867,male,ITU,Telugu,SAS,South Asian Ancestry
+2222,NA18593,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2223,HG02255,male,ACB,African Caribbean,AFR,African Ancestry
+2224,HG03874,female,ITU,Telugu,SAS,South Asian Ancestry
+2225,NA18606,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2226,HG02262,male,PEL,Peruvian,AMR,American Ancestry
+2227,HG03754,female,STU,Tamil,SAS,South Asian Ancestry
+2228,NA18613,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2229,NA18618,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2230,HG02274,male,PEL,Peruvian,AMR,American Ancestry
+2231,NA18620,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2232,HG02072,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2233,HG03913,female,BEB,Bengali,SAS,South Asian Ancestry
+2234,NA18625,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2235,HG02077,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2236,HG03920,male,BEB,Bengali,SAS,South Asian Ancestry
+2237,NA18632,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2238,HG02084,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2239,HG03925,female,BEB,Bengali,SAS,South Asian Ancestry
+2240,NA18637,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2241,HG02089,female,PEL,Peruvian,AMR,American Ancestry
+2242,HG03773,male,ITU,Telugu,SAS,South Asian Ancestry
+2243,NA18644,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2244,HG01992,female,PEL,Peruvian,AMR,American Ancestry
+2245,HG03778,male,ITU,Telugu,SAS,South Asian Ancestry
+2246,NA18740,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2247,HG01997,female,PEL,Peruvian,AMR,American Ancestry
+2248,HG03780,female,ITU,Telugu,SAS,South Asian Ancestry
+2249,NA18745,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2250,HG02003,female,PEL,Peruvian,AMR,American Ancestry
+2251,HG03785,male,ITU,Telugu,SAS,South Asian Ancestry
+2252,NA18757,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2253,HG02008,male,PEL,Peruvian,AMR,American Ancestry
+2254,HG03792,male,ITU,Telugu,SAS,South Asian Ancestry
+2255,NA18795,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2256,HG02010,female,ACB,African Caribbean,AFR,African Ancestry
+2257,HG03716,male,ITU,Telugu,SAS,South Asian Ancestry
+2258,NA12343,female,CEU,CEPH,EUR,European Ancestry
+2259,HG02046,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2260,NA12348,female,CEU,CEPH,EUR,European Ancestry
+2261,HG02053,male,ACB,African Caribbean,AFR,African Ancestry
+2262,HG03730,female,ITU,Telugu,SAS,South Asian Ancestry
+2263,NA12386,female,CEU,CEPH,EUR,European Ancestry
+2264,HG02058,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2265,HG03742,male,ITU,Telugu,SAS,South Asian Ancestry
+2266,NA12413,male,CEU,CEPH,EUR,European Ancestry
+2267,HG02060,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2268,NA06994,male,CEU,CEPH,EUR,European Ancestry
+2269,NA12716,male,CEU,CEPH,EUR,European Ancestry
+2270,NA07000,female,CEU,CEPH,EUR,European Ancestry
+2271,NA12761,female,CEU,CEPH,EUR,European Ancestry
+2272,HG02224,male,IBS,Iberian,EUR,European Ancestry
+2273,NA07029,male,CEU,CEPH,EUR,European Ancestry
+2274,NA12766,male,CEU,CEPH,EUR,European Ancestry
+2275,HG02229,female,IBS,Iberian,EUR,European Ancestry
+2276,NA07031,female,CEU,CEPH,EUR,European Ancestry
+2277,NA12778,female,CEU,CEPH,EUR,European Ancestry
+2278,HG02231,male,IBS,Iberian,EUR,European Ancestry
+2279,NA07048,male,CEU,CEPH,EUR,European Ancestry
+2280,NA12812,male,CEU,CEPH,EUR,European Ancestry
+2281,HG02236,male,IBS,Iberian,EUR,European Ancestry
+2282,NA07055,female,CEU,CEPH,EUR,European Ancestry
+2283,NA12817,male,CEU,CEPH,EUR,European Ancestry
+2284,HG02166,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+2285,NA07346,female,CEU,CEPH,EUR,European Ancestry
+2286,NA12829,male,CEU,CEPH,EUR,European Ancestry
+2287,NA07435,male,CEU,CEPH,EUR,European Ancestry
+2288,NA12843,female,CEU,CEPH,EUR,European Ancestry
+2289,HG02178,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+2290,NA10837,male,CEU,CEPH,EUR,European Ancestry
+2291,NA12874,male,CEU,CEPH,EUR,European Ancestry
+2292,HG02180,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+2293,NA10851,male,CEU,CEPH,EUR,European Ancestry
+2294,NA18485,male,YRI,Yoruba,AFR,African Ancestry
+2295,HG02185,female,CDX,Dai Chinese,EAS,East Asian Ancestry
+2296,NA10856,male,CEU,CEPH,EUR,European Ancestry
+2297,NA18497,male,YRI,Yoruba,AFR,African Ancestry
+2298,HG02015,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2299,NA10863,female,CEU,CEPH,EUR,European Ancestry
+2300,NA18500,male,YRI,Yoruba,AFR,African Ancestry
+2301,HG02027,male,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2302,HG04182,male,BEB,Bengali,SAS,South Asian Ancestry
+2303,NA18505,female,YRI,Yoruba,AFR,African Ancestry
+2304,HG02445,male,ACB,African Caribbean,AFR,African Ancestry
+2305,NA18517,female,YRI,Yoruba,AFR,African Ancestry
+2306,HG02464,male,GWD,Gambian Mandinka,Gambian,AFR,African Ancestry,Africa (SGDP)
+2307,HG04194,male,BEB,Bengali,SAS,South Asian Ancestry
+2308,NA18531,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2309,HG02471,female,ACB,African Caribbean,AFR,African Ancestry
+2310,NA11840,female,CEU,CEPH,EUR,European Ancestry
+2311,HG02476,female,ACB,African Caribbean,AFR,African Ancestry
+2312,HG04202,female,ITU,Telugu,SAS,South Asian Ancestry
+2313,NA12045,male,CEU,CEPH,EUR,European Ancestry
+2314,HG02279,male,PEL,Peruvian,AMR,American Ancestry
+2315,NA12057,female,CEU,CEPH,EUR,European Ancestry
+2316,HG02281,male,ACB,African Caribbean,AFR,African Ancestry
+2317,NA12146,male,CEU,CEPH,EUR,European Ancestry
+2318,HG02286,female,PEL,Peruvian,AMR,American Ancestry
+2319,HG04062,female,ITU,Telugu,SAS,South Asian Ancestry
+2320,NA12273,female,CEU,CEPH,EUR,European Ancestry
+2321,HG02293,female,PEL,Peruvian,AMR,American Ancestry
+2322,NA12329,female,CEU,CEPH,EUR,European Ancestry
+2323,HG02298,female,PEL,Peruvian,AMR,American Ancestry
+2324,HG04093,male,ITU,Telugu,SAS,South Asian Ancestry
+2325,NA12336,female,CEU,CEPH,EUR,European Ancestry
+2326,HG02301,female,PEL,Peruvian,AMR,American Ancestry
+2327,HG04098,male,ITU,Telugu,SAS,South Asian Ancestry
+2328,HG04212,female,ITU,Telugu,SAS,South Asian Ancestry
+2329,HG04106,female,STU,Tamil,SAS,South Asian Ancestry
+2330,HG02351,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+2331,HG04118,female,ITU,Telugu,SAS,South Asian Ancestry
+2332,HG04229,male,STU,Tamil,SAS,South Asian Ancestry
+2333,HG02356,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+2334,HG02363,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+2335,HG04144,female,BEB,Bengali,SAS,South Asian Ancestry
+2336,NA06985,female,CEU,CEPH,EUR,European Ancestry
+2337,HG02375,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+2338,HG04017,male,ITU,Telugu,SAS,South Asian Ancestry
+2339,NA10835,male,CEU,CEPH,EUR,European Ancestry
+2340,HG02522,female,KHV,Kinh Vietnamese,EAS,East Asian Ancestry
+2341,NA10842,male,CEU,CEPH,EUR,European Ancestry
+2342,HG02541,male,ACB,African Caribbean,AFR,African Ancestry
+2343,HG04029,female,STU,Tamil,SAS,South Asian Ancestry
+2344,NA10847,female,CEU,CEPH,EUR,European Ancestry
+2345,HG02546,female,ACB,African Caribbean,AFR,African Ancestry
+2346,NA10854,female,CEU,CEPH,EUR,European Ancestry
+2347,HG02558,female,ACB,African Caribbean,AFR,African Ancestry
+2348,NA10859,female,CEU,CEPH,EUR,European Ancestry
+2349,HG02490,male,PJL,Punjabi,SAS,South Asian Ancestry
+2350,NA10861,female,CEU,CEPH,EUR,European Ancestry
+2351,HG04156,female,BEB,Bengali,SAS,South Asian Ancestry
+2352,NA06997,female,CEU,CEPH,EUR,European Ancestry
+2353,HG02508,female,ACB,African Caribbean,AFR,African Ancestry
+2354,NA07022,male,CEU,CEPH,EUR,European Ancestry
+2355,HG02399,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+2356,HG04214,female,ITU,Telugu,SAS,South Asian Ancestry
+2357,NA07034,male,CEU,CEPH,EUR,European Ancestry
+2358,HG02402,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+2359,HG04219,male,ITU,Telugu,SAS,South Asian Ancestry
+2360,NA07349,male,CEU,CEPH,EUR,European Ancestry
+2361,HG02407,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+2362,HG04238,male,ITU,Telugu,SAS,South Asian Ancestry
+2363,NA10830,male,CEU,CEPH,EUR,European Ancestry
+2364,HG02419,female,ACB,African Caribbean,AFR,African Ancestry
+2365,HG04185,male,BEB,Bengali,SAS,South Asian Ancestry
+2366,HG02433,male,ACB,African Caribbean,AFR,African Ancestry
+2367,HG03999,male,STU,Tamil,SAS,South Asian Ancestry
+2368,HG02577,female,ACB,African Caribbean,AFR,African Ancestry
+2369,NA18533,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2370,HG04200,female,ITU,Telugu,SAS,South Asian Ancestry
+2371,NA18538,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2372,HG04159,female,BEB,Bengali,SAS,South Asian Ancestry
+2373,HG02318,female,ACB,African Caribbean,AFR,African Ancestry
+2374,NA18545,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2375,HG04161,male,BEB,Bengali,SAS,South Asian Ancestry
+2376,HG02325,female,ACB,African Caribbean,AFR,African Ancestry
+2377,NA18552,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2378,HG04173,male,BEB,Bengali,SAS,South Asian Ancestry
+2379,HG02332,male,ACB,African Caribbean,AFR,African Ancestry
+2380,NA18557,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2381,HG04180,female,BEB,Bengali,SAS,South Asian Ancestry
+2382,HG02337,female,ACB,African Caribbean,AFR,African Ancestry
+2383,NA18564,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2384,NA18916,female,YRI,Yoruba,AFR,African Ancestry
+2385,HG02382,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+2386,NA18571,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2387,NA18923,male,YRI,Yoruba,AFR,African Ancestry
+2388,HG02387,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+2389,NA18576,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2390,NA18930,female,YRI,Yoruba,AFR,African Ancestry
+2391,HG02394,male,CDX,Dai Chinese,EAS,East Asian Ancestry
+2392,NA18595,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2393,NA18935,male,YRI,Yoruba,AFR,African Ancestry
+2394,HG02724,male,PJL,Punjabi,Punjabi,SAS,South Asia (SGDP),South Asian Ancestry
+2395,NA18603,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2396,NA18942,female,JPT,Japanese,EAS,East Asian Ancestry
+2397,HG02729,male,PJL,Punjabi,SAS,South Asian Ancestry
+2398,NA18608,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2399,NA18947,female,JPT,Japanese,EAS,East Asian Ancestry
+2400,HG02731,female,PJL,Punjabi,SAS,South Asian Ancestry
+2401,NA18610,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2402,NA18954,female,JPT,Japanese,EAS,East Asian Ancestry
+2403,HG02736,male,PJL,Punjabi,SAS,South Asian Ancestry
+2404,NA18615,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2405,NA18959,male,JPT,Japanese,EAS,East Asian Ancestry
+2406,HG02661,female,PJL,Punjabi,SAS,South Asian Ancestry
+2407,NA18622,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2408,NA18961,male,JPT,Japanese,EAS,East Asian Ancestry
+2409,HG02666,male,GWD,Gambian Mandinka,AFR,African Ancestry
+2410,NA18627,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2411,NA18966,male,JPT,Japanese,EAS,East Asian Ancestry
+2412,HG02678,male,GWD,Gambian Mandinka,AFR,African Ancestry
+2413,NA18634,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2414,NA18973,female,JPT,Japanese,EAS,East Asian Ancestry
+2415,NA18639,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2416,NA18978,female,JPT,Japanese,EAS,East Asian Ancestry
+2417,HG02685,female,PJL,Punjabi,SAS,South Asian Ancestry
+2418,NA18641,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2419,NA18980,female,JPT,Japanese,EAS,East Asian Ancestry
+2420,NA18646,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2421,NA18985,male,JPT,Japanese,EAS,East Asian Ancestry
+2422,HG02774,male,PJL,Punjabi,SAS,South Asian Ancestry
+2423,NA18747,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2424,NA18992,female,JPT,Japanese,EAS,East Asian Ancestry
+2425,NA11830,female,CEU,CEPH,EUR,European Ancestry
+2426,NA19438,female,LWK,Luhya,AFR,African Ancestry
+2427,NA11892,female,CEU,CEPH,EUR,European Ancestry
+2428,NA19440,female,LWK,Luhya,AFR,African Ancestry
+2429,HG02786,male,PJL,Punjabi,SAS,South Asian Ancestry
+2430,NA11917,male,CEU,CEPH,EUR,European Ancestry
+2431,NA19445,female,LWK,Luhya,AFR,African Ancestry
+2432,NA11931,female,CEU,CEPH,EUR,European Ancestry
+2433,NA19452,male,LWK,Luhya,AFR,African Ancestry
+2434,HG02697,female,PJL,Punjabi,SAS,South Asian Ancestry
+2435,NA11993,female,CEU,CEPH,EUR,European Ancestry
+2436,NA19457,female,LWK,Luhya,AFR,African Ancestry
+2437,HG02700,female,PJL,Punjabi,SAS,South Asian Ancestry
+2438,NA12004,female,CEU,CEPH,EUR,European Ancestry
+2439,NA19469,female,LWK,Luhya,AFR,African Ancestry
+2440,NA12155,male,CEU,CEPH,EUR,European Ancestry
+2441,NA19471,female,LWK,Luhya,AFR,African Ancestry
+2442,HG02589,female,GWD,Gambian Mandinka,AFR,African Ancestry
+2443,NA12249,female,CEU,CEPH,EUR,European Ancestry
+2444,NA19654,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2445,NA12275,female,CEU,CEPH,EUR,European Ancestry
+2446,NA19659,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2447,HG02604,female,PJL,Punjabi,SAS,South Asian Ancestry
+2448,NA12282,male,CEU,CEPH,EUR,European Ancestry
+2449,NA19661,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2450,HG02611,female,GWD,Gambian Mandinka,AFR,African Ancestry
+2451,NA12287,female,CEU,CEPH,EUR,European Ancestry
+2452,NA19072,male,JPT,Japanese,EAS,East Asian Ancestry
+2453,HG02623,male,GWD,Gambian Mandinka,AFR,African Ancestry
+2454,NA12340,male,CEU,CEPH,EUR,European Ancestry
+2455,NA19077,female,JPT,Japanese,EAS,East Asian Ancestry
+2456,HG02628,male,GWD,Gambian Mandinka,AFR,African Ancestry
+2457,NA12864,male,CEU,CEPH,EUR,European Ancestry
+2458,NA19084,female,JPT,Japanese,EAS,East Asian Ancestry
+2459,NA12890,female,CEU,CEPH,EUR,European Ancestry
+2460,NA19089,male,JPT,Japanese,EAS,East Asian Ancestry
+2461,HG02635,female,GWD,Gambian Mandinka,AFR,African Ancestry
+2462,NA18487,male,YRI,Yoruba,AFR,African Ancestry
+2463,NA19091,male,JPT,Japanese,EAS,East Asian Ancestry
+2464,HG02642,male,GWD,Gambian Mandinka,AFR,African Ancestry
+2465,NA18499,female,YRI,Yoruba,AFR,African Ancestry
+2466,NA19096,male,YRI,Yoruba,AFR,African Ancestry
+2467,HG02813,male,GWD,Gambian Mandinka,AFR,African Ancestry
+2468,NA18502,female,YRI,Yoruba,AFR,African Ancestry
+2469,NA19104,male,YRI,Yoruba,AFR,African Ancestry
+2470,NA18507,male,YRI,Yoruba,AFR,African Ancestry
+2471,NA19109,female,YRI,Yoruba,AFR,African Ancestry
+2472,HG02820,female,GWD,Gambian Mandinka,AFR,African Ancestry
+2473,NA18519,male,YRI,Yoruba,AFR,African Ancestry
+2474,NA19116,female,YRI,Yoruba,AFR,African Ancestry
+2475,HG02837,female,GWD,Gambian Mandinka,AFR,African Ancestry
+2476,NA18521,male,YRI,Yoruba,AFR,African Ancestry
+2477,NA19123,male,YRI,Yoruba,AFR,African Ancestry
+2478,NA18526,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2479,NA19128,male,YRI,Yoruba,AFR,African Ancestry
+2480,HG02654,male,PJL,Punjabi,SAS,South Asian Ancestry
+2481,NA12376,female,CEU,CEPH,EUR,European Ancestry
+2482,NA19130,male,YRI,Yoruba,AFR,African Ancestry
+2483,HG02659,female,PJL,Punjabi,SAS,South Asian Ancestry
+2484,NA12383,female,CEU,CEPH,EUR,European Ancestry
+2485,NA19142,male,YRI,Yoruba,AFR,African Ancestry
+2486,HG02793,female,PJL,Punjabi,SAS,South Asian Ancestry
+2487,NA12489,female,CEU,CEPH,EUR,European Ancestry
+2488,NA19147,female,YRI,Yoruba,AFR,African Ancestry
+2489,HG02798,male,GWD,Gambian Mandinka,AFR,African Ancestry
+2490,NA12718,female,CEU,CEPH,EUR,European Ancestry
+2491,NA19154,male,YRI,Yoruba,AFR,African Ancestry
+2492,NA12749,female,CEU,CEPH,EUR,European Ancestry
+2493,NA19159,female,YRI,Yoruba,AFR,African Ancestry
+2494,HG02983,female,GWD,Gambian Mandinka,AFR,African Ancestry
+2495,NA12751,female,CEU,CEPH,EUR,European Ancestry
+2496,NA19161,male,YRI,Yoruba,AFR,African Ancestry
+2497,HG03006,male,BEB,Bengali,Bengali,SAS,South Asia (SGDP),South Asian Ancestry
+2498,NA12763,female,CEU,CEPH,EUR,European Ancestry
+2499,NA19166,female,YRI,Yoruba,AFR,African Ancestry
+2500,HG03018,male,PJL,Punjabi,SAS,South Asian Ancestry
+2501,NA12775,male,CEU,CEPH,EUR,European Ancestry
+2502,NA19173,male,YRI,Yoruba,AFR,African Ancestry
+2503,HG03025,female,GWD,Gambian Mandinka,AFR,African Ancestry
+2504,NA12802,female,CEU,CEPH,EUR,European Ancestry
+2505,NA19185,female,YRI,Yoruba,AFR,African Ancestry
+2506,NA12814,male,CEU,CEPH,EUR,European Ancestry
+2507,NA19678,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2508,HG03157,male,ESN,Esan,AFR,African Ancestry
+2509,NA18913,male,YRI,Yoruba,AFR,African Ancestry
+2510,NA19680,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2511,NA18925,male,YRI,Yoruba,AFR,African Ancestry
+2512,NA19685,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2513,HG03169,male,ESN,Esan,AFR,African Ancestry
+2514,NA18944,male,JPT,Japanese,EAS,East Asian Ancestry
+2515,NA19700,male,ASW,African Ancestry SW,AFR,African Ancestry
+2516,HG03171,female,ESN,Esan,AFR,African Ancestry
+2517,NA18949,female,JPT,Japanese,EAS,East Asian Ancestry
+2518,NA19705,male,ASW,African Ancestry SW,AFR,African Ancestry
+2519,NA18951,female,JPT,Japanese,EAS,East Asian Ancestry
+2520,NA19712,female,ASW,African Ancestry SW,AFR,African Ancestry
+2521,HG03190,male,ESN,Esan,AFR,African Ancestry
+2522,NA18956,female,JPT,Japanese,EAS,East Asian Ancestry
+2523,NA19717,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2524,HG02851,male,GWD,Gambian Mandinka,AFR,African Ancestry
+2525,NA18963,female,JPT,Japanese,EAS,East Asian Ancestry
+2526,NA19724,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2527,NA18968,female,JPT,Japanese,EAS,East Asian Ancestry
+2528,NA19729,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2529,HG02870,female,GWD,Gambian Mandinka,AFR,African Ancestry
+2530,NA18970,male,JPT,Japanese,EAS,East Asian Ancestry
+2531,NA18853,male,YRI,Yoruba,AFR,African Ancestry
+2532,HG02882,female,GWD,Gambian Mandinka,AFR,African Ancestry
+2533,NA18975,female,JPT,Japanese,EAS,East Asian Ancestry
+2534,NA18858,female,YRI,Yoruba,AFR,African Ancestry
+2535,HG02887,male,GWD,Gambian Mandinka,AFR,African Ancestry
+2536,NA18982,male,JPT,Japanese,EAS,East Asian Ancestry
+2537,NA18860,male,YRI,Yoruba,AFR,African Ancestry
+2538,HG02952,female,ESN,Esan,AFR,African Ancestry
+2539,NA18987,female,JPT,Japanese,EAS,East Asian Ancestry
+2540,NA18865,male,YRI,Yoruba,AFR,African Ancestry
+2541,NA18994,male,JPT,Japanese,EAS,East Asian Ancestry
+2542,NA18872,male,YRI,Yoruba,AFR,African Ancestry
+2543,NA18999,female,JPT,Japanese,EAS,East Asian Ancestry
+2544,NA18877,male,YRI,Yoruba,AFR,African Ancestry
+2545,HG02971,male,ESN,Esan,AFR,African Ancestry
+2546,NA19000,male,JPT,Japanese,EAS,East Asian Ancestry
+2547,NA18909,female,YRI,Yoruba,AFR,African Ancestry
+2548,HG02976,female,ESN,Esan,AFR,African Ancestry
+2549,NA19005,male,JPT,Japanese,EAS,East Asian Ancestry
+2550,NA18911,male,YRI,Yoruba,AFR,African Ancestry
+2551,NA19012,male,JPT,Japanese,EAS,East Asian Ancestry
+2552,NA18997,female,JPT,Japanese,EAS,East Asian Ancestry
+2553,HG03121,female,ESN,Esan,AFR,African Ancestry
+2554,NA19017,female,LWK,Luhya,AFR,African Ancestry
+2555,NA19003,female,JPT,Japanese,EAS,East Asian Ancestry
+2556,HG03126,female,ESN,Esan,AFR,African Ancestry
+2557,NA19024,female,LWK,Luhya,AFR,African Ancestry
+2558,NA19010,female,JPT,Japanese,EAS,East Asian Ancestry
+2559,HG03133,male,ESN,Esan,AFR,African Ancestry
+2560,NA19031,male,LWK,Luhya,AFR,African Ancestry
+2561,NA19027,male,LWK,Luhya,AFR,African Ancestry
+2562,HG03049,female,GWD,Gambian Mandinka,AFR,African Ancestry
+2563,NA19036,female,LWK,Luhya,AFR,African Ancestry
+2564,NA19041,male,LWK,Luhya,AFR,African Ancestry
+2565,NA19043,male,LWK,Luhya,AFR,African Ancestry
+2566,NA19046,male,LWK,Luhya,AFR,African Ancestry
+2567,HG03099,female,ESN,Esan,AFR,African Ancestry
+2568,NA19055,male,JPT,Japanese,EAS,East Asian Ancestry
+2569,NA19058,male,JPT,Japanese,EAS,East Asian Ancestry
+2570,NA19062,male,JPT,Japanese,EAS,East Asian Ancestry
+2571,NA19060,male,JPT,Japanese,EAS,East Asian Ancestry
+2572,HG03114,female,ESN,Esan,AFR,African Ancestry
+2573,NA19067,male,JPT,Japanese,EAS,East Asian Ancestry
+2574,NA19065,female,JPT,Japanese,EAS,East Asian Ancestry
+2575,HG02938,male,ESN,Esan,AFR,African Ancestry
+2576,NA19074,female,JPT,Japanese,EAS,East Asian Ancestry
+2577,NA19313,female,LWK,Luhya,AFR,African Ancestry
+2578,NA19079,male,JPT,Japanese,EAS,East Asian Ancestry
+2579,NA19318,male,LWK,Luhya,AFR,African Ancestry
+2580,HG03063,male,MSL,Mende,AFR,African Ancestry
+2581,NA19081,female,JPT,Japanese,EAS,East Asian Ancestry
+2582,NA19320,female,LWK,Luhya,AFR,African Ancestry
+2583,HG03082,female,MSL,Mende,AFR,African Ancestry
+2584,NA19086,male,JPT,Japanese,EAS,East Asian Ancestry
+2585,NA19332,female,LWK,Luhya,AFR,African Ancestry
+2586,HG03239,female,PJL,Punjabi,SAS,South Asian Ancestry
+2587,NA19093,female,YRI,Yoruba,AFR,African Ancestry
+2588,NA19351,female,LWK,Luhya,AFR,African Ancestry
+2589,HG03241,female,GWD,Gambian Mandinka,AFR,African Ancestry
+2590,NA19098,male,YRI,Yoruba,AFR,African Ancestry
+2591,NA19375,male,LWK,Luhya,AFR,African Ancestry
+2592,HG03246,male,GWD,Gambian Mandinka,AFR,African Ancestry
+2593,NA19101,male,YRI,Yoruba,AFR,African Ancestry
+2594,NA19382,male,LWK,Luhya,AFR,African Ancestry
+2595,HG03258,male,GWD,Gambian Mandinka,AFR,African Ancestry
+2596,NA19113,male,YRI,Yoruba,AFR,African Ancestry
+2597,NA19394,male,LWK,Luhya,AFR,African Ancestry
+2598,NA19118,female,YRI,Yoruba,AFR,African Ancestry
+2599,NA19399,female,LWK,Luhya,AFR,African Ancestry
+2600,HG03265,male,ESN,Esan,AFR,African Ancestry
+2601,NA19120,male,YRI,Yoruba,AFR,African Ancestry
+2602,NA19197,female,YRI,Yoruba,AFR,African Ancestry
+2603,NA19132,female,YRI,Yoruba,AFR,African Ancestry
+2604,NA19200,male,YRI,Yoruba,AFR,African Ancestry
+2605,HG03479,female,MSL,Mende,AFR,African Ancestry
+2606,NA19137,female,YRI,Yoruba,AFR,African Ancestry
+2607,NA19205,male,YRI,Yoruba,AFR,African Ancestry
+2608,HG03486,female,MSL,Mende,AFR,African Ancestry
+2609,NA19144,male,YRI,Yoruba,AFR,African Ancestry
+2610,NA19224,male,YRI,Yoruba,AFR,African Ancestry
+2611,NA19149,female,YRI,Yoruba,AFR,African Ancestry
+2612,NA19236,male,YRI,Yoruba,AFR,African Ancestry
+2613,NA19151,female,YRI,Yoruba,AFR,African Ancestry
+2614,NA19248,male,YRI,Yoruba,AFR,African Ancestry
+2615,NA19175,male,YRI,Yoruba,AFR,African Ancestry
+2616,NA20505,female,TSI,Toscani,EUR,European Ancestry
+2617,HG03311,male,ESN,Esan,AFR,African Ancestry
+2618,NA18855,female,YRI,Yoruba,AFR,African Ancestry
+2619,NA20512,male,TSI,Toscani,EUR,European Ancestry
+2620,HG03342,female,ESN,Esan,AFR,African Ancestry
+2621,NA18862,male,YRI,Yoruba,AFR,African Ancestry
+2622,NA20517,female,TSI,Toscani,EUR,European Ancestry
+2623,HG03354,female,ESN,Esan,AFR,African Ancestry
+2624,NA18867,female,YRI,Yoruba,AFR,African Ancestry
+2625,NA20524,male,TSI,Toscani,EUR,European Ancestry
+2626,NA18874,male,YRI,Yoruba,AFR,African Ancestry
+2627,NA20529,female,TSI,Toscani,EUR,European Ancestry
+2628,HG03366,female,ESN,Esan,AFR,African Ancestry
+2629,NA18879,male,YRI,Yoruba,AFR,African Ancestry
+2630,NA20531,female,TSI,Toscani,EUR,European Ancestry
+2631,HG03518,male,ESN,Esan,AFR,African Ancestry
+2632,NA18881,female,YRI,Yoruba,AFR,African Ancestry
+2633,NA20536,male,TSI,Toscani,EUR,European Ancestry
+2634,HG03520,female,ESN,Esan,AFR,African Ancestry
+2635,NA18906,female,YRI,Yoruba,AFR,African Ancestry
+2636,NA20543,male,TSI,Toscani,EUR,European Ancestry
+2637,NA19199,female,YRI,Yoruba,AFR,African Ancestry
+2638,NA20581,male,TSI,Toscani,EUR,European Ancestry
+2639,HG03556,male,MSL,Mende,AFR,African Ancestry
+2640,NA19202,female,YRI,Yoruba,AFR,African Ancestry
+2641,NA20586,male,TSI,Toscani,EUR,European Ancestry
+2642,HG03563,female,MSL,Mende,AFR,African Ancestry
+2643,NA19207,male,YRI,Yoruba,AFR,African Ancestry
+2644,NA20752,male,TSI,Toscani,EUR,European Ancestry
+2645,NA19214,female,YRI,Yoruba,AFR,African Ancestry
+2646,NA20757,female,TSI,Toscani,EUR,European Ancestry
+2647,HG03378,female,MSL,Mende,AFR,African Ancestry
+2648,NA19221,female,YRI,Yoruba,AFR,African Ancestry
+2649,NA20764,female,TSI,Toscani,EUR,European Ancestry
+2650,HG03380,female,MSL,Mende,AFR,African Ancestry
+2651,NA19226,male,YRI,Yoruba,AFR,African Ancestry
+2652,NA20769,female,TSI,Toscani,EUR,European Ancestry
+2653,HG03385,male,MSL,Mende,AFR,African Ancestry
+2654,NA19238,female,YRI,Yoruba,AFR,African Ancestry
+2655,NA20771,female,TSI,Toscani,EUR,European Ancestry
+2656,NA19240,female,YRI,Yoruba,AFR,African Ancestry
+2657,NA20783,male,TSI,Toscani,EUR,European Ancestry
+2658,HG03291,female,ESN,Esan,AFR,African Ancestry
+2659,NA19252,male,YRI,Yoruba,AFR,African Ancestry
+2660,NA20790,female,TSI,Toscani,EUR,European Ancestry
+2661,NA19257,female,YRI,Yoruba,AFR,African Ancestry
+2662,NA20795,female,TSI,Toscani,EUR,European Ancestry
+2663,HG03304,male,ESN,Esan,AFR,African Ancestry
+2664,NA19308,male,LWK,Luhya,AFR,African Ancestry
+2665,NA20803,male,TSI,Toscani,EUR,European Ancestry
+2666,HG03195,female,ESN,Esan,AFR,African Ancestry
+2667,NA19310,female,LWK,Luhya,AFR,African Ancestry
+2668,NA20808,female,TSI,Toscani,EUR,European Ancestry
+2669,NA19428,male,LWK,Luhya,AFR,African Ancestry
+2670,NA20810,male,TSI,Toscani,EUR,European Ancestry
+2671,HG03234,male,PJL,Punjabi,SAS,South Asian Ancestry
+2672,NA19430,male,LWK,Luhya,AFR,African Ancestry
+2673,NA20815,male,TSI,Toscani,EUR,European Ancestry
+2674,HG03397,male,MSL,Mende,AFR,African Ancestry
+2675,NA19435,female,LWK,Luhya,AFR,African Ancestry
+2676,NA20822,female,TSI,Toscani,EUR,European Ancestry
+2677,NA19454,male,LWK,Luhya,AFR,African Ancestry
+2678,NA20827,male,TSI,Toscani,EUR,European Ancestry
+2679,HG03436,male,MSL,Mende,AFR,African Ancestry
+2680,NA19461,male,LWK,Luhya,AFR,African Ancestry
+2681,NA20846,male,GIH,Gujarati,SAS,South Asian Ancestry
+2682,NA19466,male,LWK,Luhya,AFR,African Ancestry
+2683,NA20853,female,GIH,Gujarati,SAS,South Asian Ancestry
+2684,HG03455,female,MSL,Mende,AFR,African Ancestry
+2685,NA19473,female,LWK,Luhya,AFR,African Ancestry
+2686,NA19625,female,ASW,African Ancestry SW,AFR,African Ancestry
+2687,NA19818,male,ASW,African Ancestry SW,AFR,African Ancestry
+2688,NA19649,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2689,NA19902,female,ASW,African Ancestry SW,AFR,African Ancestry
+2690,NA19651,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2691,NA19914,female,ASW,African Ancestry SW,AFR,African Ancestry
+2692,NA19656,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2693,NA19919,male,ASW,African Ancestry SW,AFR,African Ancestry
+2694,NA19663,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2695,NA19921,female,ASW,African Ancestry SW,AFR,African Ancestry
+2696,HG03690,female,STU,Tamil,SAS,South Asian Ancestry
+2697,NA20502,female,TSI,Toscani,EUR,European Ancestry
+2698,NA19983,female,ASW,African Ancestry SW,AFR,African Ancestry
+2699,NA20507,female,TSI,Toscani,EUR,European Ancestry
+2700,NA19731,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2701,NA20514,female,TSI,Toscani,EUR,European Ancestry
+2702,NA19748,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2703,HG03607,female,BEB,Bengali,SAS,South Asian Ancestry
+2704,NA20519,male,TSI,Toscani,EUR,European Ancestry
+2705,NA19750,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2706,HG03619,female,PJL,Punjabi,SAS,South Asian Ancestry
+2707,NA20521,male,TSI,Toscani,EUR,European Ancestry
+2708,NA19755,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2709,NA20526,female,TSI,Toscani,EUR,European Ancestry
+2710,NA19762,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2711,NA20533,female,TSI,Toscani,EUR,European Ancestry
+2712,NA19774,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2713,HG03633,male,PJL,Punjabi,SAS,South Asian Ancestry
+2714,NA20538,male,TSI,Toscani,EUR,European Ancestry
+2715,NA19779,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2716,NA20540,female,TSI,Toscani,EUR,European Ancestry
+2717,NA19781,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2718,HG03640,female,PJL,Punjabi,SAS,South Asian Ancestry
+2719,NA20588,male,TSI,Toscani,EUR,European Ancestry
+2720,NA19786,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2721,HG03645,female,STU,Tamil,SAS,South Asian Ancestry
+2722,NA20754,male,TSI,Toscani,EUR,European Ancestry
+2723,NA20322,female,ASW,African Ancestry SW,AFR,African Ancestry
+2724,HG03652,male,PJL,Punjabi,SAS,South Asian Ancestry
+2725,NA20759,male,TSI,Toscani,EUR,European Ancestry
+2726,NA20334,female,ASW,African Ancestry SW,AFR,African Ancestry
+2727,HG03575,female,MSL,Mende,AFR,African Ancestry
+2728,NA20761,female,TSI,Toscani,EUR,European Ancestry
+2729,NA20339,female,ASW,African Ancestry SW,AFR,African Ancestry
+2730,HG03582,male,MSL,Mende,AFR,African Ancestry
+2731,NA20766,female,TSI,Toscani,EUR,European Ancestry
+2732,NA20341,female,ASW,African Ancestry SW,AFR,African Ancestry
+2733,NA20773,female,TSI,Toscani,EUR,European Ancestry
+2734,NA20346,male,ASW,African Ancestry SW,AFR,African Ancestry
+2735,HG03594,male,BEB,Bengali,SAS,South Asian Ancestry
+2736,NA19315,female,LWK,Luhya,AFR,African Ancestry
+2737,NA20358,male,ASW,African Ancestry SW,AFR,African Ancestry
+2738,HG03695,male,STU,Tamil,SAS,South Asian Ancestry
+2739,NA19327,female,LWK,Luhya,AFR,African Ancestry
+2740,NA20360,male,ASW,African Ancestry SW,AFR,African Ancestry
+2741,HG03703,female,PJL,Punjabi,SAS,South Asian Ancestry
+2742,NA19334,male,LWK,Luhya,AFR,African Ancestry
+2743,NA20904,male,GIH,Gujarati,SAS,South Asian Ancestry
+2744,HG03708,male,PJL,Punjabi,SAS,South Asian Ancestry
+2745,NA19346,male,LWK,Luhya,AFR,African Ancestry
+2746,NA20909,male,GIH,Gujarati,SAS,South Asian Ancestry
+2747,NA19360,male,LWK,Luhya,AFR,African Ancestry
+2748,NA20911,male,GIH,Gujarati,SAS,South Asian Ancestry
+2749,HG03796,female,BEB,Bengali,SAS,South Asian Ancestry
+2750,NA19372,male,LWK,Luhya,AFR,African Ancestry
+2751,NA21089,female,GIH,Gujarati,SAS,South Asian Ancestry
+2752,NA19377,female,LWK,Luhya,AFR,African Ancestry
+2753,NA21091,male,GIH,Gujarati,SAS,South Asian Ancestry
+2754,HG03809,male,BEB,Bengali,SAS,South Asian Ancestry
+2755,NA19384,male,LWK,Luhya,AFR,African Ancestry
+2756,NA20276,female,ASW,African Ancestry SW,AFR,African Ancestry
+2757,NA19391,female,LWK,Luhya,AFR,African Ancestry
+2758,NA20288,male,ASW,African Ancestry SW,AFR,African Ancestry
+2759,NA19396,female,LWK,Luhya,AFR,African Ancestry
+2760,NA20290,female,ASW,African Ancestry SW,AFR,African Ancestry
+2761,HG03715,male,ITU,Telugu,SAS,South Asian Ancestry
+2762,NA19404,female,LWK,Luhya,AFR,African Ancestry
+2763,NA20295,male,ASW,African Ancestry SW,AFR,African Ancestry
+2764,HG03722,female,ITU,Telugu,SAS,South Asian Ancestry
+2765,NA19788,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2766,NA20884,male,GIH,Gujarati,SAS,South Asian Ancestry
+2767,HG03727,male,ITU,Telugu,SAS,South Asian Ancestry
+2768,NA19790,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2769,NA20889,male,GIH,Gujarati,SAS,South Asian Ancestry
+2770,HG03741,female,STU,Tamil,SAS,South Asian Ancestry
+2771,NA19795,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2772,NA20891,male,GIH,Gujarati,SAS,South Asian Ancestry
+2773,HG03746,male,STU,Tamil,SAS,South Asian Ancestry
+2774,NA19834,male,ASW,African Ancestry SW,AFR,African Ancestry
+2775,NA20896,female,GIH,Gujarati,SAS,South Asian Ancestry
+2776,HG03753,male,STU,Tamil,SAS,South Asian Ancestry
+2777,NA19904,male,ASW,African Ancestry SW,AFR,African Ancestry
+2778,NA20858,male,GIH,Gujarati,SAS,South Asian Ancestry
+2779,HG03760,female,STU,Tamil,SAS,South Asian Ancestry
+2780,NA19909,female,ASW,African Ancestry SW,AFR,African Ancestry
+2781,NA20872,female,GIH,Gujarati,SAS,South Asian Ancestry
+2782,HG03765,female,PJL,Punjabi,SAS,South Asian Ancestry
+2783,NA19916,male,ASW,African Ancestry SW,AFR,African Ancestry
+2784,NA20877,female,GIH,Gujarati,SAS,South Asian Ancestry
+2785,HG03772,female,ITU,Telugu,SAS,South Asian Ancestry
+2786,NA19923,female,ASW,African Ancestry SW,AFR,African Ancestry
+2787,HG03777,male,ITU,Telugu,SAS,South Asian Ancestry
+2788,NA19985,female,ASW,African Ancestry SW,AFR,African Ancestry
+2789,HG03784,female,ITU,Telugu,SAS,South Asian Ancestry
+2790,NA20127,female,ASW,African Ancestry SW,AFR,African Ancestry
+2791,HG03789,female,ITU,Telugu,SAS,South Asian Ancestry
+2792,NA19670,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2793,HG03943,male,STU,Tamil,SAS,South Asian Ancestry
+2794,NA19675,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2795,HG03948,female,STU,Tamil,SAS,South Asian Ancestry
+2796,NA19682,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2797,HG03950,male,STU,Tamil,SAS,South Asian Ancestry
+2798,NA19702,male,ASW,African Ancestry SW,AFR,African Ancestry
+2799,HG03955,female,STU,Tamil,SAS,South Asian Ancestry
+2800,NA19707,female,ASW,African Ancestry SW,AFR,African Ancestry
+2801,NA21116,male,GIH,Gujarati,SAS,South Asian Ancestry
+2802,HG03967,male,ITU,Telugu,SAS,South Asian Ancestry
+2803,NA19714,female,ASW,African Ancestry SW,AFR,African Ancestry
+2804,NA21123,male,GIH,Gujarati,SAS,South Asian Ancestry
+2805,HG03823,female,BEB,Bengali,SAS,South Asian Ancestry
+2806,NA19719,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2807,NA21128,male,GIH,Gujarati,SAS,South Asian Ancestry
+2808,HG03830,male,BEB,Bengali,SAS,South Asian Ancestry
+2809,NA19721,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2810,NA21130,male,GIH,Gujarati,SAS,South Asian Ancestry
+2811,NA19726,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2812,NA21135,male,GIH,Gujarati,SAS,South Asian Ancestry
+2813,NA19733,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2814,NA21142,female,GIH,Gujarati,SAS,South Asian Ancestry
+2815,NA19738,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2816,HG04100,male,STU,Tamil,SAS,South Asian Ancestry
+2817,NA19740,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2818,HG04131,male,BEB,Bengali,SAS,South Asian Ancestry
+2819,NA19752,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2820,NA19757,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2821,NA19764,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2822,HG03885,male,STU,Tamil,SAS,South Asian Ancestry
+2823,NA19771,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2824,HG03897,female,STU,Tamil,SAS,South Asian Ancestry
+2825,NA19776,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2826,HG03900,male,STU,Tamil,SAS,South Asian Ancestry
+2827,NA19783,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2828,HG03905,male,BEB,Bengali,SAS,South Asian Ancestry
+2829,NA20336,female,ASW,African Ancestry SW,AFR,African Ancestry
+2830,HG03917,male,BEB,Bengali,SAS,South Asian Ancestry
+2831,NA20343,male,ASW,African Ancestry SW,AFR,African Ancestry
+2832,NA20348,male,ASW,African Ancestry SW,AFR,African Ancestry
+2833,NA20350,male,ASW,African Ancestry SW,AFR,African Ancestry
+2834,HG03931,female,BEB,Bengali,SAS,South Asian Ancestry
+2835,NA20355,female,ASW,African Ancestry SW,AFR,African Ancestry
+2836,HG04023,male,ITU,Telugu,SAS,South Asian Ancestry
+2837,NA20362,male,ASW,African Ancestry SW,AFR,African Ancestry
+2838,HG04035,female,STU,Tamil,SAS,South Asian Ancestry
+2839,NA20413,male,ASW,African Ancestry SW,AFR,African Ancestry
+2840,HG04042,female,STU,Tamil,SAS,South Asian Ancestry
+2841,NA20278,male,ASW,African Ancestry SW,AFR,African Ancestry
+2842,NA21104,male,GIH,Gujarati,SAS,South Asian Ancestry
+2843,HG04047,female,STU,Tamil,SAS,South Asian Ancestry
+2844,NA20285,male,ASW,African Ancestry SW,AFR,African Ancestry
+2845,NA21109,male,GIH,Gujarati,SAS,South Asian Ancestry
+2846,HG03854,male,STU,Tamil,SAS,South Asian Ancestry
+2847,NA20292,female,ASW,African Ancestry SW,AFR,African Ancestry
+2848,NA21111,male,GIH,Gujarati,SAS,South Asian Ancestry
+2849,HG03861,female,ITU,Telugu,SAS,South Asian Ancestry
+2850,NA20297,male,ASW,African Ancestry SW,AFR,African Ancestry
+2851,HG03866,male,ITU,Telugu,SAS,South Asian Ancestry
+2852,NA20300,female,ASW,African Ancestry SW,AFR,African Ancestry
+2853,HG03873,female,ITU,Telugu,SAS,South Asian Ancestry
+2854,NA20312,female,ASW,African Ancestry SW,AFR,African Ancestry
+2855,HG04054,female,ITU,Telugu,SAS,South Asian Ancestry
+2856,NA20317,female,ASW,African Ancestry SW,AFR,African Ancestry
+2857,HG04059,female,ITU,Telugu,SAS,South Asian Ancestry
+2858,NA20778,male,TSI,Toscani,EUR,European Ancestry
+2859,HG04061,male,ITU,Telugu,SAS,South Asian Ancestry
+2860,NA20785,male,TSI,Toscani,EUR,European Ancestry
+2861,HG04080,male,ITU,Telugu,SAS,South Asian Ancestry
+2862,NA20792,male,TSI,Toscani,EUR,European Ancestry
+2863,HG03974,male,ITU,Telugu,SAS,South Asian Ancestry
+2864,NA20797,female,TSI,Toscani,EUR,European Ancestry
+2865,HG03986,female,STU,Tamil,SAS,South Asian Ancestry
+2866,NA20800,female,TSI,Toscani,EUR,European Ancestry
+2867,HG03998,male,STU,Tamil,SAS,South Asian Ancestry
+2868,NA20805,male,TSI,Toscani,EUR,European Ancestry
+2869,NA12344,male,CEU,CEPH,EUR,European Ancestry
+2870,NA20812,male,TSI,Toscani,EUR,European Ancestry
+2871,NA12375,male,CEU,CEPH,EUR,European Ancestry
+2872,NA20829,male,TSI,Toscani,EUR,European Ancestry
+2873,NA12399,male,CEU,CEPH,EUR,European Ancestry
+2874,NA20831,male,TSI,Toscani,EUR,European Ancestry
+2875,NA12414,female,CEU,CEPH,EUR,European Ancestry
+2876,NA20850,male,GIH,Gujarati,SAS,South Asian Ancestry
+2877,NA12546,male,CEU,CEPH,EUR,European Ancestry
+2878,NA21144,female,GIH,Gujarati,SAS,South Asian Ancestry
+2879,NA12717,female,CEU,CEPH,EUR,European Ancestry
+2880,NA12748,male,CEU,CEPH,EUR,European Ancestry
+2881,NA12750,male,CEU,CEPH,EUR,European Ancestry
+2882,NA12762,male,CEU,CEPH,EUR,European Ancestry
+2883,NA20879,female,GIH,Gujarati,SAS,South Asian Ancestry
+2884,NA12767,female,CEU,CEPH,EUR,European Ancestry
+2885,NA20881,female,GIH,Gujarati,SAS,South Asian Ancestry
+2886,NA12801,male,CEU,CEPH,EUR,European Ancestry
+2887,NA20886,female,GIH,Gujarati,SAS,South Asian Ancestry
+2888,NA12813,female,CEU,CEPH,EUR,European Ancestry
+2889,NA20893,female,GIH,Gujarati,SAS,South Asian Ancestry
+2890,NA12818,female,CEU,CEPH,EUR,European Ancestry
+2891,NA20898,male,GIH,Gujarati,SAS,South Asian Ancestry
+2892,NA18537,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2893,NA20862,female,GIH,Gujarati,SAS,South Asian Ancestry
+2894,NA18544,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2895,NA20867,male,GIH,Gujarati,SAS,South Asian Ancestry
+2896,NA18549,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2897,NA20874,female,GIH,Gujarati,SAS,South Asian Ancestry
+2898,NA18563,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2899,NA21093,male,GIH,Gujarati,SAS,South Asian Ancestry
+2900,NA18570,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2901,NA21098,male,GIH,Gujarati,SAS,South Asian Ancestry
+2902,NA18582,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2903,NA21101,female,GIH,Gujarati,SAS,South Asian Ancestry
+2904,NA18599,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2905,NA21106,female,GIH,Gujarati,SAS,South Asian Ancestry
+2906,NA18602,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2907,NA21113,male,GIH,Gujarati,SAS,South Asian Ancestry
+2908,NA18614,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2909,NA18619,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2910,NA18621,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2911,NA18626,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2912,NA18633,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2913,NA18638,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2914,NA21118,male,GIH,Gujarati,SAS,South Asian Ancestry
+2915,NA18640,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2916,NA21120,female,GIH,Gujarati,SAS,South Asian Ancestry
+2917,NA18645,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2918,NA21125,female,GIH,Gujarati,SAS,South Asian Ancestry
+2919,NA18791,male,CHB,Han Chinese,EAS,East Asian Ancestry
+2920,NA21137,female,GIH,Gujarati,SAS,South Asian Ancestry
+2921,NA11839,male,CEU,CEPH,EUR,European Ancestry
+2922,NA20901,male,GIH,Gujarati,SAS,South Asian Ancestry
+2923,NA11891,male,CEU,CEPH,EUR,European Ancestry
+2924,NA20906,female,GIH,Gujarati,SAS,South Asian Ancestry
+2925,NA11930,male,CEU,CEPH,EUR,European Ancestry
+2926,NA21086,female,GIH,Gujarati,SAS,South Asian Ancestry
+2927,NA11992,male,CEU,CEPH,EUR,European Ancestry
+2928,NA12003,male,CEU,CEPH,EUR,European Ancestry
+2929,NA12046,female,CEU,CEPH,EUR,European Ancestry
+2930,NA12058,female,CEU,CEPH,EUR,European Ancestry
+2931,NA12154,male,CEU,CEPH,EUR,European Ancestry
+2932,NA12248,male,CEU,CEPH,EUR,European Ancestry
+2933,NA12274,male,CEU,CEPH,EUR,European Ancestry
+2934,NA12286,male,CEU,CEPH,EUR,European Ancestry
+2935,NA12832,female,CEU,CEPH,EUR,European Ancestry
+2936,NA12875,female,CEU,CEPH,EUR,European Ancestry
+2937,NA18486,male,YRI,Yoruba,AFR,African Ancestry
+2938,NA18498,male,YRI,Yoruba,AFR,African Ancestry
+2939,NA18501,male,YRI,Yoruba,AFR,African Ancestry
+2940,NA18506,male,YRI,Yoruba,AFR,African Ancestry
+2941,NA18518,female,YRI,Yoruba,AFR,African Ancestry
+2942,NA18520,female,YRI,Yoruba,AFR,African Ancestry
+2943,NA18525,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2944,NA18532,female,CHB,Han Chinese,EAS,East Asian Ancestry
+2945,NA06993,male,CEU,CEPH,EUR,European Ancestry
+2946,NA07340,female,CEU,CEPH,EUR,European Ancestry
+2947,NA07345,female,CEU,CEPH,EUR,European Ancestry
+2948,NA07357,male,CEU,CEPH,EUR,European Ancestry
+2949,NA10831,female,CEU,CEPH,EUR,European Ancestry
+2950,HG04225,male,ITU,Telugu,SAS,South Asian Ancestry
+2951,NA06986,male,CEU,CEPH,EUR,European Ancestry
+2952,HG04186,female,BEB,Bengali,SAS,South Asian Ancestry
+2953,HG04198,male,ITU,Telugu,SAS,South Asian Ancestry
+2954,HG04206,male,ITU,Telugu,SAS,South Asian Ancestry
+2955,HG04155,male,BEB,Bengali,SAS,South Asian Ancestry
+2956,HG04162,female,BEB,Bengali,SAS,South Asian Ancestry
+2957,NA10836,female,CEU,CEPH,EUR,European Ancestry
+2958,NA10843,female,CEU,CEPH,EUR,European Ancestry
+2959,NA10850,female,CEU,CEPH,EUR,European Ancestry
+2960,NA10855,female,CEU,CEPH,EUR,European Ancestry
+2961,NA18912,female,YRI,Yoruba,AFR,African Ancestry
+2962,NA18917,male,YRI,Yoruba,AFR,African Ancestry
+2963,NA18924,female,YRI,Yoruba,AFR,African Ancestry
+2964,NA18943,male,JPT,Japanese,EAS,East Asian Ancestry
+2965,NA18948,male,JPT,Japanese,EAS,East Asian Ancestry
+2966,NA18950,female,JPT,Japanese,EAS,East Asian Ancestry
+2967,NA18955,male,JPT,Japanese,EAS,East Asian Ancestry
+2968,NA18962,male,JPT,Japanese,EAS,East Asian Ancestry
+2969,NA18967,male,JPT,Japanese,EAS,East Asian Ancestry
+2970,NA18974,male,JPT,Japanese,EAS,East Asian Ancestry
+2971,NA18979,female,JPT,Japanese,EAS,East Asian Ancestry
+2972,NA18981,female,JPT,Japanese,EAS,East Asian Ancestry
+2973,NA18986,male,JPT,Japanese,EAS,East Asian Ancestry
+2974,NA18993,female,JPT,Japanese,EAS,East Asian Ancestry
+2975,NA18998,female,JPT,Japanese,EAS,East Asian Ancestry
+2976,NA19004,male,JPT,Japanese,EAS,East Asian Ancestry
+2977,NA19009,male,JPT,Japanese,EAS,East Asian Ancestry
+2978,NA19011,female,JPT,Japanese,EAS,East Asian Ancestry
+2979,NA19023,female,LWK,Luhya,Luhya,AFR,African Ancestry,Africa (SGDP)
+2980,NA19028,male,LWK,Luhya,AFR,African Ancestry
+2981,NA19030,female,LWK,Luhya,AFR,African Ancestry
+2982,NA19035,male,LWK,Luhya,AFR,African Ancestry
+2983,NA19042,female,LWK,Luhya,AFR,African Ancestry
+2984,NA19054,female,JPT,Japanese,EAS,East Asian Ancestry
+2985,NA19059,female,JPT,Japanese,EAS,East Asian Ancestry
+2986,NA19066,male,JPT,Japanese,EAS,East Asian Ancestry
+2987,NA19434,female,LWK,Luhya,AFR,African Ancestry
+2988,NA19439,female,LWK,Luhya,AFR,African Ancestry
+2989,NA19446,female,LWK,Luhya,AFR,African Ancestry
+2990,NA19453,male,LWK,Luhya,AFR,African Ancestry
+2991,NA19472,female,LWK,Luhya,AFR,African Ancestry
+2992,NA19648,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2993,NA19650,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2994,NA19655,male,MXL,Mexican Ancestry,AMR,American Ancestry
+2995,NA19662,female,MXL,Mexican Ancestry,AMR,American Ancestry
+2996,NA19314,female,LWK,Luhya,AFR,African Ancestry
+2997,NA19319,male,LWK,Luhya,AFR,African Ancestry
+2998,NA19321,female,LWK,Luhya,AFR,African Ancestry
+2999,NA19338,female,LWK,Luhya,AFR,African Ancestry
+3000,NA19352,male,LWK,Luhya,AFR,African Ancestry
+3001,NA19371,male,LWK,Luhya,AFR,African Ancestry
+3002,NA19376,male,LWK,Luhya,AFR,African Ancestry
+3003,NA19383,male,LWK,Luhya,AFR,African Ancestry
+3004,NA19390,female,LWK,Luhya,AFR,African Ancestry
+3005,NA19395,female,LWK,Luhya,AFR,African Ancestry
+3006,NA19403,female,LWK,Luhya,AFR,African Ancestry
+3007,NA19198,male,YRI,Yoruba,AFR,African Ancestry
+3008,NA19201,female,YRI,Yoruba,AFR,African Ancestry
+3009,NA19206,female,YRI,Yoruba,AFR,African Ancestry
+3010,NA19213,male,YRI,Yoruba,AFR,African Ancestry
+3011,NA19225,female,YRI,Yoruba,AFR,African Ancestry
+3012,NA19237,female,YRI,Yoruba,AFR,African Ancestry
+3013,NA19249,male,YRI,Yoruba,AFR,African Ancestry
+3014,NA19256,male,YRI,Yoruba,AFR,African Ancestry
+3015,NA19307,male,LWK,Luhya,AFR,African Ancestry
+3016,NA19674,male,MXL,Mexican Ancestry,AMR,American Ancestry
+3017,NA19679,male,MXL,Mexican Ancestry,AMR,American Ancestry
+3018,NA19681,female,MXL,Mexican Ancestry,AMR,American Ancestry
+3019,NA19686,female,MXL,Mexican Ancestry,AMR,American Ancestry
+3020,NA19701,female,ASW,African Ancestry SW,AFR,African Ancestry
+3021,NA19713,female,ASW,African Ancestry SW,AFR,African Ancestry
+3022,NA19718,female,MXL,Mexican Ancestry,AMR,American Ancestry
+3023,NA19720,male,MXL,Mexican Ancestry,AMR,American Ancestry
+3024,NA19725,female,MXL,Mexican Ancestry,AMR,American Ancestry
+3025,NA19078,female,JPT,Japanese,EAS,East Asian Ancestry
+3026,NA19080,female,JPT,Japanese,EAS,East Asian Ancestry
+3027,NA19085,male,JPT,Japanese,EAS,East Asian Ancestry
+3028,NA19092,male,YRI,Yoruba,AFR,African Ancestry
+3029,NA19097,female,YRI,Yoruba,AFR,African Ancestry
+3030,NA19100,female,YRI,Yoruba,AFR,African Ancestry
+3031,NA19105,female,YRI,Yoruba,AFR,African Ancestry
+3032,NA19117,male,YRI,Yoruba,AFR,African Ancestry
+3033,NA19129,female,YRI,Yoruba,AFR,African Ancestry
+3034,NA19131,female,YRI,Yoruba,AFR,African Ancestry
+3035,NA19143,female,YRI,Yoruba,AFR,African Ancestry
+3036,NA19148,female,YRI,Yoruba,AFR,African Ancestry
+3037,NA19150,male,YRI,Yoruba,AFR,African Ancestry
+3038,NA19174,male,YRI,Yoruba,AFR,African Ancestry
+3039,NA19186,male,YRI,Yoruba,AFR,African Ancestry
+3040,NA18854,male,YRI,Yoruba,AFR,African Ancestry
+3041,NA18859,male,YRI,Yoruba,AFR,African Ancestry
+3042,NA18861,female,YRI,Yoruba,AFR,African Ancestry
+3043,NA18873,female,YRI,Yoruba,AFR,African Ancestry
+3044,NA18878,female,YRI,Yoruba,AFR,African Ancestry
+3045,NA20506,female,TSI,Toscani,EUR,European Ancestry
+3046,NA20513,male,TSI,Toscani,EUR,European Ancestry
+3047,NA20518,male,TSI,Toscani,EUR,European Ancestry
+3048,NA20520,male,TSI,Toscani,EUR,European Ancestry
+3049,NA20525,male,TSI,Toscani,EUR,European Ancestry
+3050,NA20532,male,TSI,Toscani,EUR,European Ancestry
+3051,NA20537,male,TSI,Toscani,EUR,European Ancestry
+3052,NA20544,male,TSI,Toscani,EUR,European Ancestry
+3053,NA20582,female,TSI,Toscani,EUR,European Ancestry
+3054,NA20587,female,TSI,Toscani,EUR,European Ancestry
+3055,NA20753,female,TSI,Toscani,EUR,European Ancestry
+3056,NA20758,male,TSI,Toscani,EUR,European Ancestry
+3057,NA20760,female,TSI,Toscani,EUR,European Ancestry
+3058,NA20765,male,TSI,Toscani,EUR,European Ancestry
+3059,NA20772,female,TSI,Toscani,EUR,European Ancestry
+3060,NA19732,male,MXL,Mexican Ancestry,AMR,American Ancestry
+3061,NA19737,female,MXL,Mexican Ancestry,AMR,American Ancestry
+3062,NA19749,female,MXL,Mexican Ancestry,AMR,American Ancestry
+3063,NA19751,male,MXL,Mexican Ancestry,AMR,American Ancestry
+3064,NA19756,male,MXL,Mexican Ancestry,AMR,American Ancestry
+3065,NA19763,female,MXL,Mexican Ancestry,AMR,American Ancestry
+3066,NA19770,female,MXL,Mexican Ancestry,AMR,American Ancestry
+3067,NA19775,female,MXL,Mexican Ancestry,AMR,American Ancestry
+3068,NA19782,female,MXL,Mexican Ancestry,AMR,American Ancestry
+3069,NA19787,male,MXL,Mexican Ancestry,AMR,American Ancestry
+3070,NA19794,female,MXL,Mexican Ancestry,AMR,American Ancestry
+3071,NA19819,female,ASW,African Ancestry SW,AFR,African Ancestry
+3072,NA19908,male,ASW,African Ancestry SW,AFR,African Ancestry
+3073,NA19915,male,ASW,African Ancestry SW,AFR,African Ancestry
+3074,NA19922,male,ASW,African Ancestry SW,AFR,African Ancestry
+3075,NA19984,male,ASW,African Ancestry SW,AFR,African Ancestry
+3076,NA20126,male,ASW,African Ancestry SW,AFR,African Ancestry
+3077,NA20796,male,TSI,Toscani,EUR,European Ancestry
+3078,NA20804,female,TSI,Toscani,EUR,European Ancestry
+3079,NA20809,male,TSI,Toscani,EUR,European Ancestry
+3080,NA20811,male,TSI,Toscani,EUR,European Ancestry
+3081,NA20816,male,TSI,Toscani,EUR,European Ancestry
+3082,NA20828,female,TSI,Toscani,EUR,European Ancestry
+3083,NA20847,female,GIH,Gujarati,SAS,South Asian Ancestry
+3084,NA20335,male,ASW,African Ancestry SW,AFR,African Ancestry
+3085,NA20342,male,ASW,African Ancestry SW,AFR,African Ancestry
+3086,NA20347,male,ASW,African Ancestry SW,AFR,African Ancestry
+3087,NA20359,female,ASW,African Ancestry SW,AFR,African Ancestry
+3088,NA20361,female,ASW,African Ancestry SW,AFR,African Ancestry
+3089,NA20412,female,ASW,African Ancestry SW,AFR,African Ancestry
+3090,NA20277,female,ASW,African Ancestry SW,AFR,African Ancestry
+3091,NA20284,male,ASW,African Ancestry SW,AFR,African Ancestry
+3092,NA20289,female,ASW,African Ancestry SW,AFR,African Ancestry
+3093,NA20291,male,ASW,African Ancestry SW,AFR,African Ancestry
+3094,NA20296,female,ASW,African Ancestry SW,AFR,African Ancestry
+3095,NA20316,male,ASW,African Ancestry SW,AFR,African Ancestry
+3096,NA20854,female,GIH,Gujarati,SAS,South Asian Ancestry
+3097,NA20859,female,GIH,Gujarati,SAS,South Asian Ancestry
+3098,NA20861,male,GIH,Gujarati,SAS,South Asian Ancestry
+3099,NA20866,male,GIH,Gujarati,SAS,South Asian Ancestry
+3100,NA20873,male,GIH,Gujarati,SAS,South Asian Ancestry
+3101,NA20878,female,GIH,Gujarati,SAS,South Asian Ancestry
+3102,NA20900,female,GIH,Gujarati,SAS,South Asian Ancestry
+3103,NA20905,male,GIH,Gujarati,SAS,South Asian Ancestry
+3104,NA21092,male,GIH,Gujarati,SAS,South Asian Ancestry
+3105,NA20885,male,GIH,Gujarati,SAS,South Asian Ancestry
+3106,NA20892,female,GIH,Gujarati,SAS,South Asian Ancestry
+3107,NA20897,male,GIH,Gujarati,SAS,South Asian Ancestry
+3108,NA21143,female,GIH,Gujarati,SAS,South Asian Ancestry
+3109,NA21097,female,GIH,Gujarati,SAS,South Asian Ancestry
+3110,NA21100,male,GIH,Gujarati,SAS,South Asian Ancestry
+3111,NA21105,male,GIH,Gujarati,SAS,South Asian Ancestry
+3112,NA21112,male,GIH,Gujarati,SAS,South Asian Ancestry
+3113,NA21117,male,GIH,Gujarati,SAS,South Asian Ancestry
+3114,NA21124,male,GIH,Gujarati,SAS,South Asian Ancestry
+3115,NA21129,male,GIH,Gujarati,SAS,South Asian Ancestry
