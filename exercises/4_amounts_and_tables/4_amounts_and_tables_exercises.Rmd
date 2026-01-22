@@ -19,7 +19,21 @@ library(tibble)
 
 ## Data
 
-We have three tables. `d` has some individual-level data on 1000 Genomes Project subjects, and `d_summary` and `d_summary2` are  population-level summary tables. All three are previewed below.
+We are going to use three tables.
+
+First read in `d.csv`, which has some individual-level data on 1000 Genomes Project subjects, as a data frame called `d`.
+
+Then copy and paste this code to create `d_summary` and `d_summary2`, which will be population-level summary tables:
+
+```
+d_summary <- d %>% group_by(superpop_name) %>% summarize(sampsize=n())
+d_summary
+
+d_summary2 <- d %>% group_by(pop) %>% summarize(sampsize=n())
+d_summary2
+```
+
+
 
 ```{r}
 meta_url <- "https://raw.githubusercontent.com/sheffield-bioinformatics-core/wrangling-genomics/gh-pages/files/1000_genomes_meta.tsv"
