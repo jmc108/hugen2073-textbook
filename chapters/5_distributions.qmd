@@ -58,6 +58,8 @@ format:
 
 [Download the exercises](../exercises/5_distributions/5_distributions_exercises.Rmd)
 
+[Download sc.csv](../exercises/5_distributions/sc.csv)
+
 [Download het.csv](../exercises/5_distributions/het.csv)
 
 ::: {.callout-tip collapse="true"}
@@ -65,21 +67,14 @@ format:
 ### Expand to see the answers
 
 ```{webr}
-# Install these if needed
-# BiocManager::install("scRNAseq")
+# Install these if needed on your computer
 library("tidyverse")
-library("scRNAseq")
 library("ggridges")
 library("ggforce")
 library("ggrain")
 
 # Set up data
-counts <- assay(SegerstolpePancreasData(), "counts")
-d <- as.data.frame(counts[,201])
-for (i in 1:19) {
-  d <- cbind(d,counts[,200+i])
-}
-names(d) <- paste0("sample",1:ncol(d))
+d <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/5_distributions/sc.csv")
 head(d)
 dim(d)
 ```
