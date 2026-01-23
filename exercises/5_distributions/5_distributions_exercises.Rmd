@@ -17,6 +17,9 @@ Here are the packages you need. You may need to install scRNAseq from Bioconduct
 # BiocManager::install("scRNAseq")
 library("tidyverse")
 library("scRNAseq")
+library("ggridges")
+library("ggforce")
+library("ggrain")
 ```
 
 ## Data
@@ -38,65 +41,60 @@ dim(d)
 
 # Exercises
 
-## One-variable histograms
+## Histograms for one distribution
 
-First, make a histogram of the raw counts for one of the samples.
+First, make a histogram of the raw counts for one of the samples. use all default settings.
 
-```{r}
-d %>% 
-  ggplot() +
-  geom_histogram(aes(x=sample1))
-```
 
-What's wrong with this histogram? Without changing the bins (yet), change the plot or data in a way to make the plot more informative. (Hint: transform the data.)
+### Plot 1
 
 ```{r}
-d %>% 
-  ggplot() +
-  geom_histogram(aes(x=log2(sample1+1)))
+
 ```
 
-One bin still dominates. But what if we want to simply categorize the genes into two bins, "undetected" and "detected"? See if simply telling `geom_histogram` to use 2 bins works.
+### Plot 2
+
+What's wrong with this histogram? Why does it look like there's only 1 bin, and yet the x-axis extends far to the right? Without changing the bins (yet), change the plot or data in a way to make the plot more informative. (Hint: transform the data.)
 
 ```{r}
-d %>% 
-  ggplot() +
-  geom_histogram(aes(x=log2(sample1+1)), bins=2)
+
 ```
+
+### Plot 3
+
+One bin still dominates. But what if we want to simply categorize the genes into two bins, "undetected" and "detected"? See if simply telling `geom_histogram` to use exactly 2 bins works.
+
+```{r}
+
+```
+
+### Plot 4
 
 Did that do what you intended? Is there one "undetected" and one "detected" bin? Time to try a different `geom_histogram` parameter, `breaks`, instead of `bins`. Note that `breaks` needs to specify a vector. Note this will not create equally wide bins.
 
 As an example, `breaks=c(0,1,2,3)` would specify bars covering the following intervals: [0,1), [1,2), and [2,3]. Notice that all but the last interval are "half-open", i.e., include the left but not the right endpoint.
 
 ```{r}
-d %>% 
-  ggplot() +
-  geom_histogram(aes(x=log2(sample1+1)),
-                 breaks = c(-0,
-                            1,
-                            max(log2(d$sample1+1))
-                            )
-                 )
+
 ```
+
+### Plot 5
 
 Not try using uniform bin widths of 1. Notice that (almost) no matter how you specify the bins, the x-axis seems to extend out past 10, although there are apparently no bins. What is happening there?
 
 ```{r}
-d %>%
-  ggplot() +
-  geom_histogram(aes(x=log2(sample1+1)), binwidth=1)
+
 ```
+
+### Plot 6
 
 Finally, try plotting the data without the undetected genes.
 
 ```{r}
-d %>%
-  filter(sample1 > 0) %>% 
-  ggplot() +
-  geom_histogram(aes(x=log2(sample1+1)))
+
 ```
 
-## Histograms with more than 1 variable
+## Histograms for several distributions
 
 Now let's compare the distributions of several variables. For a moment, imagine you wanted to plot histograms for sample1 and sample2 in the same plot. You would still want to include `geom_histogram()` with expression assigned to the `x` aesthetic. What would you need in order to draw separate distributions for sample1 and sample2?
 
@@ -130,7 +128,7 @@ expression    gene    sample
 0             2       3
 ```
 
-The following chunk converts the data into long format with the `pivot_longer` function.
+The following chunk converts the data into long format with the `pivot_longer` function. Let's also apply the `log2(x+1)` transformation to `expression` and save it as a column.
 
 ```{r}
 dlong <- d %>% 
@@ -138,19 +136,146 @@ dlong <- d %>%
   pivot_longer(,
                cols=sample1:sample20,
                names_to="sample",
-               values_to="expression")
+               values_to="expression") %>% 
+  mutate(logexp = log2(expression+1))
+  
 head(dlong, n=20)
 
 ```
 
+### Plot 7
+
 Now that you have the `sample` variable, make a single plot showing histograms for 3 samples. Include the `position` argument of `geom_histogram`, trying these 3 values for it: `identity`, `stack`, and `dodge`.
 
+For the remaining plots, unless instructed otherwise, filter to include only observations with `expression > 0`. Be sure to continue applying `log2(x+1)` to the expression values, too.
+
 ```{r}
-dlong %>% 
-  filter(sample %in% c("sample1", "sample2", "sample3")) %>% 
-  filter(expression > 0) %>% 
-  ggplot() +
-  geom_histogram(
-    aes(x=log2(expression+1), fill=sample), position="dodge")
+
+```
+
+### Plot 8
+
+Now do the same for all 20 samples. What's wrong with this plot?
+
+```{r}
+
+```
+
+### Plot 9
+
+Finally, make a "ridgeline" histogram using `geom_density_ridges` from the `ggridges` package (which you probably need to install). Note that you need to include the aesthetic `y` for a ridgeline plot. You also need to include `stat = "binline"` in order to get histograms instead of density plots.
+
+```{r}
+
+```
+
+## Other plots for many distributions
+
+Now let's use another dataset, `het.csv` with less skewness and somewhat fewer points. This dataset contains heterozygosities calculated on chromosome 22 for 1000 Genomes Project subjects.
+
+Read in the data and apply `head`. The column `F` contains the heterozygosity statistic we'll be plotting.
+
+We will be grouping by population (the column `pop`). Apply `unique(het$pop)` do get an idea of how many different populations are represented. There are clearly too many to plot side-by-side histograms.
+
+
+```{r}
+# Your code here
+# Read in het.csv and do head(het)
+# Apply unique(het$pop)
+
+```
+
+Now let's practicing making a lot of different plots of these data. Fundamentally, we're exploring whether heterozygosity differs across populations.
+
+In all your subsequent plots, order the populations by their median heterozygosity. You can use `fct_reorder(pop, F ,.fun=median)`.
+
+### Plot 10
+
+First, let's try a strip chart with jittering to show the raw data. Use `geom_jitter`. You can guess the aesthetics you need. Try including a parameter to help with the overplotting.
+
+
+```{r}
+
+```
+
+
+### Plot 11
+
+Now let's try a beeswarm plot, where the points are a little less haphazardly positioned. You probably need to install the package `beesarm`. The syntax looks like: `beeswarm(Y~X, data=het)`, where `Y` represents your continuosu variable and `X` represents your grouping variable.
+
+You'll find the spacing and point size are not ideal. Try using `pch="."` for smaller points. Also try decreasing `spacing` from its default of 1 until you see disctinct "swarms" emerge.
+
+
+```{r}
+
+```
+
+
+### Plot 12
+
+Now let's try plotting summary statistics with `geom_boxplot`. You should be able to guess the syntax. Try overlaying the jittered strip chart, too.
+
+- Notice that this causes outliers to be plotted twice!
+
+- Also pay attention to which geom you put first in your command! Which way makes more sense to you?
+
+```{r}
+
+
+```
+
+### Plot 13
+
+Now try a violin plot (`geom_violin`) with overlaid boxplot. Use the `width` argument to make the boxplot a little smaller.
+
+```{r}
+
+```
+
+### Plot 14
+
+Now try a sina plot using `geom_sina` from the `ggforce` package.
+
+- You need to include `geom_violin` as well
+
+- Which geom should come first?
+
+- Try adjusting the `size` option in `geom_sina`
+
+```{r}
+```
+
+
+### Plot 15
+
+Finally, try a raincloud plot using `geom_rain` from `ggrain`. Note that due to a quirk of `geom_rain` you need to put your `aes()` command inside of your `ggplot` command, not inside of `geom_rain()`.
+
+```{r}
+het %>% 
+  ggplot(aes(x=fct_reorder(pop,F,.fun=median), y=F)) +
+  geom_rain()
+```
+
+
+## Density plots
+
+### Plot 16
+
+Use `geom_density` to make density plots for just two populations of your choice. Compare the results of using the `fill` vs. the `color` aesthetic. Note it's best to include the `alpha` argument if you're using `fill`. Experiment with the `bw` argument.
+
+```{r}
+
+```
+
+### Plot 17
+
+Finally, make side-by-side histograms with density plots overlaid for for the whole dataset.
+
+Where is the density plot?! Look closely. Can you figure out what's happening?
+
+We need to either scale down the histogram or scale up the density plot. To do the former, which is simpler, include `y = after_stat(density)` in the aesthetics for the histogram.
+
+```{r}
+
 ```
 

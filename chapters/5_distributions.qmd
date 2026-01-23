@@ -58,14 +58,184 @@ format:
 
 [Download the exercises](../exercises/5_distributions/5_distributions_exercises.Rmd)
 
+[Download het.csv](../exercises/5_distributions/het.csv)
 
 ::: {.callout-tip collapse="true"}
 
 ### Expand to see the answers
 
 ```{webr}
+# Install these if needed
+# BiocManager::install("scRNAseq")
+library("tidyverse")
+library("scRNAseq")
+library("ggridges")
+library("ggforce")
+library("ggrain")
 
+# Set up data
+counts <- assay(SegerstolpePancreasData(), "counts")
+d <- as.data.frame(counts[,201])
+for (i in 1:19) {
+  d <- cbind(d,counts[,200+i])
+}
+names(d) <- paste0("sample",1:ncol(d))
+head(d)
+dim(d)
 ```
+
+```{webr}
+d %>% 
+  ggplot() +
+  geom_histogram(aes(x=sample1)) +
+  ggtitle("Plot 1")
+```
+
+```{webr}
+d %>% 
+  ggplot() +
+  geom_histogram(aes(x=log2(sample1+1))) +
+  ggtitle("Plot 2")
+```
+
+```{webr}
+d %>% 
+  ggplot() +
+  geom_histogram(aes(x=log2(sample1+1)), bins=2) +
+  ggtitle("Plot 3")
+```
+
+```{webr}
+d %>% 
+  ggplot() +
+  geom_histogram(aes(x=log2(sample1+1)),
+                 breaks = c(-0,1,max(log2(d$sample1+1)))) +
+  ggtitle("Plot 4")
+```
+
+```{webr}
+d %>%
+  ggplot() +
+  geom_histogram(aes(x=log2(sample1+1)), binwidth=1) +
+  ggtitle("Plot 5")
+```
+
+```{webr}
+d %>%
+  filter(sample1 > 0) %>% 
+  ggplot() +
+  geom_histogram(aes(x=log2(sample1+1))) +
+  ggtitle("Plot 6")
+```
+
+```{webr}
+head(d)
+dlong <- d %>% 
+  mutate(gene=row_number()) %>% 
+  pivot_longer(,
+               cols=sample1:sample20,
+               names_to="sample",
+               values_to="expression") %>% 
+  mutate(logexp = log2(expression+1))
+  
+head(dlong, n=20)
+```
+
+```{webr}
+dlong %>% 
+  filter(sample %in% c("sample1", "sample2", "sample3")) %>% 
+  filter(expression > 0) %>% 
+  ggplot() +
+  geom_histogram(
+    aes(x=logexp, fill=sample), position="dodge") +
+  ggtitle("Plot 7")
+```
+
+
+```{webr}
+dlong %>% 
+  filter(expression > 0) %>% 
+  ggplot() +
+  geom_histogram(
+    aes(x=logexp, fill=sample), position="dodge") +
+  ggtitle("Plot 8")
+```
+
+```{webr}
+dlong %>% 
+  filter(expression > 0) %>% 
+  ggplot() +
+  geom_density_ridges(aes(x=logexp, y=sample),
+                      stat = "binline") +
+  ggtitle("Plot 9")
+```
+
+```{webr}
+het <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/5_distributions/het.csv")
+unique(het$pop)
+```
+
+```{webr}
+het %>% 
+  ggplot() +
+  geom_jitter(aes(x=fct_reorder(pop,F,.fun=median), y=F), alpha=0.5) +
+  ggtitle("Plot 10")
+```
+
+```{webr}
+beeswarm(F~fct_reorder(pop, F, .fun=median),
+         data=het, spacing=0.3,
+         pch=".",
+         main="Plot 11")
+```
+
+```{webr}
+het %>% 
+  ggplot() +
+  geom_boxplot(aes(x=fct_reorder(pop,F,.fun=median), y=F)) +
+  geom_jitter(aes(x=fct_reorder(pop,F,.fun=median), y=F), alpha=0.2) +
+  ggtitle("Plot 12")
+```
+
+```{webr}
+het %>% 
+  ggplot() +
+  geom_violin(aes(x=fct_reorder(pop,F,.fun=median), y=F)) +
+  geom_boxplot(aes(x=fct_reorder(pop,F,.fun=median), y=F, width=0.3)) +
+  ggtitle("Plot 13")
+```
+
+```{webr}
+het %>% 
+  ggplot() +
+  geom_violin(aes(x=fct_reorder(pop,F,.fun=median), y=F))+
+  geom_sina(aes(x=fct_reorder(pop,F,.fun=median), y=F), size=0.5) +
+  ggtitle("Plot 14")
+```
+
+```{webr}
+het %>% 
+  ggplot(aes(x=fct_reorder(pop,F,.fun=median), y=F)) +
+  geom_rain() +
+  ggtitle("Plot 15")
+```
+
+```{webr}
+het %>% 
+  filter(pop %in% c("CEU", "TSI")) %>% 
+  ggplot() +
+  geom_density(aes(x=F, fill=pop), alpha=0.3, bw=0.01) +
+  ggtitle("Plot 16")
+```
+
+```{webr}
+het %>% 
+  ggplot() +
+  geom_histogram(aes(x=F, y=after_stat(density))) +
+  geom_density(aes(x=F)) +
+  ggtitle("Plot 17")
+```
+
 
 :::
 
