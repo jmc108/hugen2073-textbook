@@ -14,7 +14,7 @@ Here are the packages you need.
 ```{r}
 # Install these if needed
 library("tidyverse")
-#library("scRNAseq")
+library("beeswarm")
 library("ggridges")
 library("ggforce")
 library("ggrain")
