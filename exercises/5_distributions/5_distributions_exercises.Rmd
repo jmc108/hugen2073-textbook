@@ -6,17 +6,15 @@ output:
     code_folding: show
 ---
 
-Here are the packages you need. You may need to install scRNAseq from Bioconductor with `BiocManager::install("scRNAseq")`.
-
+Here are the packages you need. 
 # Setup
 
 ## Packages
 
 ```{r}
 # Install these if needed
-# BiocManager::install("scRNAseq")
 library("tidyverse")
-library("scRNAseq")
+#library("scRNAseq")
 library("ggridges")
 library("ggforce")
 library("ggrain")
@@ -24,18 +22,11 @@ library("ggrain")
 
 ## Data
 
-We'll use some (real) scRNAseq data from 20 samples.
+The first dataset, `sc.csv` has some scRNAseq data from the package `scRNAseq`. We'll use some (real) data from 20 samples. Read in the file and apply `head` and `dim`.
 
 ```{r}
-# Set up data
-counts <- assay(SegerstolpePancreasData(), "counts")
-d <- as.data.frame(counts[,201])
-for (i in 1:19) {
-  d <- cbind(d,counts[,200+i])
-}
-names(d) <- paste0("sample",1:ncol(d))
-head(d)
-dim(d)
+# Read in the data
+# Apply head and dim
 ```
 
 

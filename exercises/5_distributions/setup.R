@@ -21,3 +21,15 @@ d <- het |>
   mutate(pop = fct_reorder(pop, F))
 
 write.csv(d, file="/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/5_distributions/het.csv", row.names = FALSE, quote = FALSE)
+
+
+
+###
+library("scRNAseq")
+counts <- assay(SegerstolpePancreasData(), "counts")
+d <- as.data.frame(counts[,201])
+for (i in 1:19) {
+  d <- cbind(d,counts[,200+i])
+}
+names(d) <- paste0("sample",1:ncol(d))
+write.csv(d, file="/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/5_distributions/sc.csv", row.names = FALSE, quote=FALSE)
