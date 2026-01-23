@@ -72,6 +72,7 @@ library("tidyverse")
 library("ggridges")
 library("ggforce")
 library("ggrain")
+library("beeswarm")
 
 # Set up data
 d <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/5_distributions/sc.csv")
