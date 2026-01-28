@@ -5,3 +5,358 @@ output:
   html_document:
     code_folding: show
 ---
+
+# Setup
+
+```{r}
+# Load packages
+library("tidyverse")
+library("ggforce")
+library("knitr")
+library("lubridate")
+library("plotly")
+library("zoo")
+library("spls")
+library("GGally")
+library("corrplot")
+library("plotly")
+library("rgl")
+library("scatterplot3d")
+library("knitr")
+```
+
+```{r}
+# Read in data
+cv <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/4_amounts_and_tables/cv.csv")
+lrr <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/6_associations_and_trends/lrr.csv")
+sc <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/6_associations_and_trends/sc.csv")
+pcs <- read.csv("/Users/jonathanchernus/Downloads/archive/genetic_data_train.csv")
+util <- read_csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/6_associations_and_trends/utility.csv")
+```
+
+# Exercises
+
+## Line graph
+
+The chunk below simulates genetic drift in two populations of different sizes (`Ne`=200 `Ne`=2000).
+
+We start with an initial allele frequency of `p0`=0.3 and follow `p` for 20 generations (`generation`).
+
+Each population is simulated 12 times, as reflected in the grouping variable `pop`. So, for example, `Ne200_7` in the `pop` column means "replicate number 7 of the 200-person population."
+
+Inspect the data to make sure you understand the variables.
+
+
+```{r}
+set.seed(2073)
+
+# ---- Wright–Fisher drift simulator ----
+simulate_drift <- function(p0, Ne, gens, n_pops, label_prefix = "pop") {
+  # p0: starting allele frequency
+  # Ne: effective population size (diploid)
+  # gens: number of generations
+  # n_pops: number of replicate populations
+  
+  map_dfr(seq_len(n_pops), function(i) {
+    p <- numeric(gens + 1)
+    p[1] <- p0
+    for (g in 2:(gens + 1)) {
+      # next generation allele count ~ Binomial(2Ne, p_prev)
+      k <- rbinom(1, size = 2 * Ne, prob = p[g - 1])
+      p[g] <- k / (2 * Ne)
+    }
+    tibble(
+      pop = paste0(label_prefix, i),
+      generation = 0:gens,
+      p = p
+    )
+  })
+}
+
+# ---- realistic-ish parameters ----
+p0   <- 0.30   # common-ish starting allele frequency
+gens <- 60
+n_pops <- 12
+
+# Two scenarios: small vs large Ne to show volatility differences
+d_small <- simulate_drift(p0 = p0, Ne = 200,  gens = gens, n_pops = n_pops, label_prefix = "Ne200_")
+d_large <- simulate_drift(p0 = p0, Ne = 2000, gens = gens, n_pops = n_pops, label_prefix = "Ne2000_")
+
+d <- bind_rows(
+  d_small %>% mutate(Ne = 200),
+  d_large %>% mutate(Ne = 2000)
+)
+
+kable(head(d))
+```
+
+Now make a line graph of the allele frequency over time:
+
+- facet by population size (`Ne`), in such a way that one plot is on top of the other (rather than side by side)
+
+- draw a line for each replicate, but make them slightly translucent with `alpha` (color them all the same; what aesthetic should you use instead of `color`?)
+
+- include `+ theme_classic()` to remove the plot background
+
+- but add a horizontal dotted line to show the initial allele frequency of `p0`=0.3 (what geom do you need? Include `linetype="dashed"`)
+
+```{r}
+# Your code here
+
+```
+
+## Bonus: vibe-coded interactive line graph
+
+Your instructor thought his electricity bill looked high, so he downloaded a year's data from the utility company.
+
+This code produces an interactive bar graph of electricity usage every hour, colored by hourly electricity cost.
+
+No need to change anything here - just play with the interactive plot for a few moments and check out how surprisingly simple the plotting code is.
+
+```{r}
+d2 <- util %>%
+  mutate(
+    datetime = as.POSIXct(as.Date(DATE, format = "%m/%d/%y"), tz = "America/New_York") +
+      as.numeric(`START TIME`),
+    cost = readr::parse_number(COST)
+  ) %>%
+  arrange(datetime)
+
+p <- plot_ly(
+  data = d2,
+  x = ~datetime,
+  y = ~`USAGE (kWh)`,
+  type = "bar",
+  customdata = ~cost,
+  hovertemplate = paste(
+    "%{x}<br>",
+    "Usage: %{y:.2f} kWh<br>",
+    "Cost: $%{customdata:.2f}",
+    "<extra></extra>"
+  ),
+  marker = list(
+    color = ~cost,                 # <- continuous color mapping
+    showscale = TRUE,              # <- colorbar legend
+    colorbar = list(title = "Cost ($)")
+  )
+) %>%
+  layout(
+    title = "Hourly Usage (kWh), Colored by Cost ($)",
+    xaxis = list(
+      title = "Time",
+      type = "date",
+      rangeslider = list(visible = TRUE)
+    ),
+    yaxis = list(title = "Usage (kWh)")
+  )
+
+p
+
+
+```
+
+## Smoothing
+
+The dataset `lrr` (read in above) contains LRR values on chromosome 22 for a single scan.
+
+Make a scatterplot of the data. Then use the function `rollmean` from the `zoo` package to calculate moving average, and plot it as a connected line. Include the option `fill=NA`. Vary the `k` parameter to see if you can find one that does a good job of pinpointing the deletion. (Change `xlim()` if that helps.)
+
+```{r}
+
+```
+
+Try the same thing with a LOESS curve (`geom_smooth(method="loess")`) instead of `rollmean`. Turn off the error bar, and vary the `span` parameter.
+
+```{r}
+# Your code here
+```
+
+
+## Overplotting
+
+Now, let's try making a scatterplot of gene expression in two samples in the `sc.csv` dataset (read in above). Pick two samples and make a scatterplot of the expression of all the genes. Apply the `log2(x+1)` transformation first. (Don't use `sample1` and `sample2`, as they're so similar that they make for a boring plot.)
+
+How many points are in the plot? How many points do you think you can see in the plot?
+
+In your first plot, try using the `alpha` parameter to control overplotting.
+
+```{r}
+# Your code here
+
+```
+
+Now try a few more ways of addressing the overplotting problem.
+
+First, try out `geom_bin2d` and `geom_hex`
+
+- Try filtering out genes that are unexpressed in either sample
+
+- Also try adjusting bin parameters
+
+```{r}
+# Your code here
+```
+
+Now try two versions of a 2D density plot: `geom_density_2d` and `geom_density_2d_filled`. Notice the default plot is not helpful without filtering lowly-expressed genes. Try putting the two geoms in a single plot and overlaying a scatterplot.
+
+Note there are some more variations [here](https://ggplot2.tidyverse.org/reference/geom_density_2d.html).
+
+```{r}
+# Your code here
+```
+
+## Connected scatterplots
+
+If we have two variables that change with time, we could plot a line graph of each. Here, gene-expression measurements from synchronized cells are summarized by two principal components. 
+
+```{r}
+# No need to change this code
+
+data(yeast)
+# genes x timepoints
+dim(yeast$y)
+# transpose so rows = timepoints
+pca <- prcomp(t(yeast$y), scale. = TRUE)
+pca_df <- data.frame(
+  PC1 = pca$x[, 1],
+  PC2 = pca$x[, 2],
+  idx = seq_len(nrow(pca$x))  # implicit time index
+)
+pca_df %>% 
+  ggplot() +
+  geom_point(aes(x=idx, y=PC1)) + geom_line(aes(x=idx, y=PC1), color="red") +
+  geom_point(aes(x=idx, y=PC2)) + geom_line(aes(x=idx, y=PC2), color="blue") +
+  ylab("PC1 (red) and PC2 (blue)")+
+  ggtitle("Two PCs over time")
+
+```
+
+
+Instead, we could look at how `PC1` and `PC2` relate to each other directly. Make a connected scatterplot to show this.
+
+- Try `geom_line` - why doesn't it work?
+
+- Use `geom_path` instead.
+
+- Try including `arrow=arrow()`.
+
+```{r}
+# Your code here
+
+```
+
+
+## Many variables
+
+We can use the `ggpairs` function from `GGally` to make pairwise plots of many variables.
+
+Try using `ggpairs` to explore expression in 5 samples in the `sc` dataset. `log2(x_1)`-transform the variables and filter out non-expressed genes first.
+
+```{r}
+# Your code here
+```
+
+## Correlations and heatmaps
+
+Now try using the `corrplot` function from the `corrplot` package.
+
+- Try using the same code you used in the chunk above to filter and process the data
+
+- This time, use all the samples
+
+- Pipe it into the `cor` function to calculate correlations
+
+- Pipe the correlation matrix into `corrplot`
+
+- Experiment with different values of the `method` argument (or use the `corrplot.mixed` function and separately specify `lower` and `upper`; note the default plotting parameters are not wonderful)
+
+```{r}
+# Your code here
+```
+
+
+## 3D scatterplot
+
+There are several ways to make 3D scatterplots in R. These include 
+
+- `plotly::plot_ly(type="scatter3d", mode="markers")`
+
+- `rgl::plot3d`
+
+- `scatterplot3d:scatterplot3d` (only a 2D projection)
+
+Try using at least one of the above to make a scatterplot of the first 3 PCs of ancestry in the dataset `pcs`. Color the points by `Ancestry`. You will probably need to check the documentation of the plotting function you use (hint: look for examples at the bottom of the help page).
+
+```{r}
+# Your code here
+```
+
+
+## Parallel set/alluvial plot
+
+Let's make a parallel set-style plot to show how the categorical variables `Type` and `clinsig` are related in the `cv` dataset.
+
+There are several packages for these kinds of plots, and they all seem to be a little quirky. We will try `geom_parallel_sets` from the `ggforce` package.
+
+### Formatting
+
+First we need to use some helper functions to get the data in shape for `geom_parallel_set`.
+
+Currently, the data look like this:
+
+```{r}
+knitr(head(cv))
+```
+
+We need to aggregate the cross-category counts and convert that into parallel sets format.
+
+Copy this code and run it in the chunk below:
+
+```
+# Aggregate counts
+d_counts <- cv %>%
+  count(Type, clinsig, name = "n")
+
+# Convert to parallel-sets format
+d_ps <- gather_set_data(d_counts, c("Type", "clinsig"))
+
+head(d_counts)
+head(d_ps)
+```
+
+```{r}
+# Paste the above code here and run it
+```
+
+### Plotting
+
+Now we're ready to plot
+
+- Use `ggplot`
+
+  - with `d_ps` as the input data frame
+  
+  - and `aes(x, id = id, split = y, value = n)`
+
+- Also include these three geoms
+
+  - `geom_parallel_sets`
+  
+  - `geom_parallel_sets_axes`
+  
+  - `geom_parallel_sets_labels`
+
+- To improve the plot:
+
+  - adjust `alpha` in one of the layers (which?)
+  
+  - adjust `size` in one of the layers (which?)
+  
+  - include `axis.width = 0.25, color = "grey30", fill = "grey95"` in one of the layers (which?)
+  
+  - try coloring the ribbons by either `Type` or `clinsig` (which layer?)
+
+```{r}
+# Your code here
+```
+

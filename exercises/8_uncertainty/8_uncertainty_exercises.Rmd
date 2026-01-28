@@ -1,0 +1,212 @@
+---
+title: "Uncertainty exercises"
+author: "Jon Chernus"
+output:
+  html_document:
+    code_folding: show
+---
+
+```{r}
+library("tidyverse")
+```
+
+
+## Distribution of sample means
+
+- Use `rnorm` to randomly generate n=5 observations from a normal distribution with mean 100 and standard deviation 10
+
+- Store it as a vector called `x`
+
+- Make a histogram of `x` showing the interval [70,130]
+
+- Add a green vertical line at the population mean
+
+- Add a red vertical line at your sample mean
+
+The distance between the red and green lines represents how close your sample mean is to the "unknown" mean, 100.
+
+Run the chunk numerous times. What do you see?
+
+```{r}
+x <- rnorm(n=5, mean=100, sd=10)
+x %>%
+  as.data.frame(x=.) %>%
+  ggplot() +
+  geom_histogram(aes(x=x)) +
+  xlim(c(70,130)) +
+  geom_vline(xintercept = mean(x), color="red") +
+  geom_vline(xintercept=100, color="green")
+```
+
+You should see that sometimes your red line is close to the green line, but that the distance varies a bit.
+
+In the chunk below, do the same thing, but with n=1000. What do you notice?
+
+```{r}
+x <- rnorm(n=1000, mean=100, sd=10)
+x %>%
+  as.data.frame(x=.) %>%
+  ggplot() +
+  geom_histogram(aes(x=x)) +
+  xlim(c(70,130)) +
+  geom_vline(xintercept = mean(x), color="red") +
+  geom_vline(xintercept=100, color="green")
+```
+
+You should see that the distance between the sample mean and the population mean is smaller now, on average.
+
+Instead of clicking the green triangle to re-run the chunk over and over, now we're going to re-run the experiment with a loop so we can record all the sample means (i.e., the red lines).
+
+A `for` loop looks like this, where `n_simulations` is the number of times we want to iterate the experiment:
+
+```
+for (i in 1:n_simulations) {
+  # ...
+  # Do something
+  # ...
+  # ...
+}
+```
+
+Write a `for` loop that 
+
+- Takes samples of size n=5 from the same distribution as above
+
+- 10,000 times
+
+- and stores all 10,000 sample means in a vector called `means5`
+
+
+```{r}
+n_simulations <- 10000
+means5 <- rep(NA, n_simulations)
+for (i in 1:n_simulations) {
+  means5[i] <- mean(rnorm(n=5, mean=100, sd=10))
+}
+hist(means5)
+abline(v = 100, col="green")
+```
+
+Similarly, generate  `means10`, `means100`, `means1000`, and `means10000` and store them as columns in a data frame. (So the data frame should have 10,000 rows and 4 columns.)
+
+```{r}
+d <- data.frame(means10=rep(NA,n_simulations),
+                means100=rep(NA,n_simulations),
+                means1000=rep(NA,n_simulations),
+                means10000=rep(NA,n_simulations)
+                )
+for (i in 1:n_simulations) {
+  d[i,"means10"] <- mean(rnorm(n=10, mean=100, sd=10))
+  d[i,"means100"] <- mean(rnorm(n=100, mean=100, sd=10))
+  d[i,"means1000"] <- mean(rnorm(n=1000, mean=100, sd=10))
+  d[i,"means10000"] <- mean(rnorm(n=10000, mean=100, sd=10))
+}
+```
+
+Now let's plot the distributions of `means10`, `means100`, `means1000`, and `means10000` together using overlapping density plots.
+
+First, we need to reshape the data. Use this command:
+```
+d_long <- d %>%
+  pivot_longer(
+    cols = starts_with("means"),
+    names_to = "window",
+    values_to = "mean"
+  )
+```
+
+Use the code above to reshape the data, and make your plot in the chunk below. (Use `alpha` and a sequential color scale.)
+
+```{r}
+# Paste the command above
+# Put your density plot code here
+d_long <- d %>%
+  pivot_longer(
+    cols = starts_with("means"),
+    names_to = "samplesize",
+    values_to = "mean"
+  )
+
+d_long %>%
+  ggplot() +
+  geom_density(aes(x=mean,fill=samplesize),alpha=0.5) +
+  scale_fill_brewer(palette="Blues") +
+  geom_vline(xintercept = 100, color="green")
+```
+
+What do you notice? Think for a moment about how you could quantify this pattern.
+
+Think of the sample mean itself as a random variable (a function of the random sample of size n). You should see that as the sample size (n) increases, the corresponding sample mean has a tighter and tighter distribution around the "unknown" population mean.
+
+We know the underlying distribution we sampled from had a standard deviation of 10. How is the related to the standard deviations of the variables in our density plot, `mean10`, `mean100`, `mean1000`, and `mean10000`?
+
+It's a fact in statistics that if you randomly take samples of size n from a distribution with standard deviation $\sigma$, the sample mean will have a distribution of $\sigma / \sqrt{n}$.
+
+Make a scatterplot to show whether your simulations bear out that formula. The scatterplot should show 4 points. Add a linear regression line, too.
+
+```{r}
+# Your scatterplot code
+data.frame(est=c(sd(d$means10),sd(d$means100), sd(d$means1000), sd(d$means10000)),
+           truth=10/sqrt(c(10,100,1000,10000))) %>% 
+  ggplot() +
+  geom_point(aes(x=truth,y=est)) +
+  geom_smooth(aes(x=truth,y=est),method="lm", se=FALSE)
+```
+
+Note that typically $\sigma$ is unknown, so we would estimate it with the sample standard deviation.
+
+Here's what your plot would look like if we had to estimate $\sigma$ from a single sample in each case:
+
+```{r}
+# Your scatterplot code
+data.frame(est=c(
+  sd(rnorm(n=10, mean=100, sd=10))/sqrt(10),
+  sd(rnorm(n=100, mean=100, sd=10))/sqrt(100),
+  sd(rnorm(n=1000, mean=100, sd=10))/sqrt(1000),
+  sd(rnorm(n=1000, mean=100, sd=10))/sqrt(10000)),
+           truth=10/sqrt(c(10,100,1000,10000))) %>% 
+  ggplot() +
+  geom_point(aes(x=truth,y=est)) +
+  geom_smooth(aes(x=truth,y=est),method="lm", se=FALSE)
+```
+
+Note that all of the above is true even if we sampled from a non-normal distribution.
+
+Let's try sampling from a weird-looking distribution, beta(0.1, 0.1). It looks like this, not remotely normal:
+
+```{r}
+hist(rbeta(n=1000, shape1=0.1, shape2=0.1), breaks=100)
+```
+
+As we did with the normal distribution, let's draw many samples and record their means.
+
+You can see that the sample means become more tightly distributed as sample size increases, even though the underlying distribution was extremely non-normal.
+
+In fact, the central limit theorem says that the sampling distribution of the mean is asymptotically normal; i.e., as the sample size increases, the distribution will converge to a normal distribution.
+
+```{r}
+db <- data.frame(means10=rep(NA,n_simulations),
+                means100=rep(NA,n_simulations),
+                means1000=rep(NA,n_simulations),
+                means10000=rep(NA,n_simulations)
+                )
+for (i in 1:n_simulations) {
+  db[i,"means10"] <- mean(rbeta(n=10, shape1=0.1, shape2=0.1))
+  db[i,"means100"] <- mean(rbeta(n=100,shape1=0.1, shape2=0.1))
+  db[i,"means1000"] <- mean(rbeta(n=1000, shape1=0.1, shape2=0.1))
+  db[i,"means10000"] <- mean(rbeta(n=10000, shape1=0.1, shape2=0.1))
+}
+
+db_long <- db %>%
+  pivot_longer(
+    cols = starts_with("means"),
+    names_to = "samplesize",
+    values_to = "mean"
+  )
+
+db_long %>%
+  ggplot() +
+  geom_density(aes(x=mean,fill=samplesize),alpha=0.5) +
+  scale_fill_brewer(palette="Blues")
+```
+
