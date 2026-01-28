@@ -23,6 +23,7 @@ library("plotly")
 library("rgl")
 library("scatterplot3d")
 library("knitr")
+library("hexbin")
 ```
 
 ```{r}
