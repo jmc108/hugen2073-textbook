@@ -64,8 +64,259 @@ format:
 ### Expand to see the answers
 
 ```{webr}
+# Load packages
+library("tidyverse")
+library("ggforce")
+library("knitr")
+library("lubridate")
+library("plotly")
+library("zoo")
+library("spls")
+library("GGally")
+library("corrplot")
+library("plotly")
+library("rgl")
+library("scatterplot3d")
+library("knitr")
+```
+
+```{webr}
+# Read in data
+cv <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/6_associations_and_trends/cv.csv")
+lrr <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/6_associations_and_trends/lrr.csv")
+sc <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/6_associations_and_trends/sc.csv")
+pcs <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/6_associations_and_trends/genetic_data_train.csv")
+util <- read_csv("https://jmc108.github.io/hugen2073-textbook/exercises/6_associations_and_trends/utility.csv")
+```
+
+```{webr}
+set.seed(2073)
+
+# ---- Wright–Fisher drift simulator ----
+simulate_drift <- function(p0, Ne, gens, n_pops, label_prefix = "pop") {
+  # p0: starting allele frequency
+  # Ne: effective population size (diploid)
+  # gens: number of generations
+  # n_pops: number of replicate populations
+  
+  map_dfr(seq_len(n_pops), function(i) {
+    p <- numeric(gens + 1)
+    p[1] <- p0
+    for (g in 2:(gens + 1)) {
+      # next generation allele count ~ Binomial(2Ne, p_prev)
+      k <- rbinom(1, size = 2 * Ne, prob = p[g - 1])
+      p[g] <- k / (2 * Ne)
+    }
+    tibble(
+      pop = paste0(label_prefix, i),
+      generation = 0:gens,
+      p = p
+    )
+  })
+}
+
+# ---- realistic-ish parameters ----
+p0   <- 0.30   # common-ish starting allele frequency
+gens <- 60
+n_pops <- 12
+
+# Two scenarios: small vs large Ne to show volatility differences
+d_small <- simulate_drift(p0 = p0, Ne = 200,  gens = gens, n_pops = n_pops, label_prefix = "Ne200_")
+d_large <- simulate_drift(p0 = p0, Ne = 2000, gens = gens, n_pops = n_pops, label_prefix = "Ne2000_")
+
+d <- bind_rows(
+  d_small %>% mutate(Ne = 200),
+  d_large %>% mutate(Ne = 2000)
+)
+
+kable(head(d))
+```
+
+```{webr}
+ggplot(d, aes(x = generation, y = p, group = pop)) +
+  geom_hline(yintercept = p0, linetype = "dashed") +
+  geom_line(alpha = 0.6) +
+  facet_wrap(~Ne, ncol = 1) +
+  coord_cartesian(ylim = c(0, 1)) +
+  labs(
+    title = "Genetic drift (Wright–Fisher) in replicate populations",
+    subtitle = "Same starting allele frequency, different effective population sizes",
+    x = "Generation",
+    y = "Allele frequency (p)"
+  ) +
+  theme_classic() +
+  ggtitle("Line graph")
+```
+
+```{webr}
+d2 <- util %>%
+  mutate(
+    datetime = as.POSIXct(as.Date(DATE, format = "%m/%d/%y"), tz = "America/New_York") +
+      as.numeric(`START TIME`),
+    cost = readr::parse_number(COST)
+  ) %>%
+  arrange(datetime)
+
+p <- plot_ly(
+  data = d2,
+  x = ~datetime,
+  y = ~`USAGE (kWh)`,
+  type = "bar",
+  customdata = ~cost,
+  hovertemplate = paste(
+    "%{x}<br>",
+    "Usage: %{y:.2f} kWh<br>",
+    "Cost: $%{customdata:.2f}",
+    "<extra></extra>"
+  ),
+  marker = list(
+    color = ~cost,                 # <- continuous color mapping
+    showscale = TRUE,              # <- colorbar legend
+    colorbar = list(title = "Cost ($)")
+  )
+) %>%
+  layout(
+    title = "Hourly Usage (kWh), Colored by Cost ($)",
+    xaxis = list(
+      title = "Time",
+      type = "date",
+      rangeslider = list(visible = TRUE)
+    ),
+    yaxis = list(title = "Usage (kWh)")
+  )
+
+p
+```
+
+```{webr}
+lrr %>% 
+  mutate(avg=rollmean(lrr, k=5, align="center", fill=NA)) %>% 
+  ggplot() +
+  geom_point(aes(x=pos/10^6, y=lrr)) +
+  geom_line(aes(x=pos/10^6, y=avg)) +
+  xlab("Chr 22 (Mb)") +
+  xlim(c(15,25))
+
+lrr %>% 
+  mutate(avg=rollmean(lrr, k=5, align="center", fill=NA)) %>% 
+  ggplot() +
+  geom_point(aes(x=pos/10^6, y=lrr)) +
+  geom_smooth(aes(x=pos/10^6, y=avg),
+              se=FALSE,
+              method="loess",
+              span=0.02) +
+  xlab("Chr 22 (Mb)")
+```
+
+```{webr}
+sc %>%
+  ggplot() +
+  geom_point(aes(x=log2(sample1+1),y=log2(sample5+1)),
+             alpha=0.1)
+```
+
+```{webr}
+sc %>%
+  ggplot() +
+  geom_bin2d(aes(x=log2(sample1+1),y=log2(sample5+1)))
+
+sc %>%
+  ggplot() +
+  geom_hex(aes(x=log2(sample1+1),y=log2(sample5+1)), bins=30)
+
+sc %>%
+  filter(sample1 > 0 & sample2 > 0) %>% 
+  ggplot() +
+  geom_bin2d(aes(x=log2(sample1+1),y=log2(sample5+1)), bins=50)
+
+sc %>%
+  filter(sample1 > 0 & sample2 > 0) %>% 
+  ggplot() +
+  geom_hex(aes(x=log2(sample1+1),y=log2(sample5+1)), bins=50)
+```
+
+```{webr}
+sc %>%
+  filter(sample1 > 0 & sample2 > 0) %>% 
+  ggplot() +
+  geom_density_2d_filled(aes(x=log2(sample1+1),y=log2(sample5+1))) +
+  geom_density_2d(aes(x=log2(sample1+1),y=log2(sample5+1))) +
+  geom_point(aes(x=log2(sample1+1),y=log2(sample5+1)), alpha=0.1)
 
 ```
+
+```{webr}
+# No need to change this code
+
+data(yeast)
+# genes x timepoints
+dim(yeast$y)
+# transpose so rows = timepoints
+pca <- prcomp(t(yeast$y), scale. = TRUE)
+pca_df <- data.frame(
+  PC1 = pca$x[, 1],
+  PC2 = pca$x[, 2],
+  idx = seq_len(nrow(pca$x))  # implicit time index
+)
+pca_df %>% 
+  ggplot() +
+  geom_point(aes(x=idx, y=PC1)) + geom_line(aes(x=idx, y=PC1), color="red") +
+  geom_point(aes(x=idx, y=PC2)) + geom_line(aes(x=idx, y=PC2), color="blue") +
+  ylab("PC1 (red) and PC2 (blue)")+
+  ggtitle("Two PCs over time")
+```
+
+```{webr}
+ggplot(pca_df, aes(PC1, PC2)) +
+  geom_path(aes(color=idx), arrow=arrow()) +
+  geom_point()
+```
+
+```{webr}
+samples <- c("sample1", "sample2", "sample3", "sample4", "sample5")
+sc %>% 
+  select(all_of(samples)) %>% 
+  filter(rowSums(sc[, samples] <= 0) == 0) %>%
+  mutate(across(everything(), function(x) log2(x + 1))) %>%
+  ggpairs()
+```
+
+```{webr}
+sc %>% 
+  filter(rowSums(sc[, samples] <= 0) == 0) %>%
+  mutate(across(everything(), function(x) log2(x + 1))) %>%
+  cor() %>% 
+  corrplot.mixed(corr=., upper="ellipse", lower="number")
+```
+
+
+```{webr}
+plot_ly(pcs, x=~PC1, y=~PC2, z=~PC3, type="scatter3d", mode="markers", color=pcs$Ancestry)
+plot3d(pcs$PC1, pcs$PC2, pcs$PC3, col=as.numeric(factor(pcs$Ancestry)))
+scatterplot3d(pcs$PC1, pcs$PC2, pcs$PC3, color=as.numeric(factor(pcs$Ancestry)))
+```
+
+```{webr}
+# Aggregate counts
+d_counts <- cv %>%
+  count(Type, clinsig, name = "n")
+head(d_counts)
+
+# Convert to parallel-sets format
+d_ps <- gather_set_data(d_counts, c("Type", "clinsig"))
+head(d_ps)
+```
+
+```{webr}
+# Plot: straight-sided parallel sets
+ggplot(d_ps, aes(x, id = id, split = y, value = n)) +
+  geom_parallel_sets(aes(fill=Type), alpha=0.7) +
+  geom_parallel_sets_axes(axis.width = 0.25,
+                          color = "grey30",
+                          fill = "grey95") +
+  geom_parallel_sets_labels(size = 3)
+```
+
 
 :::
 
