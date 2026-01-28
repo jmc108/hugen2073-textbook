@@ -10,22 +10,18 @@
     messages: JSON.parse(localStorage.getItem(storageKey) || "[]")
   };
 
-  // UI state: width + collapsed/hidden
   const ui = JSON.parse(localStorage.getItem(uiKey) || "null") || {
-    width: 320,
-    collapsed: false,
-    hidden: false
+    width: 360,
+    collapsed: false
   };
 
   function saveMessages() {
     localStorage.setItem(storageKey, JSON.stringify(state.messages));
   }
-
   function saveUI() {
     localStorage.setItem(uiKey, JSON.stringify(ui));
   }
 
-  // greet first time per chapter
   if (state.messages.length === 0) {
     state.messages.push({
       role: "assistant",
@@ -39,8 +35,7 @@
       <div class="tutor-header">
         <div class="tutor-title">Chat with Dr. Lysenko</div>
         <div class="tutor-controls" style="display:flex; gap:6px; align-items:center;">
-          <button class="tutor-btn" id="tutor-collapse" type="button" title="Collapse">▾</button>
-          <button class="tutor-btn" id="tutor-hide" type="button" title="Hide">✕</button>
+          <button class="tutor-btn" id="tutor-toggle" type="button" title="Collapse/Expand">▾</button>
           <button class="tutor-btn" id="tutor-clear" type="button">Clear</button>
         </div>
       </div>
@@ -56,19 +51,9 @@
     </div>
   `;
 
-  // restore pill
-  let restoreBtn = document.getElementById("tutor-restore");
-  if (!restoreBtn) {
-    restoreBtn = document.createElement("button");
-    restoreBtn.className = "tutor-restore";
-    restoreBtn.id = "tutor-restore";
-    restoreBtn.type = "button";
-    restoreBtn.textContent = "Tutor";
-    document.body.appendChild(restoreBtn);
-  }
-
   const historyEl = document.getElementById("tutor-history");
   const textEl = document.getElementById("tutor-text");
+  const toggleBtn = document.getElementById("tutor-toggle");
 
   function escapeHtml(s) {
     return String(s)
@@ -92,12 +77,10 @@
     if (!content.trim()) return;
 
     state.messages.push({ role: "user", content });
-    saveMessages();
-    render();
+    saveMessages(); render();
 
     state.messages.push({ role: "assistant", content: "…" });
-    saveMessages();
-    render();
+    saveMessages(); render();
 
     const apiMessages = state.messages
       .filter(m => m.content !== "…")
@@ -120,14 +103,10 @@
 
     state.messages.pop();
 
-    if (data && data.text) {
-      state.messages.push({ role: "assistant", content: data.text });
-    } else {
-      state.messages.push({ role: "assistant", content: `Error: ${data?.error || "No response"}` });
-    }
+    if (data && data.text) state.messages.push({ role: "assistant", content: data.text });
+    else state.messages.push({ role: "assistant", content: `Error: ${data?.error || "No response"}` });
 
-    saveMessages();
-    render();
+    saveMessages(); render();
   }
 
   document.getElementById("tutor-send").addEventListener("click", () => {
@@ -149,85 +128,68 @@
     }
   });
 
-  // ---------------------------
-  // UI apply (width/collapse/hide)
-  // ---------------------------
-  function clamp(v, lo, hi) {
-    return Math.max(lo, Math.min(hi, v));
-  }
+  // ----- UI apply -----
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
 
   function applyUI() {
-    // width via CSS variable so your existing right/top layout stays intact
-    const w = clamp(ui.width || 320, 280, Math.min(650, Math.floor(window.innerWidth * 0.6)));
+    // allow a wide range: up to 80% viewport, capped at 900px
+    const maxW = Math.min(900, Math.floor(window.innerWidth * 0.8));
+    const w = clamp(ui.width || 360, 280, maxW);
     root.style.setProperty("--tutor-width", `${w}px`);
 
     root.classList.toggle("tutor-collapsed", !!ui.collapsed);
-    root.classList.toggle("tutor-hidden", !!ui.hidden);
-    restoreBtn.classList.toggle("visible", !!ui.hidden);
+    toggleBtn.textContent = ui.collapsed ? "▸" : "▾";
   }
 
   applyUI();
 
-  // collapse toggle
-  document.getElementById("tutor-collapse").addEventListener("click", () => {
+  toggleBtn.addEventListener("click", () => {
     ui.collapsed = !ui.collapsed;
     saveUI();
     applyUI();
   });
 
-  // hide + restore
-  document.getElementById("tutor-hide").addEventListener("click", () => {
-    ui.hidden = true;
-    saveUI();
-    applyUI();
-  });
-
-  restoreBtn.addEventListener("click", () => {
-    ui.hidden = false;
-    ui.collapsed = false; // restoring should show the full widget
-    saveUI();
-    applyUI();
-  });
-
-  // ---------------------------
-  // Resize: drag the LEFT EDGE handle
-  // ---------------------------
+  // ----- Resize (robust: listen on window) -----
   const handle = document.getElementById("tutor-resize-handle");
-  let resizing = null;
+  let resizing = false;
+  let startX = 0;
+  let startW = 0;
+
+  function onMove(e) {
+    if (!resizing) return;
+    // pulling left increases width
+    const dx = startX - e.clientX;
+    ui.width = startW + dx;
+    applyUI();
+    e.preventDefault();
+  }
+
+  function endResize() {
+    if (!resizing) return;
+    resizing = false;
+    saveUI();
+    window.removeEventListener("pointermove", onMove, true);
+    window.removeEventListener("pointerup", endResize, true);
+    window.removeEventListener("pointercancel", endResize, true);
+  }
 
   handle.addEventListener("pointerdown", (e) => {
-    // only on desktop floating mode
+    // Ignore on small screens where you may not be floating
     if (!root.classList.contains("tutor-floating")) return;
 
-    const rect = root.getBoundingClientRect();
-    resizing = {
-      startX: e.clientX,
-      startW: rect.width
-    };
+    resizing = true;
+    startX = e.clientX;
+    startW = root.getBoundingClientRect().width;
 
-    root.setPointerCapture(e.pointerId);
+    // Capture movement/up anywhere (fixes "sticky" behavior)
+    window.addEventListener("pointermove", onMove, true);
+    window.addEventListener("pointerup", endResize, true);
+    window.addEventListener("pointercancel", endResize, true);
+
     e.preventDefault();
   });
 
-  handle.addEventListener("pointermove", (e) => {
-    if (!resizing) return;
-
-    // Dragging left handle: moving mouse left increases width
-    const dx = resizing.startX - e.clientX;
-    const newW = resizing.startW + dx;
-
-    ui.width = newW;
-    applyUI(); // live update while dragging
-  });
-
-  handle.addEventListener("pointerup", () => {
-    if (!resizing) return;
-    resizing = null;
-    saveUI();
-  });
-
   window.addEventListener("resize", () => {
-    // re-clamp width
     applyUI();
     saveUI();
   });
