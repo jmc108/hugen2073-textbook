@@ -10,12 +10,9 @@
     messages: JSON.parse(localStorage.getItem(storageKey) || "[]")
   };
 
-  // UI state (position/size/collapsed/hidden)
+  // UI state: width + collapsed/hidden
   const ui = JSON.parse(localStorage.getItem(uiKey) || "null") || {
-    left: null,      // px
-    top: null,       // px
-    width: null,     // px
-    height: null,    // px
+    width: 320,
     collapsed: false,
     hidden: false
   };
@@ -28,7 +25,7 @@
     localStorage.setItem(uiKey, JSON.stringify(ui));
   }
 
-  // If no prior history for this chapter, greet first
+  // greet first time per chapter
   if (state.messages.length === 0) {
     state.messages.push({
       role: "assistant",
@@ -39,9 +36,9 @@
 
   root.innerHTML = `
     <div class="tutor-panel">
-      <div class="tutor-header" id="tutor-header">
+      <div class="tutor-header">
         <div class="tutor-title">Chat with Dr. Lysenko</div>
-        <div class="tutor-controls">
+        <div class="tutor-controls" style="display:flex; gap:6px; align-items:center;">
           <button class="tutor-btn" id="tutor-collapse" type="button" title="Collapse">▾</button>
           <button class="tutor-btn" id="tutor-hide" type="button" title="Hide">✕</button>
           <button class="tutor-btn" id="tutor-clear" type="button">Clear</button>
@@ -54,18 +51,21 @@
         <textarea id="tutor-text" rows="2" placeholder="Ask a question…"></textarea>
         <button class="tutor-btn tutor-send" id="tutor-send" type="button">Send</button>
       </div>
-    </div>
 
-    <div class="tutor-resizer" id="tutor-resizer" aria-hidden="true"></div>
+      <div class="tutor-resize-handle" id="tutor-resize-handle" aria-hidden="true"></div>
+    </div>
   `;
 
-  // Restore button (outside root, for hidden state)
-  const restoreBtn = document.createElement("button");
-  restoreBtn.className = "tutor-restore";
-  restoreBtn.id = "tutor-restore";
-  restoreBtn.type = "button";
-  restoreBtn.textContent = "Tutor";
-  document.body.appendChild(restoreBtn);
+  // restore pill
+  let restoreBtn = document.getElementById("tutor-restore");
+  if (!restoreBtn) {
+    restoreBtn = document.createElement("button");
+    restoreBtn.className = "tutor-restore";
+    restoreBtn.id = "tutor-restore";
+    restoreBtn.type = "button";
+    restoreBtn.textContent = "Tutor";
+    document.body.appendChild(restoreBtn);
+  }
 
   const historyEl = document.getElementById("tutor-history");
   const textEl = document.getElementById("tutor-text");
@@ -95,7 +95,6 @@
     saveMessages();
     render();
 
-    // placeholder bubble
     state.messages.push({ role: "assistant", content: "…" });
     saveMessages();
     render();
@@ -119,7 +118,6 @@
       data = { error: String(e) };
     }
 
-    // replace placeholder
     state.messages.pop();
 
     if (data && data.text) {
@@ -144,7 +142,6 @@
     render();
   });
 
-  // Enter = send, Shift+Enter = newline
   textEl.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -153,50 +150,32 @@
   });
 
   // ---------------------------
-  // Apply / manage UI state
+  // UI apply (width/collapse/hide)
   // ---------------------------
-  function applyUI() {
-    // collapsed/hidden classes
-    root.classList.toggle("tutor-collapsed", !!ui.collapsed);
-    root.classList.toggle("tutor-hidden", !!ui.hidden);
-
-    restoreBtn.classList.toggle("visible", !!ui.hidden);
-
-    // size
-    if (ui.width) root.style.width = `${ui.width}px`;
-    if (ui.height) root.style.height = `${ui.height}px`;
-
-    // position: if user dragged before, pin with left/top (override right/top default)
-    if (ui.left != null && ui.top != null) {
-      root.style.right = "auto";
-      root.style.bottom = "auto";
-      root.style.left = `${ui.left}px`;
-      root.style.top = `${ui.top}px`;
-    }
-  }
-
   function clamp(v, lo, hi) {
     return Math.max(lo, Math.min(hi, v));
   }
 
-  function captureRectToUI() {
-    const rect = root.getBoundingClientRect();
-    ui.left = rect.left;
-    ui.top = rect.top;
-    ui.width = rect.width;
-    ui.height = rect.height;
+  function applyUI() {
+    // width via CSS variable so your existing right/top layout stays intact
+    const w = clamp(ui.width || 320, 280, Math.min(650, Math.floor(window.innerWidth * 0.6)));
+    root.style.setProperty("--tutor-width", `${w}px`);
+
+    root.classList.toggle("tutor-collapsed", !!ui.collapsed);
+    root.classList.toggle("tutor-hidden", !!ui.hidden);
+    restoreBtn.classList.toggle("visible", !!ui.hidden);
   }
 
   applyUI();
 
-  // Collapse toggle
+  // collapse toggle
   document.getElementById("tutor-collapse").addEventListener("click", () => {
     ui.collapsed = !ui.collapsed;
     saveUI();
     applyUI();
   });
 
-  // Hide (mostly remove) + restore
+  // hide + restore
   document.getElementById("tutor-hide").addEventListener("click", () => {
     ui.hidden = true;
     saveUI();
@@ -205,115 +184,52 @@
 
   restoreBtn.addEventListener("click", () => {
     ui.hidden = false;
+    ui.collapsed = false; // restoring should show the full widget
     saveUI();
     applyUI();
   });
 
   // ---------------------------
-  // Drag to move (header)
+  // Resize: drag the LEFT EDGE handle
   // ---------------------------
-  const headerEl = document.getElementById("tutor-header");
+  const handle = document.getElementById("tutor-resize-handle");
+  let resizing = null;
 
-  let drag = null;
-
-  headerEl.addEventListener("pointerdown", (e) => {
-    // Don’t start drag if clicking on a button inside header
-    if (e.target.closest("button")) return;
+  handle.addEventListener("pointerdown", (e) => {
+    // only on desktop floating mode
+    if (!root.classList.contains("tutor-floating")) return;
 
     const rect = root.getBoundingClientRect();
-    drag = {
+    resizing = {
       startX: e.clientX,
-      startY: e.clientY,
-      startLeft: rect.left,
-      startTop: rect.top
+      startW: rect.width
     };
 
-    root.setPointerCapture(e.pointerId);
-
-    // switch to left/top anchoring
-    root.style.right = "auto";
-    root.style.bottom = "auto";
-    root.style.left = `${rect.left}px`;
-    root.style.top = `${rect.top}px`;
-  });
-
-  headerEl.addEventListener("pointermove", (e) => {
-    if (!drag) return;
-
-    const dx = e.clientX - drag.startX;
-    const dy = e.clientY - drag.startY;
-
-    const newLeft = drag.startLeft + dx;
-    const newTop = drag.startTop + dy;
-
-    const maxLeft = window.innerWidth - root.offsetWidth;
-    const maxTop = window.innerHeight - root.offsetHeight;
-
-    root.style.left = `${clamp(newLeft, 8, maxLeft - 8)}px`;
-    root.style.top = `${clamp(newTop, 8, maxTop - 8)}px`;
-  });
-
-  headerEl.addEventListener("pointerup", () => {
-    if (!drag) return;
-    drag = null;
-    captureRectToUI();
-    saveUI();
-  });
-
-  // ---------------------------
-  // Resize (bottom-right)
-  // ---------------------------
-  const resizerEl = document.getElementById("tutor-resizer");
-  let resize = null;
-
-  resizerEl.addEventListener("pointerdown", (e) => {
-    const rect = root.getBoundingClientRect();
-    resize = {
-      startX: e.clientX,
-      startY: e.clientY,
-      startW: rect.width,
-      startH: rect.height
-    };
     root.setPointerCapture(e.pointerId);
     e.preventDefault();
   });
 
-  resizerEl.addEventListener("pointermove", (e) => {
-    if (!resize) return;
+  handle.addEventListener("pointermove", (e) => {
+    if (!resizing) return;
 
-    const dx = e.clientX - resize.startX;
-    const dy = e.clientY - resize.startY;
+    // Dragging left handle: moving mouse left increases width
+    const dx = resizing.startX - e.clientX;
+    const newW = resizing.startW + dx;
 
-    const minW = 280;
-    const minH = 220;
-    const maxW = Math.min(window.innerWidth * 0.92, 650);
-    const maxH = Math.min(window.innerHeight * 0.86, 900);
-
-    const newW = clamp(resize.startW + dx, minW, maxW);
-    const newH = clamp(resize.startH + dy, minH, maxH);
-
-    root.style.width = `${newW}px`;
-    root.style.height = `${newH}px`;
+    ui.width = newW;
+    applyUI(); // live update while dragging
   });
 
-  resizerEl.addEventListener("pointerup", () => {
-    if (!resize) return;
-    resize = null;
-    captureRectToUI();
+  handle.addEventListener("pointerup", () => {
+    if (!resizing) return;
+    resizing = null;
     saveUI();
   });
 
-  // Keep within viewport on resize
   window.addEventListener("resize", () => {
-    const rect = root.getBoundingClientRect();
-    if (ui.left != null && ui.top != null) {
-      const maxLeft = window.innerWidth - rect.width;
-      const maxTop = window.innerHeight - rect.height;
-      ui.left = clamp(rect.left, 8, maxLeft - 8);
-      ui.top = clamp(rect.top, 8, maxTop - 8);
-      saveUI();
-      applyUI();
-    }
+    // re-clamp width
+    applyUI();
+    saveUI();
   });
 
   render();

@@ -99,21 +99,74 @@
     position: fixed;
     top: 190px;
     right: 18px;
-    width: 300px;
+    width: var(--tutor-width, 320px);
     height: calc(100vh - 230px);
     z-index: 99999;
-    background: #fff;
+    background: transparent;
   }
 
   #tutor-root.tutor-floating .tutor-panel {
     height: 100%;
+    position: relative;
   }
 
-  /* Make room so the book text doesn’t slide underneath */
-  /*main.content {
-    padding-right: 460px;
+  /* Left-edge resize handle */
+  #tutor-root.tutor-floating .tutor-resize-handle {
+    position: absolute;
+    left: -6px;
+    top: 0;
+    height: 100%;
+    width: 12px;
+    cursor: ew-resize;
+    /* invisible but easy to hit */
+    background: transparent;
   }
-  */
+
+  /* a subtle visual cue (optional) */
+  #tutor-root.tutor-floating .tutor-resize-handle::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.10);
+  }
+
+  /* Collapsed = header only */
+  #tutor-root.tutor-floating.tutor-collapsed {
+    height: auto;
+  }
+
+  #tutor-root.tutor-floating.tutor-collapsed .tutor-history,
+  #tutor-root.tutor-floating.tutor-collapsed .tutor-input,
+  #tutor-root.tutor-floating.tutor-collapsed .tutor-resize-handle {
+    display: none;
+  }
+
+  /* Hidden: root disappears; restore pill appears */
+  #tutor-root.tutor-floating.tutor-hidden {
+    display: none;
+  }
+
+  .tutor-restore {
+    position: fixed;
+    right: 18px;
+    top: 190px;
+    z-index: 99999;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid #ccc;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+    cursor: pointer;
+    display: none;
+  }
+
+  .tutor-restore.visible {
+    display: block;
+  }
 }
 
 
