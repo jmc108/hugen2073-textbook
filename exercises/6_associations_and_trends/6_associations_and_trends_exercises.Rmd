@@ -1,5 +1,5 @@
 ---
-title: "Associatioms and trends exercises"
+title: "Associations and trends exercises"
 author: "Jon Chernus"
 output:
   html_document:
@@ -28,11 +28,11 @@ library("hexbin")
 
 ```{r}
 # Read in data
-cv <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/4_amounts_and_tables/cv.csv")
-lrr <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/6_associations_and_trends/lrr.csv")
-sc <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/6_associations_and_trends/sc.csv")
-pcs <- read.csv("/Users/jonathanchernus/Downloads/archive/genetic_data_train.csv")
-util <- read_csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/6_associations_and_trends/utility.csv")
+cv <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/6_associations_and_trends/cv.csv")
+lrr <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/6_associations_and_trends/lrr.csv")
+sc <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/6_associations_and_trends/sc.csv")
+pcs <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/6_associations_and_trends/genetic_data_train.csv")
+util <- read_csv("https://jmc108.github.io/hugen2073-textbook/exercises/6_associations_and_trends/utility.csv")
 ```
 
 # Exercises
