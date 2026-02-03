@@ -1,0 +1,609 @@
+---
+title: "Categorical data and proportions exercises"
+author: "Jon Chernus"
+output:
+  html_document:
+    code_folding: show
+---
+
+# Setup
+
+## Packages
+
+```{r}
+# Load/install packages
+library(tidyverse)
+library(knitr)
+library(VennDiagram)
+library(UpSetR)
+library(ComplexHeatmap) # Needed for helping with upset plots
+library(RColorBrewer)
+library(biomaRt)
+library(treemapify)
+library(ggmosaic)
+#library(msigdbr)
+```
+
+## Data
+
+### Background
+
+First, read in the dataset. We will describe it below.
+
+```{r}
+gtex_hallmark <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/gtex_hallmark.csv")
+```
+
+The data for these exercises are Genotype-Tissue Expression (GTEx) gene expression summaries merged with Molecular Signatures Database (MSigDB) Hallmark gene sets.
+
+The GTEx dataset lists median expression (in transcripts per million, TPM) for each gene in each tissue. You can see there are 56,200 transcripts in 56 tissues. The tissues are listed below.
+
+```{r}
+# How many genes and tissues
+gtex_hallmark %>% pull(gene_symbol) %>% unique() %>% length()
+gtex_hallmark %>% pull(tissue) %>% unique() %>% length()
+# List the tissues
+gtex_hallmark %>% pull(tissue) %>% unique()
+```
+
+The MSigDB Hallmark gene set is just a collection of 50 gene sets, 50 lists of genes associated with specific biological processes or states. The gene sets are named below. Notice that they vary in size.
+
+```{r}
+# Gene set sizes
+msig_hallmark <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark.csv")
+msig_hallmark %>% group_by(gs_name) %>% summarize(count=n()) %>% arrange(desc(count)) %>% kable()
+```
+
+### Your dataset
+
+The dataframe you'll work with is `gtex_hallmark`, where the expression data and gene set membership info have been merged. Remember that a gene can be expressed in multiple tissues and that it can appear in more than one gene set, so the same gene (or even the same gene-tissue combination) can appear several times in this dataframe. For example, here are a few roes for APOE. You can see that each row is repeated because the gene belongs to two gene sets, `HALLMARK_ADIPOGENESIS` and `HALLMARK_XENOBIOTIC_METABOLISM`.
+
+Also observe that expression has been log-transformed for you in the variable `log_tpm` and also dichotomized as `expressed_high`, which is either `TRUE` or `FALSE` for a given gene in a given tissue.
+
+```{r}
+# Repeated genes (and gene-tissue combinations)
+gtex_hallmark %>% filter(gene_symbol == "APOE") %>% head() %>% kable()
+```
+
+Finally, here's a helper function for you called `genes_in_set`. For some of the exercises, you're going to want a vector listing all the genes in a gene set.
+
+```{r}
+# Helper function
+msig_hallmark_pairs <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark_pairs.csv")
+genes_in_set <- function(gs) {
+  msig_hallmark_pairs %>%
+    filter(gs_name == gs) %>%
+    pull(gene_symbol) %>%
+    unique()
+}
+```
+
+Here's an example of usage. What genes are in the `HALLMARK_PANCREAS_BETA_CELLS` gene set?
+
+```{r}
+genes_in_set("HALLMARK_PANCREAS_BETA_CELLS")
+```
+
+
+```{r, eval=FALSE}
+tissues_use <- c("Liver", "Heart - Left Ventricle", "Brain - Cortex", "Skeletal Muscle", "Whole Blood")
+
+sets_use <- c(
+  "HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+  "HALLMARK_INTERFERON_GAMMA_RESPONSE",
+  "HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION",
+  "HALLMARK_MTORC1_SIGNALING"
+)
+```
+
+
+# Exercises
+
+## Proportions
+
+### Circle graph
+
+Making a circle graph in ggplot is not as simple as one might hope.
+
+- Pick a tissue and a gene set and set them as the variables `mytissue` and `mygeneset` in the chunk below
+
+- The code in that chunk will make a circle graph showing what percent of genes expressed in the chosen tissue are in the chosen gene set
+
+- Carefully check the code and comments to understand how it works (try peeking at the data during intermediate steps)
+
+```{r}
+# You pick the tissue
+# You pick the gene set
+mytissue <- "Liver"
+mygeneset <- "HALLMARK_OXIDATIVE_PHOSPHORYLATION"
+
+# Remember this dataset has multiple rows per gene (and per gene-tissue combination)
+gtex_hallmark %>% 
+  # Pick the tissue
+  filter(tissue == mytissue) %>%
+  # Get only highly expressed genes
+  filter(expressed_high == TRUE) %>% 
+  # Make an indicator for whether each gene is in your gene set
+  mutate(in_set = gene_symbol %in% genes_in_set(mygeneset)) %>% 
+  # We don't want to double-count any genes!!
+  dplyr::select(gene_symbol,in_set) %>% 
+  unique() %>% 
+  # Now we have have the right genes, so tabulate
+  count(in_set) %>% 
+  # Convert to a proportion
+  mutate(prop = n / sum(n),
+         label = paste0(
+           if_else(in_set,
+                   "In set",
+                   "Not in set"),
+           "\n", scales::percent(prop))) %>% 
+  # Plot
+  # Note the aesthetics carefully!
+  ggplot(aes(x = "", y = n, fill = in_set)) +
+  # Use geom_col but convert bar --> circle by using polar coordinates
+  geom_col() +
+  coord_polar(theta="y") +
+  # Show the percentages on the graph
+  # (Make sure the text doesn't pile up)
+  geom_text(aes(label = label),
+            position = position_stack(vjust = 0.5),
+            size = 4) +
+  # Remove unwanted plot background
+  theme_void() +
+  # Title
+  ggtitle(paste("Proportion of expressed genes in",
+                mytissue,
+                "\nthat are in",
+                mygeneset))
+```
+
+Now try adapting the code above to make your own circle graph to answer the following question.
+
+Of the genes in the `"HALLMARK_NOTCH_SIGNALING"` gene set, what tissues are they highly expressed in? (If a gene is highly expressed in multiple tissues, you can double-count it).
+
+```{r}
+gtex_hallmark %>% 
+  filter(gs_name == "HALLMARK_NOTCH_SIGNALING") %>% 
+  filter(expressed_high == TRUE) %>% 
+  count(tissue) %>% 
+    mutate(prop = n / sum(n),
+         label = paste0(
+           tissue,
+           "\n", scales::percent(prop))) %>% 
+    ggplot(aes(x = "", y = n, fill = tissue)) +
+  geom_col(width=1) +
+  coord_polar(theta="y") +
+  geom_text(aes(label = label),
+            position = position_stack(vjust = 0),
+            size = 1) +
+  theme_void() +
+  ggtitle("") +
+  theme(legend.position = "none")
+
+  
+```
+
+
+
+
+
+```{r, eval=FALSE}
+tissue_selected <- "Liver"
+gs <- "HALLMARK_OXIDATIVE_PHOSPHORYLATION"
+
+set_genes <- genes_in_set(gs)
+
+df <- gtex_hallmark %>%
+  filter(tissue == tissue_selected & expressed_high == TRUE) %>%
+  mutate(in_set = gene_symbol %in% set_genes) %>%
+  count(in_set) %>%
+  mutate(prop = n / sum(n),
+         label = paste0(if_else(in_set, "In set", "Not in set"), "\n", scales::percent(prop)))
+
+ggplot(df, aes(x = "", y = n, fill = in_set)) +
+  geom_col(width = 1, color = "white") +
+  coord_polar(theta = "y") +
+  geom_text(aes(label = label), position = position_stack(vjust = 0.5), size = 4) +
+  theme_void() +
+  labs(title = paste("Proportion of expressed genes in", tissue, "\nthat are in", gs),
+       fill = NULL)
+
+```
+
+
+### Stacked bars adding up to 100%
+
+- how to control which bars are on top/bottom/middle
+
+```{r, eval=FALSE}
+df <- map_dfr(sets_use, function(gs) {
+  set_genes <- genes_in_set(gs)
+  gtex_long %>%
+    filter(tissue %in% tissues_use) %>%
+    mutate(gs = gs,
+           group = if_else(gene_symbol %in% set_genes, "In set", "Not in set")) %>%
+    group_by(gs, tissue, group) %>%
+    summarise(n_genes = n_distinct(gene_symbol), .groups = "drop") %>%
+    group_by(gs, tissue) %>%
+    mutate(prop = n_genes / sum(n_genes)) %>%
+    ungroup()
+})
+
+ggplot(df, aes(x = tissue, y = prop, fill = group)) +
+  geom_col() +
+  facet_wrap(~gs, ncol = 2) +
+  scale_y_continuous(labels = scales::percent) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 35, hjust = 1)) +
+  labs(title = "100% stacked bars: In-set vs Not-in-set across tissues",
+       x = NULL, y = "Proportion of expressed genes", fill = NULL)
+
+```
+
+
+### Stacked density plots
+
+- how to; both the marginal versions and the add to 100% versions
+
+- with faceting
+
+## Nested proportions
+
+### Mosaic plot and treemap
+
+Suppose we have two categorical variables and want to see how they're related.
+
+Below, `genes` is a data frame listing each Emsembl gene's `biotype` and  `chr_group` (X, Y, MT, or Autosome). Note there are a lot of biotypes, so in our plots we'll only use the top few.
+
+```{r}
+mart <- useEnsembl(biomart = "genes", dataset = "hsapiens_gene_ensembl")
+
+genes <- getBM(
+  attributes = c("ensembl_gene_id", "gene_biotype", "chromosome_name"),
+  mart = mart
+) %>%
+  filter(chromosome_name %in% c(as.character(1:22), "X", "Y", "MT")) %>%
+  mutate(
+    chr_group = case_when(
+      chromosome_name == "X"  ~ "X",
+      chromosome_name == "Y"  ~ "Y",
+      chromosome_name == "MT" ~ "MT",
+      TRUE ~ "Autosome"
+    )
+  )
+
+# Get top biotypes
+top_biotypes <- genes %>% count(gene_biotype, sort = TRUE) %>% slice_head(n = 6) %>% pull(gene_biotype)
+
+# Filter down a bit
+genes2 <- genes %>% mutate(gene_biotype = if_else(gene_biotype %in% top_biotypes, gene_biotype, "Other"))
+
+# Tabular view of the data
+kable(table(genes2$chr_group, genes2$gene_biotype))
+```
+
+We can make a treemap with `geom_treemap` from the `treemapify` package. The data first need to be processed into a summary table of counts in each biotype-chromosome pair.
+
+Notice that we use the aesthetics `area`, `fill`, `label`, and `chr_group`. Also notice that there are extra treemap geoms to improve the figure.
+
+```{r}
+genes2 %>%
+  group_by(chr_group, gene_biotype) %>% 
+  summarize(n=n()) %>% 
+ggplot(.,
+       aes(area = n,
+           fill = gene_biotype,
+           label = gene_biotype,
+           subgroup = chr_group)) +
+  geom_treemap() +
+  geom_treemap_subgroup_border() +
+  geom_treemap_subgroup_text(place = "center", alpha = 0.8) +
+  geom_treemap_text(reflow = TRUE, colour = "white", min.size = 7) +
+  ggtitle("Gene biotype composition by chromosome group")
+
+```
+
+Here's a mosaic plot made with `geom_mosaic` from the `ggmosaic` package. We tabulates counts as exactly as above, but the aesthetics for this geom work a little differently. This plot could still be improved a bit.
+
+```{r}
+genes2 %>%
+  group_by(chr_group, gene_biotype) %>% 
+  summarize(n=n()) %>% 
+ggplot(.) +
+  geom_mosaic(aes(x = product(chr_group),
+                  fill = gene_biotype,
+                  weight = n)) +
+  theme_mosaic() +
+  labs(x = "Chromosome group", y = "Gene biotype", fill = "Gene biotype")
+```
+
+### Concentric donut plot
+
+I haven't found a great way to make this type of plot. (I'm not sure they're terribly useful, anyway.)
+
+```{r}
+
+```
+
+## Overlaps
+
+Let's pick several gene sets and use several plots to compare how they overlap.
+
+```{r}
+mygeneset1 <- genes_in_set("HALLMARK_UV_RESPONSE_DN")
+mygeneset2 <- genes_in_set("HALLMARK_SPERMATOGENESIS")
+mygeneset3 <- genes_in_set("HALLMARK_UV_RESPONSE_UP")
+mygeneset4 <- genes_in_set("HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY")
+mygeneset5 <- genes_in_set("HALLMARK_MITOTIC_SPINDLE")
+```
+
+Some of the plotting functions need more structure.
+
+Let's make a matrix (a data frame, really) with indicators for whether each gene is in each set.
+
+```{r}
+# First put the genes together in one big vector
+my_genes <- unique(
+  c(mygeneset1,
+    mygeneset2,
+    mygeneset3,
+    mygeneset4))
+
+# Make data frame of indicators
+gene_upset_data_indicators <- data.frame(
+  HALLMARK_UV_RESPONSE_DN=ifelse(my_genes %in% mygeneset1,1,0),
+  HALLMARK_SPERMATOGENESIS=ifelse(my_genes %in% mygeneset2,1,0),
+  HALLMARK_UV_RESPONSE_UP=ifelse(my_genes %in% mygeneset3,1,0),
+  HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY=ifelse(my_genes %in% mygeneset4,1,0),
+  HALLMARK_MITOTIC_SPINDLE=ifelse(my_genes %in% mygeneset5,1,0)
+)
+head(gene_upset_data_indicators)
+```
+
+
+### Venn diagrams
+
+Making Venn diagrams with the `VennDiagram` package is fairly straightforward. You simply bundle the vectors (sets) together in a list.
+
+```{r}
+venn.diagram(
+  x = list(mygeneset1,
+           mygeneset2,
+           mygeneset3,
+           mygeneset4,
+           mygeneset5),
+  category.names = paste("Set", 1:5),
+  filename = '~/Desktop/venn_diagram_plain.png',
+  output=TRUE
+)
+```
+
+Adding color can make the plot a little easier to interpret.
+
+```{r}
+# Chart fancier
+myCol <- brewer.pal(5, "Spectral")
+
+venn.diagram(
+  x = list(mygeneset1,
+           mygeneset1,
+           mygeneset1,
+           mygeneset1,
+           mygeneset1),
+  category.names = paste("Set", 1:5),
+  filename = '~/Desktop/venn_diagram_fancier.png',
+  output=TRUE,
+  fill = myCol,
+)
+```
+
+### Heatmap for overlap
+
+A heatmap overcomes some of the limitations of Venn diagrams.
+
+A simple way to make the heatmap:
+
+- `geom_tile`
+
+- aesthetics `x`, `y`, and `fill`
+
+```{r}
+# Add a gene identifier
+gene_upset_data_indicators$gene <- 1:nrow(gene_upset_data_indicators)
+
+# Need the data in long format
+df <- pivot_longer(gene_upset_data_indicators,
+                   -gene,
+                   names_to = "set",
+                   values_to = "in_set")
+
+# Plot
+# I put a small gap between each gene
+# That way the genes don't form contiguous blocks and can be counted
+ggplot(df, aes(x = gene, y = set, fill = factor(in_set))) +
+  geom_tile(width = 0.8, height = 0.8) +
+  scale_fill_manual(
+    values = c("0" = "grey90", "1" = "black"),
+    labels = c("OUT", "IN"),
+    name = "Membership"
+  ) +
+  labs(x = "Genes", y = "Sets") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    panel.grid = element_blank()
+  )
+
+```
+
+
+### Upset plot
+
+To make an upset plot with the `UpSetR` package, we first need to process the data a bit more.
+
+Right now we just have gene lists. We need a data frame indicating set membership.
+
+```{r}
+# Create combination object
+gene_comb <- make_comb_mat(gene_upset_data_indicators, top_n_sets = 6)
+
+# Make plot
+gene_comb <- gene_comb[comb_degree(gene_comb) > 0]
+UpSet(gene_comb)
+```
+
+Observe that we can spruce up the plot, though the code is a little complicated:
+
+```{r}
+ss <- set_size(gene_comb)
+cs <- comb_size(gene_comb)
+ht <- UpSet(gene_comb, 
+           set_order = order(ss),
+           comb_order = order(comb_degree(gene_comb), -cs),
+           top_annotation = HeatmapAnnotation(
+             "Gene set intersections" = anno_barplot(
+               cs, 
+               ylim = c(0, max(cs)*1.1),
+               border = FALSE, 
+               gp = gpar(fill = "black"), 
+               height = unit(4, "cm")), 
+             annotation_name_side = "left", 
+             annotation_name_rot = 90),
+           left_annotation = rowAnnotation(
+             "Genes per set" = anno_barplot(-ss, 
+                                            baseline = 0,
+                                            axis_param = list(
+                                              at = c(0, -50, -100, -150,-200),
+                                              labels = c(0, 50, 100, 150, 200),
+                                              labels_rot = 0),
+                                            border = FALSE, 
+                                            gp = gpar(fill = "black"), 
+                                            width = unit(4, "cm")),
+             set_name = anno_text(set_name(gene_comb), 
+                                  location = 0.5, 
+                                  just = "center",
+                                  width = max_text_width(set_name(gene_comb)) + unit(4, "mm"))
+           ), 
+           right_annotation = NULL,
+           show_row_names = FALSE)
+ht = draw(ht)
+od = column_order(ht)
+decorate_annotation("Gene set intersections", {
+  grid.text(cs[od], x = seq_along(cs), y = unit(cs[od], "native") + unit(2, "pt"), 
+            default.units = "native", just = c("left", "bottom"), 
+            gp = gpar(fontsize = 6, col = "#404040"), rot = 45)
+})
+```
+
+Here's another upset plot example that uses non-genetic data.
+
+`movies` contains 3,883 movies. The sets are the genres a movie can belong to. For example, `"Army of Darkness (1993) "` belongs to the genres/sets `"Action"`, `"Adventure"`, `"Comedy"`, `"Horror"`, and `"SciFi"`.
+
+```{r}
+# Another example - a movie dataset
+# There are a lot of possibly genres - just just the top 6
+movies <- read.csv(system.file("extdata", "movies.csv", package = "UpSetR"), 
+                  header = TRUE, sep = ";")
+head(movies)
+m <- make_comb_mat(movies, top_n_sets = 6)
+m
+
+m <- m[comb_degree(m) > 0]
+UpSet(m)
+
+
+# Customize the plot more
+ss <- set_size(m)
+cs <- comb_size(m)
+ht <- UpSet(m, 
+           set_order = order(ss),
+           comb_order = order(comb_degree(m), -cs),
+           top_annotation = HeatmapAnnotation(
+             "Genre Intersections" = anno_barplot(cs, 
+                                                  ylim = c(0, max(cs)*1.1),
+                                                  border = FALSE, 
+                                                  gp = gpar(fill = "black"), 
+                                                  height = unit(4, "cm")
+             ), 
+             annotation_name_side = "left", 
+             annotation_name_rot = 90),
+           left_annotation = rowAnnotation(
+             "Movies Per Genre" = anno_barplot(-ss, 
+                                               baseline = 0,
+                                               axis_param = list(
+                                                 at = c(0, -500, -1000, -1500),
+                                                 labels = c(0, 500, 1000, 1500),
+                                                 labels_rot = 0),
+                                               border = FALSE, 
+                                               gp = gpar(fill = "black"), 
+                                               width = unit(4, "cm")
+             ),
+             set_name = anno_text(set_name(m), 
+                                  location = 0.5, 
+                                  just = "center",
+                                  width = max_text_width(set_name(m)) + unit(4, "mm"))
+           ), 
+           right_annotation = NULL,
+           show_row_names = FALSE)
+ht = draw(ht)
+od = column_order(ht)
+decorate_annotation("Genre Intersections", {
+  grid.text(cs[od], x = seq_along(cs), y = unit(cs[od], "native") + unit(2, "pt"), 
+            default.units = "native", just = c("left", "bottom"), 
+            gp = gpar(fontsize = 6, col = "#404040"), rot = 45)
+})
+
+```
+
+You can also make upset plots of genomic range data.
+
+Check out [https://jokergoo.github.io/ComplexHeatmap-reference/book/upset-plot.html#example-with-the-genomic-regions](https://jokergoo.github.io/ComplexHeatmap-reference/book/upset-plot.html#example-with-the-genomic-regions).
+
+
+### Enrichment math
+
+Often we'd like to know if an overlap is "significant" in some sense.
+
+Imagine you perform a differential expression (DE) analysis comparing cells treated with BPA vs control cells.
+
+Each gene is tested for a difference in expression across the two conditions. After a significance threshold is applied, suppose you end up with a list of 8 genes.
+
+You might inspect the list and notice 2 of the genes belong to a pathway you're interested in (i.e., a gene set).
+
+That is, your DE genes overlap with the gene set by 2. Is that likely to be due to chance?
+
+What does this depend on?
+
+- How many DE genes did you look at? `n=8`
+
+- How big is the overlap? `k=2`
+
+- How big was the gene set? `K=50`
+
+- How big was the universe of genes? `N=?` (Pretend `N`=100)
+
+```{r}
+#if (!require(devtools)) install.packages("devtools")
+#devtools::install_github("yanlinlin82/ggvenn")
+library(ggvenn)
+degenes <- paste0("genes",1:8)
+geneset <- paste0("genes",7:50)
+ggvenn(list("DE genes"=degenes, "Gene set"=geneset)) + ggtitle("Universe size=100?")
+```
+
+If the DE genes were randomly drawn from the genome (the "universe"), how likely would it be to get `k=2` (or more) genes from the gene set?
+
+- How many ways can you pick `n` genes out of `N` genes (without replacement)?
+
+- How many ways can you pick, without replacement, `n` genes out of `N` and get `k` pathway genes, if there `K` pathway genes in total?
+
+The number of distinct ways to choose `a` objects from `b` without replacement is
+
+$$
+\binom{a}{b} = \frac{a!}{b!(a-b)!}
+$$
+
+Try to apply this formula to work out a p-value by hand for the results above. You can use the `choose` function to help your calculations.
+
+Then try using the `dypher` and/or `phyper` functions to check your work. These two functions evaluate probabilities for the hypergeometric distribution, which is the distribution that models our situation. (Read the argument descriptions for the functions.)
