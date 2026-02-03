@@ -31,7 +31,43 @@ library(ggmosaic)
 First, read in the dataset. We will describe it below.
 
 ```{r}
-gtex_hallmark <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/gtex_hallmark.csv")
+# Read data
+gtex <- read_tsv(
+  "/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct.gz",
+  skip = 2
+)
+
+# Inspect
+glimpse(gtex)
+gtex_long <- gtex %>%
+  rename(
+    gene_id = Name,
+    gene_symbol = Description
+  ) %>%
+  pivot_longer(
+    cols = -c(gene_id, gene_symbol),
+    names_to = "tissue",
+    values_to = "median_tpm"
+  )
+gtex_long <- gtex_long %>%
+  filter(median_tpm > 0.1)
+msig_hallmark <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark.csv")
+msig_hallmark_pairs <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark_pairs.csv")
+
+gtex_hallmark <- gtex_long %>%
+  left_join(
+    msig_hallmark_pairs,
+    by = "gene_symbol",
+    relationship = "many-to-many"
+  ) %>%
+  mutate(
+    gs_name = if_else(is.na(gs_name), "Not_in_Hallmark", gs_name),
+    log_tpm = log10(median_tpm + 1),
+    expressed_high = median_tpm > 10
+  )
+
+
+#gtex_hallmark <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/gtex_hallmark.csv")
 ```
 
 The data for these exercises are Genotype-Tissue Expression (GTEx) gene expression summaries merged with Molecular Signatures Database (MSigDB) Hallmark gene sets.
@@ -50,7 +86,7 @@ The MSigDB Hallmark gene set is just a collection of 50 gene sets, 50 lists of g
 
 ```{r}
 # Gene set sizes
-msig_hallmark <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark.csv")
+
 msig_hallmark %>% group_by(gs_name) %>% summarize(count=n()) %>% arrange(desc(count)) %>% kable()
 ```
 
@@ -69,7 +105,7 @@ Finally, here's a helper function for you called `genes_in_set`. For some of the
 
 ```{r}
 # Helper function
-msig_hallmark_pairs <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark_pairs.csv")
+
 genes_in_set <- function(gs) {
   msig_hallmark_pairs %>%
     filter(gs_name == gs) %>%

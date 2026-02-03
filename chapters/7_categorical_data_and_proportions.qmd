@@ -56,6 +56,14 @@ format:
 
 ## In-class Exercises
 
+[GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct](https://jmc108.github.io/hugen2073-textbook/exercises/7_categorical_data_and_proportions/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct)
+
+[gtex_hallmark.csv](https://jmc108.github.io/hugen2073-textbook/exercises/7_categorical_data_and_proportions/gtex_hallmark.csv)
+
+[msig_hallmark_pairs](https://jmc108.github.io/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark_pairs.csv)
+
+[msig_hallmark](https://jmc108.github.io/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark.csv)
+
 [Download the exercises](../exercises/7_categorical_data_and_proportions/7_categorical_data_and_proportions_exercises.Rmd)
 
 
