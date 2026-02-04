@@ -16,10 +16,13 @@ library(tidyverse)
 library(knitr)
 library(VennDiagram)
 library(UpSetR)
-library(ComplexHeatmap) # Needed for helping with upset plots
+# remotes::install_github("jokergoo/ComplexHeatmap")
+library(ComplexHeatmap) # Needed for helping with upset plots;
 library(RColorBrewer)
-library(biomaRt)
+# BiocManager::install("biomaRt")
+library(biomaRt) 
 library(treemapify)
+# remotes::install_github("haleyjeppson/ggmosaic")
 library(ggmosaic)
 #library(msigdbr)
 ```
@@ -86,7 +89,6 @@ The MSigDB Hallmark gene set is just a collection of 50 gene sets, 50 lists of g
 
 ```{r}
 # Gene set sizes
-
 msig_hallmark %>% group_by(gs_name) %>% summarize(count=n()) %>% arrange(desc(count)) %>% kable()
 ```
 
@@ -105,7 +107,6 @@ Finally, here's a helper function for you called `genes_in_set`. For some of the
 
 ```{r}
 # Helper function
-
 genes_in_set <- function(gs) {
   msig_hallmark_pairs %>%
     filter(gs_name == gs) %>%
@@ -120,6 +121,7 @@ Here's an example of usage. What genes are in the `HALLMARK_PANCREAS_BETA_CELLS`
 genes_in_set("HALLMARK_PANCREAS_BETA_CELLS")
 ```
 
+- Garbage chunk:
 
 ```{r, eval=FALSE}
 tissues_use <- c("Liver", "Heart - Left Ventricle", "Brain - Cortex", "Skeletal Muscle", "Whole Blood")
@@ -175,7 +177,7 @@ gtex_hallmark %>%
            "\n", scales::percent(prop))) %>% 
   # Plot
   # Note the aesthetics carefully!
-  ggplot(aes(x = "", y = n, fill = in_set)) +
+  ggplot(aes(x="", y = n, fill = in_set)) +
   # Use geom_col but convert bar --> circle by using polar coordinates
   geom_col() +
   coord_polar(theta="y") +
@@ -220,8 +222,7 @@ gtex_hallmark %>%
 ```
 
 
-
-
+- I think thus chunk is garbage:
 
 ```{r, eval=FALSE}
 tissue_selected <- "Liver"
@@ -249,7 +250,9 @@ ggplot(df, aes(x = "", y = n, fill = in_set)) +
 
 ### Stacked bars adding up to 100%
 
-- how to control which bars are on top/bottom/middle
+- Need to provide an example of this (though it's covered in a previous exercise)
+
+- This chunk is garbage:
 
 ```{r, eval=FALSE}
 df <- map_dfr(sets_use, function(gs) {
@@ -279,9 +282,14 @@ ggplot(df, aes(x = tissue, y = prop, fill = group)) +
 
 ### Stacked density plots
 
-- how to; both the marginal versions and the add to 100% versions
+- how to (both versions)
 
-- with faceting
+- include faceting
+
+```{r}
+
+```
+
 
 ## Nested proportions
 
@@ -422,10 +430,10 @@ myCol <- brewer.pal(5, "Spectral")
 
 venn.diagram(
   x = list(mygeneset1,
-           mygeneset1,
-           mygeneset1,
-           mygeneset1,
-           mygeneset1),
+           mygeneset2,
+           mygeneset3,
+           mygeneset4,
+           mygeneset5),
   category.names = paste("Set", 1:5),
   filename = '~/Desktop/venn_diagram_fancier.png',
   output=TRUE,
@@ -532,7 +540,7 @@ decorate_annotation("Gene set intersections", {
 })
 ```
 
-Here's another upset plot example that uses non-genetic data.
+Here's another upset plot example that uses non-genetic data. This example comes from the creator(s) of the package.
 
 `movies` contains 3,883 movies. The sets are the genres a movie can belong to. For example, `"Army of Darkness (1993) "` belongs to the genres/sets `"Action"`, `"Adventure"`, `"Comedy"`, `"Horror"`, and `"SciFi"`.
 
@@ -599,6 +607,8 @@ Check out [https://jokergoo.github.io/ComplexHeatmap-reference/book/upset-plot.h
 
 ### Enrichment math
 
+#### Question
+
 Often we'd like to know if an overlap is "significant" in some sense.
 
 Imagine you perform a differential expression (DE) analysis comparing cells treated with BPA vs control cells.
@@ -617,15 +627,15 @@ What does this depend on?
 
 - How big was the gene set? `K=50`
 
-- How big was the universe of genes? `N=?` (Pretend `N`=100)
+- How big was the universe of genes? `N=?` (Pretend `N`=100, which is unrealistically tiny.)
 
 ```{r}
 #if (!require(devtools)) install.packages("devtools")
 #devtools::install_github("yanlinlin82/ggvenn")
 library(ggvenn)
 degenes <- paste0("genes",1:8)
-geneset <- paste0("genes",7:50)
-ggvenn(list("DE genes"=degenes, "Gene set"=geneset)) + ggtitle("Universe size=100?")
+geneset <- paste0("genes",7:56)
+ggvenn(list("DE genes (n=8)"=degenes, "Gene set (K=50)"=geneset)) + ggtitle("Universe size=100?")
 ```
 
 If the DE genes were randomly drawn from the genome (the "universe"), how likely would it be to get `k=2` (or more) genes from the gene set?
@@ -643,3 +653,61 @@ $$
 Try to apply this formula to work out a p-value by hand for the results above. You can use the `choose` function to help your calculations.
 
 Then try using the `dypher` and/or `phyper` functions to check your work. These two functions evaluate probabilities for the hypergeometric distribution, which is the distribution that models our situation. (Read the argument descriptions for the functions.)
+
+#### Answer
+
+First, there are this many ways to pick `n=8` genes from a "universe" of size `N=100` genes: 
+
+$$
+\binom{N}{n} = \frac{N!}{n!(N-n)!} = \frac{100!}{8!(92)!}
+$$
+
+How many ways are to pick out exactly `k=2` pathway genes in our "sample" of size `n=8`?
+
+This is equivalent to picking `k=2` of the `K=50` pathway genes AND picking `n - k = 8 - 2 = 6` non-pathway genes out of the `N - K = 100 - 50 = 50` total non-pathway genes in the "universe".
+
+The number of ways to do that is: 
+
+$$
+\binom{K}{k} * \binom{N-K}{n-k} = \binom{50}{2} * \binom{50}{6} = \frac{50!}{2!(48)!} * \frac{50!}{6!(44)!} 
+$$
+So the probability of getting an overlap of *exactly* `k=2` is then
+
+$$
+\frac{\frac{50!}{2!(48)!} * \frac{50!}{6!(44)!} }{\frac{100!}{8!(92)!}}
+$$
+We can calculate that in R.
+
+```{r}
+(factorial(50)/(factorial(2)*factorial(48))) * (factorial(50)/(factorial(6)*factorial(44))) / (factorial(100)/(factorial(8)*factorial(92)))
+```
+
+We can verify this with `dhyper`, the probability density function for the hypergeometric distribution.
+
+```{r}
+# Note that the m, n, and k parameters have different meanings here
+dhyper(x=2, m=50, n=50, k=8)
+```
+
+Note we are not quite done. A p-value would be the probability of getting results *at least* this extreme, i.e., the probability that `k` is at least 2.
+
+Since `k` could only reach `n=8` at most, that is:
+
+$$
+\sum_{k=2}^{8} \frac{\frac{50!}{k!(50-k)!} * \frac{50!}{(8-k)!(42-k)!} }{\frac{100!}{8!(92)!}}
+$$
+
+We can calculate like this:
+
+```{r}
+sum(dhyper(x=2:8, m=50, n=50, k=8))
+```
+
+In other words, getting at least `k=2` pathway genes among our `n=8` was not at all unlikely if `K=50` out of all `N=100` genes are pathway genes.
+
+More realistically, if the universe were larger, say, `N=20,000`, then the pathway genes would be much more rare. Then the p-value would be much smaller:
+
+```{r}
+sum(dhyper(x=2:8, m=50, n=19500, k=8))
+```
+
