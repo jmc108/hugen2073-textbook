@@ -56,13 +56,11 @@ format:
 
 ## In-class Exercises
 
+[Download the exercises](../exercises/7_categorical_data_and_proportions/7_categorical_data_and_proportions_exercises.Rmd)
+
 [GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct.gz](https://jmc108.github.io/hugen2073-textbook/exercises/7_categorical_data_and_proportions/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct.gz)
 
-[msig_hallmark_pairs.csv](https://jmc108.github.io/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark_pairs.csv)
-
 [msig_hallmark.csv](https://jmc108.github.io/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark.csv)
-
-[Download the exercises](../exercises/7_categorical_data_and_proportions/7_categorical_data_and_proportions_exercises.Rmd)
 
 
 ::: {.callout-tip collapse="true"}
@@ -70,7 +68,7 @@ format:
 ### Expand to see the answers
 
 ```{webr}
-
+# Answers to the exercises are already contained in the .Rmd file
 ```
 
 :::
