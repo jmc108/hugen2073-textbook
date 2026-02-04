@@ -42,6 +42,11 @@ gtex <- read_tsv(
   skip = 2
 )
 
+msig_hallmark <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark.csv")
+
+msig_hallmark_pairs <- msig_hallmark %>%
+  distinct(gs_name, gene_symbol)
+
 # Inspect
 glimpse(gtex)
 gtex_long <- gtex %>%
@@ -56,8 +61,8 @@ gtex_long <- gtex %>%
   )
 gtex_long <- gtex_long %>%
   filter(median_tpm > 0.1)
-msig_hallmark <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark.csv")
-msig_hallmark_pairs <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark_pairs.csv")
+
+
 
 gtex_hallmark <- gtex_long %>%
   left_join(

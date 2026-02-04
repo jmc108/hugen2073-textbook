@@ -30,13 +30,6 @@ write.csv(msig_hallmark,
           quote=FALSE,
           row.names=FALSE)
 
-msig_hallmark_pairs <- msig_hallmark %>%
-  distinct(gs_name, gene_symbol)
-write.csv(msig_hallmark_pairs,
-          file="/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark_pairs.csv",
-          quote=FALSE,
-          row.names=FALSE)
-
 gtex_hallmark <- gtex_long %>%
   left_join(
     msig_hallmark_pairs,
