@@ -24,6 +24,8 @@ library(biomaRt)
 library(treemapify)
 # remotes::install_github("haleyjeppson/ggmosaic")
 library(ggmosaic)
+# devtools::install_github("yanlinlin82/ggvenn")
+library(ggvenn)
 #library(msigdbr)
 ```
 
@@ -36,7 +38,7 @@ First, read in the dataset. We will describe it below.
 ```{r}
 # Read data
 gtex <- read_tsv(
-  "/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct.gz",
+  "https://jmc108.github.io/hugen2073-textbook/exercises/7_categorical_data_and_proportions/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct.gz",
   skip = 2
 )
 
@@ -54,8 +56,8 @@ gtex_long <- gtex %>%
   )
 gtex_long <- gtex_long %>%
   filter(median_tpm > 0.1)
-msig_hallmark <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark.csv")
-msig_hallmark_pairs <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark_pairs.csv")
+msig_hallmark <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark.csv")
+msig_hallmark_pairs <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/7_categorical_data_and_proportions/msig_hallmark_pairs.csv")
 
 gtex_hallmark <- gtex_long %>%
   left_join(
@@ -70,7 +72,6 @@ gtex_hallmark <- gtex_long %>%
   )
 
 
-#gtex_hallmark <- read.csv("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/7_categorical_data_and_proportions/gtex_hallmark.csv")
 ```
 
 The data for these exercises are Genotype-Tissue Expression (GTEx) gene expression summaries merged with Molecular Signatures Database (MSigDB) Hallmark gene sets.
