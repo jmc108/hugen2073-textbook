@@ -8,6 +8,7 @@ output:
 
 ```{r}
 library("tidyverse")
+library("forestplot")
 ```
 
 
@@ -163,7 +164,7 @@ data.frame(est=c(
   sd(rnorm(n=10, mean=100, sd=10))/sqrt(10),
   sd(rnorm(n=100, mean=100, sd=10))/sqrt(100),
   sd(rnorm(n=1000, mean=100, sd=10))/sqrt(1000),
-  sd(rnorm(n=1000, mean=100, sd=10))/sqrt(10000)),
+  sd(rnorm(n=10000, mean=100, sd=10))/sqrt(10000)),
            truth=10/sqrt(c(10,100,1000,10000))) %>% 
   ggplot() +
   geom_point(aes(x=truth,y=est)) +
@@ -209,4 +210,182 @@ db_long %>%
   geom_density(aes(x=mean,fill=samplesize),alpha=0.5) +
   scale_fill_brewer(palette="Blues")
 ```
+
+We can also show the variance behaves as expected. Note that the beta distribution with parameters `a` and `b` has variance:
+
+$$
+\sigma^2 = \frac{ab}{(a+b)^2(a+b+1)}
+$$
+
+```{r}
+# Your scatterplot code
+
+# Helper function
+s_ab <- function(a,b) {sqrt(a*b/((a+b)^2*(a+b+1)))}
+s <- s_ab(0.1, 0.1)
+
+data.frame(est=c(
+  sd(rbeta(n=10, shape1=0.1, shape2=0.1))/sqrt(10),
+  sd(rbeta(n=100, shape1=0.1, shape2=0.1))/sqrt(100),
+  sd(rbeta(n=1000, shape1=0.1, shape2=0.1))/sqrt(1000),
+  sd(rbeta(n=10000, shape1=0.1, shape2=0.1))/sqrt(10000)),
+           truth=s/sqrt(c(10,100,1000,10000))) %>% 
+  ggplot() +
+  geom_point(aes(x=truth,y=est)) +
+  geom_smooth(aes(x=truth,y=est),method="lm", se=FALSE)
+```
+
+## Error bars
+
+Now let's simulate gene expression in two groups, treatment and control, each with sample size n=10.
+
+First, let's make barplots of the group means, with the raw data on top.
+
+One way to do this would be by doing `group_by() %>% summarize()` and `geom_col`.
+
+Another way would let us use the raw data: `stat_summary(fun=mean, geom="col")`. Note that this syntax can be extended for drawing the error bars.
+
+```{r}
+set.seed(2073)
+df <- tibble(
+  condition = rep(c("Control", "Treatment"), each = 10),
+  expression = c(
+    rlnorm(10, meanlog = 2.0, sdlog = 0.4),
+    rlnorm(10, meanlog = 2.3, sdlog = 0.4)
+  )
+)
+
+barplot <- df %>% 
+  ggplot(., aes(x = condition, y = expression)) +
+  stat_summary(
+    fun = mean,
+    geom = "col"
+  ) + 
+  geom_jitter(position=position_jitter(width=0.1))
+barplot
+```
+
+We can add error bars with `geom_errorbar` or `stat_summary`. Let's try `stat_summary`.
+
+```{r}
+barplot +
+  stat_summary(
+    geom="errorbar"
+  )
+```
+
+Notice the default half-width is `mean_se()`
+
+We have other choices, though, like 1 standard deviation:
+
+```{r}
+barplot +
+  stat_summary(
+    geom="errorbar",
+    fun.data=mean_sdl
+  )
+```
+
+Or a standard 95% confidence interval:
+
+```{r}
+barplot +
+  stat_summary(
+    geom="errorbar",
+    fun.data=mean_cl_normal
+  )
+```
+
+Or any other kind of confidence interval, e.g., 90%:
+
+```{r}
+barplot +
+  stat_summary(
+    geom="errorbar",
+    fun.data=function(x) mean_cl_normal(x, conf.int = 0.90)
+  )
+```
+
+
+## Confidence intervals and forest plots
+
+Suppose we have several confidence intervals estimating the same quantity, e.g., the effect of some SNP on risk of a disease.
+
+A forest plot shows all of indivdual confidence intervals, plus a meta-analytic confidence interval.
+
+There are numerous ways to make forest plots in R.
+
+- The `meta` and `metafor` packages (specifically for meta-analysis)
+
+- The `forestplot` package (assumes you already have done all the calculations)
+
+- `geom_errorbarh()` in  `ggplot2`
+
+The example below uses `forestplot`, which allows you to add an annotation table next to the plot.
+
+
+```{r}
+set.seed(2073)
+# Simulate GWAS-like odds ratios across 8 cohorts
+k <- 8
+
+dat <- tibble(
+  cohort = paste0("Cohort ", seq_len(k)),
+  n_cases    = sample(seq(2000, 12000, by = 500), k, replace = TRUE),
+  n_controls = sample(seq(2000, 20000, by = 500), k, replace = TRUE),
+  # simulate log(OR) around a modest effect
+  logOR = rnorm(k, mean = log(1.12), sd = 0.08),
+  # simulate SE loosely tied to total N (just for realism)
+  se = sqrt(4 / (n_cases + n_controls)) + runif(k, 0.01, 0.03)
+) %>%
+  mutate(
+    OR = exp(logOR),
+    lo = exp(logOR - 1.96 * se),
+    hi = exp(logOR + 1.96 * se)
+  )
+
+# Inverse-variance fixed-effect meta-analysis
+w <- 1 / dat$se^2
+logOR_meta <- sum(w * dat$logOR) / sum(w)
+se_meta <- sqrt(1 / sum(w))
+
+meta_row <- tibble(
+  cohort = "Fixed-effect meta",
+  n_cases = sum(dat$n_cases),
+  n_controls = sum(dat$n_controls),
+  logOR = logOR_meta,
+  se = se_meta,
+  OR = exp(logOR_meta),
+  lo = exp(logOR_meta - 1.96 * se_meta),
+  hi = exp(logOR_meta + 1.96 * se_meta)
+)
+
+dat2 <- bind_rows(dat, meta_row)
+
+# Build the left-side table text
+tabletext <- cbind(
+  c("Cohort", dat2$cohort),
+  c("Cases", format(dat2$n_cases, big.mark = ",")),
+  c("Controls", format(dat2$n_controls, big.mark = ",")),
+  c("OR (95% CI)",
+    sprintf("%.2f (%.2f, %.2f)", dat2$OR, dat2$lo, dat2$hi))
+)
+
+# Forest plot
+forestplot(
+  labeltext = tabletext,
+  mean  = c(NA, dat2$OR),
+  lower = c(NA, dat2$lo),
+  upper = c(NA, dat2$hi),
+  zero  = 1, # null for OR is 1
+  xlog  = TRUE, # plot on log scale
+  boxsize = 0.2,
+  lineheight = "auto",
+  col = fpColors()
+)
+
+```
+
+
+## False discovery rate
 
