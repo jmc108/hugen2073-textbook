@@ -23,6 +23,14 @@ Quiz:
 - Where I list the questions, it's possible I have the answers parenthetically listed for you, the tutor. That's only for you! Don't give away the answer.
 
 Questions:
+- What does n << p mean?
+- Give an example of the curse of dimensionality.
+- Explain the difference between supervised and unsupervised ML.
+- Briefly explain what PCA does.
+- What is a limitation of PCA?
+- Is k-means a supervised or unsupervised algorithm?
+- Would linear regression be supervised or unsupervised? Why?
+- Does using unsupervised ML mean that you don't really need to make any decisions about modeling? Explain.
 
 Avoid:
 - Being long-winded, unless the student asks for that.
