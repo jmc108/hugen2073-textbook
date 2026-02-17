@@ -237,6 +237,7 @@ plot(pc1,pc2, pch=".")
 
 ```{webr}
 library("plotly")
+library("scatterplot3d")
 pca <- prcomp(geno_data[,c(-1,-2)])
 pc1 <- pca$x[,1]
 pc2 <- pca$x[,2]
@@ -251,6 +252,10 @@ plot_ly(pcdata,
         color = ~group,
         type = "scatter3d",
         mode = "markers")
+scatterplot3d(pcdata$pc1,
+              pcdata$pc2,
+              pcdata$pc3,
+              color=as.numeric(factor(pcdata$group)))
 ```
 :::
 
@@ -258,8 +263,22 @@ plot_ly(pcdata,
 
 ### Exercise 5
 
-```{webr}
+Make a scree plot to show the importance of the PCs. How many look "interesting"?
 
+```{webr}
+# Variance explained
+var_explained <- pca$sdev^2
+prop_var <- var_explained / sum(var_explained)
+# Scree plot
+par(mfrow=c(1,2))
+plot(prop_var,
+     xlab = "Principal Component",
+     ylab = "Proportion of Variance Explained")
+plot(prop_var,
+     xlab = "Principal Component",
+     ylab = "Proportion of Variance Explained",
+     xlim=c(1,20))
+par(mfrow=c(1,1))
 ```
 
 
@@ -269,8 +288,23 @@ plot_ly(pcdata,
 
 ### Exercise 6
 
-```{webr}
+Make a parallel coordinate plot, colored by population
 
+- How many PCs should you use for the plot?
+
+- Tryo to interpret the plot
+
+```{webr}
+library("GGally")
+p <- ggparcoord(
+  cbind(
+    pca$x[,1:20],
+    data.frame(geno_data$population)
+    ),
+  columns = 1:20,
+  groupColumn = 21) 
+p$layers[[1]]$aes_params$linewidth <- 0.2
+p
 ```
 
 
@@ -280,10 +314,23 @@ plot_ly(pcdata,
 
 ### Exercise 7
 
+Repeat exercise 6 for only the HCB+JPT subset of the data. Include the scatterplot of the first 2 PCs and the scree plot(s).
+
 ```{webr}
-
+pca <- prcomp(geno_data[geno_data$population %in% c("HCB","JPT"),c(-1,-2)])
+pc1 <- pca$x[,1]
+pc2 <- pca$x[,2]
+plot(pc1,pc2, col=factor(geno_data$population[geno_data$population %in% c("HCB","JPT")]))
+var_explained <- pca$sdev^2
+prop_var <- var_explained / sum(var_explained)
+plot(prop_var,
+     xlab = "Principal Component",
+     ylab = "Proportion of Variance Explained")
+plot(prop_var,
+     xlab = "Principal Component",
+     ylab = "Proportion of Variance Explained",
+     xlim=c(1,20))
 ```
-
 
 :::
 
@@ -291,8 +338,17 @@ plot_ly(pcdata,
 
 ### Exercise 8
 
-```{webr}
+Repeat exercise 6 for only the HCB+JPT subset of the data.
 
+```{webr}
+ggparcoord(
+  cbind(
+    pca$x[,1:20],
+    data.frame(geno_data$population[geno_data$population %in% c("HCB","JPT")])
+  ),
+  columns = 1:20,
+  groupColumn = 21
+) + labs(colour = "Population")
 ```
 
 
@@ -302,8 +358,103 @@ plot_ly(pcdata,
 
 ### Exercise 9
 
-```{webr}
+`xintensity` and `yintensity` contain genotyping array data, namely each sample's intensity for each probe.
 
+First, let's look at scatterplots of the intensities for a few SNPs.
+
+- How many clusters should we expect/use? Why?
+
+- Pick a SNP (a plot number) that looks good (well-genotyped)
+
+- Pick one that looks poorly genotyped
+
+```{webr}
+# Look at these SNP intensity plots from a genotyping array
+# Imagine we want to call the genotypes by clustering the points
+# First, how many clusters should we expect/use?
+# Second, pick a SNP you think is well-genotped and a SNP you think is poorly genoyped
+# We will try clustering them with k-means
+load(url("https://jmc108.github.io/hugen2073-textbook/exercises/11_machine_learning/intensities.RData"))
+par(mfrow=c(6,6), mar=c(1,1,1,1))
+for (i in 1:36) {
+  plot(xintensity[i,], yintensity[i,],
+       main=i, cex=0.4,
+       xlab="", ylab="",
+       xaxt="n", yaxt="n")
+}
+par(mfrow=c(1,1))
+
+```
+
+Here's a function that will implement an interactive k-means algorithm to cluster the data. You don't need to change anything in this chunk. You'll run the `kmeans_click` function in the chunk after.
+
+```{webr}
+k <- 3
+kmeans_click <- function(x, y, k = 3, iters = 20, seed = 1) {
+  set.seed(seed)
+  pts <- cbind(as.numeric(x), as.numeric(y))
+  pts <- pts[complete.cases(pts), , drop = FALSE]
+  n <- nrow(pts)
+  
+  cols <- c("red","blue","darkgreen","orange","purple","brown","cyan","magenta")[1:k]
+  centers <- pts[sample.int(n, k), , drop = FALSE]
+  
+  # show initial random seeds
+  plot(pts[,1], pts[,2], pch=16, col="grey70", xlab="X", ylab="Y",
+       main="init seeds (click)")
+  points(centers[,1], centers[,2], pch=4, cex=3, lwd=3, col=cols)
+  locator(1)
+  
+  cl_old <- integer(n)
+  
+  for (t in 1:iters) {
+    # assign
+    d2 <- sapply(1:k, function(j)
+      (pts[,1]-centers[j,1])^2 + (pts[,2]-centers[j,2])^2
+    )
+    cl <- max.col(-d2)
+    
+    # update (with empty-cluster reseed)
+    for (j in 1:k) {
+      idx <- which(cl == j)
+      if (length(idx) > 0) centers[j,] <- colMeans(pts[idx, , drop=FALSE])
+      else centers[j,] <- pts[sample.int(n, 1), ]
+    }
+    
+    plot(pts[,1], pts[,2], pch=16, col=cols[cl], xlab="X", ylab="Y",
+         main=paste("iter", t, "(click)"))
+    points(centers[,1], centers[,2], pch=4, cex=3, lwd=3, col=cols)
+    locator(1)
+    
+    if (identical(cl, cl_old)) break
+    cl_old <- cl
+  }
+  
+  invisible(list(cluster=cl, centers=centers))
+}
+
+```
+
+Now run k-means for the two SNPs you picked. For each one, try several different values of `seed`.
+
+```{webr}
+# Succeeds?
+i <- 4
+x <-  xintensity[i,]
+y <-  yintensity[i,]
+kmeans_click(x, y, k = 3, seed = 4)
+
+# Fails?
+i <- 4
+x <-  xintensity[i,]
+y <-  yintensity[i,]
+kmeans_click(x, y, k = 3, seed = 2)
+
+# What do you think of these clusters?
+i <- 33
+x <-  xintensity[i,]
+y <-  yintensity[i,]
+kmeans_click(x, y, k = 3, seed = 4)
 ```
 
 
