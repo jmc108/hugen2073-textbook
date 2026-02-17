@@ -1,0 +1,3 @@
+load("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/11_machine_learning/intensities.RData")
+ls()
+str(xintensity)
