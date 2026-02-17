@@ -769,7 +769,7 @@
     "href": "chapters/11_machine_learning.html#suggested-reading",
     "title": "11  Machine Learning",
     "section": "11.4 Suggested Reading",
-    "text": "11.4 Suggested Reading",
+    "text": "11.4 Suggested Reading\nThe Elements of Statistical Learning",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Machine Learning</span>"
@@ -780,7 +780,7 @@
     "href": "chapters/11_machine_learning.html#in-class-exercises",
     "title": "11  Machine Learning",
     "section": "11.5 In-class Exercises",
-    "text": "11.5 In-class Exercises\nDownload the exercises\n\n\n\n\n\n\nTipExpand to see the answers\n\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "text": "11.5 In-class Exercises\nDownload the genotype data\nDownload the intensity data\nDownload the other dataset for PCA\n\n\n\n\n\n\nTipExercise 1\n\n\n\n\n\ngeno_data (genotypes.csv) contains some genotyping array data.\n\nCheck that you can understand what the variables (probably) mean\nWhat is n? What is p?\nMake some plots. What can you learn?\nWhat kind of structure do you think could exist in this dataset?\nDo any of the plots you made demonstrate that structure?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Machine Learning</span>"
