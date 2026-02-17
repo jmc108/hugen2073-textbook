@@ -317,9 +317,9 @@ p
 Repeat exercise 6 for only the HCB+JPT subset of the data. Include the scatterplot of the first 2 PCs and the scree plot(s).
 
 ```{webr}
-pca <- prcomp(geno_data[geno_data$population %in% c("HCB","JPT"),c(-1,-2)])
-pc1 <- pca$x[,1]
-pc2 <- pca$x[,2]
+pca2 <- prcomp(geno_data[geno_data$population %in% c("HCB","JPT"),c(-1,-2)])
+pc1 <- pca2$x[,1]
+pc2 <- pca2$x[,2]
 plot(pc1,pc2, col=factor(geno_data$population[geno_data$population %in% c("HCB","JPT")]))
 var_explained <- pca$sdev^2
 prop_var <- var_explained / sum(var_explained)
@@ -343,7 +343,7 @@ Repeat exercise 6 for only the HCB+JPT subset of the data.
 ```{webr}
 ggparcoord(
   cbind(
-    pca$x[,1:20],
+    pca2$x[,1:20],
     data.frame(geno_data$population[geno_data$population %in% c("HCB","JPT")])
   ),
   columns = 1:20,
@@ -464,8 +464,172 @@ kmeans_click(x, y, k = 3, seed = 4)
 
 ### Exercise 10
 
-```{webr}
+Now try interactively running k-means on the principal components of ancestry contained in `pca$x`. This chunk just sets up the function you'll use - don't change it.
 
+```{webr}
+kmeans_pca_step_s3d <- function(pcx,
+                                k = 3, iters = 20, seed = 1,
+                                use_pcs = NULL,          # which PCs to use for distance; NULL = all
+                                plot_pcs = 1:3,          # which 3 PCs to plot
+                                pause = TRUE,
+                                pch = 16, cex = 0.4,
+                                center_pch = 4, center_cex = 2.2, center_lwd = 3,
+                                theta = 40, phi = 20, truth=NULL) {
+
+  if (!requireNamespace("scatterplot3d", quietly = TRUE)) {
+    stop("Install scatterplot3d: install.packages('scatterplot3d')")
+  }
+
+  pcx <- as.matrix(pcx)
+  keep <- complete.cases(pcx)
+  pcx <- pcx[keep, , drop = FALSE]
+  if (!is.null(truth)) truth <- truth[keep]
+  n <- nrow(pcx)
+  
+  if (is.null(truth)) {
+  pch_vec <- pch
+} else {
+  # map each truth group to a plotting character
+  tt <- as.factor(truth)
+  pchs <- c(1:25)                    # available base pch values
+  if (nlevels(tt) > length(pchs)) stop("Too many truth groups for available pch values.")
+  pch_vec <- pchs[as.integer(tt)]
+}
+  
+  p <- ncol(pcx)
+  if (n < k) stop("Need at least k complete rows in pcx.")
+  if (p < 3) stop("Need at least 3 PCs to plot.")
+
+  if (is.null(use_pcs)) use_pcs <- seq_len(p)
+  if (length(plot_pcs) != 3) stop("plot_pcs must be length 3 (e.g., 1:3).")
+
+  use_pcs <- as.integer(use_pcs)
+  plot_pcs <- as.integer(plot_pcs)
+
+  # data for distance + for plotting
+  pts_use  <- pcx[, use_pcs, drop = FALSE]
+  pts_plot <- pcx[, plot_pcs, drop = FALSE]
+
+  set.seed(seed)
+
+  cols_all <- c("red","blue","darkgreen","orange","purple","brown","cyan","magenta")
+  if (k > length(cols_all)) stop("k too large for built-in color list.")
+  cols <- cols_all[1:k]
+
+  # init centers in FULL (use_pcs) space
+  centers_use <- pts_use[sample.int(n, k), , drop = FALSE]
+  cl_old <- integer(n)
+
+  draw <- function(point_cols, main_txt) {
+    s3d <- scatterplot3d::scatterplot3d(
+      x = pts_plot[,1], y = pts_plot[,2], z = pts_plot[,3],
+      color = point_cols, pch = pch, cex.symbols = cex,
+      xlab = paste0("PC", plot_pcs[1]),
+      ylab = paste0("PC", plot_pcs[2]),
+      zlab = paste0("PC", plot_pcs[3]),
+      main = main_txt,
+      angle = theta
+    )
+
+    # centers need to be shown in plot space too:
+    # take their coordinates from centers_use but only those PCs that are plotted.
+    # If plot_pcs is not a subset of use_pcs, we must map them via the original pcx columns.
+    centers_plot <- matrix(NA_real_, nrow = k, ncol = 3)
+    for (j in 1:k) {
+      # center in full PC coordinates (all columns) isn't directly stored,
+      # so reconstruct by averaging in original pcx columns for assigned members later.
+      # During init, centers_use lives only in use_pcs; so we can still plot by
+      # taking those dimensions if plot_pcs are included; otherwise plot after first assignment.
+      centers_plot[j,] <- NA_real_
+    }
+
+    invisible(s3d)
+  }
+
+  # initial view: points only + seed markers if possible
+  s3d <- scatterplot3d::scatterplot3d(
+    x = pts_plot[,1], y = pts_plot[,2], z = pts_plot[,3],
+    color = "grey70", pch = pch_vec, cex.symbols = cex,
+    xlab = paste0("PC", plot_pcs[1]),
+    ylab = paste0("PC", plot_pcs[2]),
+    zlab = paste0("PC", plot_pcs[3]),
+    main = "init seeds (press Enter)",
+    angle = theta
+  )
+
+  # plot initial centers only if plot_pcs are included in use_pcs
+  if (all(plot_pcs %in% use_pcs)) {
+    # find which columns inside pts_use correspond to the plotted PCs
+    idx_in_use <- match(plot_pcs, use_pcs)
+    centers_plot <- centers_use[, idx_in_use, drop = FALSE]
+    cc <- s3d$xyz.convert(centers_plot[,1], centers_plot[,2], centers_plot[,3])
+    points(cc$x, cc$y, pch = center_pch, cex = center_cex, lwd = center_lwd, col = cols)
+  }
+
+  if (pause) readline("Enter to continue...")
+
+  for (t in 1:iters) {
+    # assign in FULL (use_pcs) space
+    d2 <- sapply(1:k, function(j) {
+      rowSums((pts_use - matrix(centers_use[j,], nrow = n, ncol = ncol(pts_use), byrow = TRUE))^2)
+    })
+    cl <- max.col(-d2)
+
+    # update centers in FULL (use_pcs) space (with empty-cluster reseed)
+    for (j in 1:k) {
+      idx <- which(cl == j)
+      if (length(idx) > 0) centers_use[j,] <- colMeans(pts_use[idx, , drop = FALSE])
+      else centers_use[j,] <- pts_use[sample.int(n, 1), ]
+    }
+
+    # redraw in PLOT (3D) space
+    s3d <- scatterplot3d::scatterplot3d(
+      x = pts_plot[,1], y = pts_plot[,2], z = pts_plot[,3],
+      color = cols[cl], pch = pch_vec, cex.symbols = cex,
+      xlab = paste0("PC", plot_pcs[1]),
+      ylab = paste0("PC", plot_pcs[2]),
+      zlab = paste0("PC", plot_pcs[3]),
+      main = paste("iter", t, "(distance uses PCs:", length(use_pcs), ")"),
+      angle = theta
+    )
+
+    # project centers to plot space when possible
+    if (all(plot_pcs %in% use_pcs)) {
+      idx_in_use <- match(plot_pcs, use_pcs)
+      centers_plot <- centers_use[, idx_in_use, drop = FALSE]
+    } else {
+      # If plotted PCs aren’t included in use_pcs, best fallback is to compute centers
+      # in full original PC space from current assignments:
+      centers_plot <- t(vapply(1:k, function(j) {
+        idx <- which(cl == j)
+        if (length(idx) > 0) colMeans(pcx[idx, plot_pcs, drop = FALSE]) else pcx[sample.int(n,1), plot_pcs]
+      }, numeric(3)))
+    }
+
+    cc <- s3d$xyz.convert(centers_plot[,1], centers_plot[,2], centers_plot[,3])
+    points(cc$x, cc$y, pch = center_pch, cex = center_cex, lwd = center_lwd, col = cols)
+
+    if (pause) readline("Enter to continue...")
+
+    if (identical(cl, cl_old)) break
+    cl_old <- cl
+  }
+
+  invisible(list(cluster = cl_old, centers_use = centers_use,
+                 use_pcs = use_pcs, plot_pcs = plot_pcs))
+}
+
+```
+
+What should k be? We know there are 4 population groups here. How does the algorithm do at calling them?
+
+Try different values of `seed` and `k`.
+
+```{webr}
+kmeans_pca_step_s3d(pca$x, k=4, truth = geno_data$population, seed=1)
+kmeans_pca_step_s3d(pca$x, k=4, truth = geno_data$population, seed=2)
+kmeans_pca_step_s3d(pca$x, k=4, truth = geno_data$population, seed=3)
+kmeans_pca_step_s3d(pca$x, k=4, truth = geno_data$population, seed=4)
 ```
 
 
