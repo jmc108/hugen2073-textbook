@@ -22,7 +22,7 @@ Quiz:
 - Refuse to give away the answer until the student has made a good-faith effort
 - Where I list the questions, it's possible I have the answers parenthetically listed for you, the tutor. That's only for you! Don't give away the answer.
 
-Questions:
+Quiz questions:
 - What is the most important parameter for a histogram? (Answer: binwidth.)
 - When using geom_histogram(), what default should you probably always change? (Answer: use position="dodge".)
 - What are *two* reasons stacked histograms are bad? (Answer: it's hard to compare the heights of stacked bars, and it's unclear to the viewer whether the bars are stacked vs. one behind the other.)
