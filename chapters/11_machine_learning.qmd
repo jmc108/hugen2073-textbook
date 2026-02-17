@@ -120,12 +120,91 @@ plot(X[,1],X[,300])
 
 ::: {.callout-tip collapse="true"}
 
-### Exercise 3
+### "Exercise" 3 (curse of dimensionality)
+
+In higher dimensions, points tend to become equidistant.
 
 ```{webr}
-
+# 3a Distance concentration
+# Draw 200 points from a normal distribution in d dimensions
+# How close are the closest pair? How far are the furthest pair?
+# Get the ratio of those distances (biggest to smallest)
+set.seed(1)
+distance_spread <- function(d, n=200) {
+  X1 <- matrix(rnorm(n*d), nrow=n)
+  D <- as.matrix(dist(X1))
+  D <- D[upper.tri(D)]
+  c(min=min(D), max=max(D), mean=mean(D))
+}
+# Do this in a bunch of dimensions from 2 to 10,000
+dims <- c(2, 5, 10, 50, 100, 500, 1000, 10000)
+results <- sapply(dims, distance_spread)
+ratio <- results["min",] / results["max",]
+plot(dims, ratio, type="b",
+     xlab="Dimension",
+     ylab="Min/max distance ratio",
+     main="Distance concentration")
 ```
 
+In higher dimensions, most of the volume is "near the boundary."
+
+```{webr}
+# 3b Volume explosion
+# It's pretty obvious that measure increases exponentially with dimension
+# But also see that most of the space is near the "boundary"
+# (The unit ball is *inside* the unit cube in each space)
+vol_ratio <- function(d) {
+  (pi^(d/2) / gamma(d/2 + 1)) / (2^d)
+}
+dims <- 1:20
+ratios <- sapply(dims, vol_ratio)
+plot(dims, ratios, type="b",
+     xlab="Dimension",
+     ylab="Volume of unit ball / unit cube")
+```
+
+In higher dimensions, there is a lot of empty space.
+
+```{webr}
+# 3c Sparsity
+# The average distance between uniform points gets bigger with dimension
+dims <- 1:50
+mean_dist <- sapply(dims, function(d) {
+  X1 <- matrix(runif(1000*d), ncol=d)
+  mean(dist(X1))
+})
+plot(dims, mean_dist, type="b",
+     xlab="Dimension",
+     ylab="Mean distance (uniform cube)")
+```
+
+In high-dimensional datasets, noise can look like structure.
+
+```{webr}
+# 3d "Hallucinating" structure
+# Simulate random data
+set.seed(1)
+n <- 400
+d <- 100
+X1 <- matrix(rnorm(n*d), nrow=n)
+# Apply fancy ML stuff!
+# PCA for visualization
+# K-means clustering in original high-D space
+pca <- prcomp(X1, scale.=TRUE)
+Z <- pca$x[,1:2]
+# Plot the clusters
+# Wow, we found patterns in the data! (But the data is random and meaningless)
+km <- kmeans(X1, centers=4, nstart=50)
+plot(Z, col=km$cluster, pch=16,
+     xlab="PC1", ylab="PC2",
+     main="Pure noise + k-means clustering")
+# Draw convex hulls to exaggerate cluster appearance
+for (k in 1:4) {
+  pts <- Z[km$cluster == k, ]
+  hull <- chull(pts)
+  polygon(pts[hull, ], border=k, lwd=2)
+}
+```
 
 :::
 
@@ -133,11 +212,46 @@ plot(X[,1],X[,300])
 
 ### Exercise 4
 
-```{webr}
+Let's apply PCA to the two datasets from Exercises 1-2 (`X` and `pcadata`).
 
+- Apply PCA to `X`
+
+- Use the `prcomp` function
+
+- Try a 2D plot of the PCs (use a small plotting symbol, like `pch="."`)
+
+```{webr}
+pca <- prcomp(X)
+pc1 <- pca$x[,1]
+pc2 <- pca$x[,2]
+plot(pc1,pc2, pch=".")
 ```
 
+- Now do the same for `geno_data`
 
+- Are there any variables you should leave out?
+
+- Make a 2D plot - how do you interpret it?
+
+- Do you wonder anything about PC3? Plot it, too.
+
+```{webr}
+library("plotly")
+pca <- prcomp(geno_data[,c(-1,-2)])
+pc1 <- pca$x[,1]
+pc2 <- pca$x[,2]
+plot(pc1,pc2, col=factor(geno_data$population))
+
+pc3 <- pca$x[,3]
+pcdata <- data.frame(pc1=pc1, pc2=pc2, pc3=pc3, group=geno_data$population)
+plot_ly(pcdata,
+        x = ~pc1,
+        y = ~pc2,
+        z = ~pc3,
+        color = ~group,
+        type = "scatter3d",
+        mode = "markers")
+```
 :::
 
 ::: {.callout-tip collapse="true"}
