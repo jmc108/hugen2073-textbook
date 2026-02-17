@@ -169,7 +169,7 @@ par(op)
 
 ### Exercise 3
 # 3a Distance concentration
-# Draw 200 points from a nromal distribution in d dimensions
+# Draw 200 points from a normal distribution in d dimensions
 # How close are the closest pair? How far are the furthest pair?
 # Get the ratio of those distances (biggest to smallest)
 set.seed(1)
@@ -185,7 +185,7 @@ results <- sapply(dims, distance_spread)
 ratio <- results["min",] / results["max",]
 plot(dims, ratio, type="b",
      xlab="Dimension",
-     ylab="Min/Max distance ratio",
+     ylab="Min/max distance ratio",
      main="Distance concentration")
 
 # 3b Volume explosion
