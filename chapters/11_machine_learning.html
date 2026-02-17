@@ -405,7 +405,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"library(\"tidyverse\")\n# Read data\ngeno_data <- read.csv(\"https://jmc108.github.io/hugen2073-textbook/exercises/11_machine_learning/genotypes.csv\")\n# Peek at variables\ngeno_data[1:10,1:6]\n# n and p\ndim(geno_data)\n# Scatterplot of 2 variables\ngeno_data %>% \n  ggplot()+\n  geom_point(aes(x=rs1695824, y=rs13328662))\n# Add some noise to clarify\ngeno_data %>% \n  ggplot()+\n  geom_jitter(aes(x=rs1695824, y=rs13328662), width=0.05, height=0.05)","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# Load data\nload(url(\"https://jmc108.github.io/hugen2073-textbook/exercises/11_machine_learning/pcadata.RData\"))\n# Inspect\nX[1:5,1:5]\ndim(X)\n# Scatterplot of two features\nplot(X[,1],X[,300])","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# 3a Distance concentration\n# Draw 200 points from a normal distribution in d dimensions\n# How close are the closest pair? How far are the furthest pair?\n# Get the ratio of those distances (biggest to smallest)\nset.seed(1)\ndistance_spread <- function(d, n=200) {\n  X1 <- matrix(rnorm(n*d), nrow=n)\n  D <- as.matrix(dist(X1))\n  D <- D[upper.tri(D)]\n  c(min=min(D), max=max(D), mean=mean(D))\n}\n# Do this in a bunch of dimensions from 2 to 10,000\ndims <- c(2, 5, 10, 50, 100, 500, 1000, 10000)\nresults <- sapply(dims, distance_spread)\nratio <- results[\"min\",] / results[\"max\",]\nplot(dims, ratio, type=\"b\",\n     xlab=\"Dimension\",\n     ylab=\"Min/max distance ratio\",\n     main=\"Distance concentration\")","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# 3b Volume explosion\n# It's pretty obvious that measure increases exponentially with dimension\n# But also see that most of the space is near the \"boundary\"\n# (The unit ball is *inside* the unit cube in each space)\nvol_ratio <- function(d) {\n  (pi^(d/2) / gamma(d/2 + 1)) / (2^d)\n}\ndims <- 1:20\nratios <- sapply(dims, vol_ratio)\nplot(dims, ratios, type=\"b\",\n     xlab=\"Dimension\",\n     ylab=\"Volume of unit ball / unit cube\")","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# 3c Sparsity\n# The average distance between uniform points gets bigger with dimension\ndims <- 1:50\nmean_dist <- sapply(dims, function(d) {\n  X1 <- matrix(runif(1000*d), ncol=d)\n  mean(dist(X1))\n})\nplot(dims, mean_dist, type=\"b\",\n     xlab=\"Dimension\",\n     ylab=\"Mean distance (uniform cube)\")","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# 3d \"Hallucinating\" structure\n# Simulate random data\nset.seed(1)\nn <- 400\nd <- 100\nX1 <- matrix(rnorm(n*d), nrow=n)\n# Apply fancy ML stuff!\n# PCA for visualization\n# K-means clustering in original high-D space\npca <- prcomp(X1, scale.=TRUE)\nZ <- pca$x[,1:2]\n# Plot the clusters\n# Wow, we found patterns in the data! (But the data is random and meaningless)\nkm <- kmeans(X1, centers=4, nstart=50)\nplot(Z, col=km$cluster, pch=16,\n     xlab=\"PC1\", ylab=\"PC2\",\n     main=\"Pure noise + k-means clustering\")\n# Draw convex hulls to exaggerate cluster appearance\nfor (k in 1:4) {\n  pts <- Z[km$cluster == k, ]\n  hull <- chull(pts)\n  polygon(pts[hull, ], border=k, lwd=2)\n}","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"pca <- prcomp(X)\npc1 <- pca$x[,1]\npc2 <- pca$x[,2]\nplot(pc1,pc2, pch=\".\")","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(\"plotly\")\npca <- prcomp(geno_data[,c(-1,-2)])\npc1 <- pca$x[,1]\npc2 <- pca$x[,2]\nplot(pc1,pc2, col=factor(geno_data$population))\n\npc3 <- pca$x[,3]\npcdata <- data.frame(pc1=pc1, pc2=pc2, pc3=pc3, group=geno_data$population)\nplot_ly(pcdata,\n        x = ~pc1,\n        y = ~pc2,\n        z = ~pc3,\n        color = ~group,\n        type = \"scatter3d\",\n        mode = \"markers\")","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"library(\"tidyverse\")\n# Read data\ngeno_data <- read.csv(\"https://jmc108.github.io/hugen2073-textbook/exercises/11_machine_learning/genotypes.csv\")\n# Peek at variables\ngeno_data[1:10,1:6]\n# n and p\ndim(geno_data)\n# Scatterplot of 2 variables\ngeno_data %>% \n  ggplot()+\n  geom_point(aes(x=rs1695824, y=rs13328662))\n# Add some noise to clarify\ngeno_data %>% \n  ggplot()+\n  geom_jitter(aes(x=rs1695824, y=rs13328662), width=0.05, height=0.05)","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# Load data\nload(url(\"https://jmc108.github.io/hugen2073-textbook/exercises/11_machine_learning/pcadata.RData\"))\n# Inspect\nX[1:5,1:5]\ndim(X)\n# Scatterplot of two features\nplot(X[,1],X[,300])","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# 3a Distance concentration\n# Draw 200 points from a normal distribution in d dimensions\n# How close are the closest pair? How far are the furthest pair?\n# Get the ratio of those distances (biggest to smallest)\nset.seed(1)\ndistance_spread <- function(d, n=200) {\n  X1 <- matrix(rnorm(n*d), nrow=n)\n  D <- as.matrix(dist(X1))\n  D <- D[upper.tri(D)]\n  c(min=min(D), max=max(D), mean=mean(D))\n}\n# Do this in a bunch of dimensions from 2 to 10,000\ndims <- c(2, 5, 10, 50, 100, 500, 1000, 10000)\nresults <- sapply(dims, distance_spread)\nratio <- results[\"min\",] / results[\"max\",]\nplot(dims, ratio, type=\"b\",\n     xlab=\"Dimension\",\n     ylab=\"Min/max distance ratio\",\n     main=\"Distance concentration\")","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# 3b Volume explosion\n# It's pretty obvious that measure increases exponentially with dimension\n# But also see that most of the space is near the \"boundary\"\n# (The unit ball is *inside* the unit cube in each space)\nvol_ratio <- function(d) {\n  (pi^(d/2) / gamma(d/2 + 1)) / (2^d)\n}\ndims <- 1:20\nratios <- sapply(dims, vol_ratio)\nplot(dims, ratios, type=\"b\",\n     xlab=\"Dimension\",\n     ylab=\"Volume of unit ball / unit cube\")","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# 3c Sparsity\n# The average distance between uniform points gets bigger with dimension\ndims <- 1:50\nmean_dist <- sapply(dims, function(d) {\n  X1 <- matrix(runif(1000*d), ncol=d)\n  mean(dist(X1))\n})\nplot(dims, mean_dist, type=\"b\",\n     xlab=\"Dimension\",\n     ylab=\"Mean distance (uniform cube)\")","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# 3d \"Hallucinating\" structure\n# Simulate random data\nset.seed(1)\nn <- 400\nd <- 100\nX1 <- matrix(rnorm(n*d), nrow=n)\n# Apply fancy ML stuff!\n# PCA for visualization\n# K-means clustering in original high-D space\npca <- prcomp(X1, scale.=TRUE)\nZ <- pca$x[,1:2]\n# Plot the clusters\n# Wow, we found patterns in the data! (But the data is random and meaningless)\nkm <- kmeans(X1, centers=4, nstart=50)\nplot(Z, col=km$cluster, pch=16,\n     xlab=\"PC1\", ylab=\"PC2\",\n     main=\"Pure noise + k-means clustering\")\n# Draw convex hulls to exaggerate cluster appearance\nfor (k in 1:4) {\n  pts <- Z[km$cluster == k, ]\n  hull <- chull(pts)\n  polygon(pts[hull, ], border=k, lwd=2)\n}","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"pca <- prcomp(X)\npc1 <- pca$x[,1]\npc2 <- pca$x[,2]\nplot(pc1,pc2, pch=\".\")","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(\"plotly\")\nlibrary(\"scatterplot3d\")\npca <- prcomp(geno_data[,c(-1,-2)])\npc1 <- pca$x[,1]\npc2 <- pca$x[,2]\nplot(pc1,pc2, col=factor(geno_data$population))\n\npc3 <- pca$x[,3]\npcdata <- data.frame(pc1=pc1, pc2=pc2, pc3=pc3, group=geno_data$population)\nplot_ly(pcdata,\n        x = ~pc1,\n        y = ~pc2,\n        z = ~pc3,\n        color = ~group,\n        type = \"scatter3d\",\n        mode = \"markers\")\nscatterplot3d(pcdata$pc1,\n              pcdata$pc2,\n              pcdata$pc3,\n              color=as.numeric(factor(pcdata$group)))","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# Variance explained\nvar_explained <- pca$sdev^2\nprop_var <- var_explained / sum(var_explained)\n# Scree plot\npar(mfrow=c(1,2))\nplot(prop_var,\n     xlab = \"Principal Component\",\n     ylab = \"Proportion of Variance Explained\")\nplot(prop_var,\n     xlab = \"Principal Component\",\n     ylab = \"Proportion of Variance Explained\",\n     xlim=c(1,20))\npar(mfrow=c(1,1))","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(\"GGally\")\np <- ggparcoord(\n  cbind(\n    pca$x[,1:20],\n    data.frame(geno_data$population)\n    ),\n  columns = 1:20,\n  groupColumn = 21) \np$layers[[1]]$aes_params$linewidth <- 0.2\np","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"pca <- prcomp(geno_data[geno_data$population %in% c(\"HCB\",\"JPT\"),c(-1,-2)])\npc1 <- pca$x[,1]\npc2 <- pca$x[,2]\nplot(pc1,pc2, col=factor(geno_data$population[geno_data$population %in% c(\"HCB\",\"JPT\")]))\nvar_explained <- pca$sdev^2\nprop_var <- var_explained / sum(var_explained)\nplot(prop_var,\n     xlab = \"Principal Component\",\n     ylab = \"Proportion of Variance Explained\")\nplot(prop_var,\n     xlab = \"Principal Component\",\n     ylab = \"Proportion of Variance Explained\",\n     xlim=c(1,20))","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggparcoord(\n  cbind(\n    pca$x[,1:20],\n    data.frame(geno_data$population[geno_data$population %in% c(\"HCB\",\"JPT\")])\n  ),\n  columns = 1:20,\n  groupColumn = 21\n) + labs(colour = \"Population\")","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# Look at these SNP intensity plots from a genotyping array\n# Imagine we want to call the genotypes by clustering the points\n# First, how many clusters should we expect/use?\n# Second, pick a SNP you think is well-genotped and a SNP you think is poorly genoyped\n# We will try clustering them with k-means\nload(url(\"https://jmc108.github.io/hugen2073-textbook/exercises/11_machine_learning/intensities.RData\"))\npar(mfrow=c(6,6), mar=c(1,1,1,1))\nfor (i in 1:36) {\n  plot(xintensity[i,], yintensity[i,],\n       main=i, cex=0.4,\n       xlab=\"\", ylab=\"\",\n       xaxt=\"n\", yaxt=\"n\")\n}\npar(mfrow=c(1,1))","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"k <- 3\nkmeans_click <- function(x, y, k = 3, iters = 20, seed = 1) {\n  set.seed(seed)\n  pts <- cbind(as.numeric(x), as.numeric(y))\n  pts <- pts[complete.cases(pts), , drop = FALSE]\n  n <- nrow(pts)\n  \n  cols <- c(\"red\",\"blue\",\"darkgreen\",\"orange\",\"purple\",\"brown\",\"cyan\",\"magenta\")[1:k]\n  centers <- pts[sample.int(n, k), , drop = FALSE]\n  \n  # show initial random seeds\n  plot(pts[,1], pts[,2], pch=16, col=\"grey70\", xlab=\"X\", ylab=\"Y\",\n       main=\"init seeds (click)\")\n  points(centers[,1], centers[,2], pch=4, cex=3, lwd=3, col=cols)\n  locator(1)\n  \n  cl_old <- integer(n)\n  \n  for (t in 1:iters) {\n    # assign\n    d2 <- sapply(1:k, function(j)\n      (pts[,1]-centers[j,1])^2 + (pts[,2]-centers[j,2])^2\n    )\n    cl <- max.col(-d2)\n    \n    # update (with empty-cluster reseed)\n    for (j in 1:k) {\n      idx <- which(cl == j)\n      if (length(idx) > 0) centers[j,] <- colMeans(pts[idx, , drop=FALSE])\n      else centers[j,] <- pts[sample.int(n, 1), ]\n    }\n    \n    plot(pts[,1], pts[,2], pch=16, col=cols[cl], xlab=\"X\", ylab=\"Y\",\n         main=paste(\"iter\", t, \"(click)\"))\n    points(centers[,1], centers[,2], pch=4, cex=3, lwd=3, col=cols)\n    locator(1)\n    \n    if (identical(cl, cl_old)) break\n    cl_old <- cl\n  }\n  \n  invisible(list(cluster=cl, centers=centers))\n}","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# Succeeds?\ni <- 4\nx <-  xintensity[i,]\ny <-  yintensity[i,]\nkmeans_click(x, y, k = 3, seed = 4)\n\n# Fails?\ni <- 4\nx <-  xintensity[i,]\ny <-  yintensity[i,]\nkmeans_click(x, y, k = 3, seed = 2)\n\n# What do you think of these clusters?\ni <- 33\nx <-  xintensity[i,]\ny <-  yintensity[i,]\nkmeans_click(x, y, k = 3, seed = 4)","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -2379,6 +2379,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>Make a scree plot to show the importance of the PCs. How many look “interesting”?</p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
@@ -2396,6 +2397,11 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>Make a parallel coordinate plot, colored by population</p>
+<ul>
+<li><p>How many PCs should you use for the plot?</p></li>
+<li><p>Tryo to interpret the plot</p></li>
+</ul>
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
@@ -2413,6 +2419,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>Repeat exercise 6 for only the HCB+JPT subset of the data. Include the scatterplot of the first 2 PCs and the scree plot(s).</p>
 <div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
@@ -2430,6 +2437,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>Repeat exercise 6 for only the HCB+JPT subset of the data.</p>
 <div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
@@ -2447,7 +2455,20 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p><code>xintensity</code> and <code>yintensity</code> contain genotyping array data, namely each sample’s intensity for each probe.</p>
+<p>First, let’s look at scatterplots of the intensities for a few SNPs.</p>
+<ul>
+<li><p>How many clusters should we expect/use? Why?</p></li>
+<li><p>Pick a SNP (a plot number) that looks good (well-genotyped)</p></li>
+<li><p>Pick one that looks poorly genotyped</p></li>
+</ul>
 <div id="qwebr-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Here’s a function that will implement an interactive k-means algorithm to cluster the data. You don’t need to change anything in this chunk. You’ll run the <code>kmeans_click</code> function in the chunk after.</p>
+<div id="qwebr-insertion-location-14"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Now run k-means for the two SNPs you picked. For each one, try several different values of <code>seed</code>.</p>
+<div id="qwebr-insertion-location-15"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -2464,7 +2485,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="qwebr-insertion-location-14"></div>
+<div id="qwebr-insertion-location-16"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
@@ -3183,68 +3204,74 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a><span class="in">library("plotly")</span></span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a><span class="in">pca &lt;- prcomp(geno_data[,c(-1,-2)])</span></span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a><span class="in">pc1 &lt;- pca$x[,1]</span></span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a><span class="in">pc2 &lt;- pca$x[,2]</span></span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a><span class="in">plot(pc1,pc2, col=factor(geno_data$population))</span></span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a><span class="in">pc3 &lt;- pca$x[,3]</span></span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a><span class="in">pcdata &lt;- data.frame(pc1=pc1, pc2=pc2, pc3=pc3, group=geno_data$population)</span></span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a><span class="in">plot_ly(pcdata,</span></span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a><span class="in">        x = ~pc1,</span></span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a><span class="in">        y = ~pc2,</span></span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a><span class="in">        z = ~pc3,</span></span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="in">        color = ~group,</span></span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a><span class="in">        type = "scatter3d",</span></span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a><span class="in">        mode = "markers")</span></span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 5</span></span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a><span class="in">library("scatterplot3d")</span></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a><span class="in">pca &lt;- prcomp(geno_data[,c(-1,-2)])</span></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a><span class="in">pc1 &lt;- pca$x[,1]</span></span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a><span class="in">pc2 &lt;- pca$x[,2]</span></span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a><span class="in">plot(pc1,pc2, col=factor(geno_data$population))</span></span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a><span class="in">pc3 &lt;- pca$x[,3]</span></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a><span class="in">pcdata &lt;- data.frame(pc1=pc1, pc2=pc2, pc3=pc3, group=geno_data$population)</span></span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a><span class="in">plot_ly(pcdata,</span></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a><span class="in">        x = ~pc1,</span></span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a><span class="in">        y = ~pc2,</span></span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="in">        z = ~pc3,</span></span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a><span class="in">        color = ~group,</span></span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a><span class="in">        type = "scatter3d",</span></span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a><span class="in">        mode = "markers")</span></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a><span class="in">scatterplot3d(pcdata$pc1,</span></span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a><span class="in">              pcdata$pc2,</span></span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a><span class="in">              pcdata$pc3,</span></span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a><span class="in">              color=as.numeric(factor(pcdata$group)))</span></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 5</span></span>
 <span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 6</span></span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 7</span></span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>Make a scree plot to show the importance of the PCs. How many look "interesting"?</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a><span class="in"># Variance explained</span></span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a><span class="in">var_explained &lt;- pca$sdev^2</span></span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a><span class="in">prop_var &lt;- var_explained / sum(var_explained)</span></span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a><span class="in"># Scree plot</span></span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a><span class="in">par(mfrow=c(1,2))</span></span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a><span class="in">plot(prop_var,</span></span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a><span class="in">     xlab = "Principal Component",</span></span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a><span class="in">     ylab = "Proportion of Variance Explained")</span></span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a><span class="in">plot(prop_var,</span></span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a><span class="in">     xlab = "Principal Component",</span></span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a><span class="in">     ylab = "Proportion of Variance Explained",</span></span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a><span class="in">     xlim=c(1,20))</span></span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a><span class="in">par(mfrow=c(1,1))</span></span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
 <span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 6</span></span>
 <span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>Make a parallel coordinate plot, colored by population</span>
 <span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 8</span></span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How many PCs should you use for the plot?</span>
 <span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 9</span></span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tryo to interpret the plot</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a><span class="in">library("GGally")</span></span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a><span class="in">p &lt;- ggparcoord(</span></span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a><span class="in">  cbind(</span></span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a><span class="in">    pca$x[,1:20],</span></span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a><span class="in">    data.frame(geno_data$population)</span></span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a><span class="in">    ),</span></span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a><span class="in">  columns = 1:20,</span></span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a><span class="in">  groupColumn = 21) </span></span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a><span class="in">p$layers[[1]]$aes_params$linewidth &lt;- 0.2</span></span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a><span class="in">p</span></span>
 <span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a></span>
@@ -3252,14 +3279,164 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
 <span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 10</span></span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 7</span></span>
 <span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>Repeat exercise 6 for only the HCB+JPT subset of the data. Include the scatterplot of the first 2 PCs and the scree plot(s).</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a><span class="in">pca &lt;- prcomp(geno_data[geno_data$population %in% c("HCB","JPT"),c(-1,-2)])</span></span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a><span class="in">pc1 &lt;- pca$x[,1]</span></span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a><span class="in">pc2 &lt;- pca$x[,2]</span></span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a><span class="in">plot(pc1,pc2, col=factor(geno_data$population[geno_data$population %in% c("HCB","JPT")]))</span></span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="in">var_explained &lt;- pca$sdev^2</span></span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a><span class="in">prop_var &lt;- var_explained / sum(var_explained)</span></span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a><span class="in">plot(prop_var,</span></span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a><span class="in">     xlab = "Principal Component",</span></span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a><span class="in">     ylab = "Proportion of Variance Explained")</span></span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a><span class="in">plot(prop_var,</span></span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a><span class="in">     xlab = "Principal Component",</span></span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a><span class="in">     ylab = "Proportion of Variance Explained",</span></span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a><span class="in">     xlim=c(1,20))</span></span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 8</span></span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>Repeat exercise 6 for only the HCB+JPT subset of the data.</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a><span class="in">ggparcoord(</span></span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a><span class="in">  cbind(</span></span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a><span class="in">    pca$x[,1:20],</span></span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a><span class="in">    data.frame(geno_data$population[geno_data$population %in% c("HCB","JPT")])</span></span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a><span class="in">  ),</span></span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a><span class="in">  columns = 1:20,</span></span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a><span class="in">  groupColumn = 21</span></span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a><span class="in">) + labs(colour = "Population")</span></span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 9</span></span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a><span class="in">`xintensity`</span> and <span class="in">`yintensity`</span> contain genotyping array data, namely each sample's intensity for each probe.</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>First, let's look at scatterplots of the intensities for a few SNPs.</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How many clusters should we expect/use? Why?</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pick a SNP (a plot number) that looks good (well-genotyped)</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pick one that looks poorly genotyped</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a><span class="in"># Look at these SNP intensity plots from a genotyping array</span></span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a><span class="in"># Imagine we want to call the genotypes by clustering the points</span></span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a><span class="in"># First, how many clusters should we expect/use?</span></span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a><span class="in"># Second, pick a SNP you think is well-genotped and a SNP you think is poorly genoyped</span></span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a><span class="in"># We will try clustering them with k-means</span></span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a><span class="in">load(url("https://jmc108.github.io/hugen2073-textbook/exercises/11_machine_learning/intensities.RData"))</span></span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a><span class="in">par(mfrow=c(6,6), mar=c(1,1,1,1))</span></span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a><span class="in">for (i in 1:36) {</span></span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a><span class="in">  plot(xintensity[i,], yintensity[i,],</span></span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a><span class="in">       main=i, cex=0.4,</span></span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a><span class="in">       xlab="", ylab="",</span></span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a><span class="in">       xaxt="n", yaxt="n")</span></span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a><span class="in">par(mfrow=c(1,1))</span></span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>Here's a function that will implement an interactive k-means algorithm to cluster the data. You don't need to change anything in this chunk. You'll run the <span class="in">`kmeans_click`</span> function in the chunk after.</span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a><span class="in">k &lt;- 3</span></span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a><span class="in">kmeans_click &lt;- function(x, y, k = 3, iters = 20, seed = 1) {</span></span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a><span class="in">  set.seed(seed)</span></span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a><span class="in">  pts &lt;- cbind(as.numeric(x), as.numeric(y))</span></span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a><span class="in">  pts &lt;- pts[complete.cases(pts), , drop = FALSE]</span></span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a><span class="in">  n &lt;- nrow(pts)</span></span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a><span class="in">  cols &lt;- c("red","blue","darkgreen","orange","purple","brown","cyan","magenta")[1:k]</span></span>
+<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a><span class="in">  centers &lt;- pts[sample.int(n, k), , drop = FALSE]</span></span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a><span class="in">  # show initial random seeds</span></span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a><span class="in">  plot(pts[,1], pts[,2], pch=16, col="grey70", xlab="X", ylab="Y",</span></span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a><span class="in">       main="init seeds (click)")</span></span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a><span class="in">  points(centers[,1], centers[,2], pch=4, cex=3, lwd=3, col=cols)</span></span>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a><span class="in">  locator(1)</span></span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a><span class="in">  cl_old &lt;- integer(n)</span></span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a><span class="in">  for (t in 1:iters) {</span></span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a><span class="in">    # assign</span></span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a><span class="in">    d2 &lt;- sapply(1:k, function(j)</span></span>
+<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a><span class="in">      (pts[,1]-centers[j,1])^2 + (pts[,2]-centers[j,2])^2</span></span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a><span class="in">    )</span></span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a><span class="in">    cl &lt;- max.col(-d2)</span></span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a><span class="in">    # update (with empty-cluster reseed)</span></span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a><span class="in">    for (j in 1:k) {</span></span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a><span class="in">      idx &lt;- which(cl == j)</span></span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a><span class="in">      if (length(idx) &gt; 0) centers[j,] &lt;- colMeans(pts[idx, , drop=FALSE])</span></span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a><span class="in">      else centers[j,] &lt;- pts[sample.int(n, 1), ]</span></span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a><span class="in">    }</span></span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a><span class="in">    plot(pts[,1], pts[,2], pch=16, col=cols[cl], xlab="X", ylab="Y",</span></span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a><span class="in">         main=paste("iter", t, "(click)"))</span></span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a><span class="in">    points(centers[,1], centers[,2], pch=4, cex=3, lwd=3, col=cols)</span></span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a><span class="in">    locator(1)</span></span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a><span class="in">    if (identical(cl, cl_old)) break</span></span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a><span class="in">    cl_old &lt;- cl</span></span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a><span class="in">  invisible(list(cluster=cl, centers=centers))</span></span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>Now run k-means for the two SNPs you picked. For each one, try several different values of <span class="in">`seed`</span>.</span>
+<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a><span class="in"># Succeeds?</span></span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a><span class="in">i &lt;- 4</span></span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a><span class="in">x &lt;-  xintensity[i,]</span></span>
+<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a><span class="in">y &lt;-  yintensity[i,]</span></span>
+<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a><span class="in">kmeans_click(x, y, k = 3, seed = 4)</span></span>
+<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a><span class="in"># Fails?</span></span>
+<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a><span class="in">i &lt;- 4</span></span>
+<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a><span class="in">x &lt;-  xintensity[i,]</span></span>
+<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a><span class="in">y &lt;-  yintensity[i,]</span></span>
+<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a><span class="in">kmeans_click(x, y, k = 3, seed = 2)</span></span>
+<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a><span class="in"># What do you think of these clusters?</span></span>
+<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a><span class="in">i &lt;- 33</span></span>
+<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a><span class="in">x &lt;-  xintensity[i,]</span></span>
+<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a><span class="in">y &lt;-  yintensity[i,]</span></span>
+<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a><span class="in">kmeans_click(x, y, k = 3, seed = 4)</span></span>
+<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
+<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 10</span></span>
+<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
