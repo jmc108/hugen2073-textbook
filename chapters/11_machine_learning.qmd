@@ -80,13 +80,130 @@ format:
 - Do any of the plots you made demonstrate that structure?
 
 ```{webr}
-geno_data <- read.csv()
+library("tidyverse")
+# Read data
+geno_data <- read.csv("https://jmc108.github.io/hugen2073-textbook/exercises/11_machine_learning/genotypes.csv")
+# Peek at variables
+geno_data[1:10,1:6]
+# n and p
+dim(geno_data)
+# Scatterplot of 2 variables
+geno_data %>% 
+  ggplot()+
+  geom_point(aes(x=rs1695824, y=rs13328662))
+# Add some noise to clarify
+geno_data %>% 
+  ggplot()+
+  geom_jitter(aes(x=rs1695824, y=rs13328662), width=0.05, height=0.05)
 ```
 
 :::
 
+::: {.callout-tip collapse="true"}
+
+### Exercise 2
+
+Try the same thing for another dataset, `X` (contained in `pcadata.Rdata`).
+
+```{webr}
+# Load data
+load(url("https://jmc108.github.io/hugen2073-textbook/exercises/11_machine_learning/pcadata.RData"))
+# Inspect
+X[1:5,1:5]
+dim(X)
+# Scatterplot of two features
+plot(X[,1],X[,300])
+```
 
 
+:::
 
+::: {.callout-tip collapse="true"}
+
+### Exercise 3
+
+```{webr}
+
+```
+
+
+:::
+
+::: {.callout-tip collapse="true"}
+
+### Exercise 4
+
+```{webr}
+
+```
+
+
+:::
+
+::: {.callout-tip collapse="true"}
+
+### Exercise 5
+
+```{webr}
+
+```
+
+
+:::
+
+::: {.callout-tip collapse="true"}
+
+### Exercise 6
+
+```{webr}
+
+```
+
+
+:::
+
+::: {.callout-tip collapse="true"}
+
+### Exercise 7
+
+```{webr}
+
+```
+
+
+:::
+
+::: {.callout-tip collapse="true"}
+
+### Exercise 8
+
+```{webr}
+
+```
+
+
+:::
+
+::: {.callout-tip collapse="true"}
+
+### Exercise 9
+
+```{webr}
+
+```
+
+
+:::
+
+::: {.callout-tip collapse="true"}
+
+### Exercise 10
+
+```{webr}
+
+```
+
+
+:::
 
 
