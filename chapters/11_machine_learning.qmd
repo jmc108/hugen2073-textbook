@@ -644,7 +644,8 @@ kmeans_pca_step_s3d(pca$x, k=4, truth = geno_data$population, seed=4)
 #library(golubEsets)
 library(glmnet)
 
-load("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/11_machine_learning/example1.RData")
+load(url("https://jmc108.github.io/hugen2073-textbook/exercises/11_machine_learning/example1.RData"))
+
 
 n <- nrow(X); p <- ncol(X)
 cat("n =", n, "p =", p, "\n")
@@ -798,7 +799,7 @@ barplot(acc_vec,
 library(glmnet)
 library(pROC)
 
-load("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/11_machine_learning/example2.RData")
+load(url("https://jmc108.github.io/hugen2073-textbook/exercises/11_machine_learning/example2.RData"))
 
 
 
