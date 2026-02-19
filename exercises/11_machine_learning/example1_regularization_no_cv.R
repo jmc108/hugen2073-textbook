@@ -9,12 +9,24 @@ library(glmnet)
 
 # Data
 data(Golub_Merge)
-
 X <- t(exprs(Golub_Merge))  # samples x genes
 y <- factor(pData(Golub_Merge)$ALL.AML)  # "ALL" vs "AML"
+
 y_bin <- ifelse(y == "AML", 1, 0)        # AML=1, ALL=0 (arbitrary)
 
 gene_ids <- featureNames(Golub_Merge)    # probe ids / gene identifiers
+
+save.image("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/11_machine_learning/example1.RData")
+
+detach("package:golubEsets", unload = TRUE)
+detach("package:Biobase", unload = TRUE)
+detach("package:BiocGenerics", unload = TRUE)
+
+#library(golubEsets)
+library(glmnet)
+
+load("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/11_machine_learning/example1.RData")
+
 n <- nrow(X); p <- ncol(X)
 cat("n =", n, "p =", p, "\n")
 
