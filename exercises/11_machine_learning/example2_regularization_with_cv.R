@@ -36,13 +36,14 @@ y_bin <- ifelse(y == "AML", 1, 0)          # AML=1, ALL=0
 gene_ids <- featureNames(Golub_Merge)
 n <- nrow(X); p <- ncol(X)
 cat("n =", n, "p =", p, "\n")
-
-save.image("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/11_machine_learning/example2.RData")
-
-
+rm(Golub_Merge)
 detach("package:golubEsets", unload = TRUE)
 detach("package:Biobase", unload = TRUE)
 detach("package:BiocGenerics", unload = TRUE)
+save.image("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/11_machine_learning/example2.RData")
+
+
+
 
 #library(golubEsets)
 library(glmnet)
