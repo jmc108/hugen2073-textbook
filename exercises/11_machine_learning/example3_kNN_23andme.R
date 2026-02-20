@@ -201,9 +201,9 @@ ggplot(ref_pcs, aes(PC1, PC2, color = pop)) +
 
 
 
-
-#########
-########
+# JUNK ABOVE HERE
+######### 
+######## SETUP
 ######
 vcf_url <- "https://hgdownload.soe.ucsc.edu/gbdb/hg19/1000Genomes/phase3/ALL.chr10.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz"
 tbi_url <- paste0(vcf_url, ".tbi")
@@ -398,7 +398,13 @@ jon_pc2_flip <- sum(jon_scaled_flip * V[,2])
 jon_pc3_flip <- sum(jon_scaled_flip * V[,3])
 cat("Jon PCs if dosage flipped:", jon_pc1_flip, jon_pc2_flip, jon_pc3_flip, "\n")
 
-# ---- 3D PLOT ----
+
+save(ref_pcs,jon_pc1,jon_pc2,jon_pc3, file="/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/11_machine_learning/example3.RData")
+rm(list=ls())
+
+library(plotly)
+library(data.table)
+load(url("https://jmc108.github.io/hugen2073-textbook/exercises/11_machine_learning/example3.RData")) # ---- 3D PLOT ----
 p <- plot_ly(
   ref_pcs,
   x = ~PC1, y = ~PC2, z = ~PC3,
@@ -512,7 +518,6 @@ p2 <- add_trace(
 
 p2
 
-library(plotly)
 
 p3 <-
   ggplot() +
