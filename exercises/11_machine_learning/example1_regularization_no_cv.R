@@ -15,12 +15,13 @@ y <- factor(pData(Golub_Merge)$ALL.AML)  # "ALL" vs "AML"
 y_bin <- ifelse(y == "AML", 1, 0)        # AML=1, ALL=0 (arbitrary)
 
 gene_ids <- featureNames(Golub_Merge)    # probe ids / gene identifiers
-
-save.image("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/11_machine_learning/example1.RData")
-
+rm(Golub_Merge)
 detach("package:golubEsets", unload = TRUE)
 detach("package:Biobase", unload = TRUE)
 detach("package:BiocGenerics", unload = TRUE)
+save.image("/Users/jonathanchernus/Documents/Teaching/hugen2073-textbook/exercises/11_machine_learning/example1.RData")
+
+
 
 #library(golubEsets)
 library(glmnet)
