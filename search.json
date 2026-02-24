@@ -967,7 +967,7 @@
     "href": "chapters/14_shiny.html#suggested-reading",
     "title": "14  Shiny",
     "section": "14.4 Suggested Reading",
-    "text": "14.4 Suggested Reading",
+    "text": "14.4 Suggested Reading\nReproducible Medical Research with R: Chapter 35: A Gentle Introduction to Shiny",
     "crumbs": [
       "Visualization",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Shiny</span>"
