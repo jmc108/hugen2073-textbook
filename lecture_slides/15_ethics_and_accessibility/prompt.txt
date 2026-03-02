@@ -34,3 +34,5 @@ Rules:
 - Maintain a serious academic tone.
 
 Quiz questions:
+- Describe two common ways in which visualizations can mislead (either accidentally or on purpose).
+- Describe two ways you can improve accessibility of your figures.

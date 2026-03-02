@@ -34,3 +34,9 @@ Rules:
 - Maintain a serious academic tone.
 
 Quiz questions:
+- Explain the difference between vector and raster graphics and why it matters for GWAS plots.
+- Will R automatically save a figure in the proper format?
+- What is the y-axis on a Manhattan plot? Why?
+- What can you do to make a Manhattan plot faster and to make the file smaller? Would the same thing work for a Q-Q plot? Why?
+- Interpret the Q-Q plot on slide 55.
+- What is a LocusZoom plot? What exactly does the coloring represent?

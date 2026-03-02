@@ -34,3 +34,8 @@ Rules:
 - Maintain a serious academic tone.
 
 Quiz questions:
+- Describe the main structure of a minimal Shiny app. Include the absolute essentials and briefly describe what they do.
+- What does it mean for an element to be "reactive"?
+- What do you have to do to ensure that part of the output (or part of the back-end code evaluation) is reactive?
+- How do you pass user-supplied values from the ui to the server?
+- How do you pass reactive objects from the server back to the ui so that they're displayed in the main panel?
