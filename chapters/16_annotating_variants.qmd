@@ -50,7 +50,15 @@ format:
 
 ## Required Reading
 
+[Cano-Gamez, Eddie, and Gosia Trynka. “From GWAS to Function: Using Functional Genomics to Identify the Mechanisms Underlying Complex Diseases.” Frontiers in genetics vol. 11 424. 13 May. 2020, doi:10.3389/fgene.2020.00424](https://pmc.ncbi.nlm.nih.gov/articles/PMC7237642/)
+
+[Schipper, Marijn, and Danielle Posthuma. “Demystifying non-coding GWAS variants: an overview of computational tools and methods.” Human molecular genetics vol. 31,R1 (2022): R73-R83. doi:10.1093/hmg/ddac198](https://pmc.ncbi.nlm.nih.gov/articles/PMC9585674/)
+
 ## Suggested Reading
+
+[Biedrzycki, Richard J et al. “Spinning convincing stories for both true and false association signals.” Genetic epidemiology vol. 43,4 (2019): 356-364. doi:10.1002/gepi.22189](https://pmc.ncbi.nlm.nih.gov/articles/PMC6590226/)
+
+Strachan, Tom, and Andrew P. Read. Human Molecular Genetics. 5th ed, CRC press, Taylor & Francis group, 2019. (Read sections 10.5 and 16.)
 
 ## In-class Exercises
 

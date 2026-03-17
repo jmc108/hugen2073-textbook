@@ -34,3 +34,11 @@ Rules:
 - Maintain a serious academic tone.
 
 Quiz questions:
+- Why isn't it enough to simply publish the top SNPs in a GWAS? Or just a list of some genes?
+- Define linkage disequilibrium in your own words, and explain why it's relevant for GWAS.
+- If a GWAS reports a result like "SNP X was significantly associated with trait Y", what should you want to know about that SNP? (For the tutor: the answer I have in mind is the LD structure around it and what other SNPs nearby are associated. Plus all of their consequences/associations.)
+- True or false? GWAS hits are most often within genes.
+- What is an enhancer? How far away from the target gene can it be?
+- Explain the how the mechanism for the the association between FTO variants and BMI was figured out.
+- What does "annotating" a variant mean?
+- Explain what kind of risk is involved with annotating GWAS variants.
