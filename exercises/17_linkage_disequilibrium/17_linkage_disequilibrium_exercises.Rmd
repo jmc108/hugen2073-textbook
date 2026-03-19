@@ -1,0 +1,397 @@
+---
+title: "LDlinkR and VEP tutorial"
+date: "2025-03-25"
+output:
+  html_document:
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapse: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Tutorial
+
+Suppose you've just performed a GWAS of your trait (say, HDL levels in a population of European ancestry) and have found several significant associations you'd like to follow up on. The top association is `rs26540`.
+
+LDlink is a suite of web-based tools for querying/displaying different aspects of linkage disequilibrium. We'll be using the accompanying R package `LDlinkR`.
+
+Our goals for the first part of this tutorial are:
+
+* Find SNPs in LD with `rs26540` and the other top SNPs in some particular populations and see what other annotations we can get from `LDlinkR`
+
+* Use the expanded list of SNPs as input for the Variant Effect Predictor (VEP)
+
+Then, in the exercise after the tutorial, you can try to verify some claims made about top SNPs in a GWAS of COVID-19.
+
+## 1. Register to use `LDlinkR`
+
+Register here (https://ldlink.nci.nih.gov/?tab=apiaccess) with your name, email address, and institution; use a REAL email address. You will be emailed an access token. Copy and paste it below.
+
+```{r token, eval=F}
+my_access_token <- "2b4ff211ffc1" # This is Jon's access token!!! Use your own, not mine!
+```
+
+## 2. Install the package
+
+Install/load `LDlinkR` and ~~`haploR`~~. Install `data.table` if you don't have it. (Actually, don't install `haploR`, as haploReg was shut down and the package was removed from CRAN.)
+
+```{r get_packages, eval=F}
+# Install LDlinkR
+# install.packages("LDlinkR")  # You probably need to un-comment this line
+
+# Load packages (install data.table if you don't have it)
+library("data.table")
+library("LDlinkR")
+library("tidyverse")
+```
+
+## 3. Download and read in the input SNPs
+
+Download the file `lead_snps.txt`, a list of the 10 lead SNPs from your GWAS. Read into R, providing the correct path.
+
+```{r read_data, eval=F}
+# Set the path to the list of SNPs
+# Read them in
+# View them
+lead_snps_path <- "/Users/jonathanchernus/Documents/Teaching/2023s/hugen2073/lecture_slides/18_annotation_variants/lab_2023s/lead_snps.txt" # Change this path!
+top_snps <- read.table(file=lead_snps_path, header=F, as.is=T, col.names="snp")
+top_snps
+```
+
+## 4. List/choose available populations with `list_pop`
+
+We'd like to find proxies for these lead SNPs, i.e., SNPs that are in LD with our SNPs in some populations of interest. First, let's pick a few populations. Yoruba in Ibadan, Nigeria ("YRI") has been chosen; pick two more.
+
+```{r get_populations, eval=F}
+# This command lists the populations that we can use for LD
+# It also lists "codes" for referring to them in the functions used below
+# Pick two 
+list_pop()
+populations_chosen <- c("YRI", "MXL", "CHB") # Pick another two populations and fill in the pop_code
+```
+
+## 5. Find SNPs in LD with `LDproxy`
+
+The function `LDproxy` queries a single SNP in the specified population(s) and returns a data frame with a row for every SNP within 500kb of that SNP and also weakly in LD with it (R^2 > 0.01). We can filter for higher LD after querying.
+
+There are also columns with allele frequencies and other information. Since the function works with one SNP at a time, we'll loop over our 10 SNPs and store the information in a list.
+
+Note that the package includes another function called `LDproxy_batch` that will let you query multiple SNPs at once and write the output to a file. Notice that `LDproxy` also includes RegulomeDB "rank" in the output as well as a `Function` column for describing coding variants. 
+
+(You'll want to set this chunk to `eval=TRUE` after you get the code working. It takes a minute or two to run. Maybe with just one SNP at first.)
+```{r get_proxies, cache=TRUE, eval=FALSE}
+# Initialize an empty list
+# Loop over the 10 top snps we read in above
+# This takes a minute or two
+proxies <- list()
+
+for (i in 1:nrow(top_snps)) {
+  snp_temp <- top_snps$snp[i]
+  query_temp <- LDproxy(snp=snp_temp,
+                        pop=populations_chosen, # This uses the populations you chose
+                        r2d="r2", # This says which measure of LD to use (r^2 or D')
+                        token=my_access_token) # This uses your access token so you can get permission to access the API
+  proxies[[i]] <- query_temp # Store the output in a list
+  
+  # Print out a progress message
+  cat("Done with SNP #", i, "\n", sep="")
+  
+}
+
+# View some of the info provided
+head(proxies[[1]])
+```
+
+## 6. Cull the expanded SNP list
+
+Notice that all SNPs with R^2 > 0.01 within 500kb is a "loose" criterion. We should filter to find SNPs nearer to the GWAS hits and that are actually in high LD with them.
+
+Now, explore some of the functions of the SNPs.
+
+(You'll want to set this chunk to `eval=TRUE` after you get the code working.)
+```{r filter_proxies, eval=F}
+# Notice there are a lot of "proxies" even for just the first SNP
+dim(proxies[[1]])
+
+# Put all the proxies into a single data frame (right now they're in separate data frames)
+# Use rbindlist function for that
+# First we should add a column that says which top GWAS SNP each proxy is a proxy for
+# There are a lot of SNPs
+for (i in 1:nrow(top_snps)) {
+  proxies[[i]]$query_snp <- top_snps$snp[i]
+}
+proxies <- rbindlist(proxies)
+dim(proxies)
+
+# Now filter, using the "Distance"" column (i.e., distance from "proxy" to queried SNP") and R2 (i.e., pairwise LD)
+# Use a 50kb window around each SNP and retain only SNPs with R2 > 0.6
+# Now there are fewer
+proxies <- proxies %>% 
+  filter(abs(Distance < 50000) & R2 > 0.6)
+dim(proxies)
+
+# We can look at, for instance, the RegulomeDB ranks and Function of the proxies
+# Do any SNPs show strong evidence of regulatory function?
+# Do any affect protein coding?
+table(proxies$RegulomeDB, useNA="always")
+table(proxies$Function, useNA="always")
+```
+
+## 7. Look for trait assocations with `LDtrait`
+
+`LDtrait` searches for GWAS Catalog entries on your SNPs. The function uses LD thresholding, so plug in the original vector of 10 variants, not all the LD proxies.
+
+(You'll want to set this chunk to `eval=TRUE` after you get the code working.)
+```{r, eval=F}
+# Get associated traits
+traits <- LDtrait(snps=top_snps$snp, # Plug in the vector SNPs
+                  pop="CEU", # Pick population(s)
+                  r2d="r2", # Pick an LD measure
+                  r2d_threshold="0.6", # Pick an LD threshold
+                  win_size=50000, # Use a 50kb window
+                  token=my_access_token # USE YOUR TOKEN, NOT JON'S!!!!
+                  )
+
+# Explore this a little
+dim(traits)
+head(traits)
+
+# What traits are associated?
+table(traits$GWAS_Trait)
+```
+
+## 8. Write out the list of proxy SNPs from above as a table
+
+Write out the list of proxies (as a text file with one SNP per line, no header). You need to specify the file path/name. Call the file `top_hits_proxies.txt`.
+
+(You'll want to set this chunk to `eval=TRUE` after you get the code working.)
+```{r write_out_proxies, eval=F}
+# Set the path
+# Write out the list
+proxies_out_file <- "/Users/jonathanchernus/Documents/Teaching/2023s/hugen2073/lecture_slides/18_annotation_variants/lab_2023s/top_hits_proxies.txt" # Set the path to the file!
+write.table(x=proxies$RS_Number,
+            file=proxies_out_file,
+            row.names=F,
+            col.names=F,
+            quote=F,
+            sep="\n")
+```
+
+## 9. Plug the SNPs into VEP, download the results, read them into R
+
+Input `top_hits_proxies.txt` to VEP (https://useast.ensembl.org/Tools/VEP). Under the "Predictions" menu, make sure the box for CADD is checked. Also make sure the box `Phenotypes` is checked under `Additional annotations > Transcript annotation > Phenotype data and citations`. Run VEP and download the results as a .txt file. Read the .txt into R using the chunk below. (Your submission may sit in the queue for a while, and it may take a few minutes to finish running.) Feel free to select any other annotations of interest.
+
+(You'll want to set this chunk to `eval=TRUE` after you get the code working.)
+```{r read_in_vep, eval=F}
+# Specify path to vep output txt file
+# Read it in
+vep_annot_file <- "/Users/jonathanchernus/Documents/Teaching/2023s/hugen2073/lecture_slides/18_annotation_variants/lab_2023s/B3GqDzJzaC9EKF9a.txt" # Set the correct path!!
+vep_annot <- fread(vep_annot_file)
+```
+
+## 10. Explore the VEP output
+
+Explore the VEP output a little. Notice that there are a lot more lines of output than there were SNPs in the input. Remember the "E" in VEP is for "effect", meaning effect on **something**; a variant can have an effect on more than one **something**.
+
+(You'll want to set this chunk to `eval=TRUE` after you get the code working.)
+```{r vep_explore, eval=F}
+# How many rows/columns are there?
+# What are the column names?
+# See how many transcripts/genes/proteins/regulatory features go with each variant
+dim(vep_annot)
+names(vep_annot)
+sort(table(vep_annot[,"#Uploaded_variation"]))
+
+# Look at some of the phenotype associations (including GWAS Catalog data)
+# Observe that PubMed IDs are included where relevant (PUBMED column)
+table(vep_annot$PHENOTYPES)
+
+# Look at the SIFT and PolyPhen scores
+table(vep_annot$SIFT)
+table(vep_annot$PolyPhen)
+
+# Look at the scaled CADD scores (replace "-" with NA and recode as numeric first)
+# What is the largest scaled CADD score?
+vep_annot$CADD_PHRED[vep_annot$CADD_PHRED == "-"] <- NA
+vep_annot$CADD_PHRED <- as.numeric(vep_annot$CADD_PHRED)
+summary(vep_annot$CADD_PHRED)
+hist(vep_annot$CADD_PHRED)
+
+```
+
+## 11. Querying haploreg with `haploR`
+
+Now let's query HaploReg for the 10 lead SNPs. We use the function `queryHaploreg` from `HaploR`. The most important settings are probably `query`, `ldThresh`, `ldPop`. It's probably simplest to run one SNP at a time and store the results separately.
+
+```{r haploreg, eval=F}
+# Query Haploreg and save the output; loop over SNPs to query
+haplo <- list()
+for (i in 1:nrow(top_snps)) {
+  snp_temp <- top_snps$snp[i]
+  haplo[[i]] <- queryHaploreg(query = snp_temp, # Provide the 10 lead SNPs; recall HaploReg finds LD proxies for you
+              file = NULL, # You could use this if you wanted to read a file of SNPs, one per line
+              study = NULL, # If you wanted to use one of the "built-in" sets of GWAS results 
+              ldThresh = 0.8, # R^2 threshold for LD 
+              ldPop = "EUR", # Can also choose AFR, AMR, ASN
+              epi = "vanilla", # Source for epigenomes; vanilla=15-state chromatin model, imputed=25-state model, methyl/acetyl for histone marks
+              cons = "siphy", # "gerp" is the other option
+              genetypes = "gencode", # or "refseq" or "both"
+              url = "https://pubs.broadinstitute.org/mammals/haploreg/haploreg.php",
+              timeout = 10, # A parameter for curl
+              encoding = "UTF-8", # For retrieving web-page content
+              verbose = FALSE)
+}
+
+# Let's look at the output for the 6th of the lead SNPs
+# We see the queried lead SNP and its LD "friends"/proxies, along with some annotation
+# the "is_query_snp" column identifies the queried SNP (1 for the queried SNP, 0 for the proxies)
+# Not all of the columns show by default
+# Print the full data frame
+haplo[[6]]
+names(haplo[[6]])
+(data.frame(haplo[[6]]))
+
+# "Chromatin_States"/"Chromatin_States_Imputed"/"Chromatin_Marks"/"DNase" list all the associated regulatory annotations in the format "cell,annotation;cell,annotation"
+# Similarly, all the other information displayed on the website is compacted and stored in the output from queryHaploreg:
+# eQTL, nearby gene, motifs, GWAS Catalog references, etc., are all included
+haplo[[2]]$gwas # GWAS associations for SNP #2
+haplo[[6]]$eQTL # eQTL associations for SNP #6
+haplo[[6]]$GENCODE_name # Gencode gene near SNP #6
+haplo[[2]]$dbSNP_functional_annotation # dbSNP functional annotation for SNP #2
+
+```
+
+## 12. Directly querying RegulomeDB
+
+(Note: this code may not work.)
+
+RegulomeDB doesn't take parameters, just SNPs. It seems to work best with one SNP at a time, so we loop again over the 10 lead SNPs as before.
+
+```{r regulome, eval=F}
+# Query RegulomeDB and save the output; loop over SNPs to query
+reg <- list()
+for (i in 1:nrow(top_snps)) {
+  snp_temp <- top_snps$snp[i]
+  reg[[i]] <- queryRegulome(query = snp_temp, 
+              genomeAssembly = "GRCh37", # Or you can choose 38
+              limit = 100, # This could cause problems if you use too big a number; the default is 1000
+              timeout = 100)
+  cat("Done with SNP #", i, "\n", sep="")
+}
+
+# For each SNP, a list is returned:
+str(reg[[1]])
+names(reg[[1]])
+
+# The regulome score/rank are stored in "regulome_score"
+# Nearby SNPs and their allele frequencies in several populations are listed in nearby_snps - there seem to be errors in this!!
+reg[[1]]$rs26540$regulome_score
+reg[[1]]$rs26540$nearby_snps
+
+# Get all the regulome scores and view them (This code needs to be adjusted, since the package changed)
+#reg_scores <- data.frame(
+#  snp=top_snps$snp,
+#  ranking=unlist(lapply(reg, FUN=function(x){x$regulome_score[,c("ranking")]})),
+#  prob=unlist(lapply(reg, FUN=function(x){x$regulome_score[,c("probability")]})) )
+#reg_scores
+```
+
+## 13. A few more `LDlinkR` functions.
+
+Finally, let's play with a couple more `LDlinkR` functions.
+
+First use `LDexpress` to look for eQTLs in LD with a SNP in a given population. We can use `list_gtex_tissues()` to list all the tissues and get codes for referring to them. Let's use adipose tissues and blood, use LD in the YRI and CEU populations, and look for eQTLs within 100kb each of the top SNPs. Also use `LDtrait` to look for GWAS Catalog entries for the top SNPs and their LD proxies.
+
+(You'll want to set this chunk to `eval=TRUE` after you get the code working.)
+```{r ldlinkr_misc, eval=F}
+# List all the tissues
+# Query each of the lead SNPs, using a loop
+list_gtex_tissues()
+eqtls_fat_blood <- list()
+for (i in 1:nrow(top_snps)) {
+  snp_temp <- top_snps$snp[i]
+  eqtls_fat_blood[[i]] <- LDexpress(snps = snp_temp,
+                       pop = c("YRI", "CEU"),
+                       tissue =  c("ADI_SUB","ADI_VIS_OME","Whole_Blood"),
+                       win_size = "100000",
+                       token = my_access_token
+                      )
+    cat("Done with SNP #", i, "\n", sep="")
+}
+
+# Look at the 5th SNP, for example
+# Sort by p-value; it looks as if rs5754422, which has R2=0.6 with the queried SNP rs2256609 is strongly associated with expression of UBE2L3 in Whole Blood (p=3.6E-27)
+eqtls_fat_blood[[5]]
+eqtls_fat_blood[[5]] %>%
+  arrange(as.numeric(P_value)) %>%
+  head()
+
+
+# Look within 10kb for SNPs in strong LD with the top SNPs
+# This spits out a big table
+# What if we just want a list of the GWAS phenotypes?
+gwas_catalog_lookup <- LDtrait(top_snps$snp,
+                         pop = "CEU",
+                          r2d = "r2",
+                      r2d_threshold = 0.8,
+                        win_size = 10000,
+                     token = my_access_token,
+                     file = FALSE
+                                )
+table(gwas_catalog_lookup$GWAS_Trait)
+```
+
+# Exercise
+
+Use `LDlinkR` and/or VEP to try to replicate some of the claims from this genome-wide meta-analysis of COVID-19 by the COVID-19 Host Genetic Initiative (https://www.nature.com/articles/s41586-021-03767-x).
+
+Here are some of the statements from the section titled "Gene prioritization and association with other traits." 
+
+Note that you should of course ignore LDlink/VEP results you find that refer to this study or others subsequent to it. You probably won't be able to replicate every one of these claims, in part because not all of the databases used by the authors are queried here. But some of the claims should be verifiable. Figure 1 may be helpful in choosing a reference population for LD
+
+## 1. TYK2 locus
+
+"The COVID-19 lead variant rs74956615T>A in TYK2, which confers risk for critical illness (OR (95% CI) = 1.43 (1.29–1.59), P = 9.71 × 10−12) and hospitalization due to COVID-19 (OR (95% CI) = 1.27 (1.18–1.36), P = 5.05 × 10−10) is correlated with the missense variant rs34536443:G>C (p.Pro1104Ala; r2 = 0.82)."
+
+"This is consistent with the primary immunodeficiency described with complete TYK2 loss of function3 as this variant is known to reduce function."
+
+"By contrast, this missense variant was previously reported to be protective against autoimmune diseases (Extended Data Fig. 8 and Supplementary Table 6), including rheumatoid arthritis (OR = 0.74, P = 3.0 × 10−8; UK Biobank SAIGE) and hypothyroidism (OR = 0.84, P = 1.8 × 10−10; UK Biobank)"
+
+```{r}
+# Your code here
+```
+
+## 2. 19q13.33 locus
+
+"At the 19q13.33 locus, the lead variant rs4801778, which was significantly associated with a reported SARS-CoV-2 infection (OR (95% CI) = 0.95 (0.93–0.96), P = 2.1 × 10−8), is in LD (r2 = 0.93) with a missense variant rs11541192:G>A (p.Gly312Ser) in PPP1R15A."
+
+```{r}
+# Your code here
+```
+
+## 3. 6p21.1, 9q34.2, 12q24.13, and 21q22.11 loci
+
+Note that the lead SNPs at these 4 loci were rs1886814, rs912805253, rs10774671, and rs13050728, respectively.
+
+Here, "... the COVID-19-associated variants modify gene expression in lung"
+
+"The COVID-19 lead variant rs1886814:A>C in the FOXP4 locus is correlated (r2 = 0.64) with a lead variant of lung adenocarcinoma (tag variant is rs7741164; OR = 1.2, P = 6.0 × 10−13) and similarly with a lead variant reported for subclinical interstitial lung disease."
+
+```{r}
+# Your code here
+```
+
+## 4. 19p13.3 locus
+
+"An intronic variant rs2109069:G>A in DPP9 (chr. 19p13.3), which is positively associated with critical illness, was previously reported to be risk-increasing for interstitial lung disease (tag lead variant rs12610495:A>G (p.Leu8Pro); OR = 1.29, P = 2.0 × 10−12)."
+
+```{r}
+# Your code here
+```
+
+
