@@ -20,6 +20,8 @@ Suppose you've just performed a GWAS of your trait (say, HDL levels in a populat
 
 LDlink is a suite of web-based tools for querying/displaying different aspects of linkage disequilibrium. We'll be using the accompanying R package `LDlinkR`.
 
+(Note that you can also use command-line tools for querying LDlink - see [https://ldlink.nih.gov/apiaccess](https://ldlink.nih.gov/apiaccess)).
+
 Our goals for the first part of this tutorial are:
 
 * Find SNPs in LD with `rs26540` and the other top SNPs in some particular populations and see what other annotations we can get from `LDlinkR`
@@ -30,7 +32,7 @@ Then, in the exercise after the tutorial, you can try to verify some claims made
 
 ## 1. Register to use `LDlinkR`
 
-Register here (https://ldlink.nci.nih.gov/?tab=apiaccess) with your name, email address, and institution; use a REAL email address. You will be emailed an access token. Copy and paste it below.
+Register here [https://ldlink.nih.gov/apiaccess](https://ldlink.nih.gov/apiaccess) with your name, email address, and institution; use a REAL email address. You will be emailed an access token. Copy and paste it below.
 
 ```{r token, eval=F}
 my_access_token <- "2b4ff211ffc1" # This is Jon's access token!!! Use your own, not mine!
@@ -58,7 +60,7 @@ Download the file `lead_snps.txt`, a list of the 10 lead SNPs from your GWAS. Re
 # Set the path to the list of SNPs
 # Read them in
 # View them
-lead_snps_path <- "/Users/jonathanchernus/Documents/Teaching/2023s/hugen2073/lecture_slides/18_annotation_variants/lab_2023s/lead_snps.txt" # Change this path!
+lead_snps_path <- "https://jmc108.github.io/hugen2073-textbook/exercises/17_linkage_disequilibrium/lead_snps.txt"
 top_snps <- read.table(file=lead_snps_path, header=F, as.is=T, col.names="snp")
 top_snps
 ```
