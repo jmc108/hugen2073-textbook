@@ -7,7 +7,7 @@ format:
       sidebar-width: 420px
 ---
 
-<div id="tutor-root" data-chapter="week05" class="tutor-floating"></div>
+<div id="tutor-root" data-chapter="17_linkage_disequilibrium" class="tutor-floating"></div>
 <script src="../assets/tutor-chat.js"></script>
 <link rel="stylesheet" href="../assets/tutor-chat.css">
 
@@ -41,7 +41,7 @@ format:
 ```{=html}
 <div style="width: 100%; height: 800px; margin-top: 1.5em;">
   <iframe
-    src="../lecture_slides/1_r_and_base_r_graphics/3_r_base_r_graphics_with_example_2025s.pdf"
+    src="../lecture_slides/17_linkage_disequilibrium/17_linkage_disequilibrium.pdf"
     style="width: 100%; height: 100%; border: 1px solid #ccc;"
     title="Lecture slides">
   </iframe>
@@ -50,11 +50,21 @@ format:
 
 ## Required Reading
 
+[Watanabe, K., Taskesen, E., van Bochoven, A., & Posthuma, D. (2017). Functional mapping and annotation of genetic associations with FUMA. Nature communications, 8(1), 1826. https://doi.org/10.1038/s41467-017-01261-5](https://pmc.ncbi.nlm.nih.gov/articles/PMC5705698/)
+
+[Hunt, S. E., Moore, B., Amode, R. M., Armean, I. M., Lemos, D., Mushtaq, A., Parton, A., Schuilenburg, H., Szpak, M., Thormann, A., Perry, E., Trevanion, S. J., Flicek, P., Yates, A. D., & Cunningham, F. (2022). Annotating and prioritizing genomic variants using the Ensembl Variant Effect Predictor-A tutorial. Human mutation, 43(8), 986–997. https://doi.org/10.1002/humu.24298](https://pmc.ncbi.nlm.nih.gov/articles/PMC7613081/)
+
 ## Suggested Reading
+
+[McLaren, W., Gil, L., Hunt, S. E., Riat, H. S., Ritchie, G. R., Thormann, A., Flicek, P., & Cunningham, F. (2016). The Ensembl Variant Effect Predictor. Genome biology, 17(1), 122. https://doi.org/10.1186/s13059-016-0974-4](https://pmc.ncbi.nlm.nih.gov/articles/PMC4893825/)
+
+[Boyle, A. P., Hong, E. L., Hariharan, M., Cheng, Y., Schaub, M. A., Kasowski, M., Karczewski, K. J., Park, J., Hitz, B. C., Weng, S., Cherry, J. M., & Snyder, M. (2012). Annotation of functional variation in personal genomes using RegulomeDB. Genome research, 22(9), 1790–1797. https://doi.org/10.1101/gr.137323.112](https://pmc.ncbi.nlm.nih.gov/articles/PMC3431494/)
 
 ## In-class Exercises
 
 [Download the exercises](../exercises/17_linkage_disequilibrium/17_linkage_disequilibrium_exercises.Rmd)
+
+[lead_snps.txt](../exercises/17_linkage_disequilibrium/lead_snps.txt)
 
 ::: {.callout-tip collapse="true"}
 

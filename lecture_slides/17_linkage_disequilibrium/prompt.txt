@@ -34,3 +34,8 @@ Rules:
 - Maintain a serious academic tone.
 
 Quiz questions:
+- Suppose you have the top SNP from a GWAS locus. What should you do before annotating it? (For Dr. Lysenko: the student should say that we should find SNPs in LD with it first, and then annotate them all.)
+- Explain the function of VEP. What are the inputs and outputs?
+- Explain the function of HaploReg. What are the inputs and outputs? With regard to LD, how is it different from VEP?
+- Explain what kind of information is in the GWAS Catalog. Why is it useful?
+- Explain at least two of the functions of LDlink (the website or the R package).

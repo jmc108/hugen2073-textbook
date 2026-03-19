@@ -61,8 +61,314 @@ format:
 ### Expand to see the answers
 
 ```{webr}
+# install.packages("sonify")
+library(sonify)
+
+# Convert note names to frequencies (equal temperament, A4 = 440)
+note_to_freq <- function(note) {
+  note_names <- c("C", "C#", "D", "D#", "E", "F",
+                  "F#", "G", "G#", "A", "A#", "B")
+  
+  m <- regexec("^([A-G]#?)(-?[0-9]+)$", note)
+  parts <- regmatches(note, m)[[1]]
+  
+  if (length(parts) == 0) stop("Bad note format: ", note)
+  
+  pitch <- parts[2]
+  octave <- as.integer(parts[3])
+  
+  semitone_index <- match(pitch, note_names) - 1
+  midi <- 12 * (octave + 1) + semitone_index
+  
+  440 * 2^((midi - 69) / 12)
+}
+
+# -------------------------------------------------------------------
+# A short ORIGINAL "rickroll-adjacent" phrase:
+# upbeat 80s-style contour, but not the exact melody
+# -------------------------------------------------------------------
+notes <- c(
+  "B4","C#5","D5","D5","E5","C#5","B4","A4",
+  "B4","B4","C#5","D5","B4","A4","A5","A5","E5",
+  "B4","B4","C#5","D5","B4","D5","E5","C#5","B4","C#5","B4","A4",
+  "B4","B4","C#5","D5","B4","A4","E5","E5","E5","F#5","E5",
+  
+  "D5","E5","F#5","D5","E5","E5","E5","F#5","E5","A4",
+  "B4","C#5","D5","B4","E5","F#5","E5",
+  
+  "A4","B4","D5","B4","F#5","F#5","E5",
+  "A4","B4","D5","B4","E5","E5","D5","C#5","B4",
+  "A4","B4","D5","B4","D5","E5","C#5","A4","A4","E5","D5",
+  
+  "A4","B4","D5","B4","F#5","F#5","E5",
+  "A4","B4","D5","B4","A5","C#5","D5","C#5","B4",
+  "A4","B4","D5","B4","D5","E5","C#5","A4","A4","E5","D5"
+)
+
+dur <- 0.3*c(
+  # We're no strangers to love
+  1, 1, 0.5, 0.5, 1, 0.5, 0.5, 2,
+  
+  # You know the rules and so do I
+  1, 1, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 2,
+  
+  # A full commitment's what I'm thinking of
+  1, 1, 0.5, 0.5, 0.5, 0.75, 0.75, 0.5, 0.5, 0.5, 0.5, 2,
+  
+  # You wouldn't get this from any other guy
+  1, 1, 0.5, 0.5, 0.75, 0.75, 0.5, 0.5, 0.5, 0.5, 2,
+  
+  # I just wanna tell you how I'm feeling
+  0.75, 0.75, 0.5, 0.5, 0.75, 0.75, 0.75, 0.75, 0.5, 1.5,
+  
+  # Gotta make you understand
+  0.5, 0.5, 1, 1, 0.5, 0.5, 2,
+  
+  # Never gonna give you up
+  0.75, 0.75, 0.5, 0.5, 1, 1, 2,
+  
+  # Never gonna let you down
+  0.75, 0.75, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 2,
+  
+  # Never gonna run around and desert you
+  0.75, 0.75, 0.5, 0.5, 0.75, 0.5, 0.5, 0.75, 0.5, 0.5, 2,
+  
+  # Never gonna make you cry
+  0.75, 0.75, 0.5, 0.5, 1, 1, 2,
+  
+  # Never gonna say goodbye
+  0.75, 0.75, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 2,
+  
+  # Never gonna tell a lie and hurt you
+  0.75, 0.75, 0.5, 0.5, 0.75, 0.75, 0.5, 0.5, 0.75, 0.75, 2
+)
+length(notes)
+length(dur)
+
+freqs <- sapply(notes, note_to_freq)
+
+# sonify() wants x positions and y values.
+# With interpolation = "constant", each y is held until the next x.
+x <- c(0, cumsum(dur))
+
+# Need one extra y so the last note has something to hold to the end
+y <- c(freqs, tail(freqs, 1))
+
+# Play it
+w <- sonify(
+  x = x,
+  y = y,
+  duration = sum(dur),
+  interpolation = "constant",
+  waveform = "sawtooth",   # "sine" is softer; "square" is more retro
+  flim = range(y),       # map directly over this pitch range
+  amp_level = 0.2,
+  stereo = FALSE,
+  play = TRUE
+)
+```
+
+```{webr}
+# Top-line chorus transcription for the marked "Chorus" section,
+# encoded as note events and rendered with the sonify package.
+# Durations are in beats; set bpm to match your arrangement.
+
+library(sonify)
+
+bpm <- 113
+beat_sec <- 60 / bpm
+
+# Approximate melody from the chorus shown in the image.
+# Use NA for rests.
+chorus <- data.frame(
+  note = c(
+    # "Got-ta make you"
+    NA, NA, "D4", "E4", "F4", "D4",
+    # "un-der-stand"
+    "G4", "A4", "G4",
+    # "Nev-er gon-na give you up"
+    "C4", "D4", "D4", "F4", "F4", "E4",
+    # "Nev-er gon-na let you down"
+    "C4", "D4", "F4", "F4", "E4", "D4",
+    # "Nev-er gon-na run a-round and de-sert you"
+    "C4", "D4", "E4", "F4", "E4", "D4", "C4", "D4",
+    # "Nev-er gon-na make you cry"
+    "C4", "D4", "D4", "F4", "F4", "E4",
+    # "Nev-er gon-na say good-bye"
+    "C5", "E4", "F4", "F4", "E4", "D4",
+    # "Nev-er gon-na tell a lie and hurt you"
+    "C4", "D4", "E4", "F4", "E4", "D4", "C4"
+  ),
+  beats = c(
+    1, 1, 0.5, 0.5, 0.5, 0.5,
+    0.5, 0.5, 2,
+    0.5, 0.5, 0.5, 1, 1, 2,
+    0.5, 0.5, 1, 0.5, 1, 1.5,
+    0.5, 0.5, 0.5, 1, 0.5, 0.5, 1, 1,
+    0.5, 0.5, 0.5, 1, 1, 2,
+    1, 0.5, 0.5, 1, 0.5, 0.5,
+    0.5, 0.5, 0.5, 1, 0.5, 0.5, 2
+  ),
+  stringsAsFactors = FALSE
+)
+
+note_to_midi <- function(note) {
+  if (is.na(note)) return(NA_real_)
+  
+  pc_map <- c(
+    C = 0, `C#` = 1, Db = 1,
+    D = 2, `D#` = 3, Eb = 3,
+    E = 4,
+    F = 5, `F#` = 6, Gb = 6,
+    G = 7, `G#` = 8, Ab = 8,
+    A = 9, `A#` = 10, Bb = 10,
+    B = 11
+  )
+  
+  m <- regexec("^([A-G](?:#|b)?)(-?\\d+)$", note)
+  parts <- regmatches(note, m)[[1]]
+  pitch_class <- parts[2]
+  octave <- as.integer(parts[3])
+  
+  12 * (octave + 1) + pc_map[[pitch_class]]
+}
+
+midi_to_freq <- function(midi) {
+  if (is.na(midi)) return(NA_real_)
+  440 * 2^((midi - 69) / 12)
+}
+
+# Convert note events into a stepwise frequency series for sonify()
+events_to_series <- function(notes, beats, beat_sec) {
+  starts <- c(0, cumsum(head(beats, -1))) * beat_sec
+  ends   <- cumsum(beats) * beat_sec
+  
+  freqs <- vapply(notes, function(n) midi_to_freq(note_to_midi(n)), numeric(1))
+  
+  x <- numeric(0)
+  y <- numeric(0)
+  
+  for (i in seq_along(freqs)) {
+    s <- starts[i]
+    e <- ends[i]
+    
+    if (is.na(freqs[i])) {
+      # skip rests so they remain silent
+      next
+    }
+    
+    # duplicate each note at start/end for constant interpolation
+    x <- c(x, s, e - 1e-6)
+    y <- c(y, freqs[i], freqs[i])
+  }
+  
+  list(x = x, y = y, duration = max(ends))
+}
+
+series <- events_to_series(chorus$note, chorus$beats, beat_sec)
+
+# Play it
+sonify(
+  y = series$y,
+  x = series$x,
+  duration = series$duration,
+  play = TRUE,
+  interpolation = "constant"
+)
 
 ```
+
+
+```{webr}
+# install.packages("sonify")
+library(sonify)
+
+# Convert note names to frequencies (equal temperament, A4 = 440)
+note_to_freq <- function(note) {
+  note_names <- c("C", "C#", "D", "D#", "E", "F",
+                  "F#", "G", "G#", "A", "A#", "B")
+  
+  m <- regexec("^([A-G]#?)(-?[0-9]+)$", note)
+  parts <- regmatches(note, m)[[1]]
+  
+  if (length(parts) == 0) stop("Bad note format: ", note)
+  
+  pitch <- parts[2]
+  octave <- as.integer(parts[3])
+  
+  semitone_index <- match(pitch, note_names) - 1
+  midi <- 12 * (octave + 1) + semitone_index
+  
+  440 * 2^((midi - 69) / 12)
+}
+
+# -------------------------------------------------------------------
+# A short ORIGINAL "rickroll-adjacent" phrase:
+# upbeat 80s-style contour, but not the exact melody
+# -------------------------------------------------------------------
+notes <- c(
+  "B4","C#5","D5","D5","E5","C#5","B4","A4",
+  "B4","B4","C#5","D5","B4","A4","A5","A5","E5",
+  "B4","B4","C#5","D5","B4","D5","E5","C#5","B4","C#5","B4","A4",
+  "B4","B4","C#5","D5","B4","A4","E5","E5","E5","F#5","E5",
+  
+  "D5","E5","F#5","D5","E5","E5","E5","F#5","E5","A4",
+  "B4","C#5","D5","B4","E5","F#5","E5",
+  
+  "A4","B4","D5","B4","F#5","F#5","E5",
+  "A4","B4","D5","B4","E5","E5","D5","C#5","B4",
+  "A4","B4","D5","B4","D5","E5","C#5","A4","A4","E5","D5",
+  
+  "A4","B4","D5","B4","F#5","F#5","E5",
+  "A4","B4","D5","B4","A5","C#5","D5","C#5","B4",
+  "A4","B4","D5","B4","D5","E5","C#5","A4","A4","E5","D5"
+)
+
+dur <- 0.3*c(
+  1, 1, 0.5, 0.5, 1, 0.5, 0.5, 1.5,
+  1, 1, 0.75, 0.5, 0.5, 0.75, 0.75, 0.75, 1.75,
+  1, 1, 0.5, 0.5, 0.5, 0.75, 0.75, 0.5, 0.5, 0.5, 0.5, 1,
+  1, 0.5, 0.5, 0.75, 0.75, 0.75, 0.5, 0.5, 0.5, 0.5, 2,
+  
+  0.75, 0.75, 0.5, 0.5, 0.75, 0.75, 0.75, 0.75, 0.5, 1,
+  0.5, 0.5, 1, 1, 0.5, 0.5, 1,
+  
+  0.5, 0.5, 0.5, 0.5, 0.75, 0.75, 1.5,
+  0.5, 0.5, 0.5, 0.5, 0.75, 0.75, 0.5, 0.5, 1,
+  0.5, 0.5, 0.5, 0.5, 0.75, 0.5, 0.5, 0.75, 0.5, 0.5, 1.5,
+  
+  0.5, 0.5, 0.5, 0.5, 0.75, 0.75, 1.5,
+  0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1.5,
+  0.5, 0.5, 0.5, 0.5, 0.75, 0.75, 0.5, 0.5, 0.75, 0.75, 1.5
+)
+
+length(notes)
+length(dur)
+
+freqs <- sapply(notes, note_to_freq)
+
+# sonify() wants x positions and y values.
+# With interpolation = "constant", each y is held until the next x.
+x <- c(0, cumsum(dur))
+
+# Need one extra y so the last note has something to hold to the end
+y <- c(freqs, tail(freqs, 1))
+
+# Play it
+w <- sonify(
+  x = x,
+  y = y,
+  duration = sum(dur),
+  interpolation = "constant",
+  waveform = "sawtooth",   # "sine" is softer; "square" is more retro
+  flim = range(y),       # map directly over this pitch range
+  amp_level = 0.2,
+  stereo = FALSE,
+  play = TRUE
+)
+```
+
+
 
 :::
 
