@@ -52,6 +52,10 @@ format:
 
 ## Suggested Reading
 
+[https://genome.ucsc.edu/util.html](https://genome.ucsc.edu/util.html)
+
+[https://hgdownload.gi.ucsc.edu/downloads.html#source_downloads](https://hgdownload.gi.ucsc.edu/downloads.html#source_downloads)
+
 ## In-class Exercises
 
 [Download the exercises](../exercises/21_ucsc_genome_browser_commandline_tools/21_ucsc_genome_browser_commandline_tools_exercises.Rmd)

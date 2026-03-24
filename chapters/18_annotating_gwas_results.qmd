@@ -7,7 +7,7 @@ format:
       sidebar-width: 420px
 ---
 
-<div id="tutor-root" data-chapter="week05" class="tutor-floating"></div>
+<div id="tutor-root" data-chapter="18_annotating_gwas_results" class="tutor-floating"></div>
 <script src="../assets/tutor-chat.js"></script>
 <link rel="stylesheet" href="../assets/tutor-chat.css">
 
@@ -41,7 +41,7 @@ format:
 ```{=html}
 <div style="width: 100%; height: 800px; margin-top: 1.5em;">
   <iframe
-    src="../lecture_slides/1_r_and_base_r_graphics/3_r_base_r_graphics_with_example_2025s.pdf"
+    src="../lecture_slides/18_annotating_gwas_results/18_annotating_gwas_results.pdf"
     style="width: 100%; height: 100%; border: 1px solid #ccc;"
     title="Lecture slides">
   </iframe>
@@ -51,6 +51,18 @@ format:
 ## Required Reading
 
 ## Suggested Reading
+
+[Landrum MJ, Lee JM, Riley GR, Jang W, Rubinstein WS, Church DM, Maglott DR. ClinVar: public archive of relationships among sequence variation and human phenotype. Nucleic Acids Res. 2014 Jan;42(Database issue):D980-5. doi: 10.1093/nar/gkt1113. Epub 2013 Nov 14. PMID: 24234437; PMCID: PMC3965032.](https://pubmed.ncbi.nlm.nih.gov/24234437/)
+
+[Landrum, M. J., & Kattman, B. L. (2018). ClinVar at five years: Delivering on the promise. Human mutation, 39(11), 1623–1630. https://doi.org/10.1002/humu.23641](https://pmc.ncbi.nlm.nih.gov/articles/PMC11567647/)
+
+[ClinGen Consortium. Electronic address: splon@bcm.edu, & ClinGen Consortium (2025). The Clinical Genome Resource (ClinGen): Advancing genomic knowledge through global curation. Genetics in medicine : official journal of the American College of Medical Genetics, 27(1), 101228. https://doi.org/10.1016/j.gim.2024.101228](https://pmc.ncbi.nlm.nih.gov/articles/PMC11984750/)
+
+[Hamosh, A., Scott, A. F., Amberger, J. S., Bocchini, C. A., & McKusick, V. A. (2005). Online Mendelian Inheritance in Man (OMIM), a knowledgebase of human genes and genetic disorders. Nucleic acids research, 33(Database issue), D514–D517. https://doi.org/10.1093/nar/gki033](https://pmc.ncbi.nlm.nih.gov/articles/PMC539987/)
+
+[Buniello, A., MacArthur, J. A. L., Cerezo, M., Harris, L. W., Hayhurst, J., Malangone, C., McMahon, A., Morales, J., Mountjoy, E., Sollis, E., Suveges, D., Vrousgou, O., Whetzel, P. L., Amode, R., Guillen, J. A., Riat, H. S., Trevanion, S. J., Hall, P., Junkins, H., Flicek, P., … Parkinson, H. (2019). The NHGRI-EBI GWAS Catalog of published genome-wide association studies, targeted arrays and summary statistics 2019. Nucleic acids research, 47(D1), D1005–D1012. https://doi.org/10.1093/nar/gky1120](https://pmc.ncbi.nlm.nih.gov/articles/PMC6323933/)
+
+[Sollis, E., Mosaku, A., Abid, A., Buniello, A., Cerezo, M., Gil, L., Groza, T., Güneş, O., Hall, P., Hayhurst, J., Ibrahim, A., Ji, Y., John, S., Lewis, E., MacArthur, J. A. L., McMahon, A., Osumi-Sutherland, D., Panoutsopoulou, K., Pendlington, Z., Ramachandran, S., … Harris, L. W. (2023). The NHGRI-EBI GWAS Catalog: knowledgebase and deposition resource. Nucleic acids research, 51(D1), D977–D985. https://doi.org/10.1093/nar/gkac1010](https://pmc.ncbi.nlm.nih.gov/articles/PMC9825413/)
 
 ## In-class Exercises
 

@@ -52,6 +52,16 @@ format:
 
 ## Suggested Reading
 
+[https://genome.ucsc.edu/goldenpath/help/hgTracksHelp.html](https://genome.ucsc.edu/goldenpath/help/hgTracksHelp.html)
+
+[https://genome.ucsc.edu/docs/tableBrowserTutorial.html](https://genome.ucsc.edu/docs/tableBrowserTutorial.html)
+
+[https://genome.ucsc.edu/goldenpath/help/hgTablesHelp.html](https://genome.ucsc.edu/goldenpath/help/hgTablesHelp.html)
+
+[https://genome.ucsc.edu/goldenpath/help/hgIntegratorHelp.html](https://genome.ucsc.edu/goldenpath/help/hgIntegratorHelp.html)
+
+[https://genome.ucsc.edu/goldenpath/help/hgTracksHelp.html#CustomTracks](https://genome.ucsc.edu/goldenpath/help/hgTracksHelp.html#CustomTracks)
+
 ## In-class Exercises
 
 [Download the exercises](../exercises/19_ucsc_genome_browser_and_tracks/19_ucsc_genome_browser_and_tracks_exercises.Rmd)

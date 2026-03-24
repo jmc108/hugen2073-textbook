@@ -34,3 +34,12 @@ Rules:
 - Maintain a serious academic tone.
 
 Quiz questions:
+- Explain the difference between missense and nonsense variants. Which would you expect to be more deleterious?
+- Explain what SIFT and PolyPhen scores are for.
+- Explain what a nonsense variant is.
+- Explain what a frameshift variant is.
+- Explain what a CADD score is for and what might be a reasonable threshold for deleteriousness?
+- Explain what kind of information is in ClinVar and what the review status tiers mean.
+- Explain what kind of information is OMIM and what it's useful for.
+- Explain what kinds of tasks ANNOVAR is good for.
+- If you were using ANNOVAR to identify a causal variant for a suspected genetic disorder, why would you filter out synonymous variants? Why would you filter out SNPs found in dbSNP or the 1000 Genomes Project?
