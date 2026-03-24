@@ -1,0 +1,106 @@
+# ANNOVAR examples
+
+Here you'll play with ANNOVAR and its output.
+
+## Example 1: prioritizing and filtering variants in human data
+
+In this exercise, you will analyze next-generation sequencing variant data to identify and prioritize candidate genetic variants, with a focus on high-confidence, protein-altering mutations that are most likely to impact gene function. The following case provides a clinical context in which to apply this approach.
+
+A 28-year-old individual demonstrates a stable behavioral phenotype marked by persistent interpersonal attachment and resistance to relational disengagement, with no evidence of abandonment behaviors, affective withdrawal, or deceptive communication, and a consistent avoidance of actions associated with psychological distress in others. Whole-exome sequencing was performed in order obtain a diagnosis.
+
+### Running ANNOVAR
+
+You can run ANNOVAR yourself or skip to the next part and just use the results that have been computed for you.
+
+First, log on to the computing cluster [http://hugen.crc.pitt.edu](http://hugen.crc.pitt.edu) and start an interactive job with `srun --pty -M teach -A hugen2073-2026s bash`.
+
+We will use singularity to run ANNOVAR in a container from a docker image. Run the code below to 
+
+```
+module load singularity
+singularity pull annovar_2018Apr16.sif docker://bioinfochrustrasbourg/annovar:2018Apr16
+```
+
+I have already downloaded refGene for you in `/ix1/hugen2073-2026s/annovar_example/humandb`. Check out the files to understand what they contain.
+
+Now run ANNOVAR with these commands. The results will be written to a folder called `annovar_results` inside your home folder.
+
+```
+HDB=/ix1/hugen2073-2026s/annovar_example/humandb
+
+cd ~
+mkdir -p ~/annovar_results
+
+singularity exec \
+  --bind "$PWD:$PWD" \
+  --bind "$HDB:$HDB" \
+  /ix1/hugen2073-2026s/annovar_example/annovar_2018Apr16.sif bash -lc '
+cd "'"$PWD"'" &&
+perl /home/TOOLS/tools/annovar/current/bin/table_annovar.pl \
+  /ix1/hugen2073-2026s/annovar_example/ra_with_spikes.vcf \
+  '"$HDB"' \
+  -buildver hg19 \
+  -out ~/annovar_results/example \
+  -protocol refGene \
+  -operation g \
+  -nastring . \
+  -vcfinput
+'
+```
+
+### Interpreting results
+
+Now either log on to the RStudio server or copy `example.hg19_multianno.vcf` to your computer.
+
+Read in the annotated vcf, `example.hg19_multianno.vcf`. If you skipped running ANNOVAR yourself, you can use the file provided in `/ix1/hugen2073-2026s/annovar_example/`.
+
+This chunk of code will read in the annotated VCF, extract some useful information from the INFO field, and put it in a data frame.
+
+```{r}
+library(vcfR)
+vcf <- read.vcfR("/ix1/hugen2073-2026s/annovar_example/example.hg19_multianno.vcf")
+
+
+# Parse INFO and selected FORMAT fields
+z <- vcfR2tidy(
+  vcf,
+  info_only = FALSE,
+  info_types = TRUE,
+  format_fields = c("GT", "DP", "GQ"),
+  format_types = TRUE
+)
+
+# Variant-level fields + INFO annotations
+fix_df <- z$fix
+
+# Sample-level genotype fields
+gt_df <- z$gt
+
+# Join them together
+df <- gt_df %>%
+  left_join(fix_df, by = c("ChromKey", "POS")) %>%
+  select(CHROM, POS, Gene.refGene, ExonicFunc.refGene,
+         QUAL, FILTER, Indiv, gt_GT, gt_DP, gt_GQ)
+
+head(df)
+
+df %>% 
+  filter(FILTER=="PASS") %>% 
+  filter(ExonicFunc.refGene=="stopgain") %>% 
+  arrange(desc(QUAL))
+
+```
+
+
+Now, prioritize as follows
+
+- only retain nonsense (`"stopgain"`) mutations
+
+- only retain mutations that `"PASS"` the `FILTER`
+
+- arrange the mutations by `QUAL` from highest to lowest
+
+- read the gene names
+
+## Running ANNOVAR for a cat
+

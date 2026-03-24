@@ -1,0 +1,212 @@
+########## Human VCF ANNOVAR example
+
+# Setup
+cd /ix1/hugen2073-2026s/annovar_example
+python make_stopgains.py > spikein_variants.vcf 2> spikein_summary.txt # Secret
+grep '^#' ra.vcf > ra_with_spikes.vcf # Secret
+grep -v '^#' ra.vcf >> ra_with_spikes.vcf # Secret
+cat spikein_variants.vcf >> ra_with_spikes.vcf # Secret
+
+module load singularity
+singularity pull annovar_2018Apr16.sif docker://bioinfochrustrasbourg/annovar:2018Apr16
+
+# We want to do gene-based annotation first, so we need annovar to pull databases for us
+# annovar can't download here, so we have to use wget
+mkdir -p humandb
+##singularity exec --bind "$PWD:$PWD" annovar_2018Apr16.sif bash -lc '
+##cd "'"$PWD"'" &&
+##perl /home/TOOLS/tools/annovar/current/bin/annotate_variation.pl \
+##  -buildver hg19 \
+##  -downdb refGene \
+##  humandb/
+##'
+wget -O humandb/hg19_refGene.txt.gz \
+
+# Download the gene locations
+  http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/refGene.txt.gz
+gunzip humandb/hg19_refGene.txt.gz
+
+# Download the human genome fasta
+wget -O humandb/hg19.fa.gz \
+  http://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/hg19.fa.gz
+gunzip humandb/hg19.fa.gz
+
+# Generate hg19_refGeneMrna.fa (mRNA for each transcript for amino acid change annotation)
+# This took a couple minutes
+singularity exec --bind "$PWD:$PWD" annovar_2018Apr16.sif bash -lc '
+cd "'"$PWD"'" &&
+perl /home/TOOLS/tools/annovar/current/bin/retrieve_seq_from_fasta.pl \
+  humandb/hg19_refGene.txt \
+  -format refGene \
+  -seqfile humandb/hg19.fa \
+  -outfile humandb/hg19_refGeneMrna.fa
+'
+
+# Run annovar
+singularity exec --bind "$PWD:$PWD" annovar_2018Apr16.sif bash -lc '
+cd "'"$PWD"'" &&
+perl /home/TOOLS/tools/annovar/current/bin/table_annovar.pl \
+  ra_with_spikes.vcf \
+  humandb/ \
+  -buildver hg19 \
+  -out example \
+  -protocol refGene \
+  -operation g \
+  -nastring . \
+  -vcfinput
+'
+
+# See the R code in the lecture 18 exercise for how to find the variants now
+
+
+
+########## Cat VCF ANNOVAR example
+cd /ix1/hugen2073-2026s/annovar_example/cat
+https://www.omia.org/static/omia.sql.gz
+gunzip omia.sql.gz
+
+
+singularity exec \
+  --bind "$PWD:$PWD" \
+  ../annovar_2018Apr16.sif bash -lc '
+cd "'"$PWD"'" &&
+perl /home/TOOLS/tools/annovar/current/bin/table_annovar.pl \
+  chelsea_with_omia.sorted.vcf \
+  catdb/ \
+  -buildver felCat9 \
+  -out chelsea_full \
+  -protocol refGene,omia \
+  -operation g,f \
+  -nastring . \
+  -vcfinput
+'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+singularity exec \
+  --bind "$PWD:$PWD" \
+  ../annovar_2018Apr16.sif bash -lc '
+cd "'"$PWD"'" &&
+perl /home/TOOLS/tools/annovar/current/bin/table_annovar.pl \
+  chelsea_with_omia.vcf \
+  catdb/ \
+  -buildver felCat9 \
+  -out derp \
+  -protocol omia \
+  -operation f \
+  -nastring . \
+  -vcfinput
+'
+
+
+
+
+
+
+singularity exec \
+  --bind "$PWD:$PWD" \
+  ../annovar_2018Apr16.sif bash -lc '
+cd "'"$PWD"'" &&
+perl /home/TOOLS/tools/annovar/current/bin/table_annovar.pl \
+  test.vcf \
+  catdb/ \
+  -buildver felCat9 \
+  -out derp \
+  -protocol omia \
+  -operation f \
+  -nastring . \
+  -vcfinput
+'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+singularity exec \
+  --bind "$PWD:$PWD" \
+  --bind /ix1/hugen2073-2026s/annovar_example/cat/catdb/ \
+  annovar_2018Apr16.sif bash -lc '
+cd "'"$PWD"'" &&
+perl /home/TOOLS/tools/annovar/current/bin/table_annovar.pl \
+  chelsea.vcf \
+  /ix1/hugen2073-2026s/annovar_example/cat/catdb/ \
+  -buildver felcat9 \
+  -out cat_example \
+  -protocol omia \
+  -operation f \
+  -nastring . \
+  -vcfinput
+'
+
+
+singularity exec \
+  --bind "$PWD:$PWD" \
+  --bind /full/path/to/catdb:/full/path/to/catdb \
+  annovar_2018Apr16.sif bash -lc '
+cd "'"$PWD"'" &&
+perl /home/TOOLS/tools/annovar/current/bin/table_annovar.pl \
+  cat.vcf \
+  /full/path/to/catdb \
+  -buildver felCat9 \
+  -out cat_example \
+  -protocol refGene,omia \
+  -operation g,f \
+  -nastring . \
+  -vcfinput
+'
+
+
+
+
+
+singularity exec --bind "$PWD:$PWD" annovar_2018Apr16.sif bash -lc '
+cd "'"$PWD"'" &&
+perl /home/TOOLS/tools/annovar/current/bin/table_annovar.pl \
+  chelsea.vcf felCat9 \
+  -buildver felCat9 \
+  -out chelsea_annovar \
+  -protocol refGene \
+  -operation g \
+  -nastring . \
+  -vcfinput
+'
+
+
+
+
+
+
+

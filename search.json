@@ -1231,7 +1231,7 @@
     "href": "chapters/18_annotating_gwas_results.html#suggested-reading",
     "title": "18  Annotating GWAS Results",
     "section": "18.4 Suggested Reading",
-    "text": "18.4 Suggested Reading",
+    "text": "18.4 Suggested Reading\nLandrum MJ, Lee JM, Riley GR, Jang W, Rubinstein WS, Church DM, Maglott DR. ClinVar: public archive of relationships among sequence variation and human phenotype. Nucleic Acids Res. 2014 Jan;42(Database issue):D980-5. doi: 10.1093/nar/gkt1113. Epub 2013 Nov 14. PMID: 24234437; PMCID: PMC3965032.\nLandrum, M. J., & Kattman, B. L. (2018). ClinVar at five years: Delivering on the promise. Human mutation, 39(11), 1623–1630. https://doi.org/10.1002/humu.23641\nClinGen Consortium. Electronic address: splon@bcm.edu, & ClinGen Consortium (2025). The Clinical Genome Resource (ClinGen): Advancing genomic knowledge through global curation. Genetics in medicine : official journal of the American College of Medical Genetics, 27(1), 101228. https://doi.org/10.1016/j.gim.2024.101228\nHamosh, A., Scott, A. F., Amberger, J. S., Bocchini, C. A., & McKusick, V. A. (2005). Online Mendelian Inheritance in Man (OMIM), a knowledgebase of human genes and genetic disorders. Nucleic acids research, 33(Database issue), D514–D517. https://doi.org/10.1093/nar/gki033\nBuniello, A., MacArthur, J. A. L., Cerezo, M., Harris, L. W., Hayhurst, J., Malangone, C., McMahon, A., Morales, J., Mountjoy, E., Sollis, E., Suveges, D., Vrousgou, O., Whetzel, P. L., Amode, R., Guillen, J. A., Riat, H. S., Trevanion, S. J., Hall, P., Junkins, H., Flicek, P., … Parkinson, H. (2019). The NHGRI-EBI GWAS Catalog of published genome-wide association studies, targeted arrays and summary statistics 2019. Nucleic acids research, 47(D1), D1005–D1012. https://doi.org/10.1093/nar/gky1120\nSollis, E., Mosaku, A., Abid, A., Buniello, A., Cerezo, M., Gil, L., Groza, T., Güneş, O., Hall, P., Hayhurst, J., Ibrahim, A., Ji, Y., John, S., Lewis, E., MacArthur, J. A. L., McMahon, A., Osumi-Sutherland, D., Panoutsopoulou, K., Pendlington, Z., Ramachandran, S., … Harris, L. W. (2023). The NHGRI-EBI GWAS Catalog: knowledgebase and deposition resource. Nucleic acids research, 51(D1), D977–D985. https://doi.org/10.1093/nar/gkac1010",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Annotating GWAS Results</span>"
@@ -1297,7 +1297,7 @@
     "href": "chapters/19_ucsc_genome_browser_and_tracks.html#suggested-reading",
     "title": "19  UCSC Genome Browser and Tracks",
     "section": "19.4 Suggested Reading",
-    "text": "19.4 Suggested Reading",
+    "text": "19.4 Suggested Reading\nhttps://genome.ucsc.edu/goldenpath/help/hgTracksHelp.html\nhttps://genome.ucsc.edu/docs/tableBrowserTutorial.html\nhttps://genome.ucsc.edu/goldenpath/help/hgTablesHelp.html\nhttps://genome.ucsc.edu/goldenpath/help/hgIntegratorHelp.html\nhttps://genome.ucsc.edu/goldenpath/help/hgTracksHelp.html#CustomTracks",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>UCSC Genome Browser and Tracks</span>"
@@ -1429,7 +1429,7 @@
     "href": "chapters/21_ucsc_genome_browser_commandline_tools.html#suggested-reading",
     "title": "21  UCSC Genome Browser command-line tools",
     "section": "21.4 Suggested Reading",
-    "text": "21.4 Suggested Reading",
+    "text": "21.4 Suggested Reading\nhttps://genome.ucsc.edu/util.html\nhttps://hgdownload.gi.ucsc.edu/downloads.html#source_downloads",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>UCSC Genome Browser command-line tools</span>"

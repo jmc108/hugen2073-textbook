@@ -175,7 +175,7 @@ Write out the list of proxies (as a text file with one SNP per line, no header).
 ```{r write_out_proxies, eval=F}
 # Set the path
 # Write out the list
-proxies_out_file <- "/Users/jonathanchernus/Documents/Teaching/2023s/hugen2073/lecture_slides/18_annotation_variants/lab_2023s/top_hits_proxies.txt" # Set the path to the file!
+proxies_out_file <- "/Users/jonathanchernus/Desktop/top_hits_proxies.txt" # Set the path to the file!
 write.table(x=proxies$RS_Number,
             file=proxies_out_file,
             row.names=F,
