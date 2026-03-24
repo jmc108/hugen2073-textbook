@@ -82,5 +82,113 @@ perl /home/TOOLS/tools/annovar/current/bin/table_annovar.pl \
 '
 
 
+##### Some random cat setup/processing commands here:
+module load bcftools
+bcftools view -v snps,indels -Ov -o chelsea.vcf chelsea_22.gvcf.gz
+
+https://genome.ucsc.edu/cgi-bin/hgTables?db=felCat9&hgta_group=genes&hgta_track=refSeqComposite&hgta_table=ncbiRefSeq&hgta_doSchema=describe+table+schema
+wget http://hgdownload.soe.ucsc.edu/gbdb/felCat9/ncbiRefSeq/seqNcbiRefSeq.rna.fa
+# "Note: all start coordinates in our database are 0-based, not 1-based. "
+# https://hgdownload.soe.ucsc.edu/goldenPath/felCat9/database/
+wget https://hgdownload.soe.ucsc.edu/goldenPath/felCat9/database/ncbiRefSeq.txt.gz
+
+# Change chromosome names
+zcat ncbiRefSeq.txt.gz | \
+awk 'BEGIN{FS=OFS="\t"}
+{
+  if      ($3=="chrA1") $3="1";
+  else if ($3=="chrA2") $3="2";
+  else if ($3=="chrA3") $3="3";
+  else if ($3=="chrB1") $3="4";
+  else if ($3=="chrB2") $3="5";
+  else if ($3=="chrB3") $3="6";
+  else if ($3=="chrB4") $3="7";
+  else if ($3=="chrC1") $3="8";
+  else if ($3=="chrC2") $3="9";
+  else if ($3=="chrD1") $3="10";
+  else if ($3=="chrD2") $3="11";
+  else if ($3=="chrD3") $3="12";
+  else if ($3=="chrD4") $3="13";
+  else if ($3=="chrE1") $3="14";
+  else if ($3=="chrE2") $3="15";
+  else if ($3=="chrE3") $3="16";
+  else if ($3=="chrF1") $3="17";
+  else if ($3=="chrF2") $3="18";
+  else if ($3=="chrX")  $3="19";
+  else if ($3=="chrM")  $3="20";
+  else next;
+  print
+}' > felCat9_refGene.txt
+
+cp seqNcbiRefSeq.rna.fa felCat9_refGeneMrna.fa
+
+# Move files to felCat9
+
+module load singularity
+
+singularity pull annovar_2018Apr16.sif docker://bioinfochrustrasbourg/annovar:2018Apr16
+
+singularity exec --bind "$PWD:$PWD" annovar_2018Apr16.sif bash -lc '
+cd "'"$PWD"'" &&
+perl /home/TOOLS/tools/annovar/current/bin/table_annovar.pl \
+  chelsea.vcf felCat9 \
+  -buildver felCat9 \
+  -out chelsea_annovar \
+  -protocol refGene \
+  -operation g \
+  -nastring . \
+  -vcfinput
+'
+
+
+wget https://hgdownload.soe.ucsc.edu/goldenPath/felCat9/bigZips/felCat9.fa.gz
+gunzip felCat9.fa.gz
+awk '
+/^>/ {
+  keep=1
+  if      ($0==">chrA1") h=">1"
+  else if ($0==">chrA2") h=">2"
+  else if ($0==">chrA3") h=">3"
+  else if ($0==">chrB1") h=">4"
+  else if ($0==">chrB2") h=">5"
+  else if ($0==">chrB3") h=">6"
+  else if ($0==">chrB4") h=">7"
+  else if ($0==">chrC1") h=">8"
+  else if ($0==">chrC2") h=">9"
+  else if ($0==">chrD1") h=">10"
+  else if ($0==">chrD2") h=">11"
+  else if ($0==">chrD3") h=">12"
+  else if ($0==">chrD4") h=">13"
+  else if ($0==">chrE1") h=">14"
+  else if ($0==">chrE2") h=">15"
+  else if ($0==">chrE3") h=">16"
+  else if ($0==">chrF1") h=">17"
+  else if ($0==">chrF2") h=">18"
+  else if ($0==">chrX")  h=">19"
+  else if ($0==">chrM")  h=">20"
+  else keep=0
+
+  if (keep) print h
+  next
+}
+keep { print }
+' felCat9.fa > felCat9.canonical.renamed.fa
+
+
+
+
+
+singularity exec --bind "$PWD:$PWD" annovar_2018Apr16.sif bash -lc '
+cd "'"$PWD"'" &&
+perl /home/TOOLS/tools/annovar/current/bin/retrieve_seq_from_fasta.pl \
+  felCat9/felCat9_refGene.txt \
+  -format refGene \
+  -seqfile felCat9.canonical.renamed.fa \
+  -outfile felCat9/felCat9_refGeneMrna.fa
+'
+
+
+grep 'NM_' chelsea_annovar.refGene.exonic_variant_function > exonic.NM.txt
+cut -f2 exonic.NM.txt | sort | uniq -c | sort -nr
 
 
