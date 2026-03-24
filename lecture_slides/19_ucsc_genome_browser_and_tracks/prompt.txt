@@ -34,3 +34,14 @@ Rules:
 - Maintain a serious academic tone.
 
 Quiz questions:
+- Explain what information is in the Table Schema for a track and why the Table Schema is useful.
+- Briefly explain how to access and use the Table Browser and what it does.
+- What are the Variant Annotation Integrator and Data Integrator for? What is different about them?
+- What is LiftOver?
+- Explain the difference between 1-start, fully-closed and 0-start, half-open coordinates. For example, how would you represent the position of a one-nucleotide insertion between the second and third base of a sequence on chromosome 22 using both conventions?
+- What is BED format here? Explain the required columns and the general purpose of the optional columns.
+- What is bedGraph format for? Explain the format.
+- Explain what information goes in the browser lines of a custom track.
+- Explain what information goes in the track line of a custom track.
+- How does the track line differ between BED and bedGraph format custom tracks?
+- Explain how color is encoded in a BED file. Also, what do you need to add to the track line in order to make sure the colors are used?

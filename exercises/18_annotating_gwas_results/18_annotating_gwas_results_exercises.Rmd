@@ -104,3 +104,51 @@ Now, prioritize as follows
 
 ## Running ANNOVAR for a cat
 
+This has been done for you already.
+
+Here we performed both gene- and filter-based annotation. RefGene was used for annotating amino acid changes, and the Online Mendelian Inheritance in Animals (OMIA) database was used for detecting possible Mendelian mutations in cats.
+
+```
+singularity exec \
+  --bind "$PWD:$PWD" \
+  ../annovar_2018Apr16.sif bash -lc '
+cd "'"$PWD"'" &&
+perl /home/TOOLS/tools/annovar/current/bin/table_annovar.pl \
+  chelsea_with_omia.sorted.vcf \
+  catdb/ \
+  -buildver felCat9 \
+  -out chelsea_full \
+  -protocol refGene,omia \
+  -operation g,f \
+  -nastring . \
+  -vcfinput
+'
+```
+
+The main results file is `/ix1/hugen2073-2026s/annovar_example/cat/chelsea_full.felCat9_multianno.vcf`.
+
+Instead of reading the file into R, let's just use some cobbled-together Unix commands. You can either run these in the terminal or run them in R with the `system`.
+
+
+This command will find the most severe annotations in protein-coding, RefSeq-curated genes and label them as (heterozygous) HET or HOM (homozygous).
+
+```
+grep -v '^#' "$VCF" \
+| grep -E 'ExonicFunc.refGene=(stopgain|stoploss|frameshift[^;]*|nonsynonymous SNV)' \
+| grep 'AAChange.refGene=.*NM_' \
+| awk -F'\t' '
+$10 ~ /^(0[\/|]1|1[\/|]0):/ {print "HET\t"$0}
+$10 ~ /^1[\/|]1:/           {print "HOM_ALT\t"$0}
+' \
+| sort -k7,7nr
+```
+
+We see there are dozens of results.
+
+We can also check whether any were found in OMIA.
+
+```
+grep -v '^#' "$VCF" | grep -v 'omia=\.'
+```
+
+What phenotype is this variant associated with? 
