@@ -1,0 +1,74 @@
+# Exercises
+
+## Exercise 1
+
+The SNP rs62229686 was the lead variant at a particular locus in a multivariate GWAS of plasma lipid levels. The authors claim it is a missense variant in the AGPAT3 gene with CADD \< 20 (<https://www.nature.com/articles/s41467-023-42532-8>). Try to verify these claims.
+
+(You should notice there's a problem when trying to verify the CADD score through querying with R/SQL. What could you try instead?) You may also find it easier (necessary?) to use two queries for verifying the functional consequence and the gene.
+
+```{r}
+# Your code here
+
+
+```
+
+
+# Solutions
+
+## Exercise 1
+
+We can pretty easily verify it being a missense variant in AGPAT3.
+
+```{r}
+# Get the position and functional consequence
+q <- "
+SELECT *
+FROM hg38.snp151
+WHERE name = 'rs62229686'
+;"
+
+r <- query(q)
+r
+r$func
+
+chr_temp <- r$chrom
+start_temp <- r$chromStart
+end_temp <- r$chromEnd
+
+# Get the gene
+q <- paste0("
+SELECT *
+FROM hg38.ncbiRefSeq
+WHERE chrom = '",chr_temp,"' AND
+txStart < ",start_temp," AND
+txEnd > ",end_temp,"
+;"
+)
+r <- query(q)
+table(r$name2)
+
+```
+
+For the CADD part, you can install bigWigToWig and run then it like this. Note that the CADD scores are in 4 separate files, one for each possible allele (A, C, G, T).
+
+```{r}
+# You may need to give yourself permission to run the program
+# Open your terminal and run this command:
+# chmod -v a+x ~/Downloads/bigWigToWig
+
+# This create a bigWigToWig command for us to run
+for (allele in c("a","g","t","c")) {
+
+  command_temp <- paste0(
+  "~/Downloads/bigWigToWig ",
+  "-chrom=",chr_temp," ",
+  "-start=",start_temp," ",
+  "-end=",end_temp," ",
+  "http://hgdownload.soe.ucsc.edu/gbdb/hg38/cadd1.7/",allele,".bw stdout"
+  )
+
+  # This causes R to run the command
+  system(command_temp)
+
+}
+```
