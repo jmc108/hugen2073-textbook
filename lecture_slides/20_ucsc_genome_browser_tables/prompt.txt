@@ -34,3 +34,7 @@ Rules:
 - Maintain a serious academic tone.
 
 Quiz questions:
+- Explain what a primary key and a foreign key are.
+- Explain the difference between left, right, inner, and outer joins.
+- Give an SQL command to query the GWAS Catalog for the hg19 locations of SNPs that are BOTH associated with gout with p-values at least as significant as 1e-9 AND have risk allele frequencies at least 2%. (Note that riskAlFreq is the name of the column with risk allele frequency.)
+- Explain everything that happens in slide 34 (the Example JOIN Query from Table Browser slide). Be sure to explain which information comes from which tables.
