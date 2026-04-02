@@ -34,3 +34,10 @@ Rules:
 - Maintain a serious academic tone.
 
 Quiz questions:
+- What kind of information goes in BED files?
+- Other than genotypes and things like position and alleles, what kinds of information can be embedded in a VCF?
+- What is bigBed format? What is it for? Where is it used? How do you access this file type?
+- Explain what wget and curl are for and the important differences between them. Why is wget probably not ideal for large genomic datasets?
+- What is tabix for? What requirements does it have in order to work? Can you only use it locally?
+- Compare and contrast bcftools with tabix.
+- Give some examples of what bedtools can do.
