@@ -1,0 +1,264 @@
+# Setup
+
+The data we'll work with are summary statistics from a UK BioBank GWAS of liking cheese.
+
+- Log on to the cluster at <http://hugen.crc.pitt.edu>
+
+- Log in at the terminal (Clusters > Teach Shell Access)
+
+- Start an interactive job with `srun -M teach -A hugen2073-2026s --pty bash`
+
+- Do the exercises below
+
+- Don't run the bash chunks in RStudio server, because they'll run on the login node and get me in trouble
+
+# Exercises
+
+## 1. Downloading data
+
+First, let's just try downloading/streaming files with `wget` and `curl`.
+
+### `wget`
+
+Suppose we want to download all of the chromosome 21 data from the 1000 Genomes Project. The file and index are:
+
+- `https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr21.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz`
+
+- `https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr21.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz.tbi`
+
+In the bash chunk below, use `wget` to download these somewhere in your home folder. Check the file sizes and how long the download takes. Note this is the smallest autosome.
+
+(After you're done with these exercises today, you will probably want to delete the files you downloaded, because your storage space is limited.)
+
+```{bash}
+# Your code here
+
+```
+
+
+### `curl`
+
+Suppose instead you want to naively look for a variant at position `48119740` in the file you downloaded. Use `zcat` to stream the compressed VCF, and then pipe it into a suitable `grep` command to search for a variant at that position. Include the `time` command in the beginning of the line containing your command. This will output how long the command took, in seconds (read the time labeled `real` in the output).
+
+```{bash}
+# Your code here
+# Should look like:
+# time your_command_here
+
+```
+
+## 2. Querying with `tabix`
+
+Now try using `tabix` to query that location instead.
+
+You need to load `bcftools` first, which contains `tabix`.
+
+The basic syntax looks like `tabix file.vcf.gz chr:pos-pos`.
+
+Time it as above. How much faster is it?
+
+```{bash}
+# Your code here
+
+
+```
+
+Now delete the index file you downloaded, and try the `tabix` command again. What happens? Why?
+
+```{bash}
+# Your code here
+
+```
+
+Now delete the `vcf.gz` you downloaded, too. This time, query the file remotely.
+
+```{bash}
+# Your code here
+
+```
+
+
+## 3. `bedtools`
+
+Let's take some obesity-related SNPs and try to see if they lie in enhancers. These SNPs are from around the famous FTO locus, and some are known to lie in an enhancer for adipose tissue.
+
+Unfortunately, I couldn't easily find an enhancer database for that tissue, so let's try with a skeletal muscle database.
+
+- First, use `curl -L` to stream the enhancer database from this file:  `http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeBroadHmm/wgEncodeBroadHmmHsmmHMM.bed.gz`.
+
+- Pipe this into `gunzip -c` to decompress it
+
+- Pipe into `awk '$4 ~ /Enh/'` to retain only enhancer marks
+
+- Redirect to a text file with `> enhancers.bed`
+
+Next, look at the SNPs we want to query in `/ix1/hugen2073-2026s/ucsc/fto_snps.bed`.
+
+Now do `module load bedtools`.
+
+Use `bedtools intersect` to see if the SNPs in your bed file overlap with your enhancers in your other bed file.
+
+- Use flags like `-a file1.bed` and `-b file2.bed` to specify the two input files you want to intersect.
+
+- Include the flags `-wa` and `-wb` to print the complete record for each pair of overlapping features.
+
+- Read the output to try to understand it.
+
+```{bash}
+# Your code here 
+
+```
+
+## 4. bigBedtoBed
+
+A patient with neuropathy-like symptoms was found to have a deletion near PMP22 (chr17:15150000-15300000). What does ClinVar say about variants in that region?
+
+To use bigBedtoBed, start your command like this: `/ix1/hugen2073-2026s/ucsc/bigBedToBed`.
+
+- See the slides for syntax
+
+- Use the Table Browser to find the link the the .bb file
+
+- Use the table schema to help you select column numbers
+
+- Then you can pipe into a command like `awk '{print $1,$2,$3,$13,$14,$15,$16,$22}' pmp22_clinvar_cnv.bed | column -t` to view the columns of interest (replace the numbers with the columns you actually want)
+
+```{r}
+# Your code here
+
+```
+
+## Bonus: bigWig
+
+The SNP rs62229686 was the lead variant at a particular locus in a multivariate GWAS of plasma lipid levels. The authors claim it is a missense variant in the AGPAT3 gene with CADD \< 20 (<https://www.nature.com/articles/s41467-023-42532-8>). Try to verify these claims.
+
+(You should notice there's a problem when trying to verify the CADD score through querying with R/SQL. What could you try instead?) You may also find it easier (necessary?) to use two queries for verifying the functional consequence and the gene.
+
+```{r}
+# Your code here
+
+```
+
+# Solutions
+
+## `wget`
+
+```{bash}
+wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr21.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz
+wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr21.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz.tbi
+
+```
+
+
+## `curl`
+
+```{bash}
+time zcat ALL.chr21.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz | grep 48119740
+```
+
+
+## `tabix`
+
+```{bash}
+# Query local file
+module load bcftools
+time tabix ALL.chr21.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz 21:48119740-48119740
+
+# Delete index, try again
+# You'll get an error
+rm ALL.chr21.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz.tbi
+tabix ALL.chr21.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz 21:48119740-48119740
+
+# Query remotely
+rm ALL.chr21.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz.tbi
+tabix https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr21.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz 21:48119740-48119740
+
+```
+
+
+## `bedtools`
+
+```{bash}
+# Get enhancers
+curl -L http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeBroadHmm/wgEncodeBroadHmmHsmmHMM.bed.gz \
+| gunzip -c \
+| awk '$4 ~ /Enh/' > enhancers.bed
+
+# Check out SNPs
+cat /ix1/hugen2073-2026s/ucsc/fto_snps.bed
+
+# Investigate overlap
+module load bedtools
+bedtools intersect -a /ix1/hugen2073-2026s/ucsc/fto_snps.bed -b enhancers.bed -wa -wb
+```
+
+
+## `bigBedtoBed`
+
+```{bash}
+# For example...
+/ix1/hugen2073-2026s/ucsc/bigBedToBed \
+  https://hgdownload.soe.ucsc.edu/gbdb/hg38/bbi/clinvar/clinvarCnv.bb \
+  -chrom=chr17 -start=15150000 -end=15300000 \
+  stdout | awk -F"\t" '{print $23}'
+```
+
+
+
+## `bigWig`
+
+We can pretty easily verify it being a missense variant in AGPAT3.
+
+```{r}
+# Get the position and functional consequence
+q <- "
+SELECT *
+FROM hg38.snp151
+WHERE name = 'rs62229686'
+;"
+
+r <- query(q)
+r
+r$func
+
+chr_temp <- r$chrom
+start_temp <- r$chromStart
+end_temp <- r$chromEnd
+
+# Get the gene
+q <- paste0("
+SELECT *
+FROM hg38.ncbiRefSeq
+WHERE chrom = '",chr_temp,"' AND
+txStart < ",start_temp," AND
+txEnd > ",end_temp,"
+;"
+)
+r <- query(q)
+table(r$name2)
+
+```
+
+For the CADD part, you can install bigWigToWig and run then it like this. Note that the CADD scores are in 4 separate files, one for each possible allele (A, C, G, T).
+
+```{r}
+# You may need to give yourself permission to run the program
+# Open your terminal and run this command:
+# chmod -v a+x ~/Downloads/bigWigToWig
+
+# This create a bigWigToWig command for us to run
+for (allele in c("a","g","t","c")) {
+
+  command_temp <- paste0(
+  "~/Downloads/bigWigToWig ",
+  "-chrom=",chr_temp," ",
+  "-start=",start_temp," ",
+  "-end=",end_temp," ",
+  "http://hgdownload.soe.ucsc.edu/gbdb/hg38/cadd1.7/",allele,".bw stdout"
+  )
+
+  # Print the command you want to run, and then run it at the terminal
+  cat(command_temp)
+
+}
+```
