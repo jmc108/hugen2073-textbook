@@ -52,6 +52,10 @@ format:
 
 ## Suggested Reading
 
+[GTEx Consortium. “The GTEx Consortium atlas of genetic regulatory effects across human tissues.” Science (New York, N.Y.) vol. 369,6509 (2020): 1318-1330. doi:10.1126/science.aaz1776](https://pubmed.ncbi.nlm.nih.gov/32913098/)
+
+[Gamazon, Eric R et al. “A gene-based association method for mapping traits using reference transcriptome data.” Nature genetics vol. 47,9 (2015): 1091-8. doi:10.1038/ng.3367](https://pubmed.ncbi.nlm.nih.gov/26258848/)
+
 ## In-class Exercises
 
 [Download the exercises](../exercises/23_eqtls_and_twas/23_eqtls_and_twas_exercises.Rmd)

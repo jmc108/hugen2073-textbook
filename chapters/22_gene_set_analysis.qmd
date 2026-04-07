@@ -41,7 +41,7 @@ format:
 ```{=html}
 <div style="width: 100%; height: 800px; margin-top: 1.5em;">
   <iframe
-    src="../lecture_slides/1_r_and_base_r_graphics/3_r_base_r_graphics_with_example_2025s.pdf"
+    src="../lecture_slides/22_gene_set_analysis/22_gene_set_analysis.pdf"
     style="width: 100%; height: 100%; border: 1px solid #ccc;"
     title="Lecture slides">
   </iframe>
@@ -51,6 +51,14 @@ format:
 ## Required Reading
 
 ## Suggested Reading
+
+[Ashburner, M et al. “Gene ontology: tool for the unification of biology. The Gene Ontology Consortium.” Nature genetics vol. 25,1 (2000): 25-9. doi:10.1038/75556](https://pubmed.ncbi.nlm.nih.gov/10802651/)
+
+[Mooney, Michael A, and Beth Wilmot. “Gene set analysis: A step-by-step guide.” American journal of medical genetics. Part B, Neuropsychiatric genetics : the official publication of the International Society of Psychiatric Genetics vol. 168,7 (2015): 517-27. doi:10.1002/ajmg.b.32328](https://pmc.ncbi.nlm.nih.gov/articles/PMC4638147/)
+
+[Wang, Lily et al. “Gene set analysis of genome-wide association studies: methodological issues and perspectives.” Genomics vol. 98,1 (2011): 1-8. doi:10.1016/j.ygeno.2011.04.006](https://pmc.ncbi.nlm.nih.gov/articles/PMC3852939/)
+
+[McLean, Cory Y et al. “GREAT improves functional interpretation of cis-regulatory regions.” Nature biotechnology vol. 28,5 (2010): 495-501. doi:10.1038/nbt.1630](https://pubmed.ncbi.nlm.nih.gov/20436461/)
 
 ## In-class Exercises
 

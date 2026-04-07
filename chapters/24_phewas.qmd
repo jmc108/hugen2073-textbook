@@ -52,6 +52,10 @@ format:
 
 ## Suggested Reading
 
+[Denny, Joshua C et al. “Phenome-Wide Association Studies as a Tool to Advance Precision Medicine.” Annual review of genomics and human genetics vol. 17 (2016): 353-73. doi:10.1146/annurev-genom-090314-024956](https://pubmed.ncbi.nlm.nih.gov/27147087/)
+
+[Gagliano Taliun, Sarah A et al. “Exploring and visualizing large-scale genetic associations by using PheWeb.” Nature genetics vol. 52,6 (2020): 550-552. doi:10.1038/s41588-020-0622-5](https://pubmed.ncbi.nlm.nih.gov/32504056/)
+
 ## In-class Exercises
 
 [Download the exercises](../exercises/24_phewas/24_phewas_exercises.Rmd)

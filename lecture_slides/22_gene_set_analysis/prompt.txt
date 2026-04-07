@@ -34,3 +34,11 @@ Rules:
 - Maintain a serious academic tone.
 
 Quiz questions:
+- Compare and contrast over-representation analysis vs. a functional scoring class method like GSEA. What kind of inputs does each use? What is the difference in what they test?
+- What unrealistic assumptions and limitations are involved with over-representation analysis?
+- What are some convenient tools that test lots of gene sets for you at once?
+- What do we mean by the multiple-testing problem in the context of gene set analysis? Explain the concept of FDR, and contrast it with the idea of an alpha level.
+- What are some limitations of gene sets in general? (The concept of a gene set, that is - not merely the testing.)
+- Explain the idea of gene ontologies. Why do the ontologies come with evidence codes?
+- Explain how you can use FUMA for gene set analysis even if you don't have SNP-level summary stats.
+- Explain the idea behind GREAT. Be sure to explain what the inputs are and how it differs from ordinary ORA.
