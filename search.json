@@ -1495,7 +1495,7 @@
     "href": "chapters/22_gene_set_analysis.html#suggested-reading",
     "title": "22  Gene Set Analysis",
     "section": "22.4 Suggested Reading",
-    "text": "22.4 Suggested Reading",
+    "text": "22.4 Suggested Reading\nAshburner, M et al. “Gene ontology: tool for the unification of biology. The Gene Ontology Consortium.” Nature genetics vol. 25,1 (2000): 25-9. doi:10.1038/75556\nMooney, Michael A, and Beth Wilmot. “Gene set analysis: A step-by-step guide.” American journal of medical genetics. Part B, Neuropsychiatric genetics : the official publication of the International Society of Psychiatric Genetics vol. 168,7 (2015): 517-27. doi:10.1002/ajmg.b.32328\nWang, Lily et al. “Gene set analysis of genome-wide association studies: methodological issues and perspectives.” Genomics vol. 98,1 (2011): 1-8. doi:10.1016/j.ygeno.2011.04.006\nMcLean, Cory Y et al. “GREAT improves functional interpretation of cis-regulatory regions.” Nature biotechnology vol. 28,5 (2010): 495-501. doi:10.1038/nbt.1630",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Gene Set Analysis</span>"
@@ -1561,7 +1561,7 @@
     "href": "chapters/23_eqtls_and_twas.html#suggested-reading",
     "title": "23  eQTLs and TWAS",
     "section": "23.4 Suggested Reading",
-    "text": "23.4 Suggested Reading",
+    "text": "23.4 Suggested Reading\nGTEx Consortium. “The GTEx Consortium atlas of genetic regulatory effects across human tissues.” Science (New York, N.Y.) vol. 369,6509 (2020): 1318-1330. doi:10.1126/science.aaz1776\nGamazon, Eric R et al. “A gene-based association method for mapping traits using reference transcriptome data.” Nature genetics vol. 47,9 (2015): 1091-8. doi:10.1038/ng.3367",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>eQTLs and TWAS</span>"
@@ -1627,7 +1627,7 @@
     "href": "chapters/24_phewas.html#suggested-reading",
     "title": "24  PheWAS",
     "section": "24.4 Suggested Reading",
-    "text": "24.4 Suggested Reading",
+    "text": "24.4 Suggested Reading\nDenny, Joshua C et al. “Phenome-Wide Association Studies as a Tool to Advance Precision Medicine.” Annual review of genomics and human genetics vol. 17 (2016): 353-73. doi:10.1146/annurev-genom-090314-024956\nGagliano Taliun, Sarah A et al. “Exploring and visualizing large-scale genetic associations by using PheWeb.” Nature genetics vol. 52,6 (2020): 550-552. doi:10.1038/s41588-020-0622-5",
     "crumbs": [
       "Genomics",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>PheWAS</span>"
