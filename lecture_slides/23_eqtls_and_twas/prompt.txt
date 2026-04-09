@@ -34,3 +34,15 @@ Rules:
 - Maintain a serious academic tone.
 
 Quiz questions:
+- In your own words, explain what an eQTL is. (Do not repeat the lecture notes.)
+- What's the difference between a cis-eQTL and a trans-eQTL?
+- Why are eQTLS of interest in the context of GWAS?
+- Why is it too simple to say something like "rs12345 is an eQTL for gene X"? Name at least 4 important factors ignored by such a statement.
+- What information does GTEx contain?
+- In your own words, explain what a TWAS is. (Do not repeat the lecture notes.) Be sure to explain what the inputs and outputs are and what statistical hypothesis is tested.
+- True or false: TWAS signals reflect gene expression changes due to a disease? Explain.
+- What is the difference between PrediXcan and S-PrediXcan? Explain the inputs and outputs of both.
+- What kind of data are PrediXcan and S-PrediXcan trained on?
+- When you run PrediXcan or S-PrediXcan, what's the most importnat thing you, the user, must specify? What related tool gets around that problem?
+- True or false: TWAS predicts most gene expression quite inaccurately.
+- How does population/ancestry complicate TWAS?
