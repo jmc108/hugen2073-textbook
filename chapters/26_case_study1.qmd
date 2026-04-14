@@ -1,5 +1,5 @@
 ---
-title: "TBD2"
+title: "TBD1"
 format:
   html:
     sidebar: true
@@ -7,7 +7,7 @@ format:
       sidebar-width: 420px
 ---
 
-<div id="tutor-root" data-chapter="week05" class="tutor-floating"></div>
+<div id="tutor-root" data-chapter="26_case_study1" class="tutor-floating"></div>
 <script src="../assets/tutor-chat.js"></script>
 <link rel="stylesheet" href="../assets/tutor-chat.css">
 
@@ -41,7 +41,7 @@ format:
 ```{=html}
 <div style="width: 100%; height: 800px; margin-top: 1.5em;">
   <iframe
-    src="../lecture_slides/1_r_and_base_r_graphics/3_r_base_r_graphics_with_example_2025s.pdf"
+    src="../lecture_slides/26_case_study1/26_case_study1.pdf"
     style="width: 100%; height: 100%; border: 1px solid #ccc;"
     title="Lecture slides">
   </iframe>
@@ -50,11 +50,17 @@ format:
 
 ## Required Reading
 
+[Strom, Nora I et al. “Genome-wide association study of major anxiety disorders in 122,341 European-ancestry cases identifies 58 loci and highlights GABAergic signaling.” Nature genetics vol. 58,2 (2026): 275-288. doi:10.1038/s41588-025-02485-8](https://pmc.ncbi.nlm.nih.gov/articles/PMC12900644/)
+
 ## Suggested Reading
+
+[Schwartzentruber, Jeremy et al. “Genome-wide meta-analysis, fine-mapping and integrative prioritization implicate new Alzheimer's disease risk genes.” Nature genetics vol. 53,3 (2021): 392-402. doi:10.1038/s41588-020-00776-w](https://pmc.ncbi.nlm.nih.gov/articles/PMC7610386/)
+
+[Nativio, Raffaella et al. “An integrated multi-omics approach identifies epigenetic alterations associated with Alzheimer's disease.” Nature genetics vol. 52,10 (2020): 1024-1035. doi:10.1038/s41588-020-0696-0](https://pmc.ncbi.nlm.nih.gov/articles/PMC8098004/)
 
 ## In-class Exercises
 
-[Download the exercises](../exercises/27_TBD2/27_TBD2_exercises.Rmd)
+[Download the exercises](../exercises/26_TBD1/26_TBD1_exercises.Rmd)
 
 
 
