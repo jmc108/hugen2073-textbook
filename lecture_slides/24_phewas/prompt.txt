@@ -34,3 +34,10 @@ Rules:
 - Maintain a serious academic tone.
 
 Quiz questions:
+- Explain the difference between forward and reverse genetics. Which is GWAS? Which is pheWAS?
+- Explain what pheWAS is.
+- What is pleiotropy? Explain the difference between horizontal and vertical pleiotropy. Why are they hard to distinguish? Give an example, and explain how you could distinguish between them.
+- What is a "phenome"? What are two ways to create/define a phenome? What are the tradeoffs between the two?
+- How are cases and controls chosen/defined in an EHR-based pheWAS?
+- Describe some of the challenges of pheWAS in general.
+- Describe two different reasons for doing pheWAS.
