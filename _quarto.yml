@@ -46,8 +46,8 @@ book:
         - chapters/23_eqtls_and_twas.qmd
         - chapters/24_phewas.qmd
         - chapters/25_finemapping.qmd
-        - chapters/26_TBD1.qmd
-        - chapters/27_TBD2.qmd
+        - chapters/26_case_study1.qmd
+        - chapters/27_case_study2.qmd
     - part: "Appendix"
       chapters:
         - chapters/appendix.qmd
