@@ -1,5 +1,5 @@
 ---
-title: "TBD1"
+title: "Case Study 1"
 format:
   html:
     sidebar: true
