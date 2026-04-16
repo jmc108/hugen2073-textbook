@@ -34,3 +34,7 @@ Rules:
 - Maintain a serious academic tone.
 
 Quiz questions:
+- What does "fine-mapping" mean, and why do we do it?
+- What are the typical inputs and outputs for Bayesian fine-mapping?
+- Explain what a posterior inclusion probability and a credible set are.
+- What question does colocalization analysis try to answer?

@@ -1,0 +1,112 @@
+# Setup
+
+Log on to the computing cluster and launch an RStudio Server session.
+
+We will try to use the package `susieR` to reproduce Figure 2 from this paper:
+
+[Gjoka, Aida, and Heather J Cordell. “Fine-Mapping the Results From Genome-Wide Association Studies of Primary Biliary Cholangitis Using SuSiE and h2-D2.” Genetic epidemiology vol. 49,1 (2025): e22592. doi:10.1002/gepi.22592](https://pmc.ncbi.nlm.nih.gov/articles/PMC11656035/).
+
+Summary stats from the GWAS along with LD matrices are available at [https://www.staff.ncl.ac.uk/heather.cordell/GJOKA_SUMSTATS.zip](https://www.staff.ncl.ac.uk/heather.cordell/GJOKA_SUMSTATS.zip). These have already been downloaded for you in `ix1/hugen2073-2026s/susie/GJOKA_SUMSTATS/`.
+
+The locus in Figure 2 is locus number 46, which corresponds to the files `sumstats_46.assoc.logistic` and `covmat_46.ld`.
+
+# Read in the data
+
+```{r}
+# install.packages("susieR")
+library(data.table)
+library(susieR)
+library(ggplot2)
+
+# Load your data
+# SNP order in sumstats MUST match rows/cols of R - We'll assume this is true
+sumstats <- fread("/ix1/hugen2073-2026s/susie/GJOKA_SUMSTATS/sumstats_46.assoc.logistic")
+R <- as.matrix(fread("/ix1/hugen2073-2026s/susie/GJOKA_SUMSTATS/covmat_46.ld"))
+
+# Notice the dimensions match
+dim(sumstats)
+dim(R)
+
+# Inspect
+# Looks like plink results
+head(sumstats)
+R[1:5,1:5]
+```
+
+# Run `susieR`
+
+```{r}
+# Compute z-scores
+z <- sumstats$BETA/sumstats$SE
+
+# Run SuSiE-RSS
+fit <- susie_rss(
+  z = z,
+  R = R,
+  n = sumstats$NMISS[1],  # Sample size
+  L = 10               # max number of effects
+)
+
+# Look at results
+# Plot PIPs
+summary(fit)
+fit$sets
+pip <- fit$pip
+pip
+```
+
+# Plot
+
+```{r}
+# Really basic plot
+plot(pip)
+plot(sumstats$BP, -log10(sumstats$P), col="grey")
+points(sumstats$BP, -log10(sumstats$P),
+       col=ifelse(pip > 0.1, "red", "grey"))
+
+
+
+# Plot the two CSs in different colors
+# color CS1
+# color CS2
+cs <- fit$sets$cs
+cols <- rep("grey", nrow(sumstats))
+cols[cs[[1]]] <- "red"
+cols[cs[[2]]] <- "blue"
+plot(sumstats$BP, -log10(sumstats$P), col=cols, pch=16)
+
+
+
+# Nicer plot in ggplot
+# This plot looks more like Figure 2
+cs <- fit$sets$cs
+# Assign each SNP to a CS (or "none")
+cs_id <- rep("none", nrow(sumstats))
+for (i in seq_along(cs)) {
+  cs_id[cs[[i]]] <- paste0("CS", i)
+}
+df <- data.frame(
+  BP = sumstats$BP,
+  logp = -log10(sumstats$P),
+  pip = pip,
+  cs = factor(cs_id)
+)
+ggplot(df, aes(x = BP, y = logp)) +
+  geom_point(aes(color = cs, size = pip, alpha = pip)) +
+  scale_color_manual(values = c(
+    "none" = "grey80",
+    "CS1" = "red",
+    "CS2" = "blue"
+  )) +
+  scale_size(range = c(1, 5)) +
+  scale_alpha(range = c(0.3, 1)) +
+  labs(
+    x = "Position (BP)",
+    y = expression(-log[10](P)),
+    color = "Credible Set",
+    size = "PIP",
+    alpha = "PIP"
+  ) +
+  theme_minimal()
+
+```

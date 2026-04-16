@@ -52,6 +52,12 @@ format:
 
 ## Suggested Reading
 
+[Schaid, Daniel J et al. “From genome-wide associations to candidate causal variants by statistical fine-mapping.” Nature reviews. Genetics vol. 19,8 (2018): 491-504. doi:10.1038/s41576-018-0016-z](https://pmc.ncbi.nlm.nih.gov/articles/PMC6050137/)
+
+[Wallace, Chris. “A more accurate method for colocalisation analysis allowing for multiple causal variants.” PLoS genetics vol. 17,9 e1009440. 29 Sep. 2021, doi:10.1371/journal.pgen.1009440](https://pmc.ncbi.nlm.nih.gov/articles/PMC8504726/)
+
+[Giambartolomei, Claudia et al. “Bayesian test for colocalisation between pairs of genetic association studies using summary statistics.” PLoS genetics vol. 10,5 e1004383. 15 May. 2014, doi:10.1371/journal.pgen.1004383](https://pmc.ncbi.nlm.nih.gov/articles/PMC4022491/)
+
 ## In-class Exercises
 
 [Download the exercises](../exercises/25_finemapping/25_finemapping_exercises.Rmd)
