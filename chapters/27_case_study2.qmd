@@ -54,7 +54,7 @@ format:
 
 ## In-class Exercises
 
-[Download the exercises](../exercises/26_case_study2/26_case_study2_exercises.Rmd)
+[Download the exercises](../exercises/27_case_study2/27_case_study2_exercises.Rmd)
 
 
 
