@@ -1,0 +1,83 @@
+---
+title: "Case study 2 exercises"
+date: "2026-04-23"
+output:
+  html_document:
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapse: false
+---
+
+# Introduction
+
+You will work in small groups to (approximately) replicate some post-GWAS analyses from the anxiety GWAS paper you recently read, and then briedly share your results (or lack thereof) with the class.
+
+Here is the paper: 
+
+[Strom, Nora I et al. “Genome-wide association study of major anxiety disorders in 122,341 European-ancestry cases identifies 58 loci and highlights GABAergic signaling.” medRxiv : the preprint server for health sciences 2024.07.03.24309466. 5 Jul. 2024, doi:10.1101/2024.07.03.24309466. Preprint.](https://www.nature.com/articles/s41588-025-02485-8)
+
+Note that you will probably need to consult both the paper and the [supplementary information](https://static-content.springer.com/esm/art%3A10.1038%2Fs41588-025-02485-8/MediaObjects/41588_2025_2485_MOESM1_ESM.pdf). You might also find useful some of the other supporting information linked to in the paper.
+
+You are encouraged to use AI to help you. I would recommend uploading the article pdf into your LLM of choice and asking it to guide you throughout. Note that in some places the authors have made their code available. You may find helpful [this document containing some of their code](https://github.com/noraistrom/ANXGWAS2025/blob/main/SupplementaryMaterial_ANXGWAS_AnalysisCode_Software.pdf).
+
+# Setup
+
+Log on to `http://hugen.crc.pitt.edu`, open a terminal window, and start an interactive job with `srun -M teach -A hugen2073-2026s --pty  --time=01:15:00 bash`.
+
+The GWAS summary stats have been downloaded for you in `/ix1/hugen2073-2026s/case_study`.
+
+- The main results file is `ANX_2026_daner_fullANX_v12_woUTAH_11022026.gz`
+
+- You should also check the README file `readme_ANX_2026_GWAS_sumstats.txt`
+
+# Analyses
+
+After either choosing or being assigned to one of the analyses below, see how well you can replicate some part of it.
+
+## PheWAS
+
+In the "Genetic overlap between ANX and other phenotypes" section, the authors performed PheWAS for a subset of their SNPs using an R package. See if you can use the same R package to reproduce some of the results they found for those SNPs. Note you will probably need to install the package.
+
+## GSMR
+
+In the "Genetic overlap between ANX and other phenotypes" section, the authors also performed bi-directional generalized SMR (GSMR) with another R package. (You may need to try downloading summary stats from *other* GWAS to do this.)
+
+## Fine-mapping with FINEMAP
+
+See if you can replicate any of the credible sets.
+
+FINEMAP is available for you in `/ix1/hugen2073-2026s/case_study/finemap_v1.4.2_x86_64`. Some documentation is [here](http://www.christianbenner.com).
+
+## Gene-mapping with FUMA
+
+It appears the authors already published their results in FUMA. You should be able to find the study there, explore the results, and verify a number of the authors' claims. (Pretend you had uploaded the summary stats to FUMA yourself; don't actually do so, since it would probably take FUMA a long time to process the results.)
+
+## SMR
+
+The authors used SMR (a command-line program for summary Mendelian randomization) to test for causal relationships between transcription, methylation, and protein levels and anxiety.
+
+The program is provided for you in `/ix1/hugen2073-2026s/case_study/smr-1.4.1-linux-x86_64`. See if you can replicate any of these results.
+
+The documentation and other data downloads you'll probably need are [here](https://yanglab.westlake.edu.cn/software/smr/#Overview). 
+
+## LDSC
+
+The authors used LD score regression for several analyses.
+
+- Resolving inflation
+
+- Estimating/partitioning heritability
+
+- Genetic correlations with other traits
+
+The github repo is [here](https://github.com/bulik/ldsc). Data for partitioning heritability are available somewhere [here](https://console.cloud.google.com/storage/browser/broad-alkesgroup-public-requester-pays). Tutorials are [here](https://github.com/bulik/ldsc/wiki/LD-Score-Estimation-Tutorial) and [here](https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Correlation).
+
+## DrugTargetor
+
+The authors used DrugTargetor, a "web interface", to reveal possible drug repurposing opportunities. You can try to replicate their results, but you will probably find it impossible. (Note there's a [github page](https://github.com/hagax8/drugtargetor).
+
+## Plotting
+
+If you're feeling unambitious, you could just try making Manhattan, Q-Q, and/or LocusZoom-style plots to see whether they look like the authors' results. (Maybe you can improve on their figures.)
